@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { dedupeRecentBouts } from '@/lib/recent-bouts'
 import {
   parseUfcAthleteLastFights,
+  parseUfcAthleteNickname,
   parseUfcAthletePageStats,
 } from '@/lib/mappers/ufc-athlete-enrichment'
 
@@ -47,6 +48,13 @@ describe('parseUfcAthleteLastFights', () => {
     expect(bouts[0].method).toBe('ko_tko')
     expect(bouts[1].opponentName).toMatch(/Vettori/i)
     expect(dedupeRecentBouts([...bouts, ...bouts]).length).toBe(2)
+  })
+})
+
+describe('parseUfcAthleteNickname', () => {
+  it('reads hero profile nickname with HTML entities', () => {
+    const html = '<p class="hero-profile__nickname">&quot;All In&quot;</p>'
+    expect(parseUfcAthleteNickname(html)).toBe('All In')
   })
 })
 

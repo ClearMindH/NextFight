@@ -20,7 +20,7 @@ export function mergeFighterForDisplay(fighter: Fighter): Fighter {
         ...fighter,
         ranking: fresh.ranking ?? fighter.ranking,
         imageUrl: fresh.imageUrl ?? fighter.imageUrl,
-        nickname: fighter.nickname ?? fresh.nickname,
+        nickname: fresh.nickname || fighter.nickname,
         record: pickRecord(fighter.record, fresh.record),
         wins:
           fresh.wins + fresh.losses + fresh.draws > 0

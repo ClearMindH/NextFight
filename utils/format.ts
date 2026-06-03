@@ -31,6 +31,11 @@ export function formatPercent(value: number): string {
 /** Surnom affiché sous le portrait (sans guillemets parasites). */
 export function formatFighterNickname(raw?: string | null): string | null {
   if (!raw?.trim()) return null
-  const cleaned = raw.trim().replace(/^["']+|["']+$/g, '')
+  const cleaned = raw
+    .trim()
+    .replace(/&#039;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+    .replace(/^["']+|["']+$/g, '')
   return cleaned || null
 }

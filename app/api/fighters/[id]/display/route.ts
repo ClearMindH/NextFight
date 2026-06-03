@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { mergeFighterForDisplay } from '@/lib/fighter-display'
-import { getFighterFromStore } from '@/lib/roster-store'
+import { fetchUfcAthleteNickname } from '@/lib/mappers/ufc-athlete-enrichment'
+import { getFighterFromStore, upsertFighterInStore } from '@/lib/roster-store'
 
 export const dynamic = 'force-dynamic'
 
@@ -14,7 +15,25 @@ export async function GET(
     return NextResponse.json({ error: 'Fighter not found' }, { status: 404 })
   }
 
-  const fighter = mergeFighterForDisplay(raw)
+  let fighter = mergeFighterForDisplay(raw)
+
+  if (!fighter.nickname && fighter.organizationId === 'ufc') {
+    const slug = fighter.id.replace(/^ufc-/, '')
+    const nick = slug ? await fetchUfcAthleteNickname(slug) : undefined
+    if (nick) {
+      fighter = { ...fighter, nickname: nick }
+      try {
+        upsertFighterInStore({
+          ...raw,
+          nickname: nick,
+          lastSyncedAt: new Date().toISOString(),
+        })
+      } catch {
+        /* fs read-only (ex. Vercel) — le client affiche quand même le surnom */
+      }
+    }
+  }
+
   return NextResponse.json({
     id: fighter.id,
     ranking: fighter.ranking ?? null,

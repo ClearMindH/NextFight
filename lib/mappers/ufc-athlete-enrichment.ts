@@ -41,6 +41,32 @@ export async function fetchUfcAthleteJsonNode(slug: string): Promise<UfcJsonApiA
   return json.data?.[0] ?? null
 }
 
+/** Surnom affiché sur la fiche athlète (ex. « All In », « The Golden Boy »). */
+export function parseUfcAthleteNickname(html: string): string | undefined {
+  const raw =
+    html.match(/hero-profile__nickname[^>]*>([^<]+)/i)?.[1] ??
+    html.match(/c-hero-athlete__nickname[^>]*>([^<]+)/i)?.[1]
+  if (!raw) return undefined
+
+  const cleaned = raw
+    .trim()
+    .replace(/&quot;/g, '')
+    .replace(/&#039;/g, "'")
+    .replace(/^["']+|["']+$/g, '')
+    .trim()
+
+  return cleaned || undefined
+}
+
+export async function fetchUfcAthleteNickname(slug: string): Promise<string | undefined> {
+  try {
+    const html = await fetchText(`${UFC_BASE}/athlete/${slug}`)
+    return parseUfcAthleteNickname(html)
+  } catch {
+    return undefined
+  }
+}
+
 function parseMethod(raw: string): FightMethod {
   const t = raw.toLowerCase()
   if (/soum|sub/i.test(t)) return 'submission'
@@ -267,6 +293,9 @@ export async function enrichUfcFighterFromOfficialSite(
     } else if (fighter.recentBouts?.length) {
       next = { ...next, recentBouts: dedupeRecentBouts(fighter.recentBouts) }
     }
+    const pageNick = parseUfcAthleteNickname(pageHtml)
+    if (pageNick) next = { ...next, nickname: pageNick }
+
     const pageStats = parseUfcAthletePageStats(pageHtml)
     if (pageStats) {
       next = {
@@ -300,7 +329,7 @@ export async function enrichUfcFighterFromOfficialSite(
       ...mapped,
       recentBouts: next.recentBouts ?? mapped.recentBouts,
       ranking: fighter.ranking ?? mapped.ranking,
-      nickname: fighter.nickname || mapped.nickname,
+      nickname: next.nickname || mapped.nickname || fighter.nickname,
       imageUrl: fighter.imageUrl || mapped.imageUrl,
       lastSyncedAt: new Date().toISOString(),
       source: statAttrs ? 'ufc.com' : fighter.source,
