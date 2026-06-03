@@ -372,129 +372,6 @@
       ]
     },
     {
-      "id": "xtb-ksw-119",
-      "organizationId": "ksw",
-      "name": "XTB KSW 119",
-      "date": "2026-06-20T17:00:00.000Z",
-      "venue": "TBA",
-      "city": "TBA",
-      "country": "Poland",
-      "status": "upcoming",
-      "communityPredictions": 600,
-      "fights": [
-        {
-          "id": "xtb-ksw-119-f1",
-          "eventId": "xtb-ksw-119",
-          "order": 1,
-          "weightClass": "Championship",
-          "isTitle": true,
-          "isMainEvent": true,
-          "scheduledRounds": 5,
-          "redId": "ksw-patryk-kaczmarczyk",
-          "blueId": "ksw-leo-brichta"
-        },
-        {
-          "id": "xtb-ksw-119-f2",
-          "eventId": "xtb-ksw-119",
-          "order": 2,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-stefan-vojcak",
-          "blueId": "ksw-arkadiusz-wrzosek"
-        },
-        {
-          "id": "xtb-ksw-119-f3",
-          "eventId": "xtb-ksw-119",
-          "order": 3,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-daniel-rutkowski",
-          "blueId": "ksw-daniel-tarchila"
-        },
-        {
-          "id": "xtb-ksw-119-f4",
-          "eventId": "xtb-ksw-119",
-          "order": 4,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-andrzej-grzebyk",
-          "blueId": "ksw-tymoteusz-lopaczyk"
-        },
-        {
-          "id": "xtb-ksw-119-f5",
-          "eventId": "xtb-ksw-119",
-          "order": 5,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-damian-janikowski",
-          "blueId": "ksw-wiktor-zalewski"
-        },
-        {
-          "id": "xtb-ksw-119-f6",
-          "eventId": "xtb-ksw-119",
-          "order": 6,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-konrad-rusinski",
-          "blueId": "ksw-adam-masaev"
-        },
-        {
-          "id": "xtb-ksw-119-f7",
-          "eventId": "xtb-ksw-119",
-          "order": 7,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-souheil-kaouchen",
-          "blueId": "ksw-kacper-wrobel"
-        },
-        {
-          "id": "xtb-ksw-119-f8",
-          "eventId": "xtb-ksw-119",
-          "order": 8,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-michal-martinek",
-          "blueId": "ksw-marek-samociuk"
-        },
-        {
-          "id": "xtb-ksw-119-f9",
-          "eventId": "xtb-ksw-119",
-          "order": 9,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-piotr-kacprzak",
-          "blueId": "ksw-slimen-hassaini"
-        },
-        {
-          "id": "xtb-ksw-119-f10",
-          "eventId": "xtb-ksw-119",
-          "order": 10,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-piotr-chudzik",
-          "blueId": "ksw-predrag-bozovic"
-        }
-      ]
-    },
-    {
       "id": "ufc-fight-night-june-20-2026",
       "organizationId": "ufc",
       "name": "UFC Fight Night",
@@ -591,7 +468,7 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-jhonata-diniz",
-          "blueId": "ufc-jose-montanha"
+          "blueId": "ufc-jose-montanha-da-silva"
         },
         {
           "id": "ufc-fight-night-june-20-2026-f9",
@@ -742,6 +619,17 @@
           "id": "ufc-fight-night-june-27-2026-f10",
           "eventId": "ufc-fight-night-june-27-2026",
           "order": 10,
+          "weightClass": "Featherweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-kaan-ofli",
+          "blueId": "ufc-reyes-cortez"
+        },
+        {
+          "id": "ufc-fight-night-june-27-2026-f11",
+          "eventId": "ufc-fight-night-june-27-2026",
+          "order": 11,
           "weightClass": "Welterweight",
           "isTitle": false,
           "isMainEvent": false,
@@ -750,9 +638,9 @@
           "blueId": "ufc-andreas-gustafsson"
         },
         {
-          "id": "ufc-fight-night-june-27-2026-f11",
+          "id": "ufc-fight-night-june-27-2026-f12",
           "eventId": "ufc-fight-night-june-27-2026",
-          "order": 11,
+          "order": 12,
           "weightClass": "Bantamweight Championship",
           "isTitle": true,
           "isMainEvent": false,
@@ -943,96 +831,6 @@
       ]
     },
     {
-      "id": "xtb-ksw-120",
-      "organizationId": "ksw",
-      "name": "XTB KSW 120",
-      "date": "2026-07-18T17:00:00.000Z",
-      "venue": "TBA",
-      "city": "TBA",
-      "country": "Poland",
-      "status": "upcoming",
-      "communityPredictions": 600,
-      "fights": [
-        {
-          "id": "xtb-ksw-120-f1",
-          "eventId": "xtb-ksw-120",
-          "order": 1,
-          "weightClass": "Championship",
-          "isTitle": true,
-          "isMainEvent": true,
-          "scheduledRounds": 5,
-          "redId": "ksw-rafal-haratyk",
-          "blueId": "ksw-bartosz-lesko"
-        },
-        {
-          "id": "xtb-ksw-120-f2",
-          "eventId": "xtb-ksw-120",
-          "order": 2,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-augusto-sakai",
-          "blueId": "ksw-artur-szpilka"
-        },
-        {
-          "id": "xtb-ksw-120-f3",
-          "eventId": "xtb-ksw-120",
-          "order": 3,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-sebastian-przybysz",
-          "blueId": "ksw-rogerio-bontorin"
-        },
-        {
-          "id": "xtb-ksw-120-f4",
-          "eventId": "xtb-ksw-120",
-          "order": 4,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-ibragim-chuzhigaev",
-          "blueId": "ksw-maciej-rozanski"
-        },
-        {
-          "id": "xtb-ksw-120-f5",
-          "eventId": "xtb-ksw-120",
-          "order": 5,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-adam-niedzwiedz",
-          "blueId": "ksw-mateusz-pawlik"
-        },
-        {
-          "id": "xtb-ksw-120-f6",
-          "eventId": "xtb-ksw-120",
-          "order": 6,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-grzegorz-stabach",
-          "blueId": "ksw-przemyslaw-gorny"
-        },
-        {
-          "id": "xtb-ksw-120-f7",
-          "eventId": "xtb-ksw-120",
-          "order": 7,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ksw-grzegorz-kowalski",
-          "blueId": "ksw-oskar-stachura"
-        }
-      ]
-    },
-    {
       "id": "ufc-fight-night-july-18-2026",
       "organizationId": "ufc",
       "name": "UFC Fight Night",
@@ -1051,13 +849,46 @@
           "isTitle": false,
           "isMainEvent": true,
           "scheduledRounds": 5,
-          "redId": "ufc-brad-tavares",
-          "blueId": "ufc-marc-andre-barriault"
+          "redId": "ufc-jared-cannonier",
+          "blueId": "ufc-christian-leroy-duncan"
         },
         {
           "id": "ufc-fight-night-july-18-2026-f2",
           "eventId": "ufc-fight-night-july-18-2026",
           "order": 2,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-kevin-holland",
+          "blueId": "ufc-ashlee-evans-smith"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f3",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 3,
+          "weightClass": "Women's Strawweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-amanda-ribas",
+          "blueId": "ufc-fatima-kline"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f4",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 4,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-brad-tavares",
+          "blueId": "ufc-marc-andre-barriault"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f5",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 5,
           "weightClass": "Lightweight Championship",
           "isTitle": true,
           "isMainEvent": false,
@@ -1068,5 +899,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-03T18:26:13.605Z"
+  "updatedAt": "2026-06-03T22:21:10.958Z"
 }
