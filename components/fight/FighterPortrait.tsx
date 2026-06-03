@@ -12,6 +12,7 @@ import {
 import { mergeSeedRanking } from '@/lib/roster-seed-rankings'
 import { getDivisionRankingBadge } from '@/lib/fighter-ranking'
 import { canUseNextImage } from '@/lib/image-url'
+import { formatFighterNickname } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface FighterPortraitProps {
@@ -33,6 +34,7 @@ export function FighterPortrait({
   const isPlaceholder = isFighterPortraitPlaceholder(src)
   const rankingBadge = getDivisionRankingBadge(displayFighter.ranking)
   const showRankOnPhoto = Boolean(rankingBadge)
+  const nickname = formatFighterNickname(displayFighter.nickname)
 
   useEffect(() => {
     setDisplayFighter(mergeSeedRanking(fighter))
@@ -43,17 +45,26 @@ export function FighterPortrait({
     let cancelled = false
     fetch(`/api/fighters/${fighter.id}/display`, { cache: 'no-store' })
       .then((res) => (res.ok ? res.json() : null))
-      .then((data: { ranking?: number | null; imageUrl?: string | null } | null) => {
-        if (cancelled || !data) return
-        setDisplayFighter((prev) =>
-          mergeSeedRanking({
-            ...prev,
-            ranking: data.ranking ?? prev.ranking,
-            imageUrl: data.imageUrl ?? prev.imageUrl,
-          }),
-        )
-        if (data.imageUrl) setSrc(getFighterPortraitUrl({ ...fighter, imageUrl: data.imageUrl }))
-      })
+      .then(
+        (data: {
+          ranking?: number | null
+          imageUrl?: string | null
+          record?: string
+          nickname?: string | null
+        } | null) => {
+          if (cancelled || !data) return
+          setDisplayFighter((prev) =>
+            mergeSeedRanking({
+              ...prev,
+              ranking: data.ranking ?? prev.ranking,
+              imageUrl: data.imageUrl ?? prev.imageUrl,
+              record: data.record ?? prev.record,
+              nickname: data.nickname ?? prev.nickname,
+            }),
+          )
+          if (data.imageUrl) setSrc(getFighterPortraitUrl({ ...fighter, imageUrl: data.imageUrl }))
+        },
+      )
       .catch(() => {})
     return () => {
       cancelled = true
@@ -72,7 +83,7 @@ export function FighterPortrait({
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: isRed ? 0 : 0.1 }}
-      className={cn('relative flex flex-col items-center isolate', className)}
+      className={cn('relative flex flex-col items-center', className)}
     >
       <div
         className={cn(
@@ -83,10 +94,8 @@ export function FighterPortrait({
         )}
       >
         <div
-          className={cn(
-            'absolute inset-0 z-10 bg-gradient-to-t from-background via-background/20 to-transparent',
-            isPlaceholder && 'via-background/10',
-          )}
+          className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#050505]/50 via-transparent to-transparent"
+          aria-hidden
         />
         <div
           className={cn(
@@ -128,23 +137,26 @@ export function FighterPortrait({
             {rankingBadge}
           </div>
         )}
-        <div className="absolute bottom-0 inset-x-0 z-20 p-5">
-          <p
-            className={cn(
-              'text-[10px] font-medium uppercase tracking-[0.2em]',
-              isRed ? 'text-red-400/90' : 'text-blue-400/90',
-            )}
-          >
-            {isRed ? 'Coin rouge' : 'Coin bleu'}
-          </p>
-          <h2 className="mt-1 font-display text-xl sm:text-2xl font-semibold tracking-tight">
-            {displayFighter.name}
-          </h2>
-          {displayFighter.nickname && (
-            <p className="text-sm text-muted">&quot;{displayFighter.nickname}&quot;</p>
+      </div>
+
+      <div className="mt-4 w-full max-w-[280px] text-center px-1">
+        <p
+          className={cn(
+            'text-[10px] font-medium uppercase tracking-[0.2em]',
+            isRed ? 'text-red-400/90' : 'text-blue-400/90',
           )}
-          <p className="mt-1 text-xs text-muted">{displayFighter.record}</p>
-        </div>
+        >
+          {isRed ? 'Coin rouge' : 'Coin bleu'}
+        </p>
+        <h2 className="mt-1.5 font-display text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
+          {displayFighter.name}
+        </h2>
+        {nickname && (
+          <p className="mt-1.5 text-sm text-gold/90 italic leading-snug">&ldquo;{nickname}&rdquo;</p>
+        )}
+        <p className="mt-2 text-base font-semibold tabular-nums text-[#f5f2eb]">
+          {displayFighter.record}
+        </p>
       </div>
 
       {probability != null && (
@@ -155,7 +167,6 @@ export function FighterPortrait({
           </p>
         </div>
       )}
-
     </motion.div>
   )
 }

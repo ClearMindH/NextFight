@@ -27,3 +27,10 @@ export const methodLabels: Record<FightMethod, string> = {
 export function formatPercent(value: number): string {
   return `${Math.round(value)}%`
 }
+
+/** Surnom affiché sous le portrait (sans guillemets parasites). */
+export function formatFighterNickname(raw?: string | null): string | null {
+  if (!raw?.trim()) return null
+  const cleaned = raw.trim().replace(/^["']+|["']+$/g, '')
+  return cleaned || null
+}

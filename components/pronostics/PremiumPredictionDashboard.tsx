@@ -18,7 +18,7 @@ import type { FighterScoreProfile } from '@/types/prediction'
 import { getOrgBrand } from '@/lib/org-brand'
 import { getFreePreviewFight, getMainFight } from '@/lib/event-helpers'
 import { useSubscription } from '@/hooks/useSubscription'
-import { formatShortDate, formatPercent, methodLabels } from '@/utils/format'
+import { formatShortDate, formatPercent, formatFighterNickname, methodLabels } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 const DIMENSIONS: { key: keyof Omit<FighterScoreProfile, 'compositeScore'>; label: string; color: string }[] = [
@@ -429,6 +429,7 @@ export function PremiumPredictionDashboard({
           <MatchupTile
             corner="Red"
             fighter={fight.redCorner.name}
+            nickname={fight.redCorner.nickname}
             record={fight.redCorner.record}
             prob={redProb}
             accent={brand.accent}
@@ -437,6 +438,7 @@ export function PremiumPredictionDashboard({
           <MatchupTile
             corner="Blue"
             fighter={fight.blueCorner.name}
+            nickname={fight.blueCorner.nickname}
             record={fight.blueCorner.record}
             prob={blueProb}
             accent="#60a5fa"
@@ -451,6 +453,7 @@ export function PremiumPredictionDashboard({
 function MatchupTile({
   corner,
   fighter,
+  nickname,
   record,
   prob,
   accent,
@@ -458,11 +461,13 @@ function MatchupTile({
 }: {
   corner: string
   fighter: string
+  nickname?: string
   record: string
   prob: number
   accent: string
   align: 'left' | 'right'
 }) {
+  const nick = formatFighterNickname(nickname)
   return (
     <div
       className={cn(
@@ -473,7 +478,8 @@ function MatchupTile({
       <div>
         <p className="text-[10px] uppercase tracking-wider text-muted">{corner} corner</p>
         <p className="mt-1 text-lg font-semibold">{fighter}</p>
-        <p className="text-xs text-muted">{record}</p>
+        {nick && <p className="mt-1 text-sm italic text-gold/85">&ldquo;{nick}&rdquo;</p>}
+        <p className="mt-1.5 text-sm font-semibold tabular-nums text-[#f5f2eb]">{record}</p>
       </div>
       <div className={cn('text-right', align === 'right' && 'sm:text-left')}>
         <p className="text-3xl font-semibold tabular-nums" style={{ color: accent }}>

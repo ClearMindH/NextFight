@@ -34,7 +34,7 @@ export function OrgSeoPage({ org }: OrgSeoPageProps) {
 
       {mainFight && (
         <section className="section-padding">
-          <div className="container-content max-w-lg">
+          <div className="container-content max-w-4xl">
             <h2 className="font-display text-xl font-semibold mb-6">Pronostic à la une</h2>
             <PredictionCard fight={mainFight} organizationLabel={`${org.name} · Co-main (gratuit)`} />
           </div>

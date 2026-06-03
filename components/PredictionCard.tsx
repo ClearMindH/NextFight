@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, ArrowUpRight } from 'lucide-react'
 import type { Fight } from '@/types'
+import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { PredictionBreakdown } from '@/components/PredictionBreakdown'
 import { FightAnalysisPanel } from '@/components/FightAnalysisPanel'
 import { methodLabels, formatPercent } from '@/utils/format'
@@ -43,10 +44,19 @@ export function PredictionCard({
       )}
     >
       <p className="text-xs font-medium uppercase tracking-wider text-gold">{organizationLabel}</p>
+      <p className="mt-2 text-center text-sm text-muted">{fight.weightClass}</p>
 
-      <div className="mt-6 space-y-5">
-        <FighterRow name={fight.redCorner.name} probability={redProb} align="left" />
-        <FighterRow name={fight.blueCorner.name} probability={blueProb} align="right" />
+      <div className="mt-6 grid grid-cols-1 items-end gap-6 sm:grid-cols-2 sm:gap-4">
+        <FighterPortrait
+          fighter={fight.redCorner}
+          corner="red"
+          probability={redProb}
+        />
+        <FighterPortrait
+          fighter={fight.blueCorner}
+          corner="blue"
+          probability={blueProb}
+        />
       </div>
 
       <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5 text-center">
@@ -100,37 +110,6 @@ export function PredictionCard({
         <FightAnalysisPanel fight={fight} eventName={eventName} />
       )}
     </motion.article>
-  )
-}
-
-function FighterRow({
-  name,
-  probability,
-  align,
-}: {
-  name: string
-  probability: number
-  align: 'left' | 'right'
-}) {
-  return (
-    <div>
-      <div className={cn('flex items-center justify-between mb-2', align === 'right' && 'flex-row-reverse')}>
-        <span className="font-medium text-sm sm:text-base">{name}</span>
-        <span className="text-lg font-semibold text-gold tabular-nums">{formatPercent(probability)}</span>
-      </div>
-      <div className="h-1.5 rounded-full bg-border overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${probability}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className={cn(
-            'h-full rounded-full bg-gradient-to-r from-gold/80 to-gold',
-            align === 'right' && 'ml-auto',
-          )}
-        />
-      </div>
-    </div>
   )
 }
 
