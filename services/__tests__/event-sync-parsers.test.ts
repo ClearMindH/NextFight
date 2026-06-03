@@ -48,6 +48,15 @@ describe('UFC events parser', () => {
     expect(fights[0].blue.ranking).toBe(11)
   })
 
+  it('parses ranks per corner without duplicating a single rank to both', () => {
+    const html = FIXTURE('ufc-event-fight-allen-snippet.html')
+    const fights = parseUfcEventFightsHtml(html)
+    expect(fights.length).toBe(1)
+    expect(fights[0].red.ranking).toBe(4)
+    expect(fights[0].blue.ranking).toBeUndefined()
+    expect(fights[0].blue.slug).toBe('etomen-shiyahashian')
+  })
+
   it('parses UFC rank labels', () => {
     expect(parseUfcRankLabel('#5')).toBe(5)
     expect(parseUfcRankLabel('C')).toBe(1)

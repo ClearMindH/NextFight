@@ -1,3 +1,4 @@
+import { normalizeUfcAthleteSlug } from '@/lib/fighter-id-canonical'
 import { isTopRankedInDivision } from '@/lib/fighter-ranking'
 import { slugifyId } from '@/lib/mappers/ufc-api'
 import { getFighterFromStore, upsertFighterInStore } from '@/lib/roster-store'
@@ -50,7 +51,10 @@ function ensureOne(orgId: OrganizationId, ref: ScrapedFighterRef): void {
     return
   }
 
-  const slug = ref.slug ?? slugifyId(ref.fullName)
+  const slug =
+    orgId === 'ufc'
+      ? normalizeUfcAthleteSlug(ref.slug, ref.fullName) ?? slugifyId(ref.fullName)
+      : ref.slug ?? slugifyId(ref.fullName)
   if (!slug || !ref.fullName) return
 
   const id = `${orgId}-${slug}`

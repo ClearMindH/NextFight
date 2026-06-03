@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 import path from 'path'
+import { canonicalizeFighterId } from '@/lib/fighter-id-canonical'
 import type { Fighter, OrganizationId, OrganizationRoster } from '@/types'
 
 const ROSTER_DIR = path.join(process.cwd(), 'data', 'rosters')
@@ -40,9 +41,12 @@ export function saveRoster(orgId: OrganizationId, roster: OrganizationRoster): v
 }
 
 export function getFighterFromStore(id: string): Fighter | undefined {
+  const canonical = canonicalizeFighterId(id)
   for (const orgId of ORG_IDS) {
     const roster = loadRoster(orgId)
-    const found = roster.fighters.find((f) => f.id === id)
+    const found = roster.fighters.find(
+      (f) => f.id === id || f.id === canonical || canonicalizeFighterId(f.id) === canonical,
+    )
     if (found) return found
   }
   return undefined

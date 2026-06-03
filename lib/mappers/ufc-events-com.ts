@@ -132,28 +132,17 @@ function parseUfcFightRanks(block: string): { red?: number; blue?: number } {
     /c-listing-fight__ranks-row">([\s\S]*?)<\/div>\s*(?=<div class="c-listing-fight__banner|<div class="c-listing-fight__awards|<div class="c-listing-fight__names-row)/i,
   )?.[1]
 
-  let labels: string[] = []
-  if (ranksRow) {
-    labels = [...ranksRow.matchAll(/<span>([^<]+)<\/span>/gi)].map((m) => m[1].trim())
-  }
+  if (!ranksRow) return {}
 
-  if (labels.length < 2) {
-    const beforeNames = block.split('c-listing-fight__names-row')[0] ?? block
-    labels = [...beforeNames.matchAll(/corner-rank[^>]*>[\s\S]*?<span>([^<]+)<\/span>/gi)].map(
-      (m) => m[1].trim(),
-    )
-    const seen: string[] = []
-    for (const label of labels) {
-      if (!seen.includes(label)) seen.push(label)
-    }
-    labels = seen
-  }
+  const labels = [...ranksRow.matchAll(
+    /c-listing-fight__corner-rank[^>]*>[\s\S]*?<span>([^<]*)<\/span>/gi,
+  )].map((m) => m[1].trim())
 
-  if (labels.length < 2) return {}
+  if (labels.length === 0) return {}
 
   return {
-    red: parseUfcRankLabel(labels[0]),
-    blue: parseUfcRankLabel(labels[1]),
+    red: labels[0] ? parseUfcRankLabel(labels[0]) : undefined,
+    blue: labels[1] ? parseUfcRankLabel(labels[1]) : undefined,
   }
 }
 
