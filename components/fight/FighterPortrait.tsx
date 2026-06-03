@@ -6,10 +6,10 @@ import { motion } from 'framer-motion'
 import type { Fighter } from '@/types'
 import {
   FIGHTER_PORTRAIT_PLACEHOLDER,
-  getFighterInitials,
   getFighterPortraitUrl,
   isFighterPortraitPlaceholder,
 } from '@/lib/fighter-portrait'
+import { mergeSeedRanking } from '@/lib/roster-seed-rankings'
 import { getDivisionRankingBadge } from '@/lib/fighter-ranking'
 import { canUseNextImage } from '@/lib/image-url'
 import { cn } from '@/utils/cn'
@@ -27,7 +27,7 @@ export function FighterPortrait({
   probability,
   className,
 }: FighterPortraitProps) {
-  const [displayFighter, setDisplayFighter] = useState(fighter)
+  const [displayFighter, setDisplayFighter] = useState(() => mergeSeedRanking(fighter))
   const [src, setSrc] = useState(() => getFighterPortraitUrl(fighter))
   const isRed = corner === 'red'
   const isPlaceholder = isFighterPortraitPlaceholder(src)
@@ -35,7 +35,7 @@ export function FighterPortrait({
   const showRankOnPhoto = Boolean(rankingBadge)
 
   useEffect(() => {
-    setDisplayFighter(fighter)
+    setDisplayFighter(mergeSeedRanking(fighter))
     setSrc(getFighterPortraitUrl(fighter))
   }, [fighter])
 
@@ -45,11 +45,13 @@ export function FighterPortrait({
       .then((res) => (res.ok ? res.json() : null))
       .then((data: { ranking?: number | null; imageUrl?: string | null } | null) => {
         if (cancelled || !data) return
-        setDisplayFighter((prev) => ({
-          ...prev,
-          ranking: data.ranking ?? prev.ranking,
-          imageUrl: data.imageUrl ?? prev.imageUrl,
-        }))
+        setDisplayFighter((prev) =>
+          mergeSeedRanking({
+            ...prev,
+            ranking: data.ranking ?? prev.ranking,
+            imageUrl: data.imageUrl ?? prev.imageUrl,
+          }),
+        )
         if (data.imageUrl) setSrc(getFighterPortraitUrl({ ...fighter, imageUrl: data.imageUrl }))
       })
       .catch(() => {})
@@ -154,14 +156,6 @@ export function FighterPortrait({
         </div>
       )}
 
-      {!showRankOnPhoto && (
-        <div
-          className="absolute -top-3 -right-3 h-12 w-12 rounded-full border border-gold/40 bg-card flex items-center justify-center font-display text-sm font-semibold text-gold"
-          aria-hidden
-        >
-          {getFighterInitials(fighter.name)}
-        </div>
-      )}
     </motion.div>
   )
 }

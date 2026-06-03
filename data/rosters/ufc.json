@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ufc",
     "fighterCount": 1158,
-    "lastSyncedAt": "2026-06-03T18:58:36.658Z",
+    "lastSyncedAt": "2026-06-03T22:14:56.014Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -1115,7 +1115,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.360Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 1
     },
     {
       "id": "ufc-alexander-gustafsson",
@@ -1629,7 +1630,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.353Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 4
     },
     {
       "id": "ufc-amir-aliakbari",
@@ -5444,7 +5446,8 @@
         "subAvg": 0.6
       },
       "lastSyncedAt": "2026-06-03T17:55:54.360Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 3
     },
     {
       "id": "ufc-cj-fernandes",
@@ -6070,7 +6073,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.354Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 4
     },
     {
       "id": "ufc-cynthia-calvillo",
@@ -7893,7 +7897,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.358Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 1
     },
     {
       "id": "ufc-duane-cason",
@@ -8642,7 +8647,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.354Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 2
     },
     {
       "id": "ufc-erisson-ferreira",
@@ -9887,7 +9893,8 @@
         "winStreak": 0
       },
       "lastSyncedAt": "2026-06-03T17:55:54.356Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 4
     },
     {
       "id": "ufc-gina-carano",
@@ -11231,7 +11238,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.353Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 4
     },
     {
       "id": "ufc-iuri-alcantara",
@@ -11436,7 +11444,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.357Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 3
     },
     {
       "id": "ufc-jacqueline-cavalcanti",
@@ -15610,7 +15619,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.357Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 3
     },
     {
       "id": "ufc-khusein-askhabov",
@@ -16137,7 +16147,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.358Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 5
     },
     {
       "id": "ufc-leonard-garcia",
@@ -17138,7 +17149,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.354Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 2
     },
     {
       "id": "ufc-magomed-bibulatov",
@@ -18450,7 +18462,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.360Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 5
     },
     {
       "id": "ufc-matheus-camilo",
@@ -19094,7 +19107,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.358Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 1
     },
     {
       "id": "ufc-michael-aswell-jr",
@@ -25882,7 +25896,8 @@
         "strengthOfSchedule": 55
       },
       "lastSyncedAt": "2026-06-03T17:55:54.354Z",
-      "source": "merged"
+      "source": "merged",
+      "ranking": 2
     },
     {
       "id": "ufc-tom-blackledge",
@@ -28375,7 +28390,8 @@
           "opponentTier": 55,
           "monthsAgo": 4
         }
-      ]
+      ],
+      "ranking": 1
     },
     {
       "id": "ufc-sean-omalley",
@@ -29533,7 +29549,8 @@
           "opponentTier": 55,
           "monthsAgo": 4
         }
-      ]
+      ],
+      "ranking": 4
     },
     {
       "id": "ufc-paddy-pimblett",

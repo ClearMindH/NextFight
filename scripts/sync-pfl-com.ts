@@ -15,6 +15,7 @@ import {
   parsePflProfileHtml,
   type PflHtmlFighter,
 } from '../lib/mappers/pfl-com'
+import { mergeSeedRanking } from '../lib/roster-seed-rankings'
 import { saveRoster } from '../lib/roster-store'
 import type { Fighter, OrganizationRoster } from '../types'
 
@@ -191,15 +192,16 @@ function mergeExisting(incoming: Fighter[], existing: OrganizationRoster | null)
   return incoming.map((f) => {
     const old = prev.get(slugifyId(f.name))
     if (!old) return f
-    return {
+    const merged = {
       ...f,
       nickname: f.nickname || old.nickname,
       imageUrl: f.imageUrl || old.imageUrl,
       weightClass: f.weightClass || old.weightClass,
       ranking: old.ranking,
       stats: { ...old.stats, ...f.stats },
-      source: 'merged',
+      source: 'merged' as const,
     }
+    return mergeSeedRanking(merged)
   })
 }
 
