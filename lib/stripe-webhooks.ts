@@ -42,10 +42,9 @@ export async function syncSubscriptionFromStripe(
       ? await stripe.customers.retrieve(subscription.customer)
       : subscription.customer
 
+  const existingByCustomer = await getSubscriptionByCustomerId(customerId)
   const email =
-    emailFromCustomer(customer) ??
-    getSubscriptionByCustomerId(customerId)?.email ??
-    null
+    emailFromCustomer(customer) ?? existingByCustomer?.email ?? null
 
   if (!email) return
 
@@ -59,7 +58,7 @@ export async function syncSubscriptionFromStripe(
   const status = mapStripeSubscriptionStatus(subscription.status)
   const isPremiumActive = status === 'active' || status === 'trialing'
 
-  upsertSubscription({
+  await upsertSubscription({
     email,
     stripeCustomerId: customerId,
     stripeSubscriptionId: subscription.id,
@@ -97,7 +96,7 @@ export async function handleCheckoutCompleted(
 
   const planId = (session.metadata?.planId as PlanId) ?? 'premium_monthly'
 
-  upsertSubscription({
+  await upsertSubscription({
     email,
     stripeCustomerId: customerId,
     stripeSubscriptionId: null,
@@ -117,6 +116,6 @@ export async function handleSubscriptionDeleted(
       ? subscription.customer
       : subscription.customer.id
 
-  const existing = getSubscriptionByCustomerId(customerId)
-  if (existing) setSubscriptionInactive(existing.email)
+  const existing = await getSubscriptionByCustomerId(customerId)
+  if (existing) await setSubscriptionInactive(existing.email)
 }

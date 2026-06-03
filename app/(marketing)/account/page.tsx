@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AccountPage() {
   return (
-    <div className="section-padding pt-24">
+    <div className="min-h-screen section-padding pt-24 pb-20 bg-[#050505]">
       <div className="container-content">
         <AccountClient />
       </div>

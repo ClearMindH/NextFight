@@ -28,7 +28,7 @@ export async function POST(request: Request) {
   }
 
   await setCustomerEmailCookie(normalized)
-  const status = buildSubscriptionStatus(normalized)
+  const status = await buildSubscriptionStatus(normalized)
 
   return NextResponse.json({
     ok: true,

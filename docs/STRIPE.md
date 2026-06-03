@@ -55,5 +55,7 @@ Copier le `whsec_...` dans `STRIPE_WEBHOOK_SECRET`.
 
 ## Stockage
 
-En développement, les abonnements sont stockés dans `data/subscriptions.json` (gitignored).  
-En production, remplacer par une base de données (PostgreSQL, Supabase, etc.).
+Les abonnements sont synchronisés dans **Supabase** (`subscriptions`) lorsque  
+`SUPABASE_URL` et `SUPABASE_SERVICE_ROLE_KEY` sont définis. Voir `docs/SUPABASE.md`.
+
+Sans Supabase, repli local : `data/subscriptions.json` (dev uniquement).

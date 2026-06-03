@@ -40,5 +40,5 @@ export async function GET(request: Request) {
 
   await setCustomerEmailCookie(email)
 
-  return NextResponse.json(buildSubscriptionStatus(email))
+  return NextResponse.json(await buildSubscriptionStatus(email))
 }

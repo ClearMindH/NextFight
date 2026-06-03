@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic'
 export async function GET() {
   const denied = await requireAdmin()
   if (denied) return denied
-  return NextResponse.json({ subscriptions: listAllSubscriptions() })
+  return NextResponse.json({ subscriptions: await listAllSubscriptions() })
 }
 
 export async function PATCH(request: Request) {
@@ -27,13 +27,13 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: 'email required' }, { status: 400 })
     }
 
-    let record = adminUpdateSubscription(body.email, {
+    let record = await adminUpdateSubscription(body.email, {
       plan: body.plan,
       status: body.status,
     })
 
     if (!record) {
-      record = upsertSubscription({
+      record = await upsertSubscription({
         ...buildFreeSubscription(body.email),
         plan: body.plan,
         status: body.status,

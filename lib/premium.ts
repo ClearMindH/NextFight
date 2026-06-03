@@ -5,12 +5,14 @@ import {
   isActivePremium,
 } from '@/lib/subscription-store'
 
-export function buildSubscriptionStatus(email: string | null): SubscriptionStatusResponse {
+export async function buildSubscriptionStatus(
+  email: string | null,
+): Promise<SubscriptionStatusResponse> {
   if (!email) {
     return freeStatus(null)
   }
 
-  const record = getSubscriptionByEmail(email)
+  const record = await getSubscriptionByEmail(email)
   const premium = isActivePremium(record)
 
   return {

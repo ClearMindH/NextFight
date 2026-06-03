@@ -15,7 +15,7 @@ export async function POST() {
     return NextResponse.json({ error: 'Not signed in' }, { status: 401 })
   }
 
-  const record = getSubscriptionByEmail(email)
+  const record = await getSubscriptionByEmail(email)
   if (!record?.stripeCustomerId) {
     return NextResponse.json({ error: 'No billing account found' }, { status: 404 })
   }

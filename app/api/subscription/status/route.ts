@@ -6,5 +6,5 @@ export const runtime = 'nodejs'
 
 export async function GET() {
   const email = await getCustomerEmailFromCookie()
-  return NextResponse.json(buildSubscriptionStatus(email))
+  return NextResponse.json(await buildSubscriptionStatus(email))
 }

@@ -1,72 +1,48 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
-import path from 'path'
+import { isSupabaseConfigured } from '@/lib/supabase/config'
+import {
+  fileGetByCustomerId,
+  fileGetByEmail,
+  fileListAll,
+  fileUpsert,
+} from '@/lib/subscriptions/file-store'
+import {
+  supabaseGetByCustomerId,
+  supabaseGetByEmail,
+  supabaseListAll,
+  supabaseUpsert,
+} from '@/lib/subscriptions/supabase-store'
 import type { PlanId, SubscriptionRecord, SubscriptionStatus } from '@/types/subscription'
 import { isPaidPlan } from '@/lib/stripe-plans'
 
-const STORE_PATH = path.join(process.cwd(), 'data', 'subscriptions.json')
-
-interface SubscriptionStore {
-  byEmail: Record<string, SubscriptionRecord>
-  byCustomerId: Record<string, string>
+function useSupabase(): boolean {
+  return isSupabaseConfigured()
 }
 
-function emptyStore(): SubscriptionStore {
-  return { byEmail: {}, byCustomerId: {} }
+export async function getSubscriptionByEmail(
+  email: string,
+): Promise<SubscriptionRecord | null> {
+  if (useSupabase()) return supabaseGetByEmail(email)
+  return fileGetByEmail(email)
 }
 
-function readStore(): SubscriptionStore {
-  try {
-    if (!existsSync(STORE_PATH)) return emptyStore()
-    const raw = readFileSync(STORE_PATH, 'utf-8')
-    const parsed = JSON.parse(raw) as SubscriptionStore
-    return {
-      byEmail: parsed.byEmail ?? {},
-      byCustomerId: parsed.byCustomerId ?? {},
-    }
-  } catch {
-    return emptyStore()
-  }
-}
-
-function writeStore(store: SubscriptionStore): void {
-  const dir = path.dirname(STORE_PATH)
-  if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
-  writeFileSync(STORE_PATH, JSON.stringify(store, null, 2), 'utf-8')
-}
-
-export function getSubscriptionByEmail(email: string): SubscriptionRecord | null {
-  const normalized = email.toLowerCase().trim()
-  const store = readStore()
-  return store.byEmail[normalized] ?? null
-}
-
-export function getSubscriptionByCustomerId(
+export async function getSubscriptionByCustomerId(
   customerId: string,
-): SubscriptionRecord | null {
-  const store = readStore()
-  const email = store.byCustomerId[customerId]
-  if (!email) return null
-  return store.byEmail[email] ?? null
+): Promise<SubscriptionRecord | null> {
+  if (useSupabase()) return supabaseGetByCustomerId(customerId)
+  return fileGetByCustomerId(customerId)
 }
 
-export function upsertSubscription(record: SubscriptionRecord): SubscriptionRecord {
-  const store = readStore()
-  const email = record.email.toLowerCase().trim()
-  const next: SubscriptionRecord = {
-    ...record,
-    email,
-    updatedAt: new Date().toISOString(),
-  }
-  store.byEmail[email] = next
-  store.byCustomerId[record.stripeCustomerId] = email
-  writeStore(store)
-  return next
+export async function upsertSubscription(
+  record: SubscriptionRecord,
+): Promise<SubscriptionRecord> {
+  if (useSupabase()) return supabaseUpsert(record)
+  return fileUpsert(record)
 }
 
-export function setSubscriptionInactive(email: string): void {
-  const existing = getSubscriptionByEmail(email)
+export async function setSubscriptionInactive(email: string): Promise<void> {
+  const existing = await getSubscriptionByEmail(email)
   if (!existing) return
-  upsertSubscription({
+  await upsertSubscription({
     ...existing,
     plan: 'free',
     status: 'inactive',
@@ -110,18 +86,16 @@ export function mapStripeSubscriptionStatus(
   }
 }
 
-export function listAllSubscriptions(): SubscriptionRecord[] {
-  const store = readStore()
-  return Object.values(store.byEmail).sort((a, b) =>
-    b.updatedAt.localeCompare(a.updatedAt),
-  )
+export async function listAllSubscriptions(): Promise<SubscriptionRecord[]> {
+  if (useSupabase()) return supabaseListAll()
+  return fileListAll()
 }
 
-export function adminUpdateSubscription(
+export async function adminUpdateSubscription(
   email: string,
   updates: Partial<Pick<SubscriptionRecord, 'plan' | 'status' | 'currentPeriodEnd'>>,
-): SubscriptionRecord | null {
-  const existing = getSubscriptionByEmail(email)
+): Promise<SubscriptionRecord | null> {
+  const existing = await getSubscriptionByEmail(email)
   if (!existing) return null
   return upsertSubscription({
     ...existing,
@@ -140,4 +114,9 @@ export function resolvePlanFromSubscription(
   if (priceId === monthly) return 'premium_monthly'
   if (priceId === annual) return 'premium_annual'
   return fallback
+}
+
+/** Indique si la prod doit utiliser Supabase (recommandé dès le déploiement). */
+export function getSubscriptionStorageBackend(): 'supabase' | 'file' {
+  return useSupabase() ? 'supabase' : 'file'
 }
