@@ -1,0 +1,53 @@
+{
+  "name": "nextfight",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "sync:fighters": "tsx scripts/sync-fighters.ts",
+    "sync:ufc-roster": "tsx scripts/sync-ufc-com.ts",
+    "sync:pfl-roster": "tsx scripts/sync-pfl-com.ts",
+    "sync:ksw-roster": "tsx scripts/sync-ksw-com.ts",
+    "sync:hexagone-roster": "tsx scripts/sync-hexagone-com.ts",
+    "sync:ares-roster": "tsx scripts/sync-ares-com.ts",
+    "sync:events": "tsx scripts/sync-events.ts",
+    "sync:events:weekend": "tsx scripts/sync-events.ts --weekend",
+    "sync:enrich-cards": "tsx scripts/sync-enrich-cards.ts",
+    "grant:premium": "tsx scripts/grant-premium.ts",
+    "sync:all": "npm run sync:ufc-roster && npm run sync:pfl-roster && npm run sync:ksw-roster && npm run sync:ares-roster && npm run sync:hexagone-roster && npm run sync:events && npm run sync:enrich-cards",
+    "stripe:setup": "tsx scripts/stripe-setup.ts"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "geist": "^1.5.1",
+    "lucide-react": "^0.542.0",
+    "next": "^15.5.4",
+    "openai": "^6.41.0",
+    "postcss": "^8.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "recharts": "^3.1.2",
+    "stripe": "^22.2.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "^15.5.4",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.8"
+  }
+}
