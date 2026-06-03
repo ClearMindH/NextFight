@@ -1,5 +1,7 @@
 import type { UfcAthleteStat, UfcJsonApiAthlete } from '@/lib/mappers/ufc-com'
 import { mapUfcJsonAthlete } from '@/lib/mappers/ufc-com'
+import { normalizeUfcAthleteSlug } from '@/lib/fighter-id-canonical'
+import { dedupeRecentBouts } from '@/lib/recent-bouts'
 import { getAllFightersFromStore } from '@/lib/roster-store'
 import type { FightMethod, Fighter } from '@/types'
 import type { FighterRecentBout } from '@/types/recent-form'
@@ -74,8 +76,124 @@ export function parseUfcAthletePageStats(html: string): Partial<Fighter['stats']
   }
 }
 
-/** Parse le bloc « Last fight » sur la fiche athlète UFC.com (données réelles, 0–1 combat). */
-export function parseUfcAthleteLastFights(
+function monthsAgoFromUfcDateLabel(label: string, now = new Date()): number {
+  const frMonths: Record<string, number> = {
+    jan: 0,
+    fév: 1,
+    fev: 1,
+    mar: 2,
+    avr: 3,
+    mai: 4,
+    juin: 5,
+    jun: 5,
+    juil: 6,
+    jul: 6,
+    août: 7,
+    aout: 7,
+    sep: 8,
+    oct: 9,
+    nov: 10,
+    déc: 11,
+    dec: 11,
+  }
+
+  const m = label.trim().match(/(\d{1,2})\s+([A-Za-zàâéèêëïîôùûüç.]+)\.?\s+(\d{4})/i)
+  if (!m) return 6
+
+  const day = Number(m[1])
+  const monKey = m[2].toLowerCase().replace(/\./g, '')
+  let month = 0
+  for (const [key, value] of Object.entries(frMonths)) {
+    if (monKey.startsWith(key)) {
+      month = value
+      break
+    }
+  }
+
+  const fightDate = new Date(Number(m[3]), month, day)
+  const months = Math.round(
+    (now.getTime() - fightDate.getTime()) / (1000 * 60 * 60 * 24 * 30.4),
+  )
+  return Math.min(36, Math.max(0, months))
+}
+
+function opponentNameFromSlug(slug: string): string {
+  return slug
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
+}
+
+/** Historique « athlete-results » sur UFC.com (plusieurs combats réels). */
+export function parseUfcAthleteResultsHistory(
+  html: string,
+  athleteSlug: string,
+): FighterRecentBout[] {
+  const selfSlug = athleteSlug.toLowerCase()
+  const blocks = html.split(/<article class="c-card-event--athlete-results"/i)
+  const bouts: FighterRecentBout[] = []
+
+  for (const raw of blocks.slice(1)) {
+    const redCorner = raw.match(
+      /results__red-image\s+(win|loss)[\s\S]*?\/athlete\/([^"?\s#]+)/i,
+    )
+    const blueCorner = raw.match(
+      /results__blue-image\s+(win|loss)[\s\S]*?\/athlete\/([^"?\s#]+)/i,
+    )
+    if (!redCorner || !blueCorner) continue
+
+    const redSlug = redCorner[2].toLowerCase()
+    const blueSlug = blueCorner[2].toLowerCase()
+    let selfResult: 'win' | 'loss' | null = null
+    let opponentSlug: string | null = null
+
+    if (redSlug === selfSlug) {
+      selfResult = redCorner[1].toLowerCase() as 'win' | 'loss'
+      opponentSlug = blueSlug
+    } else if (blueSlug === selfSlug) {
+      selfResult = blueCorner[1].toLowerCase() as 'win' | 'loss'
+      opponentSlug = redSlug
+    } else {
+      continue
+    }
+
+    const dateLabel =
+      raw.match(/athlete-results__date">([^<]+)/i)?.[1]?.trim() ?? ''
+    const methodLabel =
+      raw.match(/athlete-results__result-label">M[ée]thode<\/div>\s*<div[^>]*athlete-results__result-text">([^<]+)/i)?.[1]?.trim() ??
+      raw.match(/M[ée]thode<\/div>\s*<div[^>]*>([^<]+)/i)?.[1]?.trim() ??
+      ''
+    const roundText =
+      raw.match(/athlete-results__result-label">Round<\/div>\s*<div[^>]*athlete-results__result-text">(\d+)/i)?.[1]
+
+    const opponentAlt = raw.match(
+      new RegExp(
+        `/athlete/${opponentSlug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[^<]*<[^>]*alt="([^"]+)"`,
+        'i',
+      ),
+    )?.[1]
+    const opponentName =
+      opponentAlt?.trim() ||
+      raw.match(
+        new RegExp(`/athlete/${opponentSlug}[^>]*>([^<]+)</a>`, 'i'),
+      )?.[1]?.trim() ||
+      opponentNameFromSlug(opponentSlug)
+
+    bouts.push({
+      opponentName,
+      result: selfResult,
+      method: parseMethod(methodLabel || 'decision'),
+      round: roundText ? Number(roundText) : undefined,
+      opponentTier: opponentTierFromStore(opponentName),
+      monthsAgo: monthsAgoFromUfcDateLabel(dateLabel),
+    })
+  }
+
+  return bouts
+}
+
+/** Fallback : bloc « Last fight » (un seul combat). */
+function parseUfcAthleteLastFightLegacy(
   html: string,
   athleteName: string,
 ): FighterRecentBout[] {
@@ -101,7 +219,6 @@ export function parseUfcAthleteLastFights(
     block.match(/c-card-event--athlete-fight__result[^>]*>([\s\S]*?)<\/div>/i)?.[1] ??
     ''
   const methodText = methodRaw.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
-
   const roundMatch = methodText.match(/R(?:ound)?\s*(\d)/i) ?? block.match(/Round\s*(\d)/i)
 
   return [
@@ -116,6 +233,23 @@ export function parseUfcAthleteLastFights(
   ]
 }
 
+/** Parse l’historique récent UFC.com (0 à 5 combats réels). */
+export function parseUfcAthleteLastFights(
+  html: string,
+  athleteName: string,
+  athleteSlug?: string,
+): FighterRecentBout[] {
+  const slug =
+    athleteSlug ??
+    normalizeUfcAthleteSlug(athleteName.toLowerCase().replace(/\s+/g, '-'), athleteName) ??
+    athleteName.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+
+  const fromResults = parseUfcAthleteResultsHistory(html, slug)
+  if (fromResults.length > 0) return dedupeRecentBouts(fromResults)
+
+  return dedupeRecentBouts(parseUfcAthleteLastFightLegacy(html, athleteName))
+}
+
 export async function enrichUfcFighterFromOfficialSite(
   fighter: Fighter,
 ): Promise<Fighter> {
@@ -127,10 +261,11 @@ export async function enrichUfcFighterFromOfficialSite(
   let pageHtml: string | undefined
   try {
     pageHtml = await fetchText(`${UFC_BASE}/athlete/${slug}`)
-    const bouts = parseUfcAthleteLastFights(pageHtml, fighter.name)
+    const bouts = parseUfcAthleteLastFights(pageHtml, fighter.name, slug)
     if (bouts.length > 0) {
-      const merged = [...bouts, ...(fighter.recentBouts ?? [])].slice(0, 5)
-      next = { ...next, recentBouts: merged }
+      next = { ...next, recentBouts: bouts }
+    } else if (fighter.recentBouts?.length) {
+      next = { ...next, recentBouts: dedupeRecentBouts(fighter.recentBouts) }
     }
     const pageStats = parseUfcAthletePageStats(pageHtml)
     if (pageStats) {

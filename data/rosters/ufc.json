@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ufc",
     "fighterCount": 1163,
-    "lastSyncedAt": "2026-06-03T22:28:05.352Z",
+    "lastSyncedAt": "2026-06-03T22:33:25.270Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -853,27 +853,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.357Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Stewart Nicoll",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Stewart Nicoll",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Stewart Nicoll",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Stewart Nicoll",
           "result": "win",
@@ -1862,20 +1841,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Rinat Fakhretdinov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Rinat Fakhretdinov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -2428,27 +2393,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Talita Alencar",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Talita Alencar",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Talita Alencar",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -2678,13 +2622,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ailin Perez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -2769,20 +2706,6 @@
       "source": "merged",
       "ranking": 8,
       "recentBouts": [
-        {
-          "opponentName": "Alex Perez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Alex Perez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Alex Perez",
           "result": "win",
@@ -3058,20 +2981,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.353Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Aleksandre Topuria",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Aleksandre Topuria",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Aleksandre Topuria",
           "result": "win",
@@ -3542,27 +3451,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Reinier de Ridder",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Reinier de Ridder",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Reinier de Ridder",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ],
       "ranking": 4
@@ -3835,20 +3723,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.360Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Gregory Rodrigues",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Gregory Rodrigues",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Gregory Rodrigues",
           "result": "win",
@@ -4504,20 +4378,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Cezary Oleksiejzcuk",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Cezary Oleksiejzcuk",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -4830,27 +4690,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.356Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Fighter portrait of Joselyne Edwards",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Joselyne Edwards",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Joselyne Edwards",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Fighter portrait of Joselyne Edwards",
           "result": "win",
@@ -5501,13 +5340,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jared Cannonier",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -5875,20 +5707,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Jafel Filho",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Jafel Filho",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -5946,20 +5764,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.360Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Xiao Long",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Xiao Long",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Xiao Long",
           "result": "win",
@@ -6796,20 +6600,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.358Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Alex Morono",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Alex Morono",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Alex Morono",
           "result": "win",
@@ -8315,27 +8105,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Felipe Bunes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Felipe Bunes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Felipe Bunes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -8634,20 +8403,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.358Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Men&#039;s Silhouette Profile Image",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Men&#039;s Silhouette Profile Image",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Men&#039;s Silhouette Profile Image",
           "result": "win",
@@ -9655,27 +9410,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Randy Brown",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Randy Brown",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Randy Brown",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -10061,27 +9795,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.357Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Kevin Vallejos",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Kevin Vallejos",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Kevin Vallejos",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Kevin Vallejos",
           "result": "win",
@@ -11064,20 +10777,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jamall Emmers",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jamall Emmers",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -11241,20 +10940,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "JunYong Park",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "JunYong Park",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ],
       "ranking": 15
@@ -11313,27 +10998,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.357Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Navajo Stirling",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Navajo Stirling",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Navajo Stirling",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Navajo Stirling",
           "result": "win",
@@ -12986,20 +12650,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Men&#039;s Silhouette Profile Image",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Men&#039;s Silhouette Profile Image",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -13181,27 +12831,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.356Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Isaac Thomson",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Isaac Thomson",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Isaac Thomson",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Isaac Thomson",
           "result": "win",
@@ -15192,27 +14821,6 @@
           "method": "decision",
           "opponentTier": 70,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Paddy Pimblett",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 70,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Paddy Pimblett",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 70,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Paddy Pimblett",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 70,
-          "monthsAgo": 4
         }
       ]
     },
@@ -15792,20 +15400,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.354Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Imanol Rodriguez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Imanol Rodriguez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Imanol Rodriguez",
           "result": "win",
@@ -17920,20 +17514,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Michał Oleksiejczuk",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Michał Oleksiejczuk",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -18445,20 +18025,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Vinicius Oliveira",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Vinicius Oliveira",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -18889,20 +18455,6 @@
       "lastSyncedAt": "2026-06-03T17:55:54.356Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Viacheslav Borshchev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Viacheslav Borshchev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Viacheslav Borshchev",
           "result": "win",
@@ -19445,20 +18997,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jean Silva",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jean Silva",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -19643,27 +19181,6 @@
       "source": "merged",
       "ranking": 13,
       "recentBouts": [
-        {
-          "opponentName": "Paddy Pimblett",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 70,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Paddy Pimblett",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 70,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Paddy Pimblett",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 70,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Paddy Pimblett",
           "result": "win",
@@ -21991,27 +21508,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Klaudia Sygula",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Klaudia Sygula",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Klaudia Sygula",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -22247,20 +21743,6 @@
       "lastSyncedAt": "2026-06-03T22:21:08.111Z",
       "source": "merged",
       "recentBouts": [
-        {
-          "opponentName": "Mauricio Ruffy",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 58,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Mauricio Ruffy",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 58,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Mauricio Ruffy",
           "result": "win",
@@ -23964,20 +23446,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jose Daniel Medina",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Jose Daniel Medina",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -25463,27 +24931,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "David Onama",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "David Onama",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "David Onama",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -26748,20 +26195,6 @@
           "method": "decision",
           "opponentTier": 86,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Erin Blanchfield",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 86,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Erin Blanchfield",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -27496,20 +26929,6 @@
       "source": "merged",
       "ranking": 12,
       "recentBouts": [
-        {
-          "opponentName": "Eduarda Moura",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Eduarda Moura",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Eduarda Moura",
           "result": "win",
@@ -28394,27 +27813,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ian Machado Garry",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ian Machado Garry",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ian Machado Garry",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -28452,27 +27850,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Andre Muniz",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Andre Muniz",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Andre Muniz",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -28504,27 +27881,6 @@
       "lastSyncedAt": "2026-06-03T22:21:04.948Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Nazim Sadykhov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Nazim Sadykhov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Nazim Sadykhov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Nazim Sadykhov",
           "result": "win",
@@ -28569,27 +27925,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Charlie Campbell",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Charlie Campbell",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Charlie Campbell",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -28621,27 +27956,6 @@
       "lastSyncedAt": "2026-06-03T17:59:32.012Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Said Nurmagomedov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Said Nurmagomedov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Said Nurmagomedov",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Said Nurmagomedov",
           "result": "win",
@@ -28685,27 +27999,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Kevin Christian",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Kevin Christian",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Kevin Christian",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -28737,27 +28030,6 @@
       "lastSyncedAt": "2026-06-03T17:59:32.049Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Joseph Morales",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Joseph Morales",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Joseph Morales",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Joseph Morales",
           "result": "win",
@@ -28801,27 +28073,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Petr Yan",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Petr Yan",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Petr Yan",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -28853,27 +28104,6 @@
       "lastSyncedAt": "2026-06-03T17:59:32.076Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Marcus McGhee",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Marcus McGhee",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Marcus McGhee",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Marcus McGhee",
           "result": "win",
@@ -28917,27 +28147,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Edgar Chairez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Edgar Chairez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Edgar Chairez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ],
       "ranking": 15
@@ -28970,27 +28179,6 @@
       "lastSyncedAt": "2026-06-03T17:59:32.110Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Joanderson Brito",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Joanderson Brito",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Joanderson Brito",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Joanderson Brito",
           "result": "win",
@@ -29063,27 +28251,6 @@
           "method": "decision",
           "opponentTier": 86,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Magomed Ankalaev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 86,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Magomed Ankalaev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Magomed Ankalaev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ],
       "ranking": 1
@@ -29117,27 +28284,6 @@
       "source": "ufc.com",
       "ranking": 3,
       "recentBouts": [
-        {
-          "opponentName": "Song Yadong",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Song Yadong",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Song Yadong",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Song Yadong",
           "result": "win",
@@ -29182,27 +28328,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Marlon Vera",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Marlon Vera",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Marlon Vera",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29240,27 +28365,6 @@
           "result": "win",
           "method": "decision",
           "opponentTier": 78,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Curtis Blaydes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 78,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Curtis Blaydes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Curtis Blaydes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
           "monthsAgo": 4
         }
       ]
@@ -29300,27 +28404,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Rafael Fiziev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Rafael Fiziev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Rafael Fiziev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29352,27 +28435,6 @@
       "lastSyncedAt": "2026-06-03T17:59:32.793Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Fighter portrait of Rodolfo Vieira",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Rodolfo Vieira",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Rodolfo Vieira",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Fighter portrait of Rodolfo Vieira",
           "result": "win",
@@ -29417,27 +28479,6 @@
           "method": "decision",
           "opponentTier": 78,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Brandon Royval",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 78,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Brandon Royval",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 78,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Brandon Royval",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 78,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29476,27 +28517,6 @@
           "method": "decision",
           "opponentTier": 78,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Amir Albazi",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 78,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Amir Albazi",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Amir Albazi",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29528,27 +28548,6 @@
       "lastSyncedAt": "2026-06-03T17:59:34.118Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Bruno Lopes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Bruno Lopes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Bruno Lopes",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Bruno Lopes",
           "result": "win",
@@ -29592,27 +28591,6 @@
           "method": "decision",
           "opponentTier": 66,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Mario Bautista",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 66,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Mario Bautista",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 66,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Mario Bautista",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 66,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29650,20 +28628,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Hyder Amil",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Hyder Amil",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29695,20 +28659,6 @@
       "lastSyncedAt": "2026-06-03T17:59:34.174Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Daniel Barez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Daniel Barez",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Daniel Barez",
           "result": "win",
@@ -29853,20 +28803,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Cody Durden",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Cody Durden",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -29898,20 +28834,6 @@
       "lastSyncedAt": "2026-06-03T17:59:34.259Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Azat Maksum",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Azat Maksum",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Azat Maksum",
           "result": "win",
@@ -29956,20 +28878,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Luana Santos",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Luana Santos",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30002,20 +28910,6 @@
       "source": "ufc.com",
       "ranking": 11,
       "recentBouts": [
-        {
-          "opponentName": "Melissa Croden",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Melissa Croden",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Melissa Croden",
           "result": "win",
@@ -30059,20 +28953,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Grant Dawson",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Grant Dawson",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30104,20 +28984,6 @@
       "lastSyncedAt": "2026-06-03T17:59:35.670Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Fares Ziam",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fares Ziam",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Fares Ziam",
           "result": "win",
@@ -30162,20 +29028,6 @@
           "method": "decision",
           "opponentTier": 62,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Asu Almabayev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 62,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Asu Almabayev",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 62,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30207,20 +29059,6 @@
       "lastSyncedAt": "2026-06-03T17:59:35.714Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Michał Oleksiejczuk",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Michał Oleksiejczuk",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Michał Oleksiejczuk",
           "result": "win",
@@ -30288,20 +29126,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Brendson Ribeiro",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Brendson Ribeiro",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30333,20 +29157,6 @@
       "lastSyncedAt": "2026-06-03T17:59:35.756Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Dustin Jacoby",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Dustin Jacoby",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Dustin Jacoby",
           "result": "win",
@@ -30390,20 +29200,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Dustin Stoltzfus",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Dustin Stoltzfus",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30435,20 +29231,6 @@
       "lastSyncedAt": "2026-06-03T17:59:35.782Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Ateba Gautier",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ateba Gautier",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Ateba Gautier",
           "result": "win",
@@ -30492,20 +29274,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Farid Basharat",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Farid Basharat",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30537,20 +29305,6 @@
       "lastSyncedAt": "2026-06-03T22:21:08.677Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Dustin Poirier",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Dustin Poirier",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Dustin Poirier",
           "result": "win",
@@ -30595,20 +29349,6 @@
           "method": "decision",
           "opponentTier": 78,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Conor McGregor",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 78,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Conor McGregor",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ],
       "ranking": 4
@@ -30642,20 +29382,6 @@
       "source": "ufc.com",
       "ranking": 6,
       "recentBouts": [
-        {
-          "opponentName": "Justin Gaethje",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Justin Gaethje",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Justin Gaethje",
           "result": "win",
@@ -30700,20 +29426,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Dan Hooker",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Dan Hooker",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30751,20 +29463,6 @@
           "result": "win",
           "method": "decision",
           "opponentTier": 90,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Merab Dvalishvili",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 90,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Merab Dvalishvili",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
           "monthsAgo": 4
         }
       ]
@@ -30804,20 +29502,6 @@
           "method": "decision",
           "opponentTier": 86,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Manel Kape",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 86,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Manel Kape",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 86,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30850,20 +29534,6 @@
       "source": "ufc.com",
       "ranking": 6,
       "recentBouts": [
-        {
-          "opponentName": "Brandon Moreno",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Brandon Moreno",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Brandon Moreno",
           "result": "win",
@@ -30932,20 +29602,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Reinier de Ridder",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Reinier de Ridder",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -30978,20 +29634,6 @@
       "source": "ufc.com",
       "ranking": 12,
       "recentBouts": [
-        {
-          "opponentName": "Modestas Bukauskas",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Modestas Bukauskas",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Modestas Bukauskas",
           "result": "win",
@@ -31063,20 +29705,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Cesar Almeida",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Cesar Almeida",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -31108,20 +29736,6 @@
       "lastSyncedAt": "2026-06-03T17:59:36.477Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Kai Kamaka",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Kai Kamaka",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Kai Kamaka",
           "result": "win",
@@ -31165,20 +29779,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ryan Gandra",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Ryan Gandra",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -31216,20 +29816,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Cody Durden",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Fighter portrait of Cody Durden",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -31257,20 +29843,6 @@
       "lastSyncedAt": "2026-06-03T17:59:37.597Z",
       "source": "event-card",
       "recentBouts": [
-        {
-          "opponentName": "Marc-Andre Barriault",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Marc-Andre Barriault",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Marc-Andre Barriault",
           "result": "win",
@@ -31314,20 +29886,6 @@
           "method": "decision",
           "opponentTier": 55,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Lance Gibson Jr.",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Lance Gibson Jr.",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
         }
       ]
     },
@@ -31359,20 +29917,6 @@
       "lastSyncedAt": "2026-06-03T17:59:37.645Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Mike Davis",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Mike Davis",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Mike Davis",
           "result": "win",
@@ -31436,13 +29980,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Yizha",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -31474,13 +30011,6 @@
       "lastSyncedAt": "2026-06-03T22:21:09.987Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Randy Brown",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 55,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Randy Brown",
           "result": "win",
@@ -31525,13 +30055,6 @@
           "method": "decision",
           "opponentTier": 50,
           "monthsAgo": 4
-        },
-        {
-          "opponentName": "Tabatha Ricci",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
         }
       ]
     },
@@ -31564,13 +30087,6 @@
       "lastSyncedAt": "2026-06-03T22:21:10.020Z",
       "source": "ufc.com",
       "recentBouts": [
-        {
-          "opponentName": "Angela Hill",
-          "result": "win",
-          "method": "decision",
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
         {
           "opponentName": "Angela Hill",
           "result": "win",

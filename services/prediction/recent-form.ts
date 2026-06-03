@@ -1,17 +1,19 @@
+import { dedupeRecentBouts } from '@/lib/recent-bouts'
 import type { FightMethod, Fighter } from '@/types'
 import type {
   FighterFormProfile,
   FighterRecentBout,
   FormMatchupInsight,
 } from '@/types/recent-form'
+import { MAX_RECENT_BOUTS } from '@/types/recent-form'
 import { normalizeFeature } from './features'
 
-export const MAX_RECENT_BOUTS = 5
+export { MAX_RECENT_BOUTS }
 
 /** Combats récents réellement connus (0 à 5), sans synthèse. */
 export function getRecentBoutsForPrediction(fighter: Fighter): FighterRecentBout[] {
   if (!fighter.recentBouts?.length) return []
-  return fighter.recentBouts.slice(0, MAX_RECENT_BOUTS)
+  return dedupeRecentBouts(fighter.recentBouts)
 }
 
 /** @deprecated Utiliser getRecentBoutsForPrediction */

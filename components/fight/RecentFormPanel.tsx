@@ -117,8 +117,11 @@ function FighterFormColumn({
             Aucun combat récent en base pour ce combattant.
           </li>
         ) : (
-          profile.bouts.map((bout) => (
-            <BoutRow key={`${bout.monthsAgo}-${bout.opponentName}`} bout={bout} />
+          profile.bouts.map((bout, index) => (
+            <BoutRow
+              key={`${bout.opponentName}-${bout.monthsAgo}-${bout.method}-${index}`}
+              bout={bout}
+            />
           ))
         )}
       </ul>

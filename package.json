@@ -22,6 +22,7 @@
     "sync:events:weekend": "tsx scripts/sync-events.ts --weekend",
     "sync:enrich-cards": "tsx scripts/sync-enrich-cards.ts",
     "merge:roster-rankings": "tsx scripts/merge-roster-rankings.ts",
+    "dedupe:recent-bouts": "tsx scripts/dedupe-roster-recent-bouts.ts",
     "grant:premium": "tsx scripts/grant-premium.ts",
     "migrate:subscriptions": "tsx scripts/migrate-subscriptions-to-supabase.ts",
     "sync:all": "npm run sync:ufc-roster && npm run sync:pfl-roster && npm run sync:ksw-roster && npm run sync:ares-roster && npm run sync:hexagone-roster && npm run sync:events && npm run sync:enrich-cards",

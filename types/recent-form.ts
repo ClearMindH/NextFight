@@ -2,6 +2,8 @@ import type { FightMethod } from './index'
 
 export type BoutResult = 'win' | 'loss' | 'draw'
 
+export const MAX_RECENT_BOUTS = 5
+
 /** Combats récents enregistrés (jusqu’à 5) pour un combattant */
 export interface FighterRecentBout {
   opponentName: string
