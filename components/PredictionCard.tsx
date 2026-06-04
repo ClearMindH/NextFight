@@ -1,12 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
 import type { Fight } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
-import { PredictionBreakdown } from '@/components/PredictionBreakdown'
 import { FightAnalysisPanel } from '@/components/FightAnalysisPanel'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { methodLabels, formatPercent, formatPredictedRound } from '@/utils/format'
@@ -16,8 +14,6 @@ interface PredictionCardProps {
   fight: Fight
   organizationLabel?: string
   className?: string
-  /** Show expandable per-dimension model scores */
-  showBreakdown?: boolean
   /** Load detailed narrative on demand (Premium) */
   showAnalysis?: boolean
   eventName?: string
@@ -27,12 +23,9 @@ export function PredictionCard({
   fight,
   organizationLabel = 'UFC Main Event',
   className,
-  showBreakdown = false,
   showAnalysis = false,
   eventName,
 }: PredictionCardProps) {
-  const [expanded, setExpanded] = useState(false)
-  const hasBreakdown = showBreakdown && fight.model.breakdown != null
   const redProb = fight.model.redWinProbability
   const blueProb = 100 - redProb
 
@@ -84,39 +77,6 @@ export function PredictionCard({
         Full fight breakdown
         <ArrowUpRight className="h-3.5 w-3.5" />
       </Link>
-
-      {hasBreakdown && (
-        <>
-          <button
-            type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="mt-4 flex w-full items-center justify-center gap-1 text-xs text-muted hover:text-gold transition-colors"
-          >
-            {expanded ? 'Hide breakdown' : 'View breakdown'}
-            <ChevronDown
-              className={cn('h-3.5 w-3.5 transition-transform', expanded && 'rotate-180')}
-            />
-          </button>
-          <AnimatePresence>
-            {expanded && fight.model.breakdown && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden"
-              >
-                <PredictionBreakdown
-                  redName={fight.redCorner.name}
-                  blueName={fight.blueCorner.name}
-                  red={fight.model.breakdown.red}
-                  blue={fight.model.breakdown.blue}
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </>
-      )}
 
       {showAnalysis && (
         <FightAnalysisPanel fight={fight} eventName={eventName} />

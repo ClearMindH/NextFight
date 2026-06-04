@@ -1,4 +1,5 @@
 import type { Fighter } from '@/types'
+import { buildFighterMethodProfile } from '@/services/prediction/method-profile'
 
 export interface StatComparisonRow {
   key: string
@@ -94,6 +95,69 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
       blue: blue.stats.winStreak,
       unit: '',
       higherIsBetter: true,
+      format: 'integer',
+    },
+    ...buildMethodComparisonRows(red, blue),
+  ]
+}
+
+function buildMethodComparisonRows(red: Fighter, blue: Fighter): StatComparisonRow[] {
+  const r = buildFighterMethodProfile(red)
+  const b = buildFighterMethodProfile(blue)
+
+  return [
+    {
+      key: 'koWins',
+      label: 'Victoires KO/TKO',
+      red: r.koWins,
+      blue: b.koWins,
+      unit: '',
+      higherIsBetter: true,
+      format: 'integer',
+    },
+    {
+      key: 'subWins',
+      label: 'Victoires soumission',
+      red: r.subWins,
+      blue: b.subWins,
+      unit: '',
+      higherIsBetter: true,
+      format: 'integer',
+    },
+    {
+      key: 'decWins',
+      label: 'Victoires décision',
+      red: r.decWins,
+      blue: b.decWins,
+      unit: '',
+      higherIsBetter: true,
+      format: 'integer',
+    },
+    {
+      key: 'koLosses',
+      label: 'Défaites KO/TKO',
+      red: r.koLosses,
+      blue: b.koLosses,
+      unit: '',
+      higherIsBetter: false,
+      format: 'integer',
+    },
+    {
+      key: 'subLosses',
+      label: 'Défaites soumission',
+      red: r.subLosses,
+      blue: b.subLosses,
+      unit: '',
+      higherIsBetter: false,
+      format: 'integer',
+    },
+    {
+      key: 'decLosses',
+      label: 'Défaites décision',
+      red: r.decLosses,
+      blue: b.decLosses,
+      unit: '',
+      higherIsBetter: false,
       format: 'integer',
     },
   ]

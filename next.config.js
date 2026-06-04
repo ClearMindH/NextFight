@@ -10,6 +10,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'wallpapercave.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'ufc.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.ufc.com',
+      },
     ],
   },
   async redirects() {

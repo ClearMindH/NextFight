@@ -42,6 +42,30 @@ export async function fetchUfcAthleteJsonNode(slug: string): Promise<UfcJsonApiA
 }
 
 /** Surnom affiché sur la fiche athlète (ex. « All In », « The Golden Boy »). */
+/** Portrait officiel (og:image ou image hero). */
+export function parseUfcAthletePortraitUrl(html: string): string | undefined {
+  const og = html.match(/property="og:image"\s+content="([^"]+)"/i)?.[1]
+  if (og && !/silhouette|comingsoon/i.test(og)) {
+    return og.replace(/&amp;/g, '&')
+  }
+  const img = html.match(
+    /event_fight_card_upper_body_of_standing_athlete[^"]*"[^>]*src="([^"]+)"/i,
+  )?.[1]
+  if (img && !/silhouette|comingsoon/i.test(img)) {
+    return img.replace(/&amp;/g, '&')
+  }
+  return undefined
+}
+
+export async function fetchUfcAthletePortraitUrl(slug: string): Promise<string | undefined> {
+  try {
+    const html = await fetchText(`${UFC_BASE}/athlete/${slug}`)
+    return parseUfcAthletePortraitUrl(html)
+  } catch {
+    return undefined
+  }
+}
+
 export function parseUfcAthleteNickname(html: string): string | undefined {
   const raw =
     html.match(/hero-profile__nickname[^>]*>([^<]+)/i)?.[1] ??
@@ -324,6 +348,9 @@ export async function enrichUfcFighterFromOfficialSite(
         source: next.source === 'event-card' ? 'ufc.com' : next.source,
       }
     }
+
+    const portrait = parseUfcAthletePortraitUrl(pageHtml)
+    if (portrait) next = { ...next, imageUrl: portrait }
   } catch {
     /* page optionnelle */
   }
@@ -353,7 +380,7 @@ export async function enrichUfcFighterFromOfficialSite(
       recentBouts: next.recentBouts ?? mapped.recentBouts,
       ranking: fighter.ranking ?? mapped.ranking,
       nickname: next.nickname || mapped.nickname || fighter.nickname,
-      imageUrl: fighter.imageUrl || mapped.imageUrl,
+      imageUrl: next.imageUrl || fighter.imageUrl || mapped.imageUrl,
       lastSyncedAt: new Date().toISOString(),
       source: statAttrs ? 'ufc.com' : fighter.source,
     }

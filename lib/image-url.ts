@@ -1,5 +1,9 @@
 /** Hostnames autorisés pour next/image (optimisation). Les autres URLs passent en <img>. */
-const NEXT_IMAGE_HOSTS = new Set(['images.unsplash.com'])
+const NEXT_IMAGE_HOSTS = new Set([
+  'images.unsplash.com',
+  'ufc.com',
+  'www.ufc.com',
+])
 
 export function canUseNextImage(src: string): boolean {
   if (!src) return false

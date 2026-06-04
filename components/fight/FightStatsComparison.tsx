@@ -13,18 +13,34 @@ import { cn } from '@/utils/cn'
 interface FightStatsComparisonProps {
   red: Fighter
   blue: Fighter
+  compact?: boolean
 }
 
-export function FightStatsComparison({ red, blue }: FightStatsComparisonProps) {
+export function FightStatsComparison({ red, blue, compact = false }: FightStatsComparisonProps) {
   const rows = buildStatComparisons(red, blue)
 
   return (
-    <section className="rounded-3xl border border-border bg-card/50 p-6 sm:p-8">
-      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-8">
+    <section
+      className={cn(
+        'rounded-2xl border border-border bg-card/50',
+        compact ? 'p-4 sm:p-5' : 'rounded-3xl p-6 sm:p-8',
+      )}
+    >
+      <div
+        className={cn(
+          'flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2',
+          compact ? 'mb-4' : 'mb-8',
+        )}
+      >
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Statistiques</p>
-          <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight">
-            Statistical comparison
+          <h2
+            className={cn(
+              'mt-1 font-display font-semibold tracking-tight',
+              compact ? 'text-lg' : 'mt-2 text-2xl',
+            )}
+          >
+            Comparaison statistique
           </h2>
         </div>
         <div className="flex gap-4 text-xs text-muted">
@@ -39,9 +55,16 @@ export function FightStatsComparison({ red, blue }: FightStatsComparisonProps) {
         </div>
       </div>
 
-      <div className="space-y-5">
+      <div className={compact ? 'space-y-3' : 'space-y-5'}>
         {rows.map((row, i) => (
-          <StatRow key={row.key} row={row} redName={red.name} blueName={blue.name} index={i} />
+          <StatRow
+            key={row.key}
+            row={row}
+            redName={red.name}
+            blueName={blue.name}
+            index={i}
+            compact={compact}
+          />
         ))}
       </div>
     </section>
@@ -53,11 +76,13 @@ function StatRow({
   redName,
   blueName,
   index,
+  compact,
 }: {
   row: StatComparisonRow
   redName: string
   blueName: string
   index: number
+  compact: boolean
 }) {
   const redShare = statRedShare(row.red, row.blue, row.higherIsBetter)
   const redWins = row.higherIsBetter ? row.red > row.blue : row.red < row.blue
@@ -91,7 +116,7 @@ function StatRow({
           {formatStatValue(row, row.blue)}
         </span>
       </div>
-      <div className="h-2 rounded-full overflow-hidden bg-border flex">
+      <div className={cn('rounded-full overflow-hidden bg-border flex', compact ? 'h-1.5' : 'h-2')}>
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${redShare}%` }}

@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import { mergeFighterForDisplay } from '@/lib/fighter-display'
-import { fetchUfcAthleteNickname } from '@/lib/mappers/ufc-athlete-enrichment'
+import {
+  fetchUfcAthleteNickname,
+  fetchUfcAthletePortraitUrl,
+} from '@/lib/mappers/ufc-athlete-enrichment'
 import { getFighterFromStore, upsertFighterInStore } from '@/lib/roster-store'
 
 export const dynamic = 'force-dynamic'
@@ -17,19 +20,36 @@ export async function GET(
 
   let fighter = mergeFighterForDisplay(raw)
 
-  if (!fighter.nickname && fighter.organizationId === 'ufc') {
+  if (fighter.organizationId === 'ufc') {
     const slug = fighter.id.replace(/^ufc-/, '')
-    const nick = slug ? await fetchUfcAthleteNickname(slug) : undefined
-    if (nick) {
-      fighter = { ...fighter, nickname: nick }
-      try {
-        upsertFighterInStore({
-          ...raw,
-          nickname: nick,
-          lastSyncedAt: new Date().toISOString(),
-        })
-      } catch {
-        /* fs read-only (ex. Vercel) — le client affiche quand même le surnom */
+    if (!fighter.nickname && slug) {
+      const nick = await fetchUfcAthleteNickname(slug)
+      if (nick) {
+        fighter = { ...fighter, nickname: nick }
+        try {
+          upsertFighterInStore({
+            ...raw,
+            nickname: nick,
+            lastSyncedAt: new Date().toISOString(),
+          })
+        } catch {
+          /* fs read-only (ex. Vercel) */
+        }
+      }
+    }
+    if (!fighter.imageUrl && slug) {
+      const imageUrl = await fetchUfcAthletePortraitUrl(slug)
+      if (imageUrl) {
+        fighter = { ...fighter, imageUrl }
+        try {
+          upsertFighterInStore({
+            ...raw,
+            imageUrl,
+            lastSyncedAt: new Date().toISOString(),
+          })
+        } catch {
+          /* fs read-only */
+        }
       }
     }
   }

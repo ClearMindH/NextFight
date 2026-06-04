@@ -28,18 +28,25 @@ export function ensureCardFightersInRoster(event: ScrapedEvent): void {
   }
 }
 
-function applyCardRanking(orgId: OrganizationId, ref: ScrapedFighterRef): void {
-  if (!isTopRankedInDivision(ref.ranking)) return
-
+function applyCardMetaFromOfficialCard(orgId: OrganizationId, ref: ScrapedFighterRef): void {
   const id = resolveFighterId(orgId, ref)
   if (!id) return
 
   const existing = getFighterFromStore(id)
-  if (!existing || existing.ranking === ref.ranking) return
+  if (!existing) return
+
+  const ranking =
+    isTopRankedInDivision(ref.ranking) && existing.ranking !== ref.ranking
+      ? ref.ranking
+      : existing.ranking
+  const imageUrl = ref.imageUrl && !existing.imageUrl ? ref.imageUrl : existing.imageUrl
+
+  if (ranking === existing.ranking && imageUrl === existing.imageUrl) return
 
   upsertFighterInStore({
     ...existing,
-    ranking: ref.ranking,
+    ranking,
+    imageUrl,
     lastSyncedAt: new Date().toISOString(),
   })
 }
@@ -47,7 +54,7 @@ function applyCardRanking(orgId: OrganizationId, ref: ScrapedFighterRef): void {
 function ensureOne(orgId: OrganizationId, ref: ScrapedFighterRef): void {
   const existingId = resolveFighterId(orgId, ref)
   if (existingId) {
-    applyCardRanking(orgId, ref)
+    applyCardMetaFromOfficialCard(orgId, ref)
     return
   }
 
@@ -59,7 +66,7 @@ function ensureOne(orgId: OrganizationId, ref: ScrapedFighterRef): void {
 
   const id = `${orgId}-${slug}`
   if (getFighterFromStore(id)) {
-    applyCardRanking(orgId, ref)
+    applyCardMetaFromOfficialCard(orgId, ref)
     return
   }
 
@@ -73,6 +80,7 @@ function ensureOne(orgId: OrganizationId, ref: ScrapedFighterRef): void {
     draws: 0,
     country: 'Unknown',
     ranking: isTopRankedInDivision(ref.ranking) ? ref.ranking : undefined,
+    imageUrl: ref.imageUrl,
     stats: { ...DEFAULT_STATS },
     lastSyncedAt: new Date().toISOString(),
     source: 'event-card',

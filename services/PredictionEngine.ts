@@ -20,6 +20,11 @@ import {
   stylisticDeltaAdjustment,
 } from './prediction/matchup-adjustments'
 import { blendedWinProbabilities } from './prediction/power-rating'
+import {
+  buildFighterMethodProfile,
+  pickPredictedMethod,
+  scoreMethodScenarios,
+} from './prediction/method-profile'
 
 const WEIGHTS_FULL = {
   striking: 0.24,
@@ -96,15 +101,19 @@ export class PredictionEngine {
     const probB = blended.probB
 
     const method = PredictionEngine.predictMethod(
+      fighterA,
+      fighterB,
       featA,
       featB,
       profileA,
       profileB,
       delta,
-      formMatchup,
+      probA,
     )
     const predictedRound = PredictionEngine.predictRound(
       method,
+      fighterA,
+      fighterB,
       featA,
       featB,
       rounds,
@@ -241,63 +250,40 @@ export class PredictionEngine {
   }
 
   private static predictMethod(
+    fighterA: Fighter,
+    fighterB: Fighter,
     featA: NormalizedFighterFeatures,
     featB: NormalizedFighterFeatures,
     profileA: FighterScoreProfile,
     profileB: FighterScoreProfile,
     delta: number,
-    form: FormMatchupInsight,
+    probA: number,
   ): FightMethod {
-    const grapplingEdge = profileA.grappling - profileB.grappling
+    const profileRed = buildFighterMethodProfile(fighterA)
+    const profileBlue = buildFighterMethodProfile(fighterB)
+    const favoredIsRed = probA >= 50
+    const favoredProfile = favoredIsRed ? profileRed : profileBlue
+    const underdogProfile = favoredIsRed ? profileBlue : profileRed
     const strikingEdge = profileA.striking - profileB.striking
-    const avgFinish =
-      (featA.finishingRate +
-        featB.finishingRate +
-        form.fighterA.finishRateLast5 +
-        form.fighterB.finishRateLast5) /
-      4
+    const grapplingEdge = profileA.grappling - profileB.grappling
+    const favoredStriking = favoredIsRed ? strikingEdge : -strikingEdge
+    const favoredGrappling = favoredIsRed ? grapplingEdge : -grapplingEdge
+    const avgFinishingRate = (featA.finishingRate + featB.finishingRate) / 2
 
-    const favoredForm = delta >= 0 ? form.fighterA : form.fighterB
-    const underdogForm = delta >= 0 ? form.fighterB : form.fighterA
+    const scores = scoreMethodScenarios(favoredProfile, underdogProfile, {
+      absDelta: Math.abs(delta),
+      strikingEdge: favoredStriking,
+      grapplingEdge: favoredGrappling,
+      avgFinishingRate,
+    })
 
-    if (Math.abs(delta) < 0.04 && avgFinish < 45) {
-      return 'decision'
-    }
-
-    const favored = delta >= 0 ? featA : featB
-    const favoredGrappling = delta >= 0 ? profileA.grappling : profileB.grappling
-
-    if (
-      underdogForm.weaknesses.some((w) => w.includes('KO')) &&
-      favoredForm.strengths.some((s) => s.includes('KO') || s.includes('finish'))
-    ) {
-      return 'ko_tko'
-    }
-
-    if (
-      underdogForm.weaknesses.some((w) => w.includes('soumission')) &&
-      favoredForm.strengths.some((s) => s.includes('soumission'))
-    ) {
-      return 'submission'
-    }
-
-    if (grapplingEdge > 0.12 && favored.takedownAccuracy >= 42 && favoredGrappling > 0.55) {
-      return favored.finishingRate > 50 ? 'submission' : 'decision'
-    }
-
-    if (strikingEdge > 0.1 && favored.finishingRate >= 48 && favored.strikeAccuracy >= 52) {
-      return 'ko_tko'
-    }
-
-    if (avgFinish >= 55 && Math.abs(delta) > 0.08) {
-      return grapplingEdge > strikingEdge ? 'submission' : 'ko_tko'
-    }
-
-    return 'decision'
+    return pickPredictedMethod(scores)
   }
 
   private static predictRound(
     method: FightMethod,
+    fighterA: Fighter,
+    fighterB: Fighter,
     featA: NormalizedFighterFeatures,
     featB: NormalizedFighterFeatures,
     scheduledRounds: number,
@@ -305,22 +291,34 @@ export class PredictionEngine {
   ): number {
     const avgFinish = (featA.finishingRate + featB.finishingRate) / 2
     const finishFactor = normalizeFeature(avgFinish, 20, 80)
+    const profA = buildFighterMethodProfile(fighterA)
+    const profB = buildFighterMethodProfile(fighterB)
+    const earlyFinishBias =
+      (profA.winKoPct + profA.winSubPct + profB.winKoPct + profB.winSubPct) / 4 / 100
 
     let round: number
 
     switch (method) {
       case 'ko_tko':
-        round = finishFactor > 0.65 ? 1 + Math.round((1 - finishFactor) * 2) : 2
+        round =
+          finishFactor > 0.62 && earlyFinishBias > 0.35
+            ? 1
+            : finishFactor > 0.5
+              ? 2
+              : 3
         break
       case 'submission':
-        round = finishFactor > 0.55 ? 2 : 3
+        round = finishFactor > 0.5 && earlyFinishBias > 0.3 ? 2 : 3
         break
       case 'decision':
-        // Décision = combat qui va à la distance (dernier round prévu).
         round = scheduledRounds
         break
       default:
         round = Math.ceil(scheduledRounds / 2)
+    }
+
+    if (method !== 'decision' && absDelta < 0.06) {
+      round = Math.min(scheduledRounds, round + 1)
     }
 
     return Math.min(scheduledRounds, Math.max(1, round))
