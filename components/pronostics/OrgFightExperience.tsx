@@ -14,7 +14,12 @@ import {
   getFightAccessMessage,
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
-import { formatShortDate, formatPercent, methodLabels } from '@/utils/format'
+import {
+  formatShortDate,
+  formatPercent,
+  formatPredictedRound,
+  methodLabels,
+} from '@/utils/format'
 interface OrgFightExperienceProps {
   org: Organization
   event: Event
@@ -170,7 +175,14 @@ export function OrgFightExperience({
         <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-4">
           {[
             { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-            { label: 'Round', value: String(fight.model.predictedRound) },
+            {
+              label: 'Fin prévue',
+              value: formatPredictedRound(
+                fight.model.predictedMethod,
+                fight.model.predictedRound,
+                fight.scheduledRounds,
+              ),
+            },
             { label: 'Confiance', value: formatPercent(fight.model.confidence) },
             {
               label: 'Lecture',

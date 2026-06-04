@@ -316,14 +316,8 @@ export class PredictionEngine {
         round = finishFactor > 0.55 ? 2 : 3
         break
       case 'decision':
-        round =
-          scheduledRounds >= 5
-            ? absDelta < 0.06
-              ? 5
-              : 4
-            : scheduledRounds === 3
-              ? 3
-              : 2
+        // Décision = combat qui va à la distance (dernier round prévu).
+        round = scheduledRounds
         break
       default:
         round = Math.ceil(scheduledRounds / 2)

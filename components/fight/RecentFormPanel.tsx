@@ -2,7 +2,7 @@
 
 import type { Fighter, FormMatchupInsight } from '@/types'
 import type { FighterRecentBout } from '@/types/recent-form'
-import { methodLabels } from '@/utils/format'
+import { formatMonthsAgo, methodLabels } from '@/utils/format'
 import { cn } from '@/utils/cn'
 import { TrendingDown, TrendingUp, Swords } from 'lucide-react'
 
@@ -144,7 +144,12 @@ function BoutRow({ bout }: { bout: FighterRecentBout }) {
 
   return (
     <li className="flex items-center justify-between gap-2 rounded-lg border border-white/[0.04] bg-white/[0.02] px-3 py-2 text-xs">
-      <span className="text-muted w-8 shrink-0">−{bout.monthsAgo}m</span>
+      <span
+        className="text-muted w-[4.5rem] shrink-0 text-right tabular-nums"
+        title={bout.monthsAgo > 0 ? `Il y a ${bout.monthsAgo} mois` : undefined}
+      >
+        {formatMonthsAgo(bout.monthsAgo)}
+      </span>
       <span className="flex-1 truncate text-foreground/90">vs {bout.opponentName}</span>
       <span className={cn('font-semibold uppercase', resultColor)}>
         {bout.result === 'win' ? 'W' : bout.result === 'loss' ? 'L' : 'D'}

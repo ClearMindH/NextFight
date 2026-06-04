@@ -28,6 +28,27 @@ export function formatPercent(value: number): string {
   return `${Math.round(value)}%`
 }
 
+/** Délai depuis un combat passé (évite « 6m » lu comme minutes). */
+export function formatMonthsAgo(months: number): string {
+  if (months <= 0) return 'Récent'
+  if (months === 1) return '1 mois'
+  return `${months} mois`
+}
+
+/** Libellé round de fin selon la méthode prédite. */
+export function formatPredictedRound(
+  method: FightMethod,
+  predictedRound: number,
+  scheduledRounds: number,
+): string {
+  if (method === 'decision') {
+    return scheduledRounds >= 5
+      ? 'À la distance (R5)'
+      : `À la distance (R${scheduledRounds})`
+  }
+  return `R${predictedRound}`
+}
+
 /** Surnom affiché sous le portrait (sans guillemets parasites). */
 export function formatFighterNickname(raw?: string | null): string | null {
   if (!raw?.trim()) return null
