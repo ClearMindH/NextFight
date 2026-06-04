@@ -7,6 +7,7 @@ import type { Event, Organization } from '@/types'
 import { OrgBrandLogo } from '@/components/OrgBrandLogo'
 import { getOrgBrand } from '@/lib/org-brand'
 import { getFreePreviewFight } from '@/lib/event-helpers'
+import { isEventPredictionsPublished } from '@/lib/event-predictions'
 import { formatShortDate, formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -18,7 +19,8 @@ interface PromotionOrgCardProps {
 
 export function PromotionOrgCard({ org, nextEvent, index = 0 }: PromotionOrgCardProps) {
   const brand = getOrgBrand(org.id)
-  const main = nextEvent ? getFreePreviewFight(nextEvent) : null
+  const published = nextEvent ? isEventPredictionsPublished(nextEvent) : false
+  const main = nextEvent && published ? getFreePreviewFight(nextEvent) : null
   const featuredProb = main?.model.redWinProbability
 
   return (
@@ -81,11 +83,11 @@ export function PromotionOrgCard({ org, nextEvent, index = 0 }: PromotionOrgCard
             <span
               className={cn(
                 'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-sans font-semibold uppercase tracking-[0.14em] ring-1',
-                brand.card.pill,
+                published ? brand.card.pill : 'bg-amber-500/10 text-amber-200/90 ring-amber-500/25',
               )}
             >
               <Sparkles className="h-3 w-3 opacity-80" />
-              Pronostics complets
+              {published ? 'Pronostics complets' : 'Carte à venir'}
             </span>
             <span
               className={cn(
@@ -109,7 +111,17 @@ export function PromotionOrgCard({ org, nextEvent, index = 0 }: PromotionOrgCard
               {org.fullName}
             </p>
 
-            {nextEvent && main ? (
+            {nextEvent && !published ? (
+              <div className="rounded-xl border border-amber-500/15 bg-black/25 px-3 py-2.5 backdrop-blur-sm">
+                <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-amber-200/80">
+                  <Calendar className="h-3 w-3 shrink-0" />
+                  {formatShortDate(nextEvent.date)}
+                </div>
+                <p className="mt-1 text-xs leading-relaxed text-muted">
+                  {nextEvent.name} — analyses en préparation
+                </p>
+              </div>
+            ) : nextEvent && main ? (
               <div className="rounded-xl border border-white/[0.06] bg-black/25 px-3 py-2.5 backdrop-blur-sm">
                 <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-muted">
                   <Calendar className="h-3 w-3 shrink-0 text-gold/80" />

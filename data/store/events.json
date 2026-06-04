@@ -145,6 +145,7 @@
       "city": "Las Vegas",
       "country": "United States",
       "status": "upcoming",
+      "predictionsStatus": "published",
       "communityPredictions": 1200,
       "fights": [
         {
@@ -290,6 +291,7 @@
       "city": "Washington",
       "country": "United States",
       "status": "upcoming",
+      "predictionsStatus": "preparing",
       "communityPredictions": 1200,
       "fights": [
         {

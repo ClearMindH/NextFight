@@ -97,6 +97,8 @@ export interface Event {
   city: string
   country: string
   status: 'upcoming' | 'live' | 'completed'
+  /** Si absent : règle auto (voir lib/event-predictions.ts). */
+  predictionsStatus?: 'published' | 'preparing'
   fights: Fight[]
   communityPredictions: number
 }

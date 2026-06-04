@@ -22,6 +22,7 @@ export interface EventInput {
   city: string
   country: string
   status: 'upcoming' | 'live' | 'completed'
+  predictionsStatus?: 'published' | 'preparing'
   communityPredictions: number
   fights: FightInput[]
 }
