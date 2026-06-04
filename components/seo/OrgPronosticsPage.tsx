@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { OrgPageHeader } from '@/components/pronostics/OrgPageHeader'
 import { OrgFeaturedFightSection } from '@/components/pronostics/OrgFeaturedFightSection'
+import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
 import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
 import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import type { Organization } from '@/types'
@@ -25,7 +26,10 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         <OrgPageHeader org={org} />
 
         {featured && featured.fights.length > 0 && (
-          <OrgFeaturedFightSection org={org} event={featured} />
+          <>
+            <OrgFeaturedFightSection org={org} event={featured} />
+            <OrgEventFightCardList org={org} event={featured} />
+          </>
         )}
 
         <OrgEventCalendar org={org} events={orgEvents} activeEventId={featured?.id} />
