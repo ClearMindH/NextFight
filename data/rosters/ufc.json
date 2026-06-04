@@ -1,8 +1,8 @@
 {
   "meta": {
     "organizationId": "ufc",
-    "fighterCount": 1163,
-    "lastSyncedAt": "2026-06-03T22:37:28.559Z",
+    "fighterCount": 1165,
+    "lastSyncedAt": "2026-06-04T19:24:33.505Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -1869,7 +1869,8 @@
           "opponentTier": 50,
           "monthsAgo": 12
         }
-      ]
+      ],
+      "nickname": "Bane"
     },
     {
       "id": "ufc-andrei-arlovski",
@@ -2677,7 +2678,8 @@
           "opponentTier": 50,
           "monthsAgo": 36
         }
-      ]
+      ],
+      "nickname": "Rebel Girl"
     },
     {
       "id": "ufc-askar-askar",
@@ -2784,7 +2786,8 @@
           "opponentTier": 50,
           "monthsAgo": 15
         }
-      ]
+      ],
+      "nickname": "Zulfikar"
     },
     {
       "id": "ufc-ateba-gautier",
@@ -3076,7 +3079,8 @@
           "opponentTier": 50,
           "monthsAgo": 27
         }
-      ]
+      ],
+      "nickname": "The Turan Warrior"
     },
     {
       "id": "ufc-ben-askren",
@@ -3547,7 +3551,7 @@
           "method": "decision",
           "round": 3,
           "opponentTier": 50,
-          "monthsAgo": 10
+          "monthsAgo": 11
         },
         {
           "opponentName": "Hernandez",
@@ -3851,9 +3855,10 @@
           "method": "submission",
           "round": 1,
           "opponentTier": 50,
-          "monthsAgo": 10
+          "monthsAgo": 11
         }
-      ]
+      ],
+      "nickname": "The Hulk"
     },
     {
       "id": "ufc-bruno-assis",
@@ -4519,7 +4524,8 @@
           "opponentTier": 50,
           "monthsAgo": 20
         }
-      ]
+      ],
+      "nickname": "Cesinha"
     },
     {
       "id": "ufc-cesar-arzamendia",
@@ -5515,7 +5521,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "CLD"
     },
     {
       "id": "ufc-christopher-alvidrez",
@@ -5918,7 +5925,8 @@
           "opponentTier": 50,
           "monthsAgo": 7
         }
-      ]
+      ],
+      "nickname": "Custom Made"
     },
     {
       "id": "ufc-cody-east",
@@ -5998,7 +6006,8 @@
           "opponentTier": 50,
           "monthsAgo": 29
         }
-      ]
+      ],
+      "nickname": "No Love"
     },
     {
       "id": "ufc-cody-gibson",
@@ -7823,19 +7832,50 @@
       "weightClass": "Women&#039;s Flyweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-04/BARBOSA_DIONE_04-04.png?h=a30e7339&itok=k68wmuxN",
       "stats": {
-        "strikingAccuracy": 52,
-        "strikeDefense": 52,
-        "takedownAccuracy": 38,
-        "takedownDefense": 65,
+        "strikingAccuracy": 64,
+        "strikeDefense": 64,
+        "takedownAccuracy": 0,
+        "takedownDefense": 11,
         "reachCm": 183,
         "heightCm": 178,
         "age": 29,
         "winStreak": 0,
         "finishingRate": 45,
-        "strengthOfSchedule": 55
+        "strengthOfSchedule": 55,
+        "slpm": 2.21,
+        "sapm": 2.4,
+        "tdAvg": 2.4,
+        "subAvg": 1.74
       },
       "lastSyncedAt": "2026-06-03T17:55:54.354Z",
-      "source": "merged"
+      "source": "merged",
+      "recentBouts": [
+        {
+          "opponentName": "Gatto",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 5
+        },
+        {
+          "opponentName": "Silva",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 17
+        },
+        {
+          "opponentName": "Belbita",
+          "result": "win",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 50,
+          "monthsAgo": 17
+        }
+      ],
+      "nickname": "The Witch"
     },
     {
       "id": "ufc-dominick-cruz",
@@ -8657,7 +8697,8 @@
           "opponentTier": 50,
           "monthsAgo": 8
         }
-      ]
+      ],
+      "nickname": "The Snack Panther"
     },
     {
       "id": "ufc-elizeu-zaleski-dos-santos",
@@ -9960,7 +10001,8 @@
           "opponentTier": 50,
           "monthsAgo": 29
         }
-      ]
+      ],
+      "nickname": "DreamKiller"
     },
     {
       "id": "ufc-geraldo-de-freitas-jr",
@@ -10083,7 +10125,7 @@
         "tdAvg": 0.18,
         "subAvg": 0.18
       },
-      "lastSyncedAt": "2026-06-03T17:55:54.357Z",
+      "lastSyncedAt": "2026-06-04T18:39:51.105Z",
       "source": "merged",
       "recentBouts": [
         {
@@ -10110,7 +10152,9 @@
           "opponentTier": 50,
           "monthsAgo": 22
         }
-      ]
+      ],
+      "ranking": 12,
+      "nickname": "Ninja"
     },
     {
       "id": "ufc-gil-castillo",
@@ -11103,7 +11147,8 @@
           "opponentTier": 50,
           "monthsAgo": 15
         }
-      ]
+      ],
+      "nickname": "The Hurricane"
     },
     {
       "id": "ufc-ian-entwistle",
@@ -11364,7 +11409,8 @@
           "opponentTier": 50,
           "monthsAgo": 16
         }
-      ]
+      ],
+      "nickname": "The Hulk"
     },
     {
       "id": "ufc-irene-aldana",
@@ -12263,7 +12309,8 @@
           "opponentTier": 50,
           "monthsAgo": 28
         }
-      ]
+      ],
+      "nickname": "Tha Killa Gorilla"
     },
     {
       "id": "ufc-jared-gooden",
@@ -14779,13 +14826,13 @@
     {
       "id": "ufc-juan-andres-luna",
       "organizationId": "ufc",
-      "name": "Juan Andres Luna",
-      "record": "0-1-0",
-      "wins": 0,
-      "losses": 1,
+      "name": "Santiago Luna",
+      "record": "8-0-0",
+      "wins": 8,
+      "losses": 0,
       "draws": 0,
-      "country": "Unknown",
-      "weightClass": "Flyweight",
+      "country": "Mexico",
+      "weightClass": "Bantamweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2022-07/LUNA_JUAN_ANDRES_CS.png?h=a30e7339&itok=JfffPYU7",
       "stats": {
         "strikingAccuracy": 32,
@@ -15882,7 +15929,8 @@
           "opponentTier": 50,
           "monthsAgo": 14
         }
-      ]
+      ],
+      "nickname": "El Gallo Negro"
     },
     {
       "id": "ufc-kevin-burns",
@@ -18034,7 +18082,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "Powerbar"
     },
     {
       "id": "ufc-marcel-fortuna",
@@ -19007,7 +19056,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "Jaguar"
     },
     {
       "id": "ufc-matt-andersen",
@@ -19560,7 +19610,8 @@
           "opponentTier": 50,
           "monthsAgo": 36
         }
-      ]
+      ],
+      "nickname": "The Gun"
     },
     {
       "id": "ufc-melton-bowen",
@@ -22366,7 +22417,8 @@
           "monthsAgo": 15
         }
       ],
-      "ranking": 11
+      "ranking": 11,
+      "nickname": "Ataman"
     },
     {
       "id": "ufc-rainn-guerrero",
@@ -23243,7 +23295,8 @@
         "subAvg": 0
       },
       "lastSyncedAt": "2026-06-03T17:55:54.358Z",
-      "source": "merged"
+      "source": "merged",
+      "nickname": "The Perfect Storm"
     },
     {
       "id": "ufc-rinat-fakhretdinov",
@@ -24063,7 +24116,8 @@
           "opponentTier": 50,
           "monthsAgo": 3
         }
-      ]
+      ],
+      "nickname": "Problema"
     },
     {
       "id": "ufc-ryo-chonan",
@@ -25565,7 +25619,8 @@
           "opponentTier": 50,
           "monthsAgo": 21
         }
-      ]
+      ],
+      "nickname": "Mean Machine"
     },
     {
       "id": "ufc-steven-asplund",
@@ -25959,29 +26014,6 @@
         "winStreak": 0
       },
       "lastSyncedAt": "2026-06-03T17:55:54.359Z",
-      "source": "merged"
-    },
-    {
-      "id": "ufc-test-fighter2",
-      "organizationId": "ufc",
-      "name": "Test Fighter2",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
-      "draws": 0,
-      "country": "Unknown",
-      "weightClass": "Middleweight",
-      "stats": {
-        "strikingAccuracy": 52,
-        "strikeDefense": 52,
-        "takedownAccuracy": 38,
-        "takedownDefense": 65,
-        "reachCm": 183,
-        "heightCm": 178,
-        "age": 29,
-        "winStreak": 0
-      },
-      "lastSyncedAt": "2026-06-03T17:55:54.360Z",
       "source": "merged"
     },
     {
@@ -26668,6 +26700,61 @@
       },
       "lastSyncedAt": "2026-06-03T17:55:54.360Z",
       "source": "merged"
+    },
+    {
+      "id": "ufc-ketlen-souza",
+      "organizationId": "ufc",
+      "name": "Ketlen Souza",
+      "record": "15-3-0",
+      "wins": 15,
+      "losses": 3,
+      "draws": 0,
+      "country": "Brazil",
+      "weightClass": "Women's Strawweight",
+      "stats": {
+        "strikingAccuracy": 53,
+        "strikeDefense": 54,
+        "takedownAccuracy": 0,
+        "takedownDefense": 10,
+        "reachCm": 165,
+        "heightCm": 163,
+        "age": 29,
+        "winStreak": 2,
+        "finishingRate": 35,
+        "strengthOfSchedule": 52,
+        "slpm": 4.01,
+        "sapm": 3.86,
+        "tdAvg": 0.46,
+        "subAvg": 0.23
+      },
+      "source": "ufc.com",
+      "recentBouts": [
+        {
+          "opponentName": "Brasil",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 5
+        },
+        {
+          "opponentName": "Rodriguez",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 17
+        },
+        {
+          "opponentName": "Hill",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 17
+        }
+      ],
+      "nickname": "Esquentadinha"
     },
     {
       "id": "ufc-tony-desouza",
@@ -27629,7 +27716,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "The Joker"
     },
     {
       "id": "ufc-wang-guan",
@@ -28485,9 +28573,10 @@
       "id": "ufc-belal-muhammad",
       "organizationId": "ufc",
       "name": "Belal Muhammad",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "nickname": "Remember The Name",
+      "record": "24-5-0",
+      "wins": 24,
+      "losses": 5,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28534,8 +28623,7 @@
           "opponentTier": 50,
           "monthsAgo": 22
         }
-      ],
-      "nickname": "Remember The Name"
+      ]
     },
     {
       "id": "ufc-edmen-shahbazyan",
@@ -28646,7 +28734,7 @@
         }
       ],
       "ranking": 14,
-      "nickname": "The Smile Killer"
+      "nickname": "Smile Killer"
     },
     {
       "id": "ufc-tom-nolan",
@@ -28762,9 +28850,9 @@
       "id": "ufc-shiyunia-tafua",
       "organizationId": "ufc",
       "name": "Junior Tafa",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "record": "7-5-0",
+      "wins": 7,
+      "losses": 5,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28940,7 +29028,7 @@
           "method": "ko_tko",
           "round": 1,
           "opponentTier": 50,
-          "monthsAgo": 4
+          "monthsAgo": 5
         },
         {
           "opponentName": "Bashi",
@@ -29503,7 +29591,8 @@
           "opponentTier": 50,
           "monthsAgo": 18
         }
-      ]
+      ],
+      "nickname": "StarBoy"
     },
     {
       "id": "ufc-kyoji-horiguchi",
@@ -29558,7 +29647,8 @@
           "opponentTier": 50,
           "monthsAgo": 36
         }
-      ]
+      ],
+      "nickname": "Karate Kid"
     },
     {
       "id": "ufc-navajo-stirling",
@@ -29656,7 +29746,7 @@
           "method": "decision",
           "round": 3,
           "opponentTier": 50,
-          "monthsAgo": 10
+          "monthsAgo": 11
         },
         {
           "opponentName": "Nurmagomedov",
@@ -29666,7 +29756,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "LokDog"
     },
     {
       "id": "ufc-ches-skelli-0",
@@ -29757,7 +29848,8 @@
           "opponentTier": 50,
           "monthsAgo": 24
         }
-      ]
+      ],
+      "nickname": "Mascote"
     },
     {
       "id": "ufc-murtazali-magomedov",
@@ -29824,7 +29916,8 @@
           "opponentTier": 50,
           "monthsAgo": 8
         }
-      ]
+      ],
+      "nickname": "The Lady GOAT"
     },
     {
       "id": "ufc-melissa-mullins",
@@ -29862,7 +29955,8 @@
           "opponentTier": 50,
           "monthsAgo": 19
         }
-      ]
+      ],
+      "nickname": "No Mess"
     },
     {
       "id": "ufc-jose-montanha",
@@ -29940,7 +30034,8 @@
           "opponentTier": 50,
           "monthsAgo": 36
         }
-      ]
+      ],
+      "nickname": "Puro Osso"
     },
     {
       "id": "ufc-aleks-oliveyra-2",
@@ -30022,7 +30117,7 @@
           "method": "decision",
           "round": 3,
           "opponentTier": 50,
-          "monthsAgo": 16
+          "monthsAgo": 17
         },
         {
           "opponentName": "Kianzad",
@@ -30141,7 +30236,8 @@
           "opponentTier": 50,
           "monthsAgo": 21
         }
-      ]
+      ],
+      "nickname": "El Loco"
     },
     {
       "id": "ufc-nazim-sadykhov",
@@ -30195,7 +30291,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "Black Wolf"
     },
     {
       "id": "ufc-charles-johnson",
@@ -30250,7 +30347,8 @@
           "opponentTier": 50,
           "monthsAgo": 16
         }
-      ]
+      ],
+      "nickname": "Inner G"
     },
     {
       "id": "ufc-michal-oleksiejczuk",
@@ -30304,7 +30402,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "Hussar"
     },
     {
       "id": "ufc-farman-hasanov",
@@ -30374,7 +30473,8 @@
           "opponentTier": 50,
           "monthsAgo": 6
         }
-      ]
+      ],
+      "nickname": "The Hunter"
     },
     {
       "id": "ufc-julius-walker",
@@ -30428,7 +30528,8 @@
           "opponentTier": 50,
           "monthsAgo": 16
         }
-      ]
+      ],
+      "nickname": "Juice Box"
     },
     {
       "id": "ufc-nursulton-ruziboev",
@@ -30482,7 +30583,8 @@
           "opponentTier": 50,
           "monthsAgo": 29
         }
-      ]
+      ],
+      "nickname": "Black"
     },
     {
       "id": "ufc-andrey-pulyaev",
@@ -30637,7 +30739,8 @@
           "monthsAgo": 36
         }
       ],
-      "ranking": 4
+      "ranking": 4,
+      "nickname": "The Notorious"
     },
     {
       "id": "ufc-max-holloway",
@@ -30681,7 +30784,7 @@
           "method": "decision",
           "round": 5,
           "opponentTier": 50,
-          "monthsAgo": 10
+          "monthsAgo": 11
         },
         {
           "opponentName": "Topuria",
@@ -30692,7 +30795,8 @@
           "monthsAgo": 19
         }
       ],
-      "ranking": 4
+      "ranking": 4,
+      "nickname": "Blessed"
     },
     {
       "id": "ufc-paddy-pimblett",
@@ -30747,7 +30851,8 @@
           "opponentTier": 50,
           "monthsAgo": 22
         }
-      ]
+      ],
+      "nickname": "The Baddy"
     },
     {
       "id": "ufc-mariya-agapova-0",
@@ -30785,7 +30890,8 @@
           "opponentTier": 50,
           "monthsAgo": 4
         }
-      ]
+      ],
+      "nickname": "God of War"
     },
     {
       "id": "ufc-cory-sandhagen",
@@ -30895,7 +31001,8 @@
           "opponentTier": 50,
           "monthsAgo": 20
         }
-      ]
+      ],
+      "nickname": "Raw Dawg"
     },
     {
       "id": "ufc-loneer-kavanagh",
@@ -31029,7 +31136,8 @@
           "opponentTier": 50,
           "monthsAgo": 23
         }
-      ]
+      ],
+      "nickname": "The Reaper"
     },
     {
       "id": "ufc-nikita-krylov",
@@ -31084,7 +31192,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "The Miner"
     },
     {
       "id": "ufc-adrian-yanez",
@@ -31168,7 +31277,8 @@
           "opponentTier": 50,
           "monthsAgo": 3
         }
-      ]
+      ],
+      "nickname": "The Baba Yaga"
     },
     {
       "id": "ufc-kai-kamaka",
@@ -31205,7 +31315,8 @@
           "opponentTier": 50,
           "monthsAgo": 4
         }
-      ]
+      ],
+      "nickname": "Da Fighting Hawaiian"
     },
     {
       "id": "ufc-zachary-reese",
@@ -31251,7 +31362,8 @@
           "opponentTier": 50,
           "monthsAgo": 7
         }
-      ]
+      ],
+      "nickname": "Savage"
     },
     {
       "id": "ufc-ode-osbourne",
@@ -31305,7 +31417,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "The Jamaican Sensation"
     },
     {
       "id": "ufc-brad-tavares",
@@ -31409,7 +31522,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "The Dream"
     },
     {
       "id": "ufc-mitch-ramirez",
@@ -31529,7 +31643,8 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "nickname": "Genghis"
     },
     {
       "id": "ufc-kevin-holland",
@@ -31581,9 +31696,10 @@
           "method": "decision",
           "round": 3,
           "opponentTier": 50,
-          "monthsAgo": 10
+          "monthsAgo": 11
         }
-      ]
+      ],
+      "nickname": "Trailblazer"
     },
     {
       "id": "ufc-amanda-ribas",
@@ -31692,6 +31808,61 @@
           "round": 2,
           "opponentTier": 50,
           "monthsAgo": 17
+        }
+      ],
+      "nickname": "The Archangel"
+    },
+    {
+      "id": "ufc-veronica-hardy",
+      "organizationId": "ufc",
+      "name": "Veronica Hardy",
+      "record": "0-0-0",
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "country": "Unknown",
+      "stats": {
+        "strikingAccuracy": 50,
+        "strikeDefense": 52,
+        "takedownAccuracy": 0,
+        "takedownDefense": 12,
+        "reachCm": 178,
+        "heightCm": 175,
+        "age": 28,
+        "winStreak": 0,
+        "finishingRate": 40,
+        "strengthOfSchedule": 50,
+        "slpm": 3.06,
+        "sapm": 3.24,
+        "tdAvg": 0.82,
+        "subAvg": 0.35
+      },
+      "lastSyncedAt": "2026-06-04T18:39:54.883Z",
+      "source": "ufc.com",
+      "recentBouts": [
+        {
+          "opponentName": "Walker",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 8
+        },
+        {
+          "opponentName": "Moura",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 19
+        },
+        {
+          "opponentName": "Aldrich",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 50,
+          "monthsAgo": 29
         }
       ]
     }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { Event, Fight, Organization } from '@/types'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nextfight.io'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nextfightsstats.com'
 
 export function buildPronosticsMetadata(org: Organization): Metadata {
   const title = `Pronostics ${org.name} — Analyses MMA | NextFight`

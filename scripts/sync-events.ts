@@ -62,9 +62,9 @@ function sleep(ms: number): Promise<void> {
 function preserveCommunityCount(
   existing: EventInput[],
   id: string,
-  fallback: number,
-): number {
-  return existing.find((e) => e.id === id)?.communityPredictions ?? fallback
+): number | undefined {
+  const n = existing.find((e) => e.id === id)?.communityPredictions
+  return n != null && n > 0 ? n : undefined
 }
 
 async function syncUfc(
@@ -114,7 +114,7 @@ async function syncUfc(
   for (const s of scraped) {
     const { event, skippedFights } = scrapedEventToInput(
       s,
-      preserveCommunityCount(existing, s.sourceId, 1200),
+      preserveCommunityCount(existing, s.sourceId),
     )
     if (event) events.push(event)
     for (const skip of skippedFights) {
@@ -199,7 +199,7 @@ async function syncPfl(
       }
       const { event, skippedFights } = scrapedEventToInput(
         scraped,
-        preserveCommunityCount(existing, scraped.sourceId, 800),
+        preserveCommunityCount(existing, scraped.sourceId),
       )
       if (event) events.push(event)
       for (const skip of skippedFights) warnings.push(`${listing.name}: ${skip.reason}`)
@@ -294,7 +294,7 @@ async function syncKsw(
       }
       const { event, skippedFights } = scrapedEventToInput(
         scraped,
-        preserveCommunityCount(existing, scraped.sourceId, 600),
+        preserveCommunityCount(existing, scraped.sourceId),
       )
       if (event) events.push(event)
       for (const skip of skippedFights) warnings.push(`${listing.name}: ${skip.reason}`)
@@ -341,9 +341,10 @@ async function syncAres(
         warnings.push(`ARES ${listing.name}: no fights`)
         continue
       }
+      ensureCardFightersInRoster(scraped)
       const { event, skippedFights } = scrapedEventToInput(
         scraped,
-        preserveCommunityCount(existing, scraped.sourceId, 500),
+        preserveCommunityCount(existing, scraped.sourceId),
       )
       if (event) events.push(event)
       for (const skip of skippedFights) warnings.push(`${listing.name}: ${skip.reason}`)

@@ -3,9 +3,10 @@ import { OrgPageHeader } from '@/components/pronostics/OrgPageHeader'
 import { OrgFeaturedFightSection } from '@/components/pronostics/OrgFeaturedFightSection'
 import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
 import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
+import { PredictionsPreparingPanel } from '@/components/pronostics/PredictionsPreparingPanel'
 import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import type { Organization } from '@/types'
-import { getEventsByOrg } from '@/data/events'
+import { getUpcomingEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
 import { getFreePreviewFight } from '@/lib/event-helpers'
 import { buildPronosticsJsonLd } from '@/lib/seo-pronostics'
 
@@ -14,8 +15,9 @@ interface OrgPronosticsPageProps {
 }
 
 export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
-  const orgEvents = getEventsByOrg(org.id)
-  const featured = orgEvents[0]
+  const orgEvents = getUpcomingEventsByOrg(org.id)
+  const { published, preparing } = partitionEventsByPredictions(orgEvents)
+  const featured = published[0]
   const previewFight = featured ? getFreePreviewFight(featured) : null
   const jsonLd = buildPronosticsJsonLd(org, previewFight ?? null, featured ?? null)
 
@@ -31,6 +33,10 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
             <OrgEventFightCardList org={org} event={featured} />
           </>
         )}
+
+        {preparing.map((event) => (
+          <PredictionsPreparingPanel key={event.id} event={event} />
+        ))}
 
         <OrgEventCalendar org={org} events={orgEvents} activeEventId={featured?.id} />
 

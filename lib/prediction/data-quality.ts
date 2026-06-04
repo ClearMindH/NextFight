@@ -4,7 +4,8 @@ import { isTrustedRosterSource } from '@/lib/prediction/infer-stats-from-record'
 /** Empreinte des stats par défaut (stubs carte / mappers génériques). */
 const DEFAULT_STAT_FINGERPRINT = {
   strikingAccuracy: 50,
-  takedownAccuracy: 40,
+  /** 40 (stub générique) ou 38 (roster ARES / KSW / PFL) */
+  takedownAccuracy: [40, 38] as const,
   strikeDefense: 55,
   takedownDefense: 55,
 } as const
@@ -20,7 +21,9 @@ export function isPlaceholderStats(fighter: Fighter): boolean {
 
   const matchesDefault =
     s.strikingAccuracy === DEFAULT_STAT_FINGERPRINT.strikingAccuracy &&
-    s.takedownAccuracy === DEFAULT_STAT_FINGERPRINT.takedownAccuracy &&
+    DEFAULT_STAT_FINGERPRINT.takedownAccuracy.includes(
+      s.takedownAccuracy as (typeof DEFAULT_STAT_FINGERPRINT.takedownAccuracy)[number],
+    ) &&
     (s.strikeDefense === DEFAULT_STAT_FINGERPRINT.strikeDefense ||
       s.strikeDefense === 52) &&
     (s.takedownDefense === DEFAULT_STAT_FINGERPRINT.takedownDefense ||

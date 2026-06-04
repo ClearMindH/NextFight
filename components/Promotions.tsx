@@ -32,8 +32,7 @@ export function Promotions() {
           </h2>
           <p className="mt-3 text-sm text-muted sm:text-base">
             Une page par promotion avec calendrier, pronostics et analyses — interface claire et
-            lisible
-            data.
+            lisible.
           </p>
         </FadeIn>
 

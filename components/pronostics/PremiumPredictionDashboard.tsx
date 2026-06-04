@@ -43,7 +43,8 @@ function convictionLabel(prob: number): { text: string; tone: string } {
   return { text: 'Underdog value', tone: 'text-[#a78bfa] border-[#a78bfa]/40 bg-[#a78bfa]/10' }
 }
 
-function formatCommunity(n: number): string {
+function formatCommunity(n: number | undefined): string | null {
+  if (n == null || n <= 0) return null
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`
   if (n >= 1000) return `${(n / 1000).toFixed(1)}K`
   return String(n)
@@ -145,16 +146,15 @@ export function PremiumPredictionDashboard({
   const conviction = convictionLabel(favoriteProb)
   const breakdown = fight.model.breakdown
 
+  const communityLabel = formatCommunity(event.communityPredictions)
   const kpis = [
     { label: 'Confiance', value: formatPercent(fight.model.confidence), color: '#fbbf24' },
     { label: 'Méthode', value: methodLabels[fight.model.predictedMethod], color: '#a78bfa' },
     { label: 'Round cible', value: String(fight.model.predictedRound), color: '#2dd4bf' },
     { label: 'Rounds prévus', value: String(fight.scheduledRounds), color: '#60a5fa' },
-    {
-      label: 'Communauté',
-      value: formatCommunity(event.communityPredictions),
-      color: '#f472b6',
-    },
+    ...(communityLabel
+      ? [{ label: 'Communauté', value: communityLabel, color: '#f472b6' }]
+      : []),
   ]
 
   return (
@@ -214,15 +214,6 @@ export function PremiumPredictionDashboard({
                   {conviction.text}
                 </span>
               </div>
-              <div className="mt-4 flex gap-1 h-8 items-end">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 rounded-sm bg-gradient-to-t from-[#2dd4bf]/80 to-[#2dd4bf]/20"
-                    style={{ height: `${30 + ((i * 7) % 70)}%`, opacity: i < 8 ? 1 : 0.35 }}
-                  />
-                ))}
-              </div>
             </IntelCard>
 
             <IntelCard>
@@ -250,7 +241,9 @@ export function PremiumPredictionDashboard({
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: Users, label: 'Pronostics', value: formatCommunity(event.communityPredictions) },
+                  ...(communityLabel
+                    ? [{ icon: Users, label: 'Pronostics', value: communityLabel }]
+                    : []),
                   { icon: Target, label: 'Confiance', value: formatPercent(fight.model.confidence) },
                   { icon: Zap, label: 'Catégorie', value: fight.weightClass.split(' ')[0] },
                   { icon: Scale, label: 'Titre', value: fight.isTitle ? 'Oui' : 'Non' },

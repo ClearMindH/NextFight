@@ -97,8 +97,11 @@ export interface Event {
   city: string
   country: string
   status: 'upcoming' | 'live' | 'completed'
+  /** Si absent : règle auto (voir lib/event-predictions.ts). */
+  predictionsStatus?: 'published' | 'preparing'
   fights: Fight[]
-  communityPredictions: number
+  /** Compteur communauté — optionnel ; non affiché tant qu’il n’y a pas de vraies données. */
+  communityPredictions?: number
 }
 
 export interface Prediction {

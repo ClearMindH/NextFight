@@ -9,7 +9,7 @@ import {
   getFighterPortraitUrl,
   isFighterPortraitPlaceholder,
 } from '@/lib/fighter-portrait'
-import { mergeSeedRanking } from '@/lib/roster-seed-rankings'
+import { applyFighterDisplayPatch } from '@/lib/fighter-display-client'
 import { getDivisionRankingBadge } from '@/lib/fighter-ranking'
 import { canUseNextImage } from '@/lib/image-url'
 import { formatFighterNickname } from '@/utils/format'
@@ -28,7 +28,7 @@ export function FighterPortrait({
   probability,
   className,
 }: FighterPortraitProps) {
-  const [displayFighter, setDisplayFighter] = useState(() => mergeSeedRanking(fighter))
+  const [displayFighter, setDisplayFighter] = useState(() => applyFighterDisplayPatch(fighter))
   const [src, setSrc] = useState(() => getFighterPortraitUrl(fighter))
   const isRed = corner === 'red'
   const isPlaceholder = isFighterPortraitPlaceholder(src)
@@ -37,7 +37,7 @@ export function FighterPortrait({
   const nickname = formatFighterNickname(displayFighter.nickname)
 
   useEffect(() => {
-    setDisplayFighter(mergeSeedRanking(fighter))
+    setDisplayFighter(applyFighterDisplayPatch(fighter))
     setSrc(getFighterPortraitUrl(fighter))
   }, [fighter])
 
@@ -54,8 +54,7 @@ export function FighterPortrait({
         } | null) => {
           if (cancelled || !data) return
           setDisplayFighter((prev) =>
-            mergeSeedRanking({
-              ...prev,
+            applyFighterDisplayPatch(prev, {
               ranking: data.ranking ?? prev.ranking,
               imageUrl: data.imageUrl ?? prev.imageUrl,
               record: data.record ?? prev.record,

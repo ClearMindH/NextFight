@@ -1,12 +1,5 @@
 import { STRIPE_PLANS } from '@/lib/stripe-plans'
-import type { FaqItem, PricingPlan, Testimonial } from '@/types'
-
-export const landingStats = [
-  { value: 5, suffix: '', label: 'Promotions couvertes' },
-  { value: 50, suffix: 'K+', label: 'Combats analysés' },
-  { value: 84, suffix: '+', label: 'Combats programmés suivis' },
-  { value: 12, suffix: 'K+', label: 'Membres actifs' },
-]
+import type { FaqItem, PricingPlan } from '@/types'
 
 export const pricingPlans: PricingPlan[] = STRIPE_PLANS.map((p) => ({
   id: p.id,
@@ -18,57 +11,6 @@ export const pricingPlans: PricingPlan[] = STRIPE_PLANS.map((p) => ({
   highlighted: p.highlighted,
   cta: p.cta,
 }))
-
-export const testimonials: Testimonial[] = [
-  {
-    id: '1',
-    name: 'Alexandre Martin',
-    role: 'Fan UFC',
-    quote:
-      'Les pages pronostics UFC sont claires : probabilités, méthode, round. Exactement ce qu’il me faut avant un événement.',
-    rating: 5,
-  },
-  {
-    id: '2',
-    name: 'Sarah Chen',
-    role: 'Journaliste MMA',
-    quote:
-      'Interface premium, sans ambiance site de paris. J’utilise les fiches combat pour mes previews.',
-    rating: 5,
-  },
-  {
-    id: '3',
-    name: 'Michał Kowalski',
-    role: 'Fan KSW',
-    quote:
-      'Enfin des pronostics KSW au même niveau que l’UFC. La page dédiée est indispensable.',
-    rating: 5,
-  },
-  {
-    id: '4',
-    name: 'David Okonkwo',
-    role: 'Coach',
-    quote:
-      'Mes athlètes consultent les matchups sur NextFight. Les stats comparées sur chaque combat sont top.',
-    rating: 5,
-  },
-  {
-    id: '5',
-    name: 'Emma Laurent',
-    role: 'Média ARES',
-    quote:
-      'On s’appuie sur NextFight pour préparer les soirées ARES. Le Premium vaut le coup pour les analyses complètes.',
-    rating: 5,
-  },
-  {
-    id: '6',
-    name: 'James O\'Brien',
-    role: 'Fan PFL',
-    quote:
-      'Le format tournoi PFL est bien pris en compte. Les pronostics suivent la saison.',
-    rating: 5,
-  },
-]
 
 export const faqItems: FaqItem[] = [
   {

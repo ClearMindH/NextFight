@@ -48,7 +48,7 @@ function buildFight(
 
 export function scrapedEventToInput(
   scraped: ScrapedEvent,
-  communityPredictions = 0,
+  communityPredictions?: number,
 ): BuildEventResult {
   const skippedFights: BuildEventResult['skippedFights'] = []
   const fights: FightInput[] = []
@@ -72,19 +72,20 @@ export function scrapedEventToInput(
     return { event: null, skippedFights }
   }
 
-  return {
-    event: {
-      id: scraped.sourceId,
-      organizationId: scraped.organizationId,
-      name: scraped.name,
-      date: scraped.date,
-      venue: scraped.venue,
-      city: scraped.city,
-      country: scraped.country,
-      status: scraped.status,
-      communityPredictions,
-      fights,
-    },
-    skippedFights,
+  const event: EventInput = {
+    id: scraped.sourceId,
+    organizationId: scraped.organizationId,
+    name: scraped.name,
+    date: scraped.date,
+    venue: scraped.venue,
+    city: scraped.city,
+    country: scraped.country,
+    status: scraped.status,
+    fights,
   }
+  if (communityPredictions != null && communityPredictions > 0) {
+    event.communityPredictions = communityPredictions
+  }
+
+  return { event, skippedFights }
 }

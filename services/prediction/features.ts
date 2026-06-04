@@ -60,18 +60,25 @@ export function normalizeFeature(value: number, min: number, max: number): numbe
   return clamp((value - min) / (max - min), 0, 1)
 }
 
+const DEFAULT_AGE = 29
+const DEFAULT_REACH_CM = 183
+const DEFAULT_HEIGHT_CM = 178
+
 /** Younger fighters score higher (prime ~26–32) */
-export function ageScore(age: number): number {
-  if (age <= 26) return 0.55 + (26 - age) * 0.01
-  if (age <= 32) return 1
-  return clamp(1 - (age - 32) * 0.04, 0.35, 1)
+export function ageScore(age: number | undefined, fallback = DEFAULT_AGE): number {
+  const a = age ?? fallback
+  if (a <= 26) return 0.55 + (26 - a) * 0.01
+  if (a <= 32) return 1
+  return clamp(1 - (a - 32) * 0.04, 0.35, 1)
 }
 
 export function relativePhysicalScore(
   self: NormalizedFighterFeatures,
   opponent: NormalizedFighterFeatures,
 ): number {
-  const reachAdv = (self.reachCm - opponent.reachCm) / 25
-  const heightAdv = (self.heightCm - opponent.heightCm) / 20
-  return clamp(0.5 + reachAdv * 0.25 + heightAdv * 0.15, 0, 1)
+  const reachAdv =
+    (self.reachCm ?? DEFAULT_REACH_CM) - (opponent.reachCm ?? DEFAULT_REACH_CM)
+  const heightAdv =
+    (self.heightCm ?? DEFAULT_HEIGHT_CM) - (opponent.heightCm ?? DEFAULT_HEIGHT_CM)
+  return clamp(0.5 + (reachAdv / 25) * 0.25 + (heightAdv / 20) * 0.15, 0, 1)
 }

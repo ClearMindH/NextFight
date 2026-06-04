@@ -116,16 +116,19 @@ export function parseAresFightCardHtml(html: string): ScrapedFight[] {
     if (!redName || !blueName) continue
 
     order += 1
-    const isTitle = /champion|title/i.test(block) || /champion/i.test(weightClass)
+    // Ne pas matcher les attributs HTML title="" dans les liens réseaux sociaux
+    const isTitle =
+      /championship|title fight|ceinture/i.test(weightClass) ||
+      /\bchampion\b/i.test(weightClass)
 
     fights.push({
       order,
       red: { fullName: redName },
       blue: { fullName: blueName },
       weightClass,
-      isTitle,
+      isTitle: order === 1 || isTitle,
       isMainEvent: order === 1,
-      scheduledRounds: isTitle || order === 1 ? 5 : 3,
+      scheduledRounds: order === 1 ? 5 : isTitle ? 5 : 3,
     })
   }
 

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { organizations } from '@/data/organizations'
 import { getAllFightIds } from '@/lib/fights'
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nextfight.io'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nextfightsstats.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ['', '/pricing', '/account', '/legal']

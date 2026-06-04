@@ -67,6 +67,21 @@ export async function fetchUfcAthleteNickname(slug: string): Promise<string | un
   }
 }
 
+/** Ex. « 18-4-0 (W-L-D) » sur la fiche UFC.com */
+export function parseUfcAthleteRecord(
+  html: string,
+): { record: string; wins: number; losses: number; draws: number } | undefined {
+  const raw =
+    html.match(/hero-profile__division-body[^>]*>\s*([0-9]+-[0-9]+-[0-9]+)/i)?.[1] ??
+    html.match(/c-hero-athlete__record[^>]*>\s*([0-9]+-[0-9]+-[0-9]+)/i)?.[1]
+  if (!raw) return undefined
+
+  const [w, l, d] = raw.split('-').map(Number)
+  if (!Number.isFinite(w) || !Number.isFinite(l)) return undefined
+  const draws = Number.isFinite(d) ? d : 0
+  return { wins: w, losses: l, draws, record: `${w}-${l}-${draws}` }
+}
+
 function parseMethod(raw: string): FightMethod {
   const t = raw.toLowerCase()
   if (/soum|sub/i.test(t)) return 'submission'
@@ -296,6 +311,11 @@ export async function enrichUfcFighterFromOfficialSite(
     const pageNick = parseUfcAthleteNickname(pageHtml)
     if (pageNick) next = { ...next, nickname: pageNick }
 
+    const pageRecord = parseUfcAthleteRecord(pageHtml)
+    if (pageRecord) {
+      next = { ...next, ...pageRecord }
+    }
+
     const pageStats = parseUfcAthletePageStats(pageHtml)
     if (pageStats) {
       next = {
@@ -314,13 +334,16 @@ export async function enrichUfcFighterFromOfficialSite(
 
     const statUrl = node.relationships?.athlete_stat?.links?.related?.href
     const statAttrs = statUrl ? await fetchUfcAthleteStatAttributes(statUrl) : undefined
+    const placeholderRecord =
+      fighter.record === '0-0-0' && (fighter.wins ?? 0) + (fighter.losses ?? 0) === 0
+
     const mapped = mapUfcJsonAthlete(node, statAttrs, {
       slug,
       name: fighter.name,
-      record: fighter.record,
-      wins: fighter.wins,
-      losses: fighter.losses,
-      draws: fighter.draws,
+      record: placeholderRecord ? undefined : fighter.record,
+      wins: placeholderRecord ? undefined : fighter.wins,
+      losses: placeholderRecord ? undefined : fighter.losses,
+      draws: placeholderRecord ? undefined : fighter.draws,
       weightClass: fighter.weightClass,
       imageUrl: fighter.imageUrl,
     })

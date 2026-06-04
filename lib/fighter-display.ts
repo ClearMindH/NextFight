@@ -1,15 +1,14 @@
 import { getFighterFromStore } from '@/lib/roster-store'
 import { mergeSeedRanking } from '@/lib/roster-seed-rankings'
+import { isPlaceholderRecord, resolveDisplayRecord } from '@/lib/fighter-record'
 import type { Fighter } from '@/types'
 
-function isPlaceholderRecord(record: string): boolean {
-  return record === '0-0-0' || record === '0-0'
-}
-
-function pickRecord(card: string, roster: string | undefined): string {
-  if (!roster || isPlaceholderRecord(roster)) return card
-  if (isPlaceholderRecord(card)) return roster
-  return roster
+function pickRecord(card: string, roster: Fighter | undefined): string {
+  if (!roster) return card
+  const resolved = resolveDisplayRecord(roster)
+  if (!isPlaceholderRecord(card)) return card
+  if (!isPlaceholderRecord(resolved)) return resolved
+  return resolved
 }
 
 /** Fusionne le roster à jour (classement, photo) pour l’affichage des portraits. */
@@ -21,7 +20,7 @@ export function mergeFighterForDisplay(fighter: Fighter): Fighter {
         ranking: fresh.ranking ?? fighter.ranking,
         imageUrl: fresh.imageUrl ?? fighter.imageUrl,
         nickname: fresh.nickname || fighter.nickname,
-        record: pickRecord(fighter.record, fresh.record),
+        record: pickRecord(fighter.record, fresh),
         wins:
           fresh.wins + fresh.losses + fresh.draws > 0
             ? fresh.wins
