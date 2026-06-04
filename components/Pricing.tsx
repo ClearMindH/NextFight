@@ -1,80 +1,94 @@
 'use client'
 
-import { Check } from 'lucide-react'
-import { STRIPE_PLANS } from '@/lib/stripe-plans'
-import { isPaidPlan } from '@/lib/stripe-plans'
+import Link from 'next/link'
+import { STRIPE_PLANS, isPaidPlan } from '@/lib/stripe-plans'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import { FadeIn } from '@/components/motion/FadeIn'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { cn } from '@/utils/cn'
 
+/** Bloc tarifs accueil — version compacte. Détail : /pricing */
 export function Pricing() {
+  const paidPlans = STRIPE_PLANS.filter((p) => isPaidPlan(p.id))
+  const annual = paidPlans.find((p) => p.id === 'premium_annual')
+  const monthly = paidPlans.find((p) => p.id === 'premium_monthly')
+
   return (
-    <section id="pricing" className="section-padding border-t border-border">
+    <section id="pricing" className="section-padding border-t border-border bg-[#050505]">
       <div className="container-content">
-        <FadeIn className="text-center max-w-2xl mx-auto">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Tarifs</p>
-          <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold tracking-tight">
-            Offres pour analystes sérieux
+        <FadeIn className="mx-auto max-w-lg text-center">
+          <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#8a8278]">
+            Nos offres
+          </p>
+          <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+            Tarifs
           </h2>
-          <p className="mt-3 text-muted text-sm sm:text-base">
-            Gratuit pour démarrer. Premium pour tous les pronostics, analyses détaillées et outils avancés.
+          <p className="mt-3 text-sm leading-relaxed text-[#8a8278]">
+            Gratuit pour le co-main. Premium pour toutes les cartes et analyses.
           </p>
         </FadeIn>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {STRIPE_PLANS.map((plan, i) => (
-            <FadeIn key={plan.id} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
-                className={cn(
-                  'flex h-full flex-col rounded-2xl border p-6',
-                  plan.highlighted
-                    ? 'border-gold/50 bg-card shadow-lg shadow-gold/5'
-                    : 'border-border bg-card/50',
-                )}
-              >
-                {plan.highlighted && (
-                  <span className="mb-4 w-fit rounded-full bg-gold/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-gold">
-                    Populaire
-                  </span>
-                )}
-                <h3 className="font-display text-lg font-semibold">{plan.name}</h3>
-                <p className="mt-2 text-muted text-sm">{plan.description}</p>
-                <p className="mt-6 font-display text-3xl font-semibold">
-                  {plan.priceLabel}
-                  {plan.period && (
-                    <span className="text-base font-normal text-muted">{plan.period}</span>
-                  )}
-                </p>
-                <ul className="mt-6 flex-1 space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-muted">
-                      <Check size={16} className="mt-0.5 shrink-0 text-gold" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  {isPaidPlan(plan.id) ? (
-                    <StripeCheckoutButton planId={plan.id} highlighted={plan.highlighted}>
-                      {plan.cta}
-                    </StripeCheckoutButton>
-                  ) : (
-                    <Link
-                      href="/register"
-                      className="block w-full rounded-full border border-border py-2.5 text-center text-sm font-medium hover:border-gold/40 transition-colors"
-                    >
-                      {plan.cta}
-                    </Link>
-                  )}
+        <div className="mx-auto mt-10 flex max-w-lg flex-col gap-4 sm:max-w-xl">
+          {annual && (
+            <FadeIn>
+              <div className="rounded-[1.25rem] border border-[#c9b896]/35 bg-[#0f0e0c] px-6 py-7 sm:px-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-[#8a8278]">
+                      Premium annuel
+                    </p>
+                    <p className="mt-2 text-sm text-[#8a8278]">{annual.description}</p>
+                  </div>
+                  <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
+                    {annual.priceLabel}
+                    <span className="text-sm font-normal text-[#6b6b6b]">{annual.period}</span>
+                  </p>
                 </div>
-              </motion.div>
+                <div className="mt-6">
+                  <StripeCheckoutButton planId={annual.id} highlighted className="!rounded-full">
+                    {annual.cta}
+                  </StripeCheckoutButton>
+                </div>
+              </div>
             </FadeIn>
-          ))}
+          )}
+          {monthly && (
+            <FadeIn delay={0.06}>
+              <div className="rounded-[1.25rem] border border-[#1f1d1a] bg-[#0a0a0a] px-6 py-7 sm:px-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-[#8a8278]">
+                      Premium mensuel
+                    </p>
+                    <p className="mt-2 text-sm text-[#8a8278]">{monthly.description}</p>
+                  </div>
+                  <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
+                    {monthly.priceLabel}
+                    <span className="text-sm font-normal text-[#6b6b6b]">{monthly.period}</span>
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <StripeCheckoutButton
+                    planId={monthly.id}
+                    className={cn(
+                      '!rounded-full !border-[#c9b896]/40 !text-[#c9b896] hover:!bg-[#c9b896]/10',
+                    )}
+                  >
+                    {monthly.cta}
+                  </StripeCheckoutButton>
+                </div>
+              </div>
+            </FadeIn>
+          )}
         </div>
+
+        <p className="mx-auto mt-8 max-w-lg text-center">
+          <Link
+            href="/pricing"
+            className="text-sm text-[#8a8278] transition-colors hover:text-[#c9b896]"
+          >
+            Voir l’offre gratuite et les détails →
+          </Link>
+        </p>
       </div>
     </section>
   )
