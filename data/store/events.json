@@ -272,10 +272,10 @@
           "id": "ufc-fight-night-june-06-2026-f12",
           "eventId": "ufc-fight-night-june-06-2026",
           "order": 12,
-          "weightClass": "Women's Strawweight",
-          "isTitle": false,
+          "weightClass": "Women's Strawweight Championship",
+          "isTitle": true,
           "isMainEvent": false,
-          "scheduledRounds": 3,
+          "scheduledRounds": 5,
           "redId": "ufc-ketlen-souza",
           "blueId": "ufc-ariane-carnelossi"
         }
@@ -651,41 +651,6 @@
       ]
     },
     {
-      "id": "pfl-san-diego-2026",
-      "organizationId": "pfl",
-      "name": "PFL San Diego",
-      "date": "2026-06-27T23:00:00.000Z",
-      "venue": "Pechanga Arena San Diego",
-      "city": "San Diego, Calif.",
-      "country": "USA",
-      "status": "upcoming",
-      "communityPredictions": 800,
-      "fights": [
-        {
-          "id": "pfl-san-diego-2026-f1",
-          "eventId": "pfl-san-diego-2026",
-          "order": 1,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "pfl-alexander-shabliy",
-          "blueId": "pfl-alfie-davis"
-        },
-        {
-          "id": "pfl-san-diego-2026-f2",
-          "eventId": "pfl-san-diego-2026",
-          "order": 2,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "pfl-abraham-bably",
-          "blueId": "pfl-rob-wilkinson"
-        }
-      ]
-    },
-    {
       "id": "ufc-329",
       "organizationId": "ufc",
       "name": "UFC 329: McGregor vs Holloway 2",
@@ -889,15 +854,26 @@
           "id": "ufc-fight-night-july-18-2026-f5",
           "eventId": "ufc-fight-night-july-18-2026",
           "order": 5,
-          "weightClass": "Lightweight Championship",
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-chase-hooper",
+          "blueId": "ufc-mitch-ramirez"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f6",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 6,
+          "weightClass": "Flyweight Championship",
           "isTitle": true,
           "isMainEvent": false,
           "scheduledRounds": 5,
-          "redId": "ufc-chase-hooper",
-          "blueId": "ufc-mitch-ramirez"
+          "redId": "ufc-veronica-hardy",
+          "blueId": "ufc-dione-barbosa"
         }
       ]
     }
   ],
-  "updatedAt": "2026-06-03T22:24:58.934Z"
+  "updatedAt": "2026-06-04T18:39:55.958Z"
 }
