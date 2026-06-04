@@ -4,6 +4,7 @@ import type { LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Crosshair, Shield, Target, Trophy } from 'lucide-react'
 import type { Fight } from '@/types'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { methodLabels, formatPercent, formatPredictedRound } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -40,26 +41,30 @@ export function FightPredictionPanel({ fight }: FightPredictionPanelProps) {
           Probabilités calculées uniquement par le moteur NextFight à partir des stats roster.
         </p>
 
+        <div className="mt-6 max-w-lg">
+          <PredictionVerdictBanner fight={fight} variant="prominent" />
+        </div>
+
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <PredictionMetric
             icon={Trophy}
-            label="Predicted winner"
+            label="Vainqueur prévu"
             value={favorite.name}
             highlight
           />
           <PredictionMetric
             icon={Target}
-            label="Win probability"
-            value={`${formatPercent(favorite.prob)} (${favorite.name.split(' ').pop()})`}
+            label="Probabilité"
+            value={formatPercent(favorite.prob)}
           />
           <PredictionMetric
             icon={Crosshair}
-            label="Probable method"
+            label="Méthode"
             value={methodLabels[model.predictedMethod]}
           />
           <PredictionMetric
             icon={Shield}
-            label="Confidence"
+            label="Confiance"
             value={formatPercent(model.confidence)}
             sub={formatPredictedRound(
               model.predictedMethod,

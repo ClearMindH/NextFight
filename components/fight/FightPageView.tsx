@@ -50,7 +50,6 @@ export function FightPageView({ data }: FightPageViewProps) {
           event={event}
           fight={fight}
           accessLabel={accessLabel}
-          showExpertAnalysis
           enforceAccess
         />
       )}

@@ -4,6 +4,8 @@ export interface ScrapedFighterRef {
   slug?: string
   fullName: string
   profileUrl?: string
+  /** Photo carte événement UFC.com */
+  imageUrl?: string
   /** Classement division (1–15), extrait de la carte officielle si disponible. */
   ranking?: number
 }

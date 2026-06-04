@@ -146,6 +146,18 @@ function parseUfcFightRanks(block: string): { red?: number; blue?: number } {
   }
 }
 
+function parseUfcCornerImage(block: string, side: 'red' | 'blue'): string | undefined {
+  const chunk = block.match(
+    new RegExp(
+      `c-listing-fight__corner-image--${side}">([\\s\\S]*?)(?=c-listing-fight__corner-image--|c-listing-fight__banner|c-listing-fight__names-row)`,
+      'i',
+    ),
+  )?.[1]
+  const raw = chunk?.match(/src="([^"]+)"/)?.[1]?.replace(/&amp;/g, '&')
+  if (!raw || /silhouette|comingsoon|flags\//i.test(raw)) return undefined
+  return raw.startsWith('http') ? raw : `${UFC_BASE}${raw.startsWith('/') ? '' : '/'}${raw}`
+}
+
 function parseUfcCornerFromBlock(
   block: string,
   side: 'red' | 'blue',
@@ -157,6 +169,7 @@ function parseUfcCornerFromBlock(
 
   if (!cornerChunk) return { fullName: '' }
 
+  const imageUrl = parseUfcCornerImage(block, side)
   const slug = cornerChunk.match(/\/athlete\/([^"?\s#]+)/)?.[1]
   const given = cornerChunk.match(/c-listing-fight__corner-given-name">([^<]+)/)?.[1]?.trim()
   const family = cornerChunk.match(/c-listing-fight__corner-family-name">([^<]+)/)?.[1]?.trim()
@@ -171,6 +184,7 @@ function parseUfcCornerFromBlock(
     slug,
     fullName,
     profileUrl: slug ? `${UFC_BASE}/athlete/${slug}` : undefined,
+    imageUrl,
     ranking,
   }
 }

@@ -5,30 +5,25 @@ import { motion } from 'framer-motion'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { FightStatsComparison } from '@/components/fight/FightStatsComparison'
-import { FightExpertAnalysis } from '@/components/fight/FightExpertAnalysis'
-import { RecentFormPanel } from '@/components/fight/RecentFormPanel'
-import { PredictionBreakdown } from '@/components/PredictionBreakdown'
 import { PremiumGate } from '@/components/premium/PremiumGate'
 import {
   canAccessFightPrediction,
   getFightAccessMessage,
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import {
   formatShortDate,
   formatPercent,
   formatPredictedRound,
   methodLabels,
 } from '@/utils/format'
+
 interface OrgFightExperienceProps {
   org: Organization
   event: Event
   fight: Fight
-  /** Sur la page org : libellé co-main / main selon l’abonnement */
   accessLabel?: string
-  /** Affiche le contenu détaillé réservé Premium (analyse rédigée) */
-  showExpertAnalysis?: boolean
-  /** Bloque stats détaillées si combat non accessible */
   enforceAccess?: boolean
 }
 
@@ -44,7 +39,6 @@ export function OrgFightExperience({
   event,
   fight,
   accessLabel,
-  showExpertAnalysis = true,
   enforceAccess = false,
 }: OrgFightExperienceProps) {
   const { isPremium, loading: subLoading } = useSubscription()
@@ -58,45 +52,51 @@ export function OrgFightExperience({
   const redProb = fight.model.redWinProbability
   const blueProb = 100 - redProb
   const favoriteProb = Math.max(redProb, blueProb)
+  const showPrediction = hasAccess || !enforceAccess
 
-  const detailContent = (
-    <div className="space-y-10 sm:space-y-12">
-      {fight.model.breakdown?.form && (
-        <RecentFormPanel
-          red={fight.redCorner}
-          blue={fight.blueCorner}
-          form={fight.model.breakdown.form}
-        />
-      )}
+  const predictionBlock = (
+    <div className="space-y-8">
+      <div className="mx-auto max-w-xl">
+        <PredictionVerdictBanner fight={fight} variant="prominent" />
+      </div>
 
-      <FightStatsComparison red={fight.redCorner} blue={fight.blueCorner} />
+      <div className="mx-auto max-w-3xl">
+        <div className="flex h-2 overflow-hidden rounded-full bg-white/[0.06]">
+          <div className="bg-red-500/80 transition-all" style={{ width: `${redProb}%` }} />
+          <div className="bg-blue-500/70 transition-all" style={{ width: `${blueProb}%` }} />
+        </div>
+        <div className="mt-2 flex justify-between text-xs tabular-nums text-muted">
+          <span>
+            {fight.redCorner.name.split(' ').pop()} {formatPercent(redProb)}
+          </span>
+          <span>
+            {fight.blueCorner.name.split(' ').pop()} {formatPercent(blueProb)}
+          </span>
+        </div>
+      </div>
 
-      {fight.model.breakdown && (
-        <section className="rounded-2xl border border-white/[0.08] bg-[#0c1219]/50 p-6 sm:p-8">
-          <h2 className="font-display text-xl font-semibold tracking-tight">
-            Comparaison par critère
-          </h2>
-          <p className="mt-1 text-sm text-muted">
-            Striking, grappling, physique, momentum et forme récente.
-          </p>
-          <div className="mt-6">
-            <PredictionBreakdown
-              redName={fight.redCorner.name}
-              blueName={fight.blueCorner.name}
-              red={fight.model.breakdown.red}
-              blue={fight.model.breakdown.blue}
-            />
+      <div className="mx-auto grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-4">
+        {[
+          { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
+          {
+            label: 'Fin prévue',
+            value: formatPredictedRound(
+              fight.model.predictedMethod,
+              fight.model.predictedRound,
+              fight.scheduledRounds,
+            ),
+          },
+          { label: 'Confiance', value: formatPercent(fight.model.confidence) },
+          { label: 'Lecture', value: convictionLabel(favoriteProb) },
+        ].map((item) => (
+          <div key={item.label} className="bg-[#0c1219] px-4 py-4 text-center sm:py-5">
+            <p className="text-[10px] uppercase tracking-wider text-muted">{item.label}</p>
+            <p className="mt-1 text-sm font-semibold tabular-nums">{item.value}</p>
           </div>
-        </section>
-      )}
+        ))}
+      </div>
 
-      {showExpertAnalysis && (
-        <FightExpertAnalysis
-          fight={fight}
-          eventName={event.name}
-          isPremium={isPremium}
-        />
-      )}
+      <FightStatsComparison red={fight.redCorner} blue={fight.blueCorner} compact />
     </div>
   )
 
@@ -137,7 +137,7 @@ export function OrgFightExperience({
           <FighterPortrait
             fighter={fight.redCorner}
             corner="red"
-            probability={redProb}
+            probability={showPrediction ? redProb : undefined}
             className="lg:justify-self-end"
           />
           <div className="hidden lg:flex flex-col items-center justify-center pb-16">
@@ -146,70 +146,25 @@ export function OrgFightExperience({
           <FighterPortrait
             fighter={fight.blueCorner}
             corner="blue"
-            probability={blueProb}
+            probability={showPrediction ? blueProb : undefined}
             className="lg:justify-self-start"
           />
-        </div>
-
-        <div className="mx-auto mt-10 max-w-3xl">
-          <div className="flex h-2 overflow-hidden rounded-full bg-white/[0.06]">
-            <div
-              className="bg-red-500/80 transition-all"
-              style={{ width: `${redProb}%` }}
-            />
-            <div
-              className="bg-blue-500/70 transition-all"
-              style={{ width: `${blueProb}%` }}
-            />
-          </div>
-          <div className="mt-2 flex justify-between text-xs tabular-nums text-muted">
-            <span>
-              {fight.redCorner.name.split(' ').pop()} {formatPercent(redProb)}
-            </span>
-            <span>
-              {fight.blueCorner.name.split(' ').pop()} {formatPercent(blueProb)}
-            </span>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-4">
-          {[
-            { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-            {
-              label: 'Fin prévue',
-              value: formatPredictedRound(
-                fight.model.predictedMethod,
-                fight.model.predictedRound,
-                fight.scheduledRounds,
-              ),
-            },
-            { label: 'Confiance', value: formatPercent(fight.model.confidence) },
-            {
-              label: 'Lecture',
-              value: convictionLabel(favoriteProb),
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="bg-[#0c1219] px-4 py-4 text-center sm:py-5"
-            >
-              <p className="text-[10px] uppercase tracking-wider text-muted">{item.label}</p>
-              <p className="mt-1 text-sm font-semibold tabular-nums">{item.value}</p>
-            </div>
-          ))}
         </div>
 
         <div className="mt-12">
           {!subLoading && enforceAccess && !hasAccess ? (
             <PremiumGate
-              title="Pronostic complet"
-              description={lockMessage ?? 'Abonnement Premium requis pour ce combat.'}
-              className="min-h-[280px]"
+              title="Pronostic Premium"
+              description={
+                lockMessage ??
+                'Abonnez-vous pour voir le pronostic complet, les probabilités et les statistiques de ce combat.'
+              }
+              className="min-h-[320px]"
             >
-              {detailContent}
+              {predictionBlock}
             </PremiumGate>
           ) : (
-            detailContent
+            predictionBlock
           )}
         </div>
 

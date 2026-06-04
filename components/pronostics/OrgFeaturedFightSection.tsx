@@ -33,7 +33,6 @@ export function OrgFeaturedFightSection({ org, event }: OrgFeaturedFightSectionP
       event={event}
       fight={fight}
       accessLabel={accessLabel}
-      showExpertAnalysis={isPremium}
       enforceAccess={false}
     />
   )

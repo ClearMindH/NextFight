@@ -110,6 +110,32 @@ describe('PredictionEngine', () => {
     expect(result.fighterAProbability).toBeGreaterThanOrEqual(8)
   })
 
+  it('predicts finishes when recent form shows KO or submission edge', () => {
+    const allen = mockFighter({
+      id: 'allen',
+      wins: 26,
+      losses: 7,
+      stats: { finishingRate: 55, subAvg: 1.14, slpm: 3.59 },
+      recentBouts: [
+        { opponentName: 'R', result: 'win', method: 'ko_tko', opponentTier: 70, monthsAgo: 8 },
+        { opponentName: 'V', result: 'win', method: 'decision', opponentTier: 70, monthsAgo: 11 },
+        { opponentName: 'H', result: 'loss', method: 'decision', opponentTier: 65, monthsAgo: 16 },
+      ],
+    })
+    const shahbazyan = mockFighter({
+      id: 'edmen',
+      wins: 14,
+      losses: 4,
+      stats: { finishingRate: 62, slpm: 4.2 },
+      recentBouts: [
+        { opponentName: 'X', result: 'loss', method: 'ko_tko', opponentTier: 60, monthsAgo: 5 },
+      ],
+    })
+
+    const result = PredictionEngine.predict({ fighterA: allen, fighterB: shahbazyan, scheduledRounds: 3 })
+    expect(['ko_tko', 'submission']).toContain(result.predictedMethod)
+  })
+
   it('respects scheduled rounds for decision picks', () => {
     const lowFinish = {
       finishingRate: 18,

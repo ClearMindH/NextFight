@@ -8,7 +8,8 @@ import { OrgBrandLogo } from '@/components/OrgBrandLogo'
 import { getOrgBrand } from '@/lib/org-brand'
 import { getFreePreviewFight } from '@/lib/event-helpers'
 import { isEventPredictionsPublished } from '@/lib/event-predictions'
-import { formatShortDate, formatPercent } from '@/utils/format'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
+import { formatShortDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface PromotionOrgCardProps {
@@ -21,7 +22,6 @@ export function PromotionOrgCard({ org, nextEvent, index = 0 }: PromotionOrgCard
   const brand = getOrgBrand(org.id)
   const published = nextEvent ? isEventPredictionsPublished(nextEvent) : false
   const main = nextEvent && published ? getFreePreviewFight(nextEvent) : null
-  const featuredProb = main?.model.redWinProbability
 
   return (
     <motion.div
@@ -131,25 +131,14 @@ export function PromotionOrgCard({ org, nextEvent, index = 0 }: PromotionOrgCard
                   {main.redCorner.name}{' '}
                   <span className="font-normal text-muted">vs</span> {main.blueCorner.name}
                 </p>
-                {featuredProb != null && (
-                  <div className="mt-2.5">
-                    <div className="mb-1 flex justify-between text-[10px] text-muted">
-                      <span>Modèle</span>
-                      <span className="text-foreground/80">
-                        {formatPercent(featuredProb)} · {main.redCorner.name.split(' ').pop()}
-                      </span>
-                    </div>
-                    <div className="h-1 overflow-hidden rounded-full bg-white/[0.08]">
-                      <div
-                        className="h-full rounded-full transition-all duration-500"
-                        style={{
-                          width: `${featuredProb}%`,
-                          background: `linear-gradient(90deg, ${brand.accent}, ${brand.accentMuted})`,
-                        }}
-                      />
-                    </div>
-                  </div>
-                )}
+                <div className="mt-2.5">
+                  <PredictionVerdictBanner
+                    fight={main}
+                    variant="compact"
+                    showProbability
+                    className="text-left"
+                  />
+                </div>
               </div>
             ) : (
               <p className="text-center text-xs leading-relaxed text-muted">

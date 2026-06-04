@@ -19,9 +19,9 @@ export function formatShortDate(iso: string): string {
 
 export const methodLabels: Record<FightMethod, string> = {
   ko_tko: 'KO / TKO',
-  submission: 'Submission',
-  decision: 'Decision',
-  draw: 'Draw',
+  submission: 'Soumission',
+  decision: 'Décision',
+  draw: 'Match nul',
 }
 
 export function formatPercent(value: number): string {
