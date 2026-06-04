@@ -4,7 +4,7 @@ import type { LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Crosshair, Shield, Target, Trophy } from 'lucide-react'
 import type { Fight } from '@/types'
-import { methodLabels, formatPercent } from '@/utils/format'
+import { methodLabels, formatPercent, formatPredictedRound } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface FightPredictionPanelProps {
@@ -61,7 +61,11 @@ export function FightPredictionPanel({ fight }: FightPredictionPanelProps) {
             icon={Shield}
             label="Confidence"
             value={formatPercent(model.confidence)}
-            sub={`Round ${model.predictedRound} · ${fight.scheduledRounds} scheduled`}
+            sub={formatPredictedRound(
+              model.predictedMethod,
+              model.predictedRound,
+              fight.scheduledRounds,
+            )}
           />
         </div>
 

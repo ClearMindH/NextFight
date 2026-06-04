@@ -18,7 +18,13 @@ import type { FighterScoreProfile } from '@/types/prediction'
 import { getOrgBrand } from '@/lib/org-brand'
 import { getFreePreviewFight, getMainFight } from '@/lib/event-helpers'
 import { useSubscription } from '@/hooks/useSubscription'
-import { formatShortDate, formatPercent, formatFighterNickname, methodLabels } from '@/utils/format'
+import {
+  formatShortDate,
+  formatPercent,
+  formatFighterNickname,
+  formatPredictedRound,
+  methodLabels,
+} from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 const DIMENSIONS: { key: keyof Omit<FighterScoreProfile, 'compositeScore'>; label: string; color: string }[] = [
@@ -150,7 +156,15 @@ export function PremiumPredictionDashboard({
   const kpis = [
     { label: 'Confiance', value: formatPercent(fight.model.confidence), color: '#fbbf24' },
     { label: 'Méthode', value: methodLabels[fight.model.predictedMethod], color: '#a78bfa' },
-    { label: 'Round cible', value: String(fight.model.predictedRound), color: '#2dd4bf' },
+    {
+      label: 'Fin prévue',
+      value: formatPredictedRound(
+        fight.model.predictedMethod,
+        fight.model.predictedRound,
+        fight.scheduledRounds,
+      ),
+      color: '#2dd4bf',
+    },
     { label: 'Rounds prévus', value: String(fight.scheduledRounds), color: '#60a5fa' },
     ...(communityLabel
       ? [{ label: 'Communauté', value: communityLabel, color: '#f472b6' }]

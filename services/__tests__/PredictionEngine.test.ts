@@ -111,14 +111,24 @@ describe('PredictionEngine', () => {
   })
 
   it('respects scheduled rounds for decision picks', () => {
-    const a = mockFighter({ id: 'a' })
-    const b = mockFighter({ id: 'b' })
+    const lowFinish = {
+      finishingRate: 18,
+      strikingAccuracy: 48,
+      strikeDefense: 50,
+      takedownAccuracy: 32,
+      takedownDefense: 55,
+      winStreak: 0,
+    }
+    const a = mockFighter({ id: 'a', stats: lowFinish })
+    const b = mockFighter({ id: 'b', stats: lowFinish })
 
     const three = PredictionEngine.predict({ fighterA: a, fighterB: b, scheduledRounds: 3 })
     const five = PredictionEngine.predict({ fighterA: a, fighterB: b, scheduledRounds: 5 })
 
     expect(three.predictedRound).toBeLessThanOrEqual(3)
     expect(five.predictedRound).toBeLessThanOrEqual(5)
+    if (three.predictedMethod === 'decision') expect(three.predictedRound).toBe(3)
+    if (five.predictedMethod === 'decision') expect(five.predictedRound).toBe(5)
     expect(three.confidence).toBeGreaterThanOrEqual(54)
     expect(three.confidence).toBeLessThanOrEqual(92)
   })

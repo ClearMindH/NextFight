@@ -27,14 +27,22 @@ export function NextFightBrand({
   const px = ICON_PX[iconSize]
   const content = (
     <>
-      <Image
-        src={LOGO_SRC}
-        alt=""
-        width={px}
-        height={px}
-        className="shrink-0 rounded-md object-cover"
-        priority
-      />
+      <span
+        className={cn(
+          'relative flex shrink-0 items-center justify-center overflow-hidden rounded-md',
+          'bg-gold/15 ring-1 ring-gold/45 shadow-[0_0_12px_rgba(201,162,39,0.15)]',
+        )}
+        style={{ width: px, height: px }}
+      >
+        <Image
+          src={LOGO_SRC}
+          alt=""
+          width={px}
+          height={px}
+          className="h-full w-full object-cover brightness-110 contrast-[1.05] saturate-[0.85] hue-rotate-[8deg]"
+          priority
+        />
+      </span>
       {showWordmark ? (
         <span
           className={cn(
