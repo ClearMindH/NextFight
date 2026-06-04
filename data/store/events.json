@@ -272,11 +272,11 @@
           "id": "ufc-fight-night-june-06-2026-f12",
           "eventId": "ufc-fight-night-june-06-2026",
           "order": 12,
-          "weightClass": "Women's Strawweight Championship",
-          "isTitle": true,
+          "weightClass": "Women's Strawweight",
+          "isTitle": false,
           "isMainEvent": false,
-          "scheduledRounds": 5,
-          "redId": "ufc-tony-desouza",
+          "scheduledRounds": 3,
+          "redId": "ufc-ketlen-souza",
           "blueId": "ufc-ariane-carnelossi"
         }
       ]

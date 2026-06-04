@@ -1,7 +1,7 @@
 {
   "meta": {
     "organizationId": "ufc",
-    "fighterCount": 1163,
+    "fighterCount": 1164,
     "lastSyncedAt": "2026-06-03T22:37:28.559Z",
     "source": "ufc.com"
   },
@@ -14779,13 +14779,13 @@
     {
       "id": "ufc-juan-andres-luna",
       "organizationId": "ufc",
-      "name": "Juan Andres Luna",
-      "record": "0-1-0",
-      "wins": 0,
-      "losses": 1,
+      "name": "Santiago Luna",
+      "record": "8-0-0",
+      "wins": 8,
+      "losses": 0,
       "draws": 0,
-      "country": "Unknown",
-      "weightClass": "Flyweight",
+      "country": "Mexico",
+      "weightClass": "Bantamweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2022-07/LUNA_JUAN_ANDRES_CS.png?h=a30e7339&itok=JfffPYU7",
       "stats": {
         "strikingAccuracy": 32,
@@ -26670,6 +26670,30 @@
       "source": "merged"
     },
     {
+      "id": "ufc-ketlen-souza",
+      "organizationId": "ufc",
+      "name": "Ketlen Souza",
+      "record": "15-3-0",
+      "wins": 15,
+      "losses": 3,
+      "draws": 0,
+      "country": "Brazil",
+      "weightClass": "Women's Strawweight",
+      "stats": {
+        "strikingAccuracy": 48,
+        "strikeDefense": 58,
+        "takedownAccuracy": 35,
+        "takedownDefense": 70,
+        "reachCm": 165,
+        "heightCm": 163,
+        "age": 29,
+        "winStreak": 2,
+        "finishingRate": 35,
+        "strengthOfSchedule": 52
+      },
+      "source": "ufc.com"
+    },
+    {
       "id": "ufc-tony-desouza",
       "organizationId": "ufc",
       "name": "Tony DeSouza",
@@ -28485,9 +28509,10 @@
       "id": "ufc-belal-muhammad",
       "organizationId": "ufc",
       "name": "Belal Muhammad",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "nickname": "Remember the Name",
+      "record": "24-5-0",
+      "wins": 24,
+      "losses": 5,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28762,9 +28787,9 @@
       "id": "ufc-shiyunia-tafua",
       "organizationId": "ufc",
       "name": "Junior Tafa",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "record": "7-5-0",
+      "wins": 7,
+      "losses": 5,
       "draws": 0,
       "country": "Unknown",
       "stats": {
