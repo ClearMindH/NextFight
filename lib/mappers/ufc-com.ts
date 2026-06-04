@@ -63,10 +63,10 @@ export interface UfcHtmlAthlete {
   slug: string
   name: string
   nickname?: string
-  record: string
-  wins: number
-  losses: number
-  draws: number
+  record?: string
+  wins?: number
+  losses?: number
+  draws?: number
   weightClass?: string
   imageUrl?: string
 }

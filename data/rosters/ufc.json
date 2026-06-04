@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ufc",
     "fighterCount": 1165,
-    "lastSyncedAt": "2026-06-04T18:43:46.978Z",
+    "lastSyncedAt": "2026-06-04T19:24:33.505Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -26017,29 +26017,6 @@
       "source": "merged"
     },
     {
-      "id": "ufc-test-fighter2",
-      "organizationId": "ufc",
-      "name": "Test Fighter2",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
-      "draws": 0,
-      "country": "Unknown",
-      "weightClass": "Middleweight",
-      "stats": {
-        "strikingAccuracy": 52,
-        "strikeDefense": 52,
-        "takedownAccuracy": 38,
-        "takedownDefense": 65,
-        "reachCm": 183,
-        "heightCm": 178,
-        "age": 29,
-        "winStreak": 0
-      },
-      "lastSyncedAt": "2026-06-03T17:55:54.360Z",
-      "source": "merged"
-    },
-    {
       "id": "ufc-themba-gorimbo",
       "organizationId": "ufc",
       "name": "Themba Gorimbo",
@@ -28757,7 +28734,7 @@
         }
       ],
       "ranking": 14,
-      "nickname": "The Smile Killer"
+      "nickname": "Smile Killer"
     },
     {
       "id": "ufc-tom-nolan",

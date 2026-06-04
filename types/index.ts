@@ -100,7 +100,8 @@ export interface Event {
   /** Si absent : règle auto (voir lib/event-predictions.ts). */
   predictionsStatus?: 'published' | 'preparing'
   fights: Fight[]
-  communityPredictions: number
+  /** Compteur communauté — optionnel ; non affiché tant qu’il n’y a pas de vraies données. */
+  communityPredictions?: number
 }
 
 export interface Prediction {

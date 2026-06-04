@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { organizations } from '@/data/organizations'
+import { NextFightBrand } from '@/components/NextFightBrand'
 import { OrgBrandLogo } from '@/components/OrgBrandLogo'
 import { OrgBrandTagline } from '@/components/OrgBrandName'
 import { cn } from '@/utils/cn'
@@ -46,12 +47,7 @@ export function Navbar() {
       )}
     >
       <div className="container-content flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-gold text-background text-xs font-bold">
-            NF
-          </span>
-          NextFight
-        </Link>
+        <NextFightBrand iconSize="md" />
 
         <nav className="hidden items-center gap-8 md:flex">
           <div className="relative" ref={promoRef}>

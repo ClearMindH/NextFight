@@ -83,12 +83,15 @@ export function UpcomingEvents() {
                         Carte annoncée — pronostics en cours de préparation
                       </p>
                     )}
-                    {published && (
-                      <p className="mt-3 flex items-center gap-1.5 text-xs text-muted">
-                        <Users size={12} />
-                        {event.communityPredictions.toLocaleString('fr-FR')} pronostics communauté
-                      </p>
-                    )}
+                    {published &&
+                      event.communityPredictions != null &&
+                      event.communityPredictions > 0 && (
+                        <p className="mt-3 flex items-center gap-1.5 text-xs text-muted">
+                          <Users size={12} />
+                          {event.communityPredictions.toLocaleString('fr-FR')} pronostics
+                          communauté
+                        </p>
+                      )}
                   </Link>
                 </motion.div>
               </FadeIn>

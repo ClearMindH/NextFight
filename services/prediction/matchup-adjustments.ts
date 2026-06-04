@@ -23,11 +23,13 @@ export function stylisticDeltaAdjustment(
   return Math.max(-0.06, Math.min(0.06, adj))
 }
 
+const DEFAULT_REACH_CM = 183
+
 export function reachDeltaAdjustment(
-  reachA: number,
-  reachB: number,
+  reachA: number | undefined,
+  reachB: number | undefined,
 ): number {
-  const diffCm = reachA - reachB
+  const diffCm = (reachA ?? DEFAULT_REACH_CM) - (reachB ?? DEFAULT_REACH_CM)
   if (Math.abs(diffCm) < 5) return 0
   return Math.max(-0.03, Math.min(0.03, diffCm * 0.002))
 }
