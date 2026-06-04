@@ -6,6 +6,7 @@ import type { Event, Fight, Organization } from '@/types'
 import { sortFightsByCardOrder, getMainFight, getFreePreviewFight } from '@/lib/event-helpers'
 import { canAccessFightPrediction } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -60,8 +61,6 @@ export function OrgEventFightCardList({ org, event }: OrgEventFightCardListProps
           {cardFights.map((fight) => {
             const hasAccess = canAccessFightPrediction(fight, event, isPremium)
             const redProb = fight.model.redWinProbability
-            const favorite =
-              redProb >= 50 ? fight.redCorner.name.split(' ').pop() : fight.blueCorner.name.split(' ').pop()
 
             return (
               <li key={fight.id}>
@@ -70,12 +69,7 @@ export function OrgEventFightCardList({ org, event }: OrgEventFightCardListProps
                     href={`/fight/${fight.id}`}
                     className="group flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6"
                   >
-                    <FightRowContent
-                      fight={fight}
-                      favorite={favorite}
-                      redProb={redProb}
-                      unlocked
-                    />
+                    <FightRowContent fight={fight} redProb={redProb} unlocked />
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-[#c9b896] shrink-0">
                       Voir le pronostic
                       <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -83,12 +77,7 @@ export function OrgEventFightCardList({ org, event }: OrgEventFightCardListProps
                   </Link>
                 ) : (
                   <div className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-                    <FightRowContent
-                      fight={fight}
-                      favorite={favorite}
-                      redProb={redProb}
-                      unlocked={false}
-                    />
+                    <FightRowContent fight={fight} redProb={redProb} unlocked={false} />
                     <Link
                       href="/pricing"
                       className="inline-flex items-center gap-2 text-sm text-[#8a8278] hover:text-[#c9b896] shrink-0"
@@ -115,12 +104,10 @@ export function OrgEventFightCardList({ org, event }: OrgEventFightCardListProps
 
 function FightRowContent({
   fight,
-  favorite,
   redProb,
   unlocked,
 }: {
   fight: Fight
-  favorite: string | undefined
   redProb: number
   unlocked: boolean
 }) {
@@ -137,9 +124,13 @@ function FightRowContent({
         {fight.redCorner.name}{' '}
         <span className="font-normal text-[#6b6b6b]">vs</span> {fight.blueCorner.name}
       </p>
-      {unlocked && favorite && (
+      {unlocked ? (
+        <div className="mt-2">
+          <PredictionVerdictBanner fight={fight} variant="compact" />
+        </div>
+      ) : (
         <p className="mt-1 text-xs tabular-nums text-[#8a8278]">
-          Favori modèle : {favorite} · {formatPercent(Math.max(redProb, 100 - redProb))}
+          Pronostic · {formatPercent(Math.max(redProb, 100 - redProb))} (Premium)
         </p>
       )}
     </div>

@@ -14,6 +14,7 @@ import {
   getFightAccessMessage,
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import {
   formatShortDate,
   formatPercent,
@@ -131,6 +132,9 @@ export function OrgFightExperience({
             <span className="mx-3 font-normal text-muted/80">vs</span>
             {fight.blueCorner.name}
           </h3>
+          <div className="mx-auto mt-6 max-w-xl">
+            <PredictionVerdictBanner fight={fight} variant="prominent" />
+          </div>
         </motion.div>
 
         <div className="mt-10 grid grid-cols-1 items-end gap-8 lg:grid-cols-[1fr_auto_1fr] lg:gap-6 max-w-5xl mx-auto">

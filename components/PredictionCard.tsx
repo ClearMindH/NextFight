@@ -8,7 +8,8 @@ import type { Fight } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { PredictionBreakdown } from '@/components/PredictionBreakdown'
 import { FightAnalysisPanel } from '@/components/FightAnalysisPanel'
-import { methodLabels, formatPercent } from '@/utils/format'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
+import { methodLabels, formatPercent, formatPredictedRound } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface PredictionCardProps {
@@ -46,6 +47,10 @@ export function PredictionCard({
       <p className="text-xs font-medium uppercase tracking-wider text-gold">{organizationLabel}</p>
       <p className="mt-2 text-center text-sm text-muted">{fight.weightClass}</p>
 
+      <div className="mt-4">
+        <PredictionVerdictBanner fight={fight} />
+      </div>
+
       <div className="mt-6 grid grid-cols-1 items-end gap-6 sm:grid-cols-2 sm:gap-4">
         <FighterPortrait
           fighter={fight.redCorner}
@@ -60,9 +65,16 @@ export function PredictionCard({
       </div>
 
       <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5 text-center">
-        <Metric label="Method" value={methodLabels[fight.model.predictedMethod]} />
-        <Metric label="Round" value={String(fight.model.predictedRound)} />
-        <Metric label="Confidence" value={formatPercent(fight.model.confidence)} highlight />
+        <Metric label="Méthode" value={methodLabels[fight.model.predictedMethod]} />
+        <Metric
+          label="Fin prévue"
+          value={formatPredictedRound(
+            fight.model.predictedMethod,
+            fight.model.predictedRound,
+            fight.scheduledRounds,
+          )}
+        />
+        <Metric label="Confiance" value={formatPercent(fight.model.confidence)} highlight />
       </div>
 
       <Link

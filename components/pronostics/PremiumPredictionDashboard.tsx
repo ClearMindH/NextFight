@@ -18,6 +18,7 @@ import type { FighterScoreProfile } from '@/types/prediction'
 import { getOrgBrand } from '@/lib/org-brand'
 import { getFreePreviewFight, getMainFight } from '@/lib/event-helpers'
 import { useSubscription } from '@/hooks/useSubscription'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import {
   formatShortDate,
   formatPercent,
@@ -202,6 +203,10 @@ export function PremiumPredictionDashboard({
             Fiche combat complète
             <ArrowUpRight className="h-4 w-4" />
           </Link>
+        </div>
+
+        <div className="mb-6 max-w-2xl">
+          <PredictionVerdictBanner fight={fight} variant="prominent" />
         </div>
 
         {/* Bento — 3 colonnes de stats combat */}
