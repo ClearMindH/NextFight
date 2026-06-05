@@ -104,24 +104,46 @@ function countsFromRatios(
   return { ko, sub, dec }
 }
 
-/** Profil victoires/défaites par KO, soumission et décision (récent + carrière). */
+function externalWinRatios(fighter: Fighter): MethodRatios | null {
+  const e = fighter.externalMethodCounts
+  if (!e || e.wins + e.losses < 2) return null
+  return normalizeRatios({ ko: e.koWins, sub: e.subWins, dec: e.decWins })
+}
+
+function externalLossRatios(fighter: Fighter): MethodRatios | null {
+  const e = fighter.externalMethodCounts
+  if (!e || e.wins + e.losses < 2) return null
+  return normalizeRatios({ ko: e.koLosses, sub: e.subLosses, dec: e.decLosses })
+}
+
+/** Profil victoires/défaites par KO, soumission et décision (récent + carrière + Sherdog/Tapology). */
 export function buildFighterMethodProfile(fighter: Fighter): FighterMethodProfile {
-  const wins = Math.max(0, fighter.wins ?? 0)
-  const losses = Math.max(0, fighter.losses ?? 0)
+  const rosterWins = Math.max(0, fighter.wins ?? 0)
+  const rosterLosses = Math.max(0, fighter.losses ?? 0)
+  const ext = fighter.externalMethodCounts
+  const wins = Math.max(rosterWins, ext?.wins ?? 0)
+  const losses = Math.max(rosterLosses, ext?.losses ?? 0)
   const bouts = fighter.recentBouts ?? []
   const career = careerRatiosFromRecord(fighter)
+  const sparseRoster = rosterWins + rosterLosses < 5
 
   const recentWinRatios = ratiosFromBouts(bouts, 'win')
   const recentLossRatios = ratiosFromBouts(bouts, 'loss')
   const recentWeight =
     bouts.length === 0 ? 0 : Math.min(0.75, 0.25 + bouts.length * 0.1)
+  const extWin = externalWinRatios(fighter)
+  const extLoss = externalLossRatios(fighter)
+  const extWeight = sparseRoster && ext ? 0.62 : ext ? 0.35 : 0
 
-  const winRatios = recentWinRatios
+  let winRatios = recentWinRatios
     ? blendRatios(career.win, recentWinRatios, recentWeight)
     : career.win
-  const lossRatios = recentLossRatios
+  let lossRatios = recentLossRatios
     ? blendRatios(career.loss, recentLossRatios, recentWeight * 0.85)
     : career.loss
+
+  if (extWin) winRatios = blendRatios(winRatios, extWin, extWeight)
+  if (extLoss) lossRatios = blendRatios(lossRatios, extLoss, extWeight)
 
   const winCounts = countsFromRatios(wins, winRatios)
   const lossCounts = countsFromRatios(losses, lossRatios)

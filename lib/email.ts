@@ -1,5 +1,6 @@
 import { Resend } from 'resend'
 import { getSiteName, getSiteUrl, NOREPLY_EMAIL } from '@/lib/site'
+import { buildMagicLoginUrl } from '@/lib/auth-magic-link'
 import { buildUnsubscribeUrl } from '@/lib/unsubscribe-token'
 import { planDisplayName } from '@/lib/subscription-constants'
 import type { PlanId } from '@/types/subscription'
@@ -81,6 +82,46 @@ export async function sendContactEmail(input: {
       html: `
         <p><strong>De :</strong> ${escapeHtml(input.name)} (${escapeHtml(input.email)})</p>
         <p>${escapeHtml(input.message).replace(/\n/g, '<br/>')}</p>
+      `,
+    })
+    return { sent: true }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Send failed'
+    return { sent: false, error: message }
+  }
+}
+
+export async function sendMagicLoginEmail(
+  email: string,
+): Promise<{ sent: boolean; error?: string }> {
+  const resend = getResend()
+  if (!resend) {
+    return { sent: false, error: 'RESEND_API_KEY not configured' }
+  }
+
+  const loginUrl = buildMagicLoginUrl(email)
+  if (!loginUrl) {
+    return { sent: false, error: 'MAGIC_LINK_SECRET not configured' }
+  }
+
+  const siteName = getSiteName()
+
+  try {
+    await resend.emails.send({
+      from: NOREPLY_EMAIL,
+      to: email,
+      subject: `Connexion ${siteName}`,
+      html: `
+        <div style="font-family:system-ui,sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a">
+          <h1 style="font-size:1.35rem">Connexion à ${siteName}</h1>
+          <p>Cliquez sur le bouton pour accéder à votre espace membre (lien valide 15 minutes).</p>
+          <p style="margin:24px 0">
+            <a href="${loginUrl}" style="background:#c9b896;color:#0c0c0c;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600">
+              Se connecter →
+            </a>
+          </p>
+          <p style="font-size:12px;color:#666">Si vous n'avez pas demandé ce lien, ignorez cet email.</p>
+        </div>
       `,
     })
     return { sent: true }

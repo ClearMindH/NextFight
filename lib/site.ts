@@ -14,3 +14,9 @@ export const CONTACT_EMAIL =
 
 export const NOREPLY_EMAIL =
   process.env.RESEND_FROM_EMAIL?.trim() || 'noreply@nextfightsstats.com'
+
+/** Production : lien magique par email. Dev : mot de passe ADMIN_SECRET. */
+export function isMagicLinkCustomerAuth(): boolean {
+  if (process.env.ALLOW_DEV_AUTH === '1') return false
+  return process.env.NODE_ENV === 'production'
+}

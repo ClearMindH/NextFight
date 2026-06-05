@@ -7,6 +7,7 @@ type AuthMode = 'login' | 'register'
 
 interface CustomerLoginExperienceProps {
   mode: AuthMode
+  magicLinkAuth?: boolean
 }
 
 const COPY: Record<
@@ -25,8 +26,8 @@ const COPY: Record<
     eyebrow: 'Espace membre',
     title: 'Connexion',
     subtitle:
-      'Accédez à vos pronostics, votre abonnement Premium et les analyses par combat.',
-    submit: 'Se connecter',
+      'Entrez votre email : nous vous envoyons un lien sécurisé pour accéder à votre espace Premium.',
+    submit: 'Recevoir le lien de connexion',
     switchHref: '/register',
     switchLabel: 'Créer un accès',
     aside:
@@ -45,36 +46,61 @@ const COPY: Record<
   },
 }
 
-export function CustomerLoginExperience({ mode }: CustomerLoginExperienceProps) {
+export function CustomerLoginExperience({
+  mode,
+  magicLinkAuth = false,
+}: CustomerLoginExperienceProps) {
   const router = useRouter()
-  const copy = COPY[mode]
+  const useMagicLink = magicLinkAuth && mode === 'login'
+  const copy = {
+    ...COPY[mode],
+    ...(mode === 'login' && !useMagicLink
+      ? {
+          subtitle:
+            'Accédez à vos pronostics, votre abonnement Premium et les analyses par combat.',
+          submit: 'Se connecter',
+        }
+      : {}),
+  }
   const [error, setError] = useState<string | null>(null)
+  const [info, setInfo] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setError(null)
+    setInfo(null)
     setLoading(true)
 
     const form = new FormData(e.currentTarget)
     const email = String(form.get('email') ?? '')
     const password = String(form.get('password') ?? '')
 
+    const body: { email: string; password?: string } = { email }
+    if (!useMagicLink && password) body.password = password
+
     const res = await fetch('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(body),
     })
 
     const data = (await res.json().catch(() => ({}))) as {
       error?: string
       redirect?: string
+      magicLinkSent?: boolean
+      message?: string
     }
 
     setLoading(false)
 
     if (!res.ok) {
       setError(data.error ?? 'Connexion impossible')
+      return
+    }
+
+    if (data.magicLinkSent) {
+      setInfo(data.message ?? 'Vérifiez votre boîte mail (et les spams).')
       return
     }
 
@@ -158,15 +184,20 @@ export function CustomerLoginExperience({ mode }: CustomerLoginExperienceProps) 
                     placeholder="vous@exemple.com"
                     autoComplete="email"
                   />
-                  <AuthField
-                    label="Mot de passe"
-                    name="password"
-                    type="password"
-                    placeholder="••••••••"
-                    autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
-                  />
+                  {!useMagicLink && (
+                    <AuthField
+                      label="Mot de passe"
+                      name="password"
+                      type="password"
+                      placeholder="••••••••"
+                      autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+                    />
+                  )}
                 </div>
 
+                {info && (
+                  <p className="mt-4 text-sm text-[#c9b896] text-center leading-relaxed">{info}</p>
+                )}
                 {error && (
                   <p className="mt-4 text-sm text-red-400/90 text-center">{error}</p>
                 )}
@@ -176,8 +207,17 @@ export function CustomerLoginExperience({ mode }: CustomerLoginExperienceProps) 
                   disabled={loading}
                   className="mt-6 w-full rounded-xl bg-[#f5f2eb] py-3.5 text-sm font-medium text-[#0a0a0a] transition-colors hover:bg-[#e8e4dc] disabled:opacity-50"
                 >
-                  {loading ? 'Connexion…' : copy.submit}
+                  {loading
+                    ? 'Envoi…'
+                    : useMagicLink && info
+                      ? 'Renvoyer le lien'
+                      : copy.submit}
                 </button>
+                {useMagicLink && (
+                  <p className="mt-3 text-center text-[11px] text-[#5c5c5c]">
+                    Lien valide 15 min · aucun mot de passe
+                  </p>
+                )}
               </div>
             </form>
 
