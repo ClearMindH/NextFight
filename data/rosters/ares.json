@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ares",
     "fighterCount": 394,
-    "lastSyncedAt": "2026-06-04T19:16:16.040Z",
+    "lastSyncedAt": "2026-06-05T13:27:57.293Z",
     "source": "aresfighting.com"
   },
   "fighters": [
@@ -70,8 +70,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:57.289Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 2,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 1,
+        "wins": 2,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-abdulrakhman-yakhyaev",
@@ -769,8 +780,19 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:43.973Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 6,
+        "subWins": 2,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 8,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-amin-ayoub",
@@ -1428,8 +1450,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:56.021Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 1,
+        "subWins": 0,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 2,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-bernardo-dos-passos",
@@ -3610,8 +3643,19 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:49.435Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 0,
+        "decWins": 0,
+        "koLosses": 1,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 0,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-ivana-siric",
@@ -5165,8 +5209,19 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:45.024Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 4,
+        "subWins": 2,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 7,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-mahamadou-soukouna",
@@ -6198,8 +6253,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:44.491Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 3,
+        "subWins": 0,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 2,
+        "decLosses": 0,
+        "wins": 3,
+        "losses": 2,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-mona-ftouhi",
@@ -8110,8 +8176,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:45.548Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 3,
+        "subWins": 0,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 4,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-wernei-cardoso",
@@ -8579,7 +8656,7 @@
       "organizationId": "ares",
       "name": "Zaurbek Sabanov",
       "record": "3-0-0",
-      "wins": 3,
+      "wins": 4,
       "losses": 0,
       "draws": 0,
       "country": "Russia",
@@ -8592,8 +8669,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:27:51.389Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 3,
+        "subWins": 0,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 4,
+        "losses": 0,
+        "source": "sherdog"
+      }
     }
   ]
 }
