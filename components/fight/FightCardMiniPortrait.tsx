@@ -26,9 +26,10 @@ export function FightCardMiniPortrait({ fighter, corner }: FightCardMiniPortrait
   }, [fighter])
 
   useEffect(() => {
-    if (!isFighterPortraitPlaceholder(getFighterPortraitUrl(fighter))) return
+    const initial = getFighterPortraitUrl(fighter)
+    if (!isFighterPortraitPlaceholder(initial)) return
     let cancelled = false
-    fetch(`/api/fighters/${fighter.id}/display`, { cache: 'no-store' })
+    fetch(`/api/fighters/${fighter.id}/display`, { cache: 'force-cache' })
       .then((res) => (res.ok ? res.json() : null))
       .then((data: { imageUrl?: string | null } | null) => {
         if (cancelled || !data?.imageUrl) return

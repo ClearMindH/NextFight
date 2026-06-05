@@ -22,7 +22,8 @@ export function getFightById(fightId: string): Fight | undefined {
 }
 
 export function getFightPageData(fightId: string): FightPageData | undefined {
-  for (const event of getEvents()) {
+  const events = getEvents()
+  for (const event of events) {
     const fight = event.fights.find((f) => f.id === fightId)
     if (!fight) continue
     const organization = getOrganization(event.organizationId)
@@ -31,7 +32,7 @@ export function getFightPageData(fightId: string): FightPageData | undefined {
       fight,
       event,
       organization,
-      orgEvents: getEventsByOrg(event.organizationId),
+      orgEvents: events.filter((e) => e.organizationId === event.organizationId),
     }
   }
   return undefined
