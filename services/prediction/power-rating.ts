@@ -1,5 +1,6 @@
 import { isTopRankedInDivision } from '@/lib/fighter-ranking'
 import { getDataQualityScore, isPlaceholderStats } from '@/lib/prediction/data-quality'
+import { getRecentBoutsForPrediction } from '@/services/prediction/recent-form'
 import type { Fighter } from '@/types'
 
 const BASE_RATING = 1500
@@ -18,11 +19,23 @@ export function computePowerRating(fighter: Fighter): number {
   }
 
   if (isTopRankedInDivision(fighter.ranking)) {
-    rating += (16 - fighter.ranking) * 18
+    rating += (16 - fighter.ranking) * 24
+    if (total === 0) rating += 95
   }
 
   const streak = fighter.stats.winStreak ?? 0
   rating += Math.min(45, streak * 9)
+
+  const recentBouts = getRecentBoutsForPrediction(fighter)
+  if (recentBouts.length > 0) {
+    const recentWins = recentBouts.filter((b) => b.result === 'win').length
+    const recentLosses = recentBouts.filter((b) => b.result === 'loss').length
+    const avgOpp =
+      recentBouts.reduce((s, b) => s + b.opponentTier, 0) / recentBouts.length
+    rating += recentWins * 16
+    rating -= recentLosses * 12
+    rating += (avgOpp - 50) * 0.85
+  }
 
   if (!isPlaceholderStats(fighter)) {
     const s = fighter.stats
@@ -35,11 +48,6 @@ export function computePowerRating(fighter: Fighter): number {
       rating += Math.min(25, (s.slpm - s.sapm) * 4)
     }
   }
-
-  const formBoost = (fighter.recentBouts?.length ?? 0) > 0
-    ? fighter.recentBouts!.filter((b) => b.result === 'win').length * 12
-    : 0
-  rating += formBoost
 
   return Math.round(Math.max(1200, Math.min(1850, rating)))
 }

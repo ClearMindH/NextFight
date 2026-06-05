@@ -1,19 +1,37 @@
-import { dedupeRecentBouts } from '@/lib/recent-bouts'
+import { filterRecentBoutsWindow } from '@/lib/recent-bouts'
+import { isTopRankedInDivision } from '@/lib/fighter-ranking'
+import { resolveOpponentTier } from '@/lib/opponent-tier'
 import type { FightMethod, Fighter } from '@/types'
 import type {
   FighterFormProfile,
   FighterRecentBout,
   FormMatchupInsight,
 } from '@/types/recent-form'
-import { MAX_RECENT_BOUTS } from '@/types/recent-form'
+import { MAX_RECENT_BOUTS, RECENT_BOUTS_MAX_MONTHS } from '@/types/recent-form'
 import { normalizeFeature } from './features'
 
-export { MAX_RECENT_BOUTS }
+export { MAX_RECENT_BOUTS, RECENT_BOUTS_MAX_MONTHS }
 
-/** Combats récents réellement connus (0 à 5), sans synthèse. */
+function refreshOpponentTiers(
+  bouts: FighterRecentBout[],
+  fighter: Fighter,
+): FighterRecentBout[] {
+  return bouts.map((b) => ({
+    ...b,
+    opponentTier: Math.max(
+      b.opponentTier,
+      resolveOpponentTier(b.opponentName, fighter.weightClass),
+    ),
+  }))
+}
+
+/** Combats récents (≤ 5, < 2 ans), sans synthèse. */
 export function getRecentBoutsForPrediction(fighter: Fighter): FighterRecentBout[] {
   if (!fighter.recentBouts?.length) return []
-  return dedupeRecentBouts(fighter.recentBouts)
+  return refreshOpponentTiers(
+    filterRecentBoutsWindow(fighter.recentBouts),
+    fighter,
+  )
 }
 
 /** @deprecated Utiliser getRecentBoutsForPrediction */
@@ -107,15 +125,15 @@ export function buildFormProfile(fighter: Fighter): FighterFormProfile {
     1,
     Math.max(
       0,
-      winScore * 0.45 +
-        tierScore * 0.25 +
-        finishScore * 0.2 -
-        lossPenalty * 0.15 +
-        (fighter.stats.winStreak ?? 0) * 0.03,
+      winScore * 0.42 +
+        tierScore * 0.32 +
+        finishScore * 0.18 -
+        lossPenalty * 0.14 +
+        (fighter.stats.winStreak ?? 0) * 0.04,
     ),
   )
 
-  const recentFormScore = 0.5 + (rawScore - 0.5) * depth
+  const recentFormScore = 0.5 + (rawScore - 0.5) * (0.55 + depth * 0.45)
 
   return {
     recentFormScore,
@@ -149,7 +167,17 @@ export function computeFormMatchup(
   const depthB = formB.bouts.length / MAX_RECENT_BOUTS
   const depth = Math.min(depthA, depthB)
 
-  let edge = (formA.recentFormScore - formB.recentFormScore) * 0.5 * depth
+  let edge = (formA.recentFormScore - formB.recentFormScore) * 0.62 * depth
+
+  const tierA =
+    formA.bouts.reduce((s, b) => s + b.opponentTier, 0) / Math.max(1, formA.bouts.length)
+  const tierB =
+    formB.bouts.reduce((s, b) => s + b.opponentTier, 0) / Math.max(1, formB.bouts.length)
+  edge += ((tierA - tierB) / 100) * 0.22 * depth
+
+  const wlA = formA.winsLast5 - formA.lossesLast5
+  const wlB = formB.winsLast5 - formB.lossesLast5
+  edge += (wlA - wlB) * 0.028 * depth
   const duelKeys: string[] = []
 
   if (depth > 0) {
@@ -171,7 +199,7 @@ export function computeFormMatchup(
     }
   }
 
-  edge = Math.max(-0.2, Math.min(0.2, edge))
+  edge = Math.max(-0.28, Math.min(0.28, edge))
 
   return {
     fighterA: formA,
@@ -179,4 +207,56 @@ export function computeFormMatchup(
     matchupEdge: edge,
     duelKeys: duelKeys.slice(0, 4),
   }
+}
+
+/** Ajustement direct des probabilités à partir des 5 derniers combats (< 2 ans). */
+export function recentFormWinProbabilityShift(
+  formA: FighterFormProfile,
+  formB: FighterFormProfile,
+  fighterA: Fighter,
+  fighterB: Fighter,
+): number {
+  const depthA = formA.bouts.length / MAX_RECENT_BOUTS
+  const depthB = formB.bouts.length / MAX_RECENT_BOUTS
+  if (depthA === 0 && depthB === 0) return 0
+
+  let shift = 0
+
+  if (depthA > 0 && depthB > 0) {
+    const depth = Math.min(depthA, depthB)
+    shift += (formA.recentFormScore - formB.recentFormScore) * 34 * depth
+
+    const tierA =
+      formA.bouts.reduce((s, b) => s + b.opponentTier, 0) / formA.bouts.length
+    const tierB =
+      formB.bouts.reduce((s, b) => s + b.opponentTier, 0) / formB.bouts.length
+    shift += (tierA - tierB) * 0.28 * depth
+
+    shift +=
+      (formA.winsLast5 -
+        formA.lossesLast5 -
+        (formB.winsLast5 - formB.lossesLast5)) *
+      2.2 *
+      depth
+  } else if (depthA > depthB) {
+    shift += 5 * depthA
+  } else if (depthB > depthA) {
+    shift -= 5 * depthB
+  }
+
+  if (
+    isTopRankedInDivision(fighterA.ranking) &&
+    !isTopRankedInDivision(fighterB.ranking) &&
+    depthA > 0
+  ) {
+    shift += 5 + (16 - fighterA.ranking!) * 0.55
+  } else if (
+    isTopRankedInDivision(fighterB.ranking) &&
+    !isTopRankedInDivision(fighterA.ranking) &&
+    depthB > 0
+  ) {
+    shift -= 5 + (16 - fighterB.ranking!) * 0.55
+  }
+
+  return Math.max(-20, Math.min(20, Math.round(shift * 10) / 10))
 }
