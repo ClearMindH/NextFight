@@ -18,7 +18,7 @@ interface FightPageViewProps {
 }
 
 export function FightPageView({ data }: FightPageViewProps) {
-  const { isPremium, loading: subLoading } = useSubscription()
+  const { isPremium } = useSubscription()
   const { trackPredictionView } = useUserActivity()
   const { fight, event, organization, orgEvents } = data
   const hasFullPrediction = canAccessFightPrediction(fight, event, isPremium)
@@ -45,16 +45,14 @@ export function FightPageView({ data }: FightPageViewProps) {
         </Link>
       </div>
 
-      {!subLoading && (
-        <OrgFightExperience
-          org={organization}
-          event={event}
-          fight={fight}
-          accessLabel={accessLabel}
-          enforceAccess
-          variant="detail"
-        />
-      )}
+      <OrgFightExperience
+        org={organization}
+        event={event}
+        fight={fight}
+        accessLabel={accessLabel}
+        enforceAccess
+        variant="detail"
+      />
 
       <OrgEventFightCardList org={organization} event={event} excludeFightId={fight.id} />
 

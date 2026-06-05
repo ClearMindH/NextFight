@@ -31,6 +31,12 @@ export function loadEventsRaw(): EventsStoreFile {
   return ensureStore()
 }
 
+let hydratedCache: { updatedAt: string; events: Event[] } | null = null
+
+function invalidateHydratedCache(): void {
+  hydratedCache = null
+}
+
 export function saveEventsRaw(data: EventsStoreFile): void {
   const dir = path.dirname(STORE_PATH)
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
@@ -39,6 +45,7 @@ export function saveEventsRaw(data: EventsStoreFile): void {
     JSON.stringify({ ...data, updatedAt: new Date().toISOString() }, null, 2),
     'utf-8',
   )
+  invalidateHydratedCache()
 }
 
 function hydrateFight(input: FightInput): Fight | null {
@@ -80,7 +87,12 @@ export function hydrateEvent(input: EventInput): Event {
 
 export function loadEventsHydrated(): Event[] {
   const raw = loadEventsRaw()
-  return raw.events.map(hydrateEvent)
+  if (hydratedCache && hydratedCache.updatedAt === raw.updatedAt) {
+    return hydratedCache.events
+  }
+  const events = raw.events.map(hydrateEvent)
+  hydratedCache = { updatedAt: raw.updatedAt, events }
+  return events
 }
 
 export function upsertEventInput(event: EventInput): void {

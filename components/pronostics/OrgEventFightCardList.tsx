@@ -74,7 +74,6 @@ export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCa
               fight={fight}
               event={event}
               isPremium={isPremium}
-              loading={loading}
             />
           ))}
         </ul>
@@ -87,59 +86,39 @@ function FightCardRow({
   fight,
   event,
   isPremium,
-  loading,
 }: {
   fight: Fight
   event: Event
   isPremium: boolean
-  loading: boolean
 }) {
   const hasAccess = canAccessFightPrediction(fight, event, isPremium)
-  const href = loading ? undefined : getFightDetailHref(fight, event, isPremium)
+  const href = getFightDetailHref(fight, event, isPremium)
   const rowClass =
     'group flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6'
 
-  const content = (
-    <>
-      <FightRowContent fight={fight} unlocked={hasAccess} />
-      <span
-        className={cn(
-          'inline-flex items-center gap-1 text-sm font-medium shrink-0',
-          hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] group-hover:text-[#c9b896]',
-        )}
-      >
-        {loading ? (
-          '…'
-        ) : hasAccess ? (
-          <>
-            Voir le pronostic
-            <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </>
-        ) : (
-          <>
-            <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
-            Voir les tarifs
-            <ChevronRight className="h-4 w-4 opacity-60" />
-          </>
-        )}
-      </span>
-    </>
-  )
-
-  if (loading || !href) {
-    return (
-      <li>
-        <div className={cn(rowClass, 'opacity-80')} aria-busy="true">
-          {content}
-        </div>
-      </li>
-    )
-  }
-
   return (
     <li>
-      <Link href={href} className={rowClass}>
-        {content}
+      <Link href={href} prefetch className={rowClass}>
+        <FightRowContent fight={fight} unlocked={hasAccess} />
+        <span
+          className={cn(
+            'inline-flex items-center gap-1 text-sm font-medium shrink-0',
+            hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] group-hover:text-[#c9b896]',
+          )}
+        >
+          {hasAccess ? (
+            <>
+              Voir le pronostic
+              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </>
+          ) : (
+            <>
+              <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
+              Voir les tarifs
+              <ChevronRight className="h-4 w-4 opacity-60" />
+            </>
+          )}
+        </span>
       </Link>
     </li>
   )
