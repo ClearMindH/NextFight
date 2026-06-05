@@ -4,8 +4,10 @@ import {
   buildFormProfile,
   computeFormMatchup,
   getRecentBoutsForPrediction,
+  recentFormWinProbabilityShift,
 } from '@/services/prediction/recent-form'
 import { PredictionEngine } from '@/services/PredictionEngine'
+import { getFighterFromStore } from '@/lib/roster-store'
 
 function mockFighter(overrides: Partial<Fighter> = {}): Fighter {
   return {
@@ -105,6 +107,18 @@ describe('recent-form', () => {
     expect(matchup.duelKeys.length).toBeGreaterThan(0)
   })
 
+  it('ignores bouts older than 24 months', () => {
+    const f = mockFighter({
+      recentBouts: [
+        { opponentName: 'A', result: 'win', method: 'decision', opponentTier: 70, monthsAgo: 8 },
+        { opponentName: 'B', result: 'win', method: 'decision', opponentTier: 65, monthsAgo: 29 },
+      ],
+    })
+    const bouts = getRecentBoutsForPrediction(f)
+    expect(bouts).toHaveLength(1)
+    expect(bouts[0].opponentName).toBe('A')
+  })
+
   it('neutralizes form edge when one fighter has no recent bouts', () => {
     const formA = buildFormProfile(
       mockFighter({
@@ -116,6 +130,25 @@ describe('recent-form', () => {
     const formB = buildFormProfile(mockFighter({ id: 'empty' }))
     const matchup = computeFormMatchup(formA, formB)
     expect(matchup.matchupEdge).toBe(0)
+  })
+})
+
+describe('Ziam vs Nolan recent-form weighting', () => {
+  it('favors ranked streaking fighter over unranked opponent with weaker schedule', () => {
+    const ziam = getFighterFromStore('ufc-fares-ziam')
+    const nolan = getFighterFromStore('ufc-tom-nolan')
+    if (!ziam || !nolan) return
+
+    const result = PredictionEngine.predict({
+      fighterA: ziam,
+      fighterB: nolan,
+      scheduledRounds: 3,
+    })
+
+    expect(result.fighterAProbability).toBeGreaterThan(result.fighterBProbability)
+    expect(result.predictedWinnerId).toBe('ufc-fares-ziam')
+    expect(result.breakdown.form?.fighterA.winsLast5).toBe(3)
+    expect(result.breakdown.form?.fighterB.bouts.length).toBeLessThanOrEqual(2)
   })
 })
 

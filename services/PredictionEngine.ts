@@ -12,7 +12,11 @@ import {
   normalizeFeature,
   relativePhysicalScore,
 } from './prediction/features'
-import { buildFormProfile, computeFormMatchup } from './prediction/recent-form'
+import {
+  buildFormProfile,
+  computeFormMatchup,
+  recentFormWinProbabilityShift,
+} from './prediction/recent-form'
 import { prepareFighterForPrediction } from '@/lib/fighter-enrichment'
 import { getDataQualityScore, isEventCardStub } from '@/lib/prediction/data-quality'
 import {
@@ -32,7 +36,7 @@ const WEIGHTS_FULL = {
   physical: 0.09,
   momentum: 0.15,
   schedule: 0.14,
-  recentForm: 0.16,
+  recentForm: 0.2,
 } as const
 
 type ProfileWeights = {
@@ -97,8 +101,14 @@ export class PredictionEngine {
 
     const heuristic = PredictionEngine.winProbabilities(delta)
     const blended = blendedWinProbabilities(fighterA, fighterB, heuristic.probA)
-    const probA = blended.probA
-    const probB = blended.probB
+    const formShift = recentFormWinProbabilityShift(
+      formA,
+      formB,
+      fighterA,
+      fighterB,
+    )
+    let probA = Math.min(91, Math.max(9, blended.probA + formShift))
+    const probB = 100 - probA
 
     const method = PredictionEngine.predictMethod(
       fighterA,

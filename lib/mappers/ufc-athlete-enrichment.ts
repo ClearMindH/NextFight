@@ -2,7 +2,7 @@ import type { UfcAthleteStat, UfcJsonApiAthlete } from '@/lib/mappers/ufc-com'
 import { mapUfcJsonAthlete } from '@/lib/mappers/ufc-com'
 import { normalizeUfcAthleteSlug } from '@/lib/fighter-id-canonical'
 import { dedupeRecentBouts } from '@/lib/recent-bouts'
-import { getAllFightersFromStore } from '@/lib/roster-store'
+import { resolveOpponentTier } from '@/lib/opponent-tier'
 import type { FightMethod, Fighter } from '@/types'
 import type { FighterRecentBout } from '@/types/recent-form'
 
@@ -113,16 +113,6 @@ function parseMethod(raw: string): FightMethod {
   return 'decision'
 }
 
-function opponentTierFromStore(opponentName: string): number {
-  const norm = opponentName.toLowerCase().replace(/[^a-z0-9]/g, '')
-  const hit = getAllFightersFromStore().find(
-    (f) => f.name.toLowerCase().replace(/[^a-z0-9]/g, '') === norm,
-  )
-  if (hit?.ranking && hit.ranking <= 15) return 90 - (hit.ranking - 1) * 4
-  if (hit) return 55
-  return 50
-}
-
 /** Stats Fight Metrics visibles sur la fiche athlète (fallback si JSON:API stat vide). */
 export function parseUfcAthletePageStats(html: string): Partial<Fighter['stats']> | undefined {
   const nums = [...html.matchAll(/c-stat-compare__number">([0-9.]+)/g)].map((m) => parseFloat(m[1]))
@@ -193,6 +183,7 @@ function opponentNameFromSlug(slug: string): string {
 export function parseUfcAthleteResultsHistory(
   html: string,
   athleteSlug: string,
+  athleteWeightClass?: string,
 ): FighterRecentBout[] {
   const selfSlug = athleteSlug.toLowerCase()
   const blocks = html.split(/<article class="c-card-event--athlete-results"/i)
@@ -249,7 +240,7 @@ export function parseUfcAthleteResultsHistory(
       result: selfResult,
       method: parseMethod(methodLabel || 'decision'),
       round: roundText ? Number(roundText) : undefined,
-      opponentTier: opponentTierFromStore(opponentName),
+      opponentTier: resolveOpponentTier(opponentName, athleteWeightClass),
       monthsAgo: monthsAgoFromUfcDateLabel(dateLabel),
     })
   }
@@ -261,6 +252,7 @@ export function parseUfcAthleteResultsHistory(
 function parseUfcAthleteLastFightLegacy(
   html: string,
   athleteName: string,
+  athleteWeightClass?: string,
 ): FighterRecentBout[] {
   const idx = html.indexOf('c-card-event--past')
   if (idx < 0) return []
@@ -292,7 +284,7 @@ function parseUfcAthleteLastFightLegacy(
       result: selfWon ? 'win' : 'loss',
       method: parseMethod(methodText || 'decision'),
       round: roundMatch ? Number(roundMatch[1]) : undefined,
-      opponentTier: opponentTierFromStore(opponent),
+      opponentTier: resolveOpponentTier(opponent, athleteWeightClass),
       monthsAgo: 4,
     },
   ]
@@ -303,16 +295,19 @@ export function parseUfcAthleteLastFights(
   html: string,
   athleteName: string,
   athleteSlug?: string,
+  athleteWeightClass?: string,
 ): FighterRecentBout[] {
   const slug =
     athleteSlug ??
     normalizeUfcAthleteSlug(athleteName.toLowerCase().replace(/\s+/g, '-'), athleteName) ??
     athleteName.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
-  const fromResults = parseUfcAthleteResultsHistory(html, slug)
+  const fromResults = parseUfcAthleteResultsHistory(html, slug, athleteWeightClass)
   if (fromResults.length > 0) return dedupeRecentBouts(fromResults)
 
-  return dedupeRecentBouts(parseUfcAthleteLastFightLegacy(html, athleteName))
+  return dedupeRecentBouts(
+    parseUfcAthleteLastFightLegacy(html, athleteName, athleteWeightClass),
+  )
 }
 
 export async function enrichUfcFighterFromOfficialSite(
@@ -326,7 +321,12 @@ export async function enrichUfcFighterFromOfficialSite(
   let pageHtml: string | undefined
   try {
     pageHtml = await fetchText(`${UFC_BASE}/athlete/${slug}`)
-    const bouts = parseUfcAthleteLastFights(pageHtml, fighter.name, slug)
+    const bouts = parseUfcAthleteLastFights(
+      pageHtml,
+      fighter.name,
+      slug,
+      fighter.weightClass,
+    )
     if (bouts.length > 0) {
       next = { ...next, recentBouts: bouts }
     } else if (fighter.recentBouts?.length) {

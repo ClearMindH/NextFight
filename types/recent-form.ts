@@ -4,6 +4,9 @@ export type BoutResult = 'win' | 'loss' | 'draw'
 
 export const MAX_RECENT_BOUTS = 5
 
+/** Seuls les combats des 24 derniers mois entrent dans la forme récente. */
+export const RECENT_BOUTS_MAX_MONTHS = 24
+
 /** Combats récents enregistrés (jusqu’à 5) pour un combattant */
 export interface FighterRecentBout {
   opponentName: string
