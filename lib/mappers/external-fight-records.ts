@@ -19,7 +19,13 @@ const cache = new Map<string, ExternalMethodCounts | null>()
 const FETCH_TIMEOUT_MS = 8000
 
 const UA =
-  'Mozilla/5.0 (compatible; NextFightBot/1.0; +https://nextfightsstats.com)'
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+
+const FETCH_HEADERS: Record<string, string> = {
+  'User-Agent': UA,
+  Accept: 'text/html,application/xhtml+xml',
+  'Accept-Language': 'en-US,en;q=0.9',
+}
 
 function normalizeName(name: string): string {
   return name
@@ -57,7 +63,7 @@ async function fetchHtml(url: string): Promise<string | null> {
   try {
     const res = await fetch(url, {
       signal: ctrl.signal,
-      headers: { 'User-Agent': UA, Accept: 'text/html' },
+      headers: FETCH_HEADERS,
       next: { revalidate: 86400 },
     })
     if (!res.ok) return null
@@ -69,35 +75,74 @@ async function fetchHtml(url: string): Promise<string | null> {
   }
 }
 
+function addSherdogBout(
+  out: ExternalMethodCounts,
+  result: 'win' | 'loss',
+  methodText: string,
+): void {
+  const kind = methodFromLabel(methodText) ?? 'dec'
+  if (result === 'win') {
+    out.wins += 1
+    if (kind === 'ko') out.koWins += 1
+    else if (kind === 'sub') out.subWins += 1
+    else out.decWins += 1
+  } else {
+    out.losses += 1
+    if (kind === 'ko') out.koLosses += 1
+    else if (kind === 'sub') out.subLosses += 1
+    else out.decLosses += 1
+  }
+}
+
 /** Parse l'historique Sherdog (colonnes résultat + méthode). */
 export function parseSherdogFightHistory(html: string): ExternalMethodCounts {
   const out = emptyCounts('sherdog')
-  const rows = [...html.matchAll(/<tr[^>]*class="[^"]*fight_history_row[^"]*"[^>]*>([\s\S]*?)<\/tr>/gi)]
 
+  const modernTable = html.match(
+    /class="new_table fighter"[\s\S]*?<\/table>/i,
+  )?.[0]
+  if (modernTable) {
+    for (const row of modernTable.matchAll(/<tr>([\s\S]*?)<\/tr>/gi)) {
+      const block = row[1]
+      const result = block.match(/final_result\s+(win|loss)/i)?.[1]?.toLowerCase()
+      if (result !== 'win' && result !== 'loss') continue
+
+      const methodText =
+        block.match(/class="winby"[^>]*>\s*<b>([^<]+)</i)?.[1] ??
+        block.match(/<b>([^<]*(?:KO|TKO|Submission|Decision)[^<]*)</i)?.[1] ??
+        ''
+      addSherdogBout(out, result, methodText)
+    }
+  }
+
+  if (out.wins + out.losses > 0) return out
+
+  const rows = [
+    ...html.matchAll(
+      /<tr[^>]*class="[^"]*fight_history_row[^"]*"[^>]*>([\s\S]*?)<\/tr>/gi,
+    ),
+  ]
   for (const row of rows) {
     const block = row[1]
-    const isWin = /class="[^"]*win[^"]*"/i.test(block) || />\s*W\s*</i.test(block)
-    const isLoss = /class="[^"]*loss[^"]*"/i.test(block) || />\s*L\s*</i.test(block)
+    const isWin =
+      /class="[^"]*win[^"]*"/i.test(block) || />\s*W\s*</i.test(block)
+    const isLoss =
+      /class="[^"]*loss[^"]*"/i.test(block) || />\s*L\s*</i.test(block)
     if (!isWin && !isLoss) continue
 
     const methodCell =
-      block.match(/<td[^>]*class="[^"]*sub_line[^"]*"[^>]*>([\s\S]*?)<\/td>/i)?.[1] ??
-      block.match(/<td[^>]*>([^<]*(?:KO|TKO|Submission|Decision)[^<]*)<\/td>/i)?.[1] ??
+      block.match(
+        /<td[^>]*class="[^"]*sub_line[^"]*"[^>]*>([\s\S]*?)<\/td>/i,
+      )?.[1] ??
+      block.match(
+        /<td[^>]*>([^<]*(?:KO|TKO|Submission|Decision)[^<]*)<\/td>/i,
+      )?.[1] ??
       ''
-    const methodText = methodCell.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
-    const kind = methodFromLabel(methodText) ?? 'dec'
-
-    if (isWin) {
-      out.wins += 1
-      if (kind === 'ko') out.koWins += 1
-      else if (kind === 'sub') out.subWins += 1
-      else out.decWins += 1
-    } else {
-      out.losses += 1
-      if (kind === 'ko') out.koLosses += 1
-      else if (kind === 'sub') out.subLosses += 1
-      else out.decLosses += 1
-    }
+    const methodText = methodCell
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+    addSherdogBout(out, isWin ? 'win' : 'loss', methodText)
   }
 
   return out

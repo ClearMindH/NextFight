@@ -34,6 +34,12 @@ export function mergeFighterForDisplay(fighter: Fighter): Fighter {
             ? fresh.draws
             : fighter.draws,
         weightClass: fighter.weightClass || fresh.weightClass,
+        externalMethodCounts:
+          fresh.externalMethodCounts ?? fighter.externalMethodCounts,
+        recentBouts:
+          (fresh.recentBouts?.length ?? 0) > 0
+            ? fresh.recentBouts
+            : fighter.recentBouts,
         stats:
           fighter.source === 'event-card' && fresh.source !== 'event-card'
             ? fresh.stats

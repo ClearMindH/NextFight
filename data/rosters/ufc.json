@@ -1,8 +1,8 @@
 {
   "meta": {
     "organizationId": "ufc",
-    "fighterCount": 1165,
-    "lastSyncedAt": "2026-06-04T19:24:33.505Z",
+    "fighterCount": 1164,
+    "lastSyncedAt": "2026-06-05T13:41:03.348Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -8372,7 +8372,7 @@
         "tdAvg": 0,
         "subAvg": 1.31
       },
-      "lastSyncedAt": "2026-06-03T22:35:37.424Z",
+      "lastSyncedAt": "2026-06-05T13:40:55.172Z",
       "source": "merged",
       "recentBouts": [
         {
@@ -8392,7 +8392,18 @@
           "monthsAgo": 14
         }
       ],
-      "nickname": "Puro Chicali"
+      "nickname": "Puro Chicali",
+      "externalMethodCounts": {
+        "koWins": 4,
+        "subWins": 8,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 2,
+        "decLosses": 4,
+        "wins": 13,
+        "losses": 6,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-edgar-garcia",
@@ -11694,7 +11705,7 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-03T22:35:34.302Z",
+      "lastSyncedAt": "2026-06-05T13:40:44.568Z",
       "source": "merged",
       "recentBouts": [
         {
@@ -11714,7 +11725,18 @@
           "monthsAgo": 6
         }
       ],
-      "nickname": "Rudy"
+      "nickname": "Rudy",
+      "externalMethodCounts": {
+        "koWins": 6,
+        "subWins": 2,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 8,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-izabela-badurek",
@@ -12726,7 +12748,7 @@
       "organizationId": "ufc",
       "name": "Jeisla Chaves",
       "record": "1-0-0",
-      "wins": 1,
+      "wins": 7,
       "losses": 0,
       "draws": 0,
       "country": "Unknown",
@@ -12748,9 +12770,20 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-03T22:35:39.739Z",
+      "lastSyncedAt": "2026-06-05T13:41:01.321Z",
       "source": "merged",
-      "nickname": "A Braba"
+      "nickname": "A Braba",
+      "externalMethodCounts": {
+        "koWins": 4,
+        "subWins": 0,
+        "decWins": 3,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 7,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-jennifer-gonzalez",
@@ -14848,8 +14881,19 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-03T17:55:54.354Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:42.698Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 3,
+        "subWins": 4,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 8,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-juan-diaz",
@@ -28377,7 +28421,7 @@
         "finishingRate": 45,
         "strengthOfSchedule": 55
       },
-      "lastSyncedAt": "2026-06-03T17:55:54.358Z",
+      "lastSyncedAt": "2026-06-05T13:41:03.339Z",
       "source": "merged",
       "recentBouts": [
         {
@@ -28388,7 +28432,18 @@
           "opponentTier": 50,
           "monthsAgo": 15
         }
-      ]
+      ],
+      "externalMethodCounts": {
+        "koWins": 5,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 1,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 6,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-yves-edwards",
@@ -28743,8 +28798,8 @@
       "name": "Tom Nolan",
       "imageUrl": "https://ufc.com/images/2026-06/NOLAN_TOM_06-06.png",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 10,
+      "losses": 1,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28763,7 +28818,7 @@
         "tdAvg": 0.74,
         "subAvg": 1.86
       },
-      "lastSyncedAt": "2026-06-03T22:35:32.966Z",
+      "lastSyncedAt": "2026-06-05T13:40:39.139Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -28791,15 +28846,26 @@
           "monthsAgo": 29
         }
       ],
-      "nickname": "Big Train"
+      "nickname": "Big Train",
+      "externalMethodCounts": {
+        "koWins": 5,
+        "subWins": 1,
+        "decWins": 4,
+        "koLosses": 1,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 10,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-bryce-mitchell",
       "organizationId": "ufc",
       "name": "Bryce Mitchell",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 18,
+      "losses": 3,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28818,7 +28884,7 @@
         "tdAvg": 3.24,
         "subAvg": 1.19
       },
-      "lastSyncedAt": "2026-06-03T22:35:33.421Z",
+      "lastSyncedAt": "2026-06-05T13:40:41.360Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -28846,7 +28912,18 @@
           "monthsAgo": 18
         }
       ],
-      "nickname": "Thug Nasty"
+      "nickname": "Thug Nasty",
+      "externalMethodCounts": {
+        "koWins": 1,
+        "subWins": 9,
+        "decWins": 8,
+        "koLosses": 1,
+        "subLosses": 2,
+        "decLosses": 0,
+        "wins": 18,
+        "losses": 3,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-shiyunia-tafua",
@@ -28873,7 +28950,7 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-03T22:35:34.762Z",
+      "lastSyncedAt": "2026-06-05T13:40:46.485Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -28884,15 +28961,26 @@
           "monthsAgo": 4
         }
       ],
-      "nickname": "The Juggernaut"
+      "nickname": "The Juggernaut",
+      "externalMethodCounts": {
+        "koWins": 7,
+        "subWins": 0,
+        "decWins": 0,
+        "koLosses": 1,
+        "subLosses": 3,
+        "decLosses": 1,
+        "wins": 7,
+        "losses": 5,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-matt-schnell",
       "organizationId": "ufc",
       "name": "Matt Schnell",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 17,
+      "losses": 10,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28911,7 +28999,7 @@
         "tdAvg": 0.6,
         "subAvg": 1.21
       },
-      "lastSyncedAt": "2026-06-03T22:35:35.207Z",
+      "lastSyncedAt": "2026-06-05T13:40:47.006Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -28939,15 +29027,26 @@
           "monthsAgo": 21
         }
       ],
-      "nickname": "Danger"
+      "nickname": "Danger",
+      "externalMethodCounts": {
+        "koWins": 2,
+        "subWins": 9,
+        "decWins": 6,
+        "koLosses": 5,
+        "subLosses": 4,
+        "decLosses": 1,
+        "wins": 17,
+        "losses": 10,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-marcus-mcghee",
       "organizationId": "ufc",
       "name": "Marcus McGhee",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 10,
+      "losses": 2,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -28966,7 +29065,7 @@
         "tdAvg": 0.31,
         "subAvg": 0.31
       },
-      "lastSyncedAt": "2026-06-03T22:35:36.108Z",
+      "lastSyncedAt": "2026-06-05T13:40:48.913Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -28994,15 +29093,26 @@
           "monthsAgo": 29
         }
       ],
-      "nickname": "The Maniac"
+      "nickname": "The Maniac",
+      "externalMethodCounts": {
+        "koWins": 8,
+        "subWins": 1,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 1,
+        "decLosses": 1,
+        "wins": 10,
+        "losses": 2,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-john-yannis",
       "organizationId": "ufc",
       "name": "John Yannis",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 10,
+      "losses": 4,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -29021,7 +29131,7 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:32.076Z",
+      "lastSyncedAt": "2026-06-05T13:40:50.353Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -29040,15 +29150,26 @@
           "opponentTier": 50,
           "monthsAgo": 17
         }
-      ]
+      ],
+      "externalMethodCounts": {
+        "koWins": 6,
+        "subWins": 0,
+        "decWins": 4,
+        "koLosses": 0,
+        "subLosses": 2,
+        "decLosses": 2,
+        "wins": 10,
+        "losses": 4,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-bruno-silva",
       "organizationId": "ufc",
       "name": "Bruno Silva",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 23,
+      "losses": 13,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -29067,7 +29188,7 @@
         "tdAvg": 2.01,
         "subAvg": 0.25
       },
-      "lastSyncedAt": "2026-06-03T22:35:36.982Z",
+      "lastSyncedAt": "2026-06-05T13:40:52.966Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -29096,15 +29217,26 @@
         }
       ],
       "ranking": 15,
-      "nickname": "Bulldog"
+      "nickname": "Bulldog",
+      "externalMethodCounts": {
+        "koWins": 20,
+        "subWins": 0,
+        "decWins": 3,
+        "koLosses": 1,
+        "subLosses": 7,
+        "decLosses": 5,
+        "wins": 23,
+        "losses": 13,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-jordan-leavitt",
       "organizationId": "ufc",
       "name": "Jordan Leavitt",
       "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "wins": 13,
+      "losses": 3,
       "draws": 0,
       "country": "Unknown",
       "stats": {
@@ -29123,7 +29255,7 @@
         "tdAvg": 3.15,
         "subAvg": 1.05
       },
-      "lastSyncedAt": "2026-06-03T22:35:38.763Z",
+      "lastSyncedAt": "2026-06-05T13:40:58.622Z",
       "source": "ufc.com",
       "recentBouts": [
         {
@@ -29151,7 +29283,18 @@
           "monthsAgo": 31
         }
       ],
-      "nickname": "The Monkey King"
+      "nickname": "The Monkey King",
+      "externalMethodCounts": {
+        "koWins": 2,
+        "subWins": 7,
+        "decWins": 4,
+        "koLosses": 0,
+        "subLosses": 2,
+        "decLosses": 1,
+        "wins": 13,
+        "losses": 3,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ufc-ilia-topuria",
