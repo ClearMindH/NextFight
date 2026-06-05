@@ -4,7 +4,10 @@ import Link from 'next/link'
 import { Lock, ChevronRight } from 'lucide-react'
 import type { Event, Fight, Organization } from '@/types'
 import { sortFightsByCardOrder, getMainFight, getFreePreviewFight } from '@/lib/event-helpers'
-import { canAccessFightPrediction } from '@/lib/fight-access'
+import {
+  canAccessFightPrediction,
+  getFightDetailHref,
+} from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { FightCardMiniPortrait } from '@/components/fight/FightCardMiniPortrait'
@@ -30,7 +33,7 @@ function fightRoleLabel(fight: Fight): string {
   return `Combat ${fight.order}`
 }
 
-export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFightCardListProps) {
+export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCardListProps) {
   const { isPremium, loading } = useSubscription()
   const featured = featuredFightForUser(event, isPremium)
   const hiddenIds = new Set(
@@ -39,7 +42,7 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
   const cardFights = sortFightsByCardOrder(event).filter((f) => !hiddenIds.has(f.id))
   const onFightPage = Boolean(excludeFightId)
 
-  if (loading || cardFights.length === 0) return null
+  if (cardFights.length === 0) return null
 
   return (
     <section className="border-b border-white/[0.06] bg-[#050505]">
@@ -58,49 +61,87 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
           {!isPremium && !loading && (
             <p className="mt-2 text-sm text-[#8a8278] leading-relaxed">
               {onFightPage
-                ? 'Explorez les autres combats — pronostic complet réservé aux abonnés Premium.'
-                : 'Le co-main gratuit est affiché ci-dessus. Cliquez sur un combat pour l’ouvrir — le pronostic complet est réservé aux abonnés Premium.'}
+                ? 'Explorez les autres combats — abonnez-vous Premium pour ouvrir chaque pronostic.'
+                : 'Le co-main gratuit est affiché ci-dessus. Les autres combats ouvrent la page Tarifs.'}
             </p>
           )}
         </div>
 
         <ul className="mx-auto mt-6 max-w-4xl divide-y divide-white/[0.06] rounded-2xl border border-white/[0.08] bg-[#0c1219]/40">
-          {cardFights.map((fight) => {
-            const hasAccess = canAccessFightPrediction(fight, event, isPremium)
-
-            return (
-              <li key={fight.id}>
-                <Link
-                  href={`/fight/${fight.id}`}
-                  className="group flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6"
-                >
-                  <FightRowContent fight={fight} unlocked={hasAccess} />
-                  <span
-                    className={cn(
-                      'inline-flex items-center gap-1 text-sm font-medium shrink-0',
-                      hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] group-hover:text-[#c9b896]',
-                    )}
-                  >
-                    {hasAccess ? (
-                      <>
-                        Voir le pronostic
-                        <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                      </>
-                    ) : (
-                      <>
-                        <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
-                        Premium
-                        <ChevronRight className="h-4 w-4 opacity-60" />
-                      </>
-                    )}
-                  </span>
-                </Link>
-              </li>
-            )
-          })}
+          {cardFights.map((fight) => (
+            <FightCardRow
+              key={fight.id}
+              fight={fight}
+              event={event}
+              isPremium={isPremium}
+              loading={loading}
+            />
+          ))}
         </ul>
       </div>
     </section>
+  )
+}
+
+function FightCardRow({
+  fight,
+  event,
+  isPremium,
+  loading,
+}: {
+  fight: Fight
+  event: Event
+  isPremium: boolean
+  loading: boolean
+}) {
+  const hasAccess = canAccessFightPrediction(fight, event, isPremium)
+  const href = loading ? undefined : getFightDetailHref(fight, event, isPremium)
+  const rowClass =
+    'group flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6'
+
+  const content = (
+    <>
+      <FightRowContent fight={fight} unlocked={hasAccess} />
+      <span
+        className={cn(
+          'inline-flex items-center gap-1 text-sm font-medium shrink-0',
+          hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] group-hover:text-[#c9b896]',
+        )}
+      >
+        {loading ? (
+          '…'
+        ) : hasAccess ? (
+          <>
+            Voir le pronostic
+            <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </>
+        ) : (
+          <>
+            <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
+            Voir les tarifs
+            <ChevronRight className="h-4 w-4 opacity-60" />
+          </>
+        )}
+      </span>
+    </>
+  )
+
+  if (loading || !href) {
+    return (
+      <li>
+        <div className={cn(rowClass, 'opacity-80')} aria-busy="true">
+          {content}
+        </div>
+      </li>
+    )
+  }
+
+  return (
+    <li>
+      <Link href={href} className={rowClass}>
+        {content}
+      </Link>
+    </li>
   )
 }
 
