@@ -81,6 +81,53 @@ describe('method-profile', () => {
     expect(scores.ko).toBeGreaterThan(scores.decision)
   })
 
+  it('uses Sherdog-style external KO profile instead of defaulting to decision', () => {
+    const striker = buildFighterMethodProfile(
+      mockFighter({
+        wins: 8,
+        losses: 0,
+        record: '8-0-0',
+        stats: { finishingRate: 75, slpm: 6.1, subAvg: 0.1 },
+        externalMethodCounts: {
+          koWins: 6,
+          subWins: 2,
+          decWins: 0,
+          koLosses: 0,
+          subLosses: 0,
+          decLosses: 0,
+          wins: 8,
+          losses: 0,
+          source: 'sherdog',
+        },
+      }),
+    )
+    const chin = buildFighterMethodProfile(
+      mockFighter({
+        wins: 3,
+        losses: 2,
+        externalMethodCounts: {
+          koWins: 2,
+          subWins: 0,
+          decWins: 1,
+          koLosses: 2,
+          subLosses: 0,
+          decLosses: 0,
+          wins: 3,
+          losses: 2,
+          source: 'sherdog',
+        },
+      }),
+    )
+    const scores = scoreMethodScenarios(striker, chin, {
+      absDelta: 0.11,
+      strikingEdge: 0.12,
+      grapplingEdge: 0,
+      avgFinishingRate: 68,
+    })
+    expect(striker.winKoPct).toBeGreaterThan(striker.winDecPct)
+    expect(pickPredictedMethod(scores)).toBe('ko_tko')
+  })
+
   it('favors submission for grappler vs weak sub defense', () => {
     const favored = buildFighterMethodProfile(
       mockFighter({

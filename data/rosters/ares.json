@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ares",
     "fighterCount": 394,
-    "lastSyncedAt": "2026-06-05T13:27:57.293Z",
+    "lastSyncedAt": "2026-06-05T13:40:35.208Z",
     "source": "aresfighting.com"
   },
   "fighters": [
@@ -70,7 +70,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:57.289Z",
+      "lastSyncedAt": "2026-06-05T13:40:28.510Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 0,
@@ -780,7 +780,7 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:43.973Z",
+      "lastSyncedAt": "2026-06-05T13:40:22.950Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 6,
@@ -1210,8 +1210,19 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:29.559Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 0,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 1,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-axel-sola",
@@ -1450,7 +1461,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:56.021Z",
+      "lastSyncedAt": "2026-06-05T13:40:27.981Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 1,
@@ -3338,8 +3349,19 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:35.206Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 1,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 1,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-ibrahima-mane",
@@ -3643,7 +3665,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:49.435Z",
+      "lastSyncedAt": "2026-06-05T13:40:26.924Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 0,
@@ -4928,8 +4950,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:34.146Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 1,
+        "wins": 1,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-ludovic-agoue",
@@ -5209,7 +5242,7 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:45.024Z",
+      "lastSyncedAt": "2026-06-05T13:40:23.988Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 4,
@@ -5260,8 +5293,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:31.124Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 2,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 1,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 3,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-maike-garros",
@@ -6253,7 +6297,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:44.491Z",
+      "lastSyncedAt": "2026-06-05T13:40:23.466Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 3,
@@ -6340,7 +6384,7 @@
       "organizationId": "ares",
       "name": "Mouhamed Gueye",
       "record": "1-0-0",
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
       "draws": 0,
       "country": "Senegal",
@@ -6352,8 +6396,19 @@
         "age": 22,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:34.684Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 2,
+        "subWins": 0,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 2,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-mouraz-kotchoyan",
@@ -7594,8 +7649,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:31.650Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 2,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 1,
+        "wins": 3,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-soslan-gagloev",
@@ -7937,8 +8003,19 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:30.604Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 0,
+        "decWins": 1,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 1,
+        "wins": 1,
+        "losses": 1,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-turpal-younousov",
@@ -8049,8 +8126,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:29.035Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 0,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 1,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-virgil-augen",
@@ -8134,8 +8222,19 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-05T13:40:30.078Z",
+      "source": "merged",
+      "externalMethodCounts": {
+        "koWins": 1,
+        "subWins": 1,
+        "decWins": 0,
+        "koLosses": 0,
+        "subLosses": 0,
+        "decLosses": 0,
+        "wins": 2,
+        "losses": 0,
+        "source": "sherdog"
+      }
     },
     {
       "id": "ares-wahbi-brahem",
@@ -8176,7 +8275,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:45.548Z",
+      "lastSyncedAt": "2026-06-05T13:40:24.507Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 3,
@@ -8669,7 +8768,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:27:51.389Z",
+      "lastSyncedAt": "2026-06-05T13:40:27.449Z",
       "source": "merged",
       "externalMethodCounts": {
         "koWins": 3,

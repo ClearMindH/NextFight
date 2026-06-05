@@ -40,7 +40,7 @@ function pct(part: number, total: number, fallback: number): number {
 
 function normalizeRatios(r: MethodRatios): MethodRatios {
   const sum = r.ko + r.sub + r.dec
-  if (sum <= 0) return { ko: 0.25, sub: 0.2, dec: 0.55 }
+  if (sum <= 0) return { ko: 0.38, sub: 0.27, dec: 0.35 }
   return { ko: r.ko / sum, sub: r.sub / sum, dec: r.dec / sum }
 }
 
@@ -133,7 +133,15 @@ export function buildFighterMethodProfile(fighter: Fighter): FighterMethodProfil
     bouts.length === 0 ? 0 : Math.min(0.75, 0.25 + bouts.length * 0.1)
   const extWin = externalWinRatios(fighter)
   const extLoss = externalLossRatios(fighter)
-  const extWeight = sparseRoster && ext ? 0.62 : ext ? 0.35 : 0
+  const extFinishShare =
+    ext && ext.wins > 0 ? (ext.koWins + ext.subWins) / ext.wins : 0
+  const extWeight = ext
+    ? sparseRoster
+      ? 0.72
+      : extFinishShare >= 0.55
+        ? 0.52
+        : 0.4
+    : 0
 
   let winRatios = recentWinRatios
     ? blendRatios(career.win, recentWinRatios, recentWeight)
@@ -159,7 +167,7 @@ export function buildFighterMethodProfile(fighter: Fighter): FighterMethodProfil
     totalLosses: losses,
     winKoPct: pct(winCounts.ko, wins, 20),
     winSubPct: pct(winCounts.sub, wins, 15),
-    winDecPct: pct(winCounts.dec, wins, 55),
+    winDecPct: pct(winCounts.dec, wins, 38),
     lossKoPct: pct(lossCounts.ko, losses, 30),
     lossSubPct: pct(lossCounts.sub, losses, 25),
     lossDecPct: pct(lossCounts.dec, losses, 40),
@@ -187,39 +195,72 @@ export function scoreMethodScenarios(
     avgFinishingRate: number
   },
 ): MethodScenarioScores {
-  const finishScale = 0.65 + opts.avgFinishingRate / 85
+  const finishScale = 0.78 + opts.avgFinishingRate / 72
 
   const koThreat =
-    (favored.winKoPct / 100) * (underdog.lossKoPct / 100) * 140 * finishScale
+    (favored.winKoPct / 100) * (underdog.lossKoPct / 100) * 155 * finishScale
   const subThreat =
-    (favored.winSubPct / 100) * (underdog.lossSubPct / 100) * 140 * finishScale
+    (favored.winSubPct / 100) * (underdog.lossSubPct / 100) * 155 * finishScale
 
   const grind =
     ((favored.winDecPct + underdog.winDecPct) / 2) *
-    (1 - opts.avgFinishingRate / 110)
+    (1 - opts.avgFinishingRate / 95)
 
-  const closeFight = opts.absDelta < 0.07 ? 14 : 0
-  const decisionBase = grind * 0.75 + closeFight
+  const closeFight = opts.absDelta < 0.07 ? 12 : 0
+  const decisionBase = grind * 0.6 + closeFight
 
-  const chinExposure = (underdog.lossKoPct / 100) * (favored.winKoPct / 100) * 80
-  const subExposure = (underdog.lossSubPct / 100) * (favored.winSubPct / 100) * 80
+  const chinExposure = (underdog.lossKoPct / 100) * (favored.winKoPct / 100) * 92
+  const subExposure = (underdog.lossSubPct / 100) * (favored.winSubPct / 100) * 92
+
+  const finishSpecialist =
+    favored.winKoPct >= 38 || favored.winSubPct >= 32
+      ? 14
+      : favored.winKoPct >= 28 || favored.winSubPct >= 22
+        ? 8
+        : 0
 
   const ko =
     koThreat +
     chinExposure +
-    Math.max(0, opts.strikingEdge) * 55 +
-    (favored.winKoPct >= underdog.winKoPct + 8 ? 12 : 0)
+    Math.max(0, opts.strikingEdge) * 62 +
+    (favored.winKoPct >= underdog.winKoPct + 8 ? 14 : 0) +
+    (favored.winKoPct >= 35 ? finishSpecialist * 0.6 : 0)
 
   const submission =
     subThreat +
     subExposure +
-    Math.max(0, opts.grapplingEdge) * 58 +
-    (favored.winSubPct >= underdog.winSubPct + 8 ? 12 : 0)
+    Math.max(0, opts.grapplingEdge) * 65 +
+    (favored.winSubPct >= underdog.winSubPct + 8 ? 14 : 0) +
+    (favored.winSubPct >= 28 ? finishSpecialist * 0.55 : 0)
 
-  let decision = decisionBase + (opts.absDelta < 0.05 && opts.avgFinishingRate < 42 ? 10 : 0)
-  if (chinExposure > 18 || subExposure > 18) decision *= 0.82
-  if (favored.winDecPct >= 58 && underdog.winDecPct >= 52) decision += 16
-  if (opts.avgFinishingRate < 35) decision += 12
+  let decision = decisionBase + (opts.absDelta < 0.05 && opts.avgFinishingRate < 38 ? 8 : 0)
+  if (chinExposure > 16 || subExposure > 16) decision *= 0.76
+  if (favored.winDecPct >= 62 && underdog.winDecPct >= 58) decision += 14
+  if (opts.avgFinishingRate < 32) decision += 8
+  if (opts.avgFinishingRate >= 50) decision *= 0.9
+  if (
+    favored.winDecPct >= 55 &&
+    underdog.winDecPct >= 52 &&
+    opts.avgFinishingRate < 44
+  ) {
+    decision += 16
+  }
+
+  const bothGrinders =
+    favored.winDecPct >= 48 &&
+    underdog.winDecPct >= 48 &&
+    favored.winKoPct < 36 &&
+    underdog.winKoPct < 36 &&
+    opts.avgFinishingRate < 46
+
+  if (bothGrinders) {
+    decision += 20
+    return {
+      ko: ko * 0.88,
+      submission: submission * 0.92,
+      decision,
+    }
+  }
 
   return { ko, submission, decision }
 }
@@ -234,8 +275,11 @@ export function pickPredictedMethod(scores: MethodScenarioScores): FightMethod {
   const [top, topScore] = entries[0]
   const secondScore = entries[1][1]
 
-  if (top === 'decision' && topScore - secondScore < 10 && secondScore > 0) {
-    return entries[1][0]
+  const margin = topScore - secondScore
+  const runnerUp = entries[1][0]
+
+  if (top === 'decision' && margin < 14 && secondScore > 0) {
+    return runnerUp
   }
 
   return top
