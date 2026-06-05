@@ -59,6 +59,12 @@ export function CheckoutSuccessContent() {
           <p className="mt-3 text-muted">
             Plan actif : <span className="text-foreground">{planDisplayName(status.plan)}</span>
           </p>
+          {status.email && (
+            <p className="mt-2 text-sm text-[#8a8278]">
+              Un email de confirmation a été envoyé à{' '}
+              <span className="text-foreground">{status.email}</span> (vérifiez les spams).
+            </p>
+          )}
           <ul className="mt-8 text-sm text-muted text-left space-y-2 max-w-xs mx-auto">
             <li>✓ Tous les pronostics détaillés</li>
             <li>✓ Analyse détaillée par combat</li>
