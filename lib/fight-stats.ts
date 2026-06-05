@@ -23,11 +23,17 @@ function takedownDefense(f: Fighter): number {
   return num(f.stats.takedownDefense ?? f.stats.tdDef, 40)
 }
 
-export function buildStatComparisons(red: Fighter, blue: Fighter): StatComparisonRow[] {
-  return [
+export type StatComparisonLevel = 'full' | 'compact' | 'minimal'
+
+export function buildStatComparisons(
+  red: Fighter,
+  blue: Fighter,
+  level: StatComparisonLevel = 'full',
+): StatComparisonRow[] {
+  const technical: StatComparisonRow[] = [
     {
       key: 'strikeAcc',
-      label: 'Strike accuracy',
+      label: 'Précision striking',
       red: red.stats.strikingAccuracy,
       blue: blue.stats.strikingAccuracy,
       unit: '%',
@@ -36,7 +42,7 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'strikeDef',
-      label: 'Strike defense',
+      label: 'Défense striking',
       red: strikeDefense(red),
       blue: strikeDefense(blue),
       unit: '%',
@@ -45,7 +51,7 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'tdAcc',
-      label: 'Takedown accuracy',
+      label: 'Précision takedown',
       red: red.stats.takedownAccuracy,
       blue: blue.stats.takedownAccuracy,
       unit: '%',
@@ -54,7 +60,7 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'tdDef',
-      label: 'Takedown defense',
+      label: 'Défense takedown',
       red: takedownDefense(red),
       blue: takedownDefense(blue),
       unit: '%',
@@ -63,7 +69,7 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'reach',
-      label: 'Reach',
+      label: 'Allonge',
       red: red.stats.reachCm,
       blue: blue.stats.reachCm,
       unit: 'cm',
@@ -72,7 +78,7 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'height',
-      label: 'Height',
+      label: 'Taille',
       red: red.stats.heightCm,
       blue: blue.stats.heightCm,
       unit: 'cm',
@@ -81,7 +87,7 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'age',
-      label: 'Age',
+      label: 'Âge',
       red: red.stats.age,
       blue: blue.stats.age,
       unit: 'yrs',
@@ -90,15 +96,30 @@ export function buildStatComparisons(red: Fighter, blue: Fighter): StatCompariso
     },
     {
       key: 'streak',
-      label: 'Win streak',
+      label: 'Série victoires',
       red: red.stats.winStreak,
       blue: blue.stats.winStreak,
       unit: '',
       higherIsBetter: true,
       format: 'integer',
     },
-    ...buildMethodComparisonRows(red, blue),
   ]
+
+  if (level === 'minimal') {
+    return buildMethodComparisonRows(red, blue).filter((r) =>
+      ['koWins', 'subWins', 'decWins'].includes(r.key),
+    )
+  }
+
+  if (level === 'compact') {
+    const compactKeys = new Set(['strikeAcc', 'strikeDef', 'tdAcc', 'reach'])
+    const methodWins = buildMethodComparisonRows(red, blue).filter((r) =>
+      ['koWins', 'subWins', 'decWins'].includes(r.key),
+    )
+    return [...technical.filter((r) => compactKeys.has(r.key)), ...methodWins]
+  }
+
+  return [...technical, ...buildMethodComparisonRows(red, blue)]
 }
 
 function buildMethodComparisonRows(red: Fighter, blue: Fighter): StatComparisonRow[] {

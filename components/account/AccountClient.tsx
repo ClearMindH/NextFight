@@ -138,7 +138,12 @@ export function AccountClient() {
               <ScreenAccess features={status.features} loading={loading} />
             )}
             {slide.id === 'billing' && (
-              <ScreenBilling isPremium={isPremium} loading={loading} email={status.email} />
+              <ScreenBilling
+                isPremium={isPremium}
+                loading={loading}
+                email={status.email}
+                periodEnd={status.currentPeriodEnd}
+              />
             )}
           </motion.div>
         </AnimatePresence>
@@ -253,9 +258,7 @@ function ScreenPlan({
             {isPremium ? 'Membre Premium' : 'Accès limité'}
           </p>
           {isPremium && periodEnd && (
-            <p className="mt-6 text-sm text-[#6b6b6b]">
-              Renouvellement · {formatShortDate(periodEnd)}
-            </p>
+            <PremiumRenewalInfo periodEnd={periodEnd} />
           )}
           {!isPremium && (
             <p className="mt-6 max-w-xs mx-auto text-sm text-[#6b6b6b] leading-relaxed">
@@ -316,14 +319,42 @@ function ScreenAccess({
   )
 }
 
+function PremiumRenewalInfo({ periodEnd }: { periodEnd: string }) {
+  const end = new Date(periodEnd)
+  const daysLeft = Math.ceil((end.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+  const expiringSoon = daysLeft <= 7
+
+  return (
+    <div className="mt-6 space-y-2 text-sm">
+      <p className={expiringSoon ? 'text-amber-400/90' : 'text-[#6b6b6b]'}>
+        Prochain renouvellement · {formatShortDate(periodEnd)}
+        {daysLeft > 0 && (
+          <span className="block text-xs mt-1">
+            {expiringSoon
+              ? `⚠️ Plus que ${daysLeft} jour${daysLeft > 1 ? 's' : ''}`
+              : `(dans ${daysLeft} jours)`}
+          </span>
+        )}
+      </p>
+      {expiringSoon && (
+        <p className="text-xs text-[#8a8278]">
+          Renouvellement automatique sauf annulation via Stripe.
+        </p>
+      )}
+    </div>
+  )
+}
+
 function ScreenBilling({
   isPremium,
   loading,
   email,
+  periodEnd,
 }: {
   isPremium: boolean
   loading: boolean
   email: string | null
+  periodEnd: string | null
 }) {
   if (loading) {
     return <p className="text-center text-sm text-[#6b6b6b]">Chargement…</p>
@@ -339,6 +370,11 @@ function ScreenBilling({
         <p className="mt-3 text-sm text-[#6b6b6b] leading-relaxed max-w-xs mx-auto">
           Modifiez votre carte, consultez vos factures ou annulez via le portail Stripe.
         </p>
+        {periodEnd && (
+          <div className="mt-6 max-w-xs mx-auto text-left">
+            <PremiumRenewalInfo periodEnd={periodEnd} />
+          </div>
+        )}
         <div className="mt-8">
           <BillingPortalButton className="w-full rounded-xl bg-[#f5f2eb] text-[#0c0c0c] hover:scale-[1.01]">
             Gérer l&apos;abonnement

@@ -12,7 +12,10 @@ const footerNav = {
     { href: '/#events', label: 'Combats à venir' },
     { href: '/pricing', label: 'Tarifs' },
     { href: '/account', label: 'Mon compte' },
-    { href: '/legal', label: 'Mentions légales' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/mentions-legales', label: 'Mentions légales' },
+    { href: '/cgu', label: 'CGU' },
+    { href: '/politique-de-confidentialite', label: 'Confidentialité' },
   ],
 }
 

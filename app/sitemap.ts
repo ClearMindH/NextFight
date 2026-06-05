@@ -1,11 +1,21 @@
 import type { MetadataRoute } from 'next'
 import { organizations } from '@/data/organizations'
 import { getAllFightIds } from '@/lib/fights'
+import { getSiteUrl } from '@/lib/site'
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nextfightsstats.com'
+const baseUrl = getSiteUrl()
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/pricing', '/account', '/legal']
+  const staticRoutes = [
+    '',
+    '/pricing',
+    '/account',
+    '/contact',
+    '/mentions-legales',
+    '/politique-de-confidentialite',
+    '/cgu',
+    '/ufc-pronostics',
+  ]
   const orgRoutesEn = organizations.map((o) => o.seoPath)
   const orgRoutesFr = organizations.map((o) => o.seoPathFr)
   const fightRoutes = getAllFightIds().map((id) => `/fight/${id}`)
