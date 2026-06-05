@@ -6,6 +6,7 @@ import {
   buildStatComparisons,
   formatStatValue,
   statRedShare,
+  type StatComparisonLevel,
   type StatComparisonRow,
 } from '@/lib/fight-stats'
 import { cn } from '@/utils/cn'
@@ -14,10 +15,16 @@ interface FightStatsComparisonProps {
   red: Fighter
   blue: Fighter
   compact?: boolean
+  level?: StatComparisonLevel
 }
 
-export function FightStatsComparison({ red, blue, compact = false }: FightStatsComparisonProps) {
-  const rows = buildStatComparisons(red, blue)
+export function FightStatsComparison({
+  red,
+  blue,
+  compact = false,
+  level = 'full',
+}: FightStatsComparisonProps) {
+  const rows = buildStatComparisons(red, blue, level)
 
   return (
     <section
@@ -29,18 +36,18 @@ export function FightStatsComparison({ red, blue, compact = false }: FightStatsC
       <div
         className={cn(
           'flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2',
-          compact ? 'mb-4' : 'mb-8',
+          compact ? 'mb-3' : 'mb-8',
         )}
       >
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Statistiques</p>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Finishes</p>
           <h2
             className={cn(
               'mt-1 font-display font-semibold tracking-tight',
-              compact ? 'text-lg' : 'mt-2 text-2xl',
+              compact ? 'text-base' : 'mt-2 text-2xl',
             )}
           >
-            Comparaison statistique
+            {level === 'minimal' ? 'Historique par méthode' : 'Comparaison statistique'}
           </h2>
         </div>
         <div className="flex gap-4 text-xs text-muted">

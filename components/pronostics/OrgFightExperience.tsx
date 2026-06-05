@@ -18,6 +18,7 @@ import {
   formatPredictedRound,
   methodLabels,
 } from '@/utils/format'
+import { cn } from '@/utils/cn'
 
 interface OrgFightExperienceProps {
   org: Organization
@@ -25,6 +26,8 @@ interface OrgFightExperienceProps {
   fight: Fight
   accessLabel?: string
   enforceAccess?: boolean
+  /** Page org : aperçu court sans stats. Page combat : détail avec stats si accès. */
+  variant?: 'preview' | 'detail'
 }
 
 function convictionLabel(prob: number): string {
@@ -40,6 +43,7 @@ export function OrgFightExperience({
   fight,
   accessLabel,
   enforceAccess = false,
+  variant = 'preview',
 }: OrgFightExperienceProps) {
   const { isPremium, loading: subLoading } = useSubscription()
   const hasAccess = enforceAccess
@@ -53,11 +57,32 @@ export function OrgFightExperience({
   const blueProb = 100 - redProb
   const favoriteProb = Math.max(redProb, blueProb)
   const showPrediction = hasAccess || !enforceAccess
+  const isPreview = variant === 'preview'
+  const showStats = !isPreview && showPrediction
+
+  const kpiItems = isPreview
+    ? [
+        { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
+        { label: 'Confiance', value: formatPercent(fight.model.confidence) },
+      ]
+    : [
+        { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
+        {
+          label: 'Fin prévue',
+          value: formatPredictedRound(
+            fight.model.predictedMethod,
+            fight.model.predictedRound,
+            fight.scheduledRounds,
+          ),
+        },
+        { label: 'Confiance', value: formatPercent(fight.model.confidence) },
+        { label: 'Lecture', value: convictionLabel(favoriteProb) },
+      ]
 
   const predictionBlock = (
-    <div className="space-y-8">
+    <div className={cn('space-y-6', !isPreview && 'space-y-8')}>
       <div className="mx-auto max-w-xl">
-        <PredictionVerdictBanner fight={fight} variant="prominent" />
+        <PredictionVerdictBanner fight={fight} variant={isPreview ? 'default' : 'prominent'} />
       </div>
 
       <div className="mx-auto max-w-3xl">
@@ -75,34 +100,48 @@ export function OrgFightExperience({
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-4">
-        {[
-          { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-          {
-            label: 'Fin prévue',
-            value: formatPredictedRound(
-              fight.model.predictedMethod,
-              fight.model.predictedRound,
-              fight.scheduledRounds,
-            ),
-          },
-          { label: 'Confiance', value: formatPercent(fight.model.confidence) },
-          { label: 'Lecture', value: convictionLabel(favoriteProb) },
-        ].map((item) => (
-          <div key={item.label} className="bg-[#0c1219] px-4 py-4 text-center sm:py-5">
+      <div
+        className={cn(
+          'mx-auto grid max-w-3xl gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08]',
+          isPreview ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-4',
+        )}
+      >
+        {kpiItems.map((item) => (
+          <div
+            key={item.label}
+            className={cn('bg-[#0c1219] px-4 text-center', isPreview ? 'py-3' : 'py-4 sm:py-5')}
+          >
             <p className="text-[10px] uppercase tracking-wider text-muted">{item.label}</p>
             <p className="mt-1 text-sm font-semibold tabular-nums">{item.value}</p>
           </div>
         ))}
       </div>
 
-      <FightStatsComparison red={fight.redCorner} blue={fight.blueCorner} compact />
+      {showStats && (
+        <FightStatsComparison
+          red={fight.redCorner}
+          blue={fight.blueCorner}
+          compact
+          level="minimal"
+        />
+      )}
+
+      {isPreview && (
+        <p className="text-center text-xs text-[#8a8278]">
+          Statistiques détaillées et pronostics complets sur chaque combat ci-dessous.
+        </p>
+      )}
     </div>
   )
 
   return (
     <section id="pronostic" className="scroll-mt-24 border-b border-white/[0.06]">
-      <div className="container-content section-padding">
+      <div
+        className={cn(
+          'container-content section-padding',
+          isPreview && 'pb-8 sm:pb-10',
+        )}
+      >
         <div className="max-w-4xl">
           {accessLabel && (
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted">
@@ -123,17 +162,27 @@ export function OrgFightExperience({
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mt-10 text-center"
+          className={cn('mt-8 text-center', !isPreview && 'mt-10')}
         >
           <p className="text-sm text-muted">{fight.weightClass}</p>
-          <h3 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h3
+            className={cn(
+              'mt-2 font-display font-semibold tracking-tight',
+              isPreview ? 'text-2xl sm:text-3xl' : 'text-3xl sm:text-4xl',
+            )}
+          >
             {fight.redCorner.name}
             <span className="mx-3 font-normal text-muted/80">vs</span>
             {fight.blueCorner.name}
           </h3>
         </motion.div>
 
-        <div className="mt-10 grid grid-cols-1 items-end gap-8 lg:grid-cols-[1fr_auto_1fr] lg:gap-6 max-w-5xl mx-auto">
+        <div
+          className={cn(
+            'mx-auto grid max-w-5xl grid-cols-1 items-end gap-6 lg:grid-cols-[1fr_auto_1fr] lg:gap-6',
+            isPreview ? 'mt-6' : 'mt-10 gap-8',
+          )}
+        >
           <FighterPortrait
             fighter={fight.redCorner}
             corner="red"
@@ -151,7 +200,7 @@ export function OrgFightExperience({
           />
         </div>
 
-        <div className="mt-12">
+        <div className={cn(isPreview ? 'mt-8' : 'mt-12')}>
           {!subLoading && enforceAccess && !hasAccess ? (
             <PremiumGate
               title="Pronostic Premium"
@@ -159,7 +208,7 @@ export function OrgFightExperience({
                 lockMessage ??
                 'Abonnez-vous pour voir le pronostic complet, les probabilités et les statistiques de ce combat.'
               }
-              className="min-h-[320px]"
+              className="min-h-[280px]"
             >
               {predictionBlock}
             </PremiumGate>
@@ -174,10 +223,7 @@ export function OrgFightExperience({
               Passer en Premium
             </Link>
             {' · '}
-            <Link
-              href={org.seoPathFr}
-              className="hover:text-foreground transition-colors"
-            >
+            <Link href={org.seoPathFr} className="hover:text-foreground transition-colors">
               Retour aux pronostics {org.name}
             </Link>
           </p>

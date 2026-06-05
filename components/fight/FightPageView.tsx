@@ -6,6 +6,7 @@ import { ArrowLeft } from 'lucide-react'
 import type { FightPageData } from '@/lib/fights'
 import { OrgFightExperience } from '@/components/pronostics/OrgFightExperience'
 import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
+import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
 import {
   canAccessFightPrediction,
 } from '@/lib/fight-access'
@@ -51,8 +52,11 @@ export function FightPageView({ data }: FightPageViewProps) {
           fight={fight}
           accessLabel={accessLabel}
           enforceAccess
+          variant="detail"
         />
       )}
+
+      <OrgEventFightCardList org={organization} event={event} excludeFightId={fight.id} />
 
       <OrgEventCalendar
         org={organization}

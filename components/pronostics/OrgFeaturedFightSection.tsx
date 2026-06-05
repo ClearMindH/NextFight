@@ -34,6 +34,7 @@ export function OrgFeaturedFightSection({ org, event }: OrgFeaturedFightSectionP
       fight={fight}
       accessLabel={accessLabel}
       enforceAccess={false}
+      variant="preview"
     />
   )
 }

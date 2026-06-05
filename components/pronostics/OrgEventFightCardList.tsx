@@ -13,6 +13,8 @@ import { cn } from '@/utils/cn'
 interface OrgEventFightCardListProps {
   org: Organization
   event: Event
+  /** Combat déjà affiché en haut (page /fight/[id]) */
+  excludeFightId?: string
 }
 
 function featuredFightForUser(event: Event, isPremium: boolean): Fight | undefined {
@@ -28,10 +30,14 @@ function fightRoleLabel(fight: Fight): string {
   return `Combat ${fight.order}`
 }
 
-export function OrgEventFightCardList({ org, event }: OrgEventFightCardListProps) {
+export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFightCardListProps) {
   const { isPremium, loading } = useSubscription()
   const featured = featuredFightForUser(event, isPremium)
-  const cardFights = sortFightsByCardOrder(event).filter((f) => f.id !== featured?.id)
+  const hiddenIds = new Set(
+    [featured?.id, excludeFightId].filter((id): id is string => Boolean(id)),
+  )
+  const cardFights = sortFightsByCardOrder(event).filter((f) => !hiddenIds.has(f.id))
+  const onFightPage = Boolean(excludeFightId)
 
   if (loading || cardFights.length === 0) return null
 
@@ -40,22 +46,25 @@ export function OrgEventFightCardList({ org, event }: OrgEventFightCardListProps
       <div className="container-content section-padding">
         <div className="max-w-4xl">
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#8a8278]">
-            {isPremium ? 'Carte complète' : 'Toute la carte'}
+            {onFightPage ? 'Suite de la carte' : isPremium ? 'Carte complète' : 'Toute la carte'}
           </p>
           <h2 className="mt-2 font-display text-xl font-semibold tracking-tight sm:text-2xl">
-            {isPremium
-              ? `${event.fights.length} combats · pronostics Premium`
-              : `${cardFights.length} combat${cardFights.length > 1 ? 's' : ''} sur la carte`}
+            {onFightPage
+              ? `${cardFights.length} autre${cardFights.length > 1 ? 's' : ''} combat${cardFights.length > 1 ? 's' : ''} sur cette carte`
+              : isPremium
+                ? `${event.fights.length} combats · pronostics Premium`
+                : `${cardFights.length} combat${cardFights.length > 1 ? 's' : ''} sur la carte`}
           </h2>
           {!isPremium && !loading && (
             <p className="mt-2 text-sm text-[#8a8278] leading-relaxed">
-              Le co-main gratuit est affiché ci-dessus. Cliquez sur un combat pour l’ouvrir — le
-              pronostic complet est réservé aux abonnés Premium.
+              {onFightPage
+                ? 'Explorez les autres combats — pronostic complet réservé aux abonnés Premium.'
+                : 'Le co-main gratuit est affiché ci-dessus. Cliquez sur un combat pour l’ouvrir — le pronostic complet est réservé aux abonnés Premium.'}
             </p>
           )}
         </div>
 
-        <ul className="mx-auto mt-8 max-w-4xl divide-y divide-white/[0.06] rounded-2xl border border-white/[0.08] bg-[#0c1219]/40">
+        <ul className="mx-auto mt-6 max-w-4xl divide-y divide-white/[0.06] rounded-2xl border border-white/[0.08] bg-[#0c1219]/40">
           {cardFights.map((fight) => {
             const hasAccess = canAccessFightPrediction(fight, event, isPremium)
 

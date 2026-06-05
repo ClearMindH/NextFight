@@ -8,6 +8,7 @@ import {
 } from '@/lib/subscription-store'
 import { isPaidPlan } from '@/lib/stripe-plans'
 import type { PlanId } from '@/types/subscription'
+import { sendWelcomeSubscriptionEmail } from '@/lib/email'
 
 function emailFromCustomer(
   customer: Stripe.Customer | Stripe.DeletedCustomer | string | null,
@@ -58,16 +59,23 @@ export async function syncSubscriptionFromStripe(
   const status = mapStripeSubscriptionStatus(subscription.status)
   const isPremiumActive = status === 'active' || status === 'trialing'
 
+  const wasPremium = existingByCustomer?.status === 'active' || existingByCustomer?.status === 'trialing'
+  const recordPlan = isPremiumActive && isPaidPlan(plan) ? plan : 'free'
+
   await upsertSubscription({
     email,
     stripeCustomerId: customerId,
     stripeSubscriptionId: subscription.id,
-    plan: isPremiumActive && isPaidPlan(plan) ? plan : 'free',
+    plan: recordPlan,
     status,
     currentPeriodEnd: periodEndIso(subscription),
     cancelAtPeriodEnd: subscription.cancel_at_period_end,
     updatedAt: new Date().toISOString(),
   })
+
+  if (isPremiumActive && isPaidPlan(recordPlan) && !wasPremium) {
+    void sendWelcomeSubscriptionEmail(email, recordPlan)
+  }
 }
 
 export async function handleCheckoutCompleted(

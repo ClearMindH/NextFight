@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import type { Organization } from '@/types'
+import { getSiteName, getSiteUrl } from '@/lib/site'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nextfightsstats.com'
+const siteUrl = getSiteUrl()
 
 export function buildOrgMetadata(org: Organization): Metadata {
   const title = `${org.name} Predictions | NextFight`
@@ -26,12 +27,34 @@ export function buildOrgMetadata(org: Organization): Metadata {
   }
 }
 
+const siteName = getSiteName()
+
 export const siteMetadata: Metadata = {
   title: {
-    default: 'NextFight — Pronostics MMA',
-    template: '%s | NextFight',
+    default: `${siteName} — Prédictions UFC, KSW, Hexagone MMA, PFL`,
+    template: `%s | ${siteName}`,
   },
   description:
-    'Pronostics MMA pour UFC, PFL, KSW, ARES et Hexagone MMA. Analyses statistiques, outil informatif sans paris sportifs.',
+    'Prédictions MMA basées sur les statistiques pour l\'UFC, KSW, Hexagone MMA, ARES et PFL. Outil informatif sans paris sportifs.',
+  keywords: [
+    'prédictions UFC',
+    'pronostics MMA',
+    'KSW predictions',
+    'Hexagone MMA',
+    'PFL picks',
+  ],
   metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: `${siteName} — Prédictions MMA`,
+    description: 'Pronostics et analyses statistiques pour les grandes cartes MMA.',
+    url: siteUrl,
+    siteName,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteName} — Prédictions MMA`,
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: siteUrl },
 }
