@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server'
 import { setCustomerEmailCookie } from '@/lib/auth-cookie'
+import { sendWelcomeSubscriptionEmail } from '@/lib/email'
 import { buildSubscriptionStatus } from '@/lib/premium'
 import { getStripe, isStripeConfigured } from '@/lib/stripe'
 import { handleCheckoutCompleted } from '@/lib/stripe-webhooks'
+import { getSubscriptionByEmail, isActivePremium } from '@/lib/subscription-store'
 
 export const runtime = 'nodejs'
 
@@ -27,8 +29,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Session not complete' }, { status: 400 })
   }
 
-  await handleCheckoutCompleted(session, stripe)
-
   const email =
     session.customer_details?.email?.toLowerCase().trim() ??
     session.customer_email?.toLowerCase().trim() ??
@@ -38,7 +38,21 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'No email on session' }, { status: 400 })
   }
 
+  const existingBefore = await getSubscriptionByEmail(email)
+  const wasPremiumBefore = isActivePremium(existingBefore)
+
+  await handleCheckoutCompleted(session, stripe)
+
+  const status = await buildSubscriptionStatus(email)
+
+  if (status.isPremium && !wasPremiumBefore) {
+    const mail = await sendWelcomeSubscriptionEmail(email, status.plan)
+    if (!mail.sent) {
+      console.error('[verify-session] welcome email failed:', mail.error)
+    }
+  }
+
   await setCustomerEmailCookie(email)
 
-  return NextResponse.json(await buildSubscriptionStatus(email))
+  return NextResponse.json(status)
 }
