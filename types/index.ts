@@ -61,6 +61,18 @@ export interface Fighter {
   stats: FighterStats
   /** 5 derniers combats (synthétisés ou issus d'une sync future) */
   recentBouts?: FighterRecentBout[]
+  /** Profil méthodes issu de Sherdog / Tapology (optionnel) */
+  externalMethodCounts?: {
+    koWins: number
+    subWins: number
+    decWins: number
+    koLosses: number
+    subLosses: number
+    decLosses: number
+    wins: number
+    losses: number
+    source?: string
+  }
   lastSyncedAt: string
   source: 'ufc-api' | 'roster-seed' | 'merged' | 'event-card' | 'ufc.com'
 }
