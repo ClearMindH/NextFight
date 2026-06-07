@@ -2,10 +2,10 @@
 
 import type { LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { Crosshair, Shield, Target, Trophy } from 'lucide-react'
+import { Shield, Target, Trophy } from 'lucide-react'
 import type { Fight } from '@/types'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
-import { methodLabels, formatPercent, formatPredictedRound } from '@/utils/format'
+import { formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface FightPredictionPanelProps {
@@ -45,7 +45,7 @@ export function FightPredictionPanel({ fight }: FightPredictionPanelProps) {
           <PredictionVerdictBanner fight={fight} variant="prominent" />
         </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
           <PredictionMetric
             icon={Trophy}
             label="Vainqueur prévu"
@@ -58,19 +58,9 @@ export function FightPredictionPanel({ fight }: FightPredictionPanelProps) {
             value={formatPercent(favorite.prob)}
           />
           <PredictionMetric
-            icon={Crosshair}
-            label="Méthode"
-            value={methodLabels[model.predictedMethod]}
-          />
-          <PredictionMetric
             icon={Shield}
             label="Confiance"
             value={formatPercent(model.confidence)}
-            sub={formatPredictedRound(
-              model.predictedMethod,
-              model.predictedRound,
-              fight.scheduledRounds,
-            )}
           />
         </div>
 

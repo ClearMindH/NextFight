@@ -45,7 +45,7 @@ export const STRIPE_PLANS: StripePlanConfig[] = [
     features: [
       'Tous les pronostics détaillés',
       'Analyse détaillée par combat',
-      'Probabilités et méthode',
+      'Probabilités de victoire',
       'Pages combat Premium',
     ],
     cta: "S'abonner",
@@ -63,7 +63,7 @@ export const STRIPE_PLANS: StripePlanConfig[] = [
     features: [
       'Tous les pronostics détaillés',
       'Analyse détaillée par combat',
-      'Probabilités et méthode',
+      'Probabilités de victoire',
       'Pages combat Premium',
       'Économisez ~33% vs mensuel',
     ],

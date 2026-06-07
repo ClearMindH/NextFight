@@ -12,12 +12,7 @@ import {
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
-import {
-  formatShortDate,
-  formatPercent,
-  formatPredictedRound,
-  methodLabels,
-} from '@/utils/format'
+import { formatShortDate, formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface OrgFightExperienceProps {
@@ -60,24 +55,10 @@ export function OrgFightExperience({
   const isPreview = variant === 'preview'
   const showStats = !isPreview && showPrediction
 
-  const kpiItems = isPreview
-    ? [
-        { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-        { label: 'Confiance', value: formatPercent(fight.model.confidence) },
-      ]
-    : [
-        { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-        {
-          label: 'Fin prévue',
-          value: formatPredictedRound(
-            fight.model.predictedMethod,
-            fight.model.predictedRound,
-            fight.scheduledRounds,
-          ),
-        },
-        { label: 'Confiance', value: formatPercent(fight.model.confidence) },
-        { label: 'Lecture', value: convictionLabel(favoriteProb) },
-      ]
+  const kpiItems = [
+    { label: 'Confiance', value: formatPercent(fight.model.confidence) },
+    { label: 'Lecture', value: convictionLabel(favoriteProb) },
+  ]
 
   const predictionBlock = (
     <div className={cn('space-y-6', !isPreview && 'space-y-8')}>
@@ -102,8 +83,7 @@ export function OrgFightExperience({
 
       <div
         className={cn(
-          'mx-auto grid max-w-3xl gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08]',
-          isPreview ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-4',
+          'mx-auto grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08]',
         )}
       >
         {kpiItems.map((item) => (

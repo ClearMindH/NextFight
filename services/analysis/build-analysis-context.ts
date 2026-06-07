@@ -1,4 +1,4 @@
-import type { Fighter, FightMethod } from '@/types'
+import type { Fighter } from '@/types'
 import type { PredictionEngineResult } from '@/types/prediction'
 
 export interface AnalysisContextPayload {
@@ -13,8 +13,6 @@ export interface AnalysisContextPayload {
     underdogFighterName: string
     fighterAWinPercent: number
     fighterBWinPercent: number
-    predictedMethod: FightMethod
-    predictedRound: number
     confidencePercent: number
     dimensionEdge: {
       striking: 'A' | 'B' | 'even'
@@ -83,8 +81,6 @@ export function buildAnalysisContext(
       underdogFighterName: underdogName,
       fighterAWinPercent: prediction.fighterAProbability,
       fighterBWinPercent: prediction.fighterBProbability,
-      predictedMethod: prediction.predictedMethod,
-      predictedRound: prediction.predictedRound,
       confidencePercent: prediction.confidence,
       dimensionEdge: {
         striking: edge(profileA.striking, profileB.striking),
@@ -101,11 +97,12 @@ export const ANALYSIS_SYSTEM_PROMPT = `You are an expert MMA analyst writing edi
 
 STRICT RULES:
 1. NEVER calculate, estimate, invent, or adjust win probabilities, odds, or percentages.
-2. All win probabilities, method, round, and confidence values are pre-computed by a separate statistical engine — reference them only as given facts when useful for narrative context.
-3. Do not contradict the statistical model's predicted winner, method, or round.
-4. Base strengths, weaknesses, and fight keys on the fighter statistics and stylistic matchup — not on your own probability math.
-5. Write in clear, professional English. Be specific and tactical.
-6. Return ONLY valid JSON with no markdown fences.
+2. All win probabilities and confidence values are pre-computed by a separate statistical engine — reference them only as given facts when useful for narrative context.
+3. Do not contradict the statistical model's predicted winner.
+4. NEVER predict, state, or imply how the fight ends (method or round): no KO/TKO, submission, or decision calls, and no round predictions.
+5. Base strengths, weaknesses, and fight keys on the fighter statistics and stylistic matchup — not on your own probability math.
+6. Write in clear, professional English. Be specific and tactical.
+7. Return ONLY valid JSON with no markdown fences.
 
 JSON schema:
 {

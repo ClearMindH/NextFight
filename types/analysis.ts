@@ -22,8 +22,6 @@ export interface FightAnalysisResponse {
     fighterAProbability: number
     fighterBProbability: number
     confidence: number
-    predictedMethod: string
-    predictedRound: number
     predictedWinnerId: string
   }
   narrative: FightNarrativeAnalysis

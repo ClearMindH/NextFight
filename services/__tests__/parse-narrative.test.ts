@@ -65,7 +65,8 @@ describe('buildAnalysisContext', () => {
     })
 
     expect(ctx.statisticalModel.fighterAWinPercent).toBe(prediction.fighterAProbability)
-    expect(ctx.statisticalModel.predictedMethod).toBe(prediction.predictedMethod)
+    expect(ctx.statisticalModel).not.toHaveProperty('predictedMethod')
+    expect(ctx.statisticalModel).not.toHaveProperty('predictedRound')
     expect(ctx.fighterA.name).toBe('Fighter A')
   })
 })

@@ -31,7 +31,7 @@ const COPY: Record<
     switchHref: '/register',
     switchLabel: 'Créer un accès',
     aside:
-      'Modèle statistique par affrontement : probabilités, méthode prédite et comparaison des profils.',
+      'Modèle statistique par affrontement : probabilités de victoire et comparaison des profils.',
   },
   register: {
     eyebrow: 'Accès local',

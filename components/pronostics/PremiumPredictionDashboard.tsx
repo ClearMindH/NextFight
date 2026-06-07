@@ -23,8 +23,6 @@ import {
   formatShortDate,
   formatPercent,
   formatFighterNickname,
-  formatPredictedRound,
-  methodLabels,
 } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -156,16 +154,6 @@ export function PremiumPredictionDashboard({
   const communityLabel = formatCommunity(event.communityPredictions)
   const kpis = [
     { label: 'Confiance', value: formatPercent(fight.model.confidence), color: '#fbbf24' },
-    { label: 'Méthode', value: methodLabels[fight.model.predictedMethod], color: '#a78bfa' },
-    {
-      label: 'Fin prévue',
-      value: formatPredictedRound(
-        fight.model.predictedMethod,
-        fight.model.predictedRound,
-        fight.scheduledRounds,
-      ),
-      color: '#2dd4bf',
-    },
     { label: 'Rounds prévus', value: String(fight.scheduledRounds), color: '#60a5fa' },
     ...(communityLabel
       ? [{ label: 'Communauté', value: communityLabel, color: '#f472b6' }]
@@ -373,35 +361,6 @@ export function PremiumPredictionDashboard({
                 </div>
                 <VerticalConfidenceMeter value={fight.model.confidence} accent="#2dd4bf" />
               </div>
-            </IntelCard>
-
-            <IntelCard>
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted mb-3">
-                Scénario probable
-              </p>
-              <ul className="space-y-2">
-                {(['ko_tko', 'submission', 'decision'] as const).map((m) => {
-                  const active = fight.model.predictedMethod === m
-                  return (
-                    <li
-                      key={m}
-                      className={cn(
-                        'flex items-center justify-between rounded-xl border px-3 py-2.5 text-sm transition-colors',
-                        active
-                          ? 'border-[#a78bfa]/40 bg-[#a78bfa]/10 text-foreground'
-                          : 'border-white/[0.04] bg-black/15 text-muted',
-                      )}
-                    >
-                      <span>{methodLabels[m]}</span>
-                      {active && (
-                        <span className="text-[10px] font-semibold uppercase text-[#a78bfa]">
-                          Prédit
-                        </span>
-                      )}
-                    </li>
-                  )
-                })}
-              </ul>
             </IntelCard>
 
             {allEvents.length > 0 && (
