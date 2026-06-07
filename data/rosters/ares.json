@@ -1,8 +1,8 @@
 {
   "meta": {
     "organizationId": "ares",
-    "fighterCount": 394,
-    "lastSyncedAt": "2026-06-05T13:40:35.208Z",
+    "fighterCount": 396,
+    "lastSyncedAt": "2026-06-07T18:09:12.300Z",
     "source": "aresfighting.com"
   },
   "fighters": [
@@ -26,7 +26,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -49,16 +49,17 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
       "id": "ares-abdoulaye-dione",
       "organizationId": "ares",
       "name": "Abdoulaye Dione",
-      "record": "2-1-0",
+      "nickname": "diambar",
+      "record": "2-2-0",
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "draws": 0,
       "country": "Senegal",
       "weightClass": "Featherweight",
@@ -68,21 +69,11 @@
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
-        "winStreak": 0
+        "winStreak": 0,
+        "heightCm": 183
       },
-      "lastSyncedAt": "2026-06-05T13:40:28.510Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 2,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 1,
-        "wins": 2,
-        "losses": 1,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-abdulrakhman-yakhyaev",
@@ -103,7 +94,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -125,7 +116,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -147,7 +138,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -169,7 +160,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -192,7 +183,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -215,7 +206,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -237,7 +228,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -257,7 +248,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -280,7 +271,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -302,7 +293,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -325,7 +316,7 @@
         "age": 2,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -348,7 +339,7 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -370,7 +361,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -393,7 +384,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -415,7 +406,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -436,7 +427,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -459,7 +450,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -480,7 +471,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -502,7 +493,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -523,7 +514,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -546,7 +537,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -568,7 +559,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -590,7 +581,7 @@
         "heightCm": 170,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -610,7 +601,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -632,7 +623,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -653,7 +644,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -676,7 +667,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -699,7 +690,7 @@
         "age": 39,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -719,7 +710,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -739,7 +730,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -759,7 +750,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -767,12 +758,14 @@
       "organizationId": "ares",
       "name": "Alvi Dasuyev",
       "nickname": "Spartan",
-      "record": "8-0-0",
-      "wins": 8,
+      "record": "9-0-0",
+      "wins": 9,
       "losses": 0,
       "draws": 0,
       "country": "Belgium",
       "weightClass": "Welterweight",
+      "ranking": 1,
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2025/06/Alvi-Dasuyev-CHAMP-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
@@ -780,19 +773,8 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:22.950Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 6,
-        "subWins": 2,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 8,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
     },
     {
       "id": "ares-amin-ayoub",
@@ -814,7 +796,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -838,7 +820,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -859,7 +841,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -881,7 +863,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -903,7 +885,28 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
+    },
+    {
+      "id": "ares-andre-fialho",
+      "organizationId": "ares",
+      "name": "Andre Fialho",
+      "record": "17-9-0",
+      "wins": 17,
+      "losses": 9,
+      "draws": 0,
+      "country": "Portugal",
+      "weightClass": "Welterweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 38,
+        "reachCm": 183,
+        "heightCm": 183,
+        "age": 32,
+        "winStreak": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -927,7 +930,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -948,7 +951,7 @@
         "heightCm": 170,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -961,6 +964,7 @@
       "draws": 0,
       "country": "Ukraine",
       "weightClass": "Lightweight",
+      "ranking": 4,
       "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2025/12/Andrii-Misiuk-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
@@ -970,7 +974,7 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -991,7 +995,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1013,7 +1017,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1033,7 +1037,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1056,7 +1060,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1079,7 +1083,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1100,7 +1104,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1123,7 +1127,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1145,7 +1149,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1168,7 +1172,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1188,41 +1192,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
-    },
-    {
-      "id": "ares-axel-iridjie",
-      "organizationId": "ares",
-      "name": "Axel Iridjie",
-      "nickname": "Le Bison",
-      "record": "1-0-0",
-      "wins": 1,
-      "losses": 0,
-      "draws": 0,
-      "country": "Côte d’Ivoire",
-      "weightClass": "Middleweight",
-      "stats": {
-        "strikingAccuracy": 50,
-        "takedownAccuracy": 38,
-        "reachCm": 183,
-        "heightCm": 180,
-        "age": 27,
-        "winStreak": 0
-      },
-      "lastSyncedAt": "2026-06-05T13:40:29.559Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 0,
-        "decWins": 1,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 1,
-        "losses": 0,
-        "source": "sherdog"
-      }
     },
     {
       "id": "ares-axel-sola",
@@ -1243,7 +1214,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1263,7 +1234,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1283,7 +1254,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1306,7 +1277,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1329,7 +1300,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1352,7 +1323,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1374,7 +1345,7 @@
         "heightCm": 193,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1398,7 +1369,7 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1418,7 +1389,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1439,7 +1410,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1447,8 +1418,8 @@
       "organizationId": "ares",
       "name": "Benoit Prigent",
       "nickname": "La Noix",
-      "record": "2-0-0",
-      "wins": 2,
+      "record": "3-0-0",
+      "wins": 3,
       "losses": 0,
       "draws": 0,
       "country": "France",
@@ -1461,19 +1432,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:27.981Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 1,
-        "subWins": 0,
-        "decWins": 1,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 2,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-bernardo-dos-passos",
@@ -1492,7 +1452,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1512,7 +1472,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1535,7 +1495,30 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
+    },
+    {
+      "id": "ares-brad-jean-elie",
+      "organizationId": "ares",
+      "name": "Brad Jean-elie",
+      "nickname": "Kratos",
+      "record": "1-0-0",
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Heavyweight",
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/06/Brad-Jean-Elie-700x700.png",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 38,
+        "reachCm": 183,
+        "heightCm": 193,
+        "age": 25,
+        "winStreak": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1556,7 +1539,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1576,7 +1559,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1599,7 +1582,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1621,7 +1604,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1641,7 +1624,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1664,7 +1647,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1686,7 +1669,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1709,7 +1692,7 @@
         "age": 42,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1732,7 +1715,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1753,7 +1736,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1776,7 +1759,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1799,7 +1782,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1822,7 +1805,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1844,7 +1827,7 @@
         "age": 3,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1867,7 +1850,7 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1890,7 +1873,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1913,7 +1896,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1934,7 +1917,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -1957,7 +1940,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -1979,7 +1962,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2002,7 +1985,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2025,7 +2008,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2045,7 +2028,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2066,7 +2049,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2086,7 +2069,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2109,7 +2092,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2131,7 +2114,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2151,7 +2134,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2173,7 +2156,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2193,7 +2176,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2215,7 +2198,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2235,7 +2218,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2258,7 +2241,7 @@
         "age": 42,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2281,7 +2264,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2303,7 +2286,7 @@
         "age": 39,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2326,7 +2309,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2347,7 +2330,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2368,7 +2351,7 @@
         "heightCm": 152,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2388,7 +2371,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2412,7 +2395,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2435,7 +2418,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2458,7 +2441,7 @@
         "age": 41,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2481,7 +2464,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2503,7 +2486,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2526,7 +2509,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2549,7 +2532,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2571,7 +2554,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2593,7 +2576,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2614,7 +2597,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2636,7 +2619,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2656,7 +2639,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2678,7 +2661,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2701,7 +2684,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2722,7 +2705,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2744,7 +2727,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -2764,7 +2747,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2784,7 +2767,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2807,7 +2790,7 @@
         "age": 44,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2828,7 +2811,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2849,7 +2832,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2870,7 +2853,7 @@
         "heightCm": 193,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2891,7 +2874,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2914,7 +2897,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2935,7 +2918,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -2957,7 +2940,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -2980,7 +2963,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3001,7 +2984,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3024,7 +3007,7 @@
         "age": 45,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3047,7 +3030,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3070,7 +3053,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3093,7 +3076,7 @@
         "age": 42,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3113,7 +3096,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3136,7 +3119,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3156,7 +3139,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3178,7 +3161,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3198,7 +3181,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3218,7 +3201,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3241,7 +3224,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3261,7 +3244,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3284,7 +3267,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3306,7 +3289,7 @@
         "heightCm": 193,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3329,39 +3312,8 @@
         "age": 39,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
-    },
-    {
-      "id": "ares-ian-kuchler",
-      "organizationId": "ares",
-      "name": "Ian Kuchler",
-      "record": "1-1-0",
-      "wins": 1,
-      "losses": 1,
-      "draws": 0,
-      "country": "Spain",
-      "weightClass": "Light Heavyweight",
-      "stats": {
-        "strikingAccuracy": 50,
-        "takedownAccuracy": 38,
-        "reachCm": 183,
-        "heightCm": 180,
-        "winStreak": 0
-      },
-      "lastSyncedAt": "2026-06-05T13:40:35.206Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 1,
-        "decWins": 0,
-        "koLosses": 1,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 1,
-        "losses": 1,
-        "source": "sherdog"
-      }
     },
     {
       "id": "ares-ibrahima-mane",
@@ -3383,7 +3335,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3405,7 +3357,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3428,7 +3380,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3451,7 +3403,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3474,7 +3426,7 @@
         "age": 43,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3495,7 +3447,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3516,7 +3468,7 @@
         "heightCm": 170,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3538,7 +3490,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3558,7 +3510,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3580,7 +3532,7 @@
         "age": 41,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3600,7 +3552,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3624,7 +3576,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3645,19 +3597,20 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
       "id": "ares-ivan-romanov",
       "organizationId": "ares",
       "name": "Ivan Romanov",
-      "record": "10-2-0",
-      "wins": 10,
-      "losses": 2,
+      "record": "11-3-0",
+      "wins": 11,
+      "losses": 3,
       "draws": 0,
       "country": "Russia",
       "weightClass": "Heavyweight",
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/05/Ivan-Romanov-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
@@ -3665,19 +3618,29 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:26.924Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 0,
-        "decWins": 0,
-        "koLosses": 1,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 0,
-        "losses": 1,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
+    },
+    {
+      "id": "ares-ivan-santana",
+      "organizationId": "ares",
+      "name": "Ivan Santana",
+      "record": "0-2-0",
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "country": "Spain",
+      "weightClass": "Heavyweight",
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/05/Ivan-Santana-700x700.png",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 38,
+        "reachCm": 183,
+        "age": 33,
+        "winStreak": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
     },
     {
       "id": "ares-ivana-siric",
@@ -3698,7 +3661,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3718,7 +3681,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3739,7 +3702,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3762,7 +3725,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3785,7 +3748,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3806,7 +3769,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3829,7 +3792,7 @@
         "age": 43,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -3852,7 +3815,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3872,7 +3835,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3893,7 +3856,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3915,7 +3878,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3938,7 +3901,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -3959,7 +3922,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -3982,7 +3945,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4003,7 +3966,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4017,7 +3980,7 @@
       "draws": 0,
       "country": "France",
       "weightClass": "Lightweight",
-      "ranking": 7,
+      "ranking": 5,
       "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/03/Jimmy-Vienot-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
@@ -4027,7 +3990,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4047,7 +4010,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4069,7 +4032,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4089,7 +4052,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4112,7 +4075,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4132,7 +4095,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4153,7 +4116,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4175,7 +4138,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4198,7 +4161,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4219,7 +4182,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4242,7 +4205,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4262,7 +4225,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4284,7 +4247,7 @@
         "heightCm": 170,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4307,7 +4270,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4329,7 +4292,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4352,7 +4315,7 @@
         "age": 47,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4374,7 +4337,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4397,7 +4360,7 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4420,7 +4383,7 @@
         "age": 45,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4441,7 +4404,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4464,7 +4427,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4485,7 +4448,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4508,7 +4471,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4532,7 +4495,7 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4552,7 +4515,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4574,7 +4537,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4596,7 +4559,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4619,7 +4582,7 @@
         "age": 41,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4642,7 +4605,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4665,7 +4628,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -4687,7 +4650,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4710,7 +4673,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4732,7 +4695,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4753,7 +4716,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4774,7 +4737,7 @@
         "heightCm": 165,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4797,7 +4760,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4820,7 +4783,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4841,7 +4804,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -4864,7 +4827,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4887,7 +4850,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4909,7 +4872,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -4931,38 +4894,28 @@
         "age": 43,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
       "id": "ares-ludmila-scurco",
       "organizationId": "ares",
       "name": "Ludmila Scurco",
-      "record": "1-1-0",
-      "wins": 1,
+      "record": "2-1-0",
+      "wins": 2,
       "losses": 1,
       "draws": 0,
-      "country": "France",
+      "country": "Moldavie",
       "weightClass": "Flyweight",
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/05/Ludmila-Scurco-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:34.146Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 1,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 1,
-        "wins": 1,
-        "losses": 1,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
+      "source": "merged"
     },
     {
       "id": "ares-ludovic-agoue",
@@ -4981,7 +4934,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5004,7 +4957,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5027,7 +4980,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5047,7 +5000,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5069,7 +5022,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5092,7 +5045,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5112,7 +5065,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5135,7 +5088,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5155,7 +5108,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5175,7 +5128,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5196,7 +5149,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5219,16 +5172,16 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
       "id": "ares-magomed-giri-umarkhadzhiev",
       "organizationId": "ares",
       "name": "Magomed-giri Umarkhadzhiev",
-      "record": "7-0-0",
+      "record": "7-1-0",
       "wins": 7,
-      "losses": 0,
+      "losses": 1,
       "draws": 0,
       "country": "France",
       "weightClass": "Lightweight",
@@ -5242,19 +5195,8 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:23.988Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 4,
-        "subWins": 2,
-        "decWins": 1,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 7,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-mahamadou-soukouna",
@@ -5273,16 +5215,16 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
       "id": "ares-maher-belkhadir",
       "organizationId": "ares",
       "name": "Maher Belkhadir",
-      "record": "3-1-0",
+      "record": "3-2-0",
       "wins": 3,
-      "losses": 1,
+      "losses": 2,
       "draws": 0,
       "country": "France",
       "weightClass": "Lightweight",
@@ -5293,19 +5235,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:31.124Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 2,
-        "subWins": 1,
-        "decWins": 0,
-        "koLosses": 1,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 3,
-        "losses": 1,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-maike-garros",
@@ -5324,7 +5255,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5347,7 +5278,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5367,7 +5298,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5388,7 +5319,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5410,7 +5341,7 @@
         "heightCm": 163,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5430,7 +5361,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5453,7 +5384,7 @@
         "age": 3,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5475,7 +5406,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5498,7 +5429,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5521,7 +5452,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5544,7 +5475,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5565,7 +5496,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5587,7 +5518,7 @@
         "age": 46,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5608,7 +5539,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5630,7 +5561,7 @@
         "heightCm": 165,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5650,7 +5581,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5670,7 +5601,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5693,7 +5624,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5716,7 +5647,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5738,7 +5669,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5758,7 +5689,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5780,7 +5711,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5803,7 +5734,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5826,7 +5757,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5848,7 +5779,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5868,7 +5799,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5890,7 +5821,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5910,7 +5841,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -5930,7 +5861,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -5952,7 +5883,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5972,7 +5903,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -5980,12 +5911,13 @@
       "organizationId": "ares",
       "name": "Melissa Nebbache",
       "nickname": "Tokyo",
-      "record": "3-0-0",
+      "record": "3-1-0",
       "wins": 3,
-      "losses": 0,
+      "losses": 1,
       "draws": 0,
       "country": "Algeria",
       "weightClass": "Flyweight",
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/05/Melissa-Nebbache-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
@@ -5994,7 +5926,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -6016,7 +5948,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6036,7 +5968,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6059,7 +5991,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6081,7 +6013,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6103,7 +6035,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -6123,7 +6055,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6145,7 +6077,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -6167,7 +6099,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6189,7 +6121,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6212,7 +6144,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6234,7 +6166,7 @@
         "age": 43,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6255,7 +6187,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6275,7 +6207,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6283,9 +6215,9 @@
       "organizationId": "ares",
       "name": "Mohamed Soumah",
       "nickname": "Black Leg",
-      "record": "3-2-0",
+      "record": "3-3-0",
       "wins": 3,
-      "losses": 2,
+      "losses": 3,
       "draws": 0,
       "country": "France",
       "weightClass": "Welterweight",
@@ -6297,19 +6229,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:23.466Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 3,
-        "subWins": 0,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 2,
-        "decLosses": 0,
-        "wins": 3,
-        "losses": 2,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
     },
     {
       "id": "ares-mona-ftouhi",
@@ -6330,7 +6251,7 @@
         "heightCm": 160,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -6354,7 +6275,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6376,39 +6297,8 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
-    },
-    {
-      "id": "ares-mouhamed-gueye",
-      "organizationId": "ares",
-      "name": "Mouhamed Gueye",
-      "record": "1-0-0",
-      "wins": 2,
-      "losses": 0,
-      "draws": 0,
-      "country": "Senegal",
-      "weightClass": "Light Heavyweight",
-      "stats": {
-        "strikingAccuracy": 50,
-        "takedownAccuracy": 38,
-        "reachCm": 183,
-        "age": 22,
-        "winStreak": 0
-      },
-      "lastSyncedAt": "2026-06-05T13:40:34.684Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 2,
-        "subWins": 0,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 2,
-        "losses": 0,
-        "source": "sherdog"
-      }
     },
     {
       "id": "ares-mouraz-kotchoyan",
@@ -6429,7 +6319,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6451,7 +6341,7 @@
         "heightCm": 173,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6473,7 +6363,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6493,7 +6383,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6515,7 +6405,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6537,7 +6427,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6557,7 +6447,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6580,7 +6470,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6602,7 +6492,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6625,7 +6515,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6648,7 +6538,7 @@
         "age": 19,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6670,7 +6560,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6683,7 +6573,7 @@
       "draws": 0,
       "country": "France",
       "weightClass": "Lightweight",
-      "ranking": 4,
+      "ranking": 3,
       "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/03/Noah-Gugnon-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
@@ -6692,7 +6582,7 @@
         "heightCm": 173,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6712,7 +6602,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6735,7 +6625,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6756,7 +6646,7 @@
         "heightCm": 196,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6776,7 +6666,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6797,7 +6687,7 @@
         "heightCm": 193,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6818,7 +6708,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6840,7 +6730,7 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6861,7 +6751,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6884,7 +6774,7 @@
         "heightCm": 196,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6904,7 +6794,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6926,7 +6816,7 @@
         "heightCm": 193,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -6947,7 +6837,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6968,7 +6858,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -6990,7 +6880,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7011,7 +6901,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7034,7 +6924,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7055,7 +6945,29 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
+    },
+    {
+      "id": "ares-radija-aquino",
+      "organizationId": "ares",
+      "name": "Radija Aquino",
+      "nickname": "sombra",
+      "record": "2-1-0",
+      "wins": 2,
+      "losses": 1,
+      "draws": 0,
+      "country": "Brazil",
+      "weightClass": "Strawweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 38,
+        "reachCm": 183,
+        "heightCm": 163,
+        "age": 24,
+        "winStreak": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7075,7 +6987,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7095,7 +7007,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7118,7 +7030,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7141,7 +7053,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7161,7 +7073,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7183,7 +7095,26 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
+    },
+    {
+      "id": "ares-reda-hayfa",
+      "organizationId": "ares",
+      "name": "Reda Hayfa",
+      "record": "0-0-0",
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Flyweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 38,
+        "reachCm": 183,
+        "winStreak": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7205,7 +7136,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7228,7 +7159,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7251,7 +7182,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7273,7 +7204,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7293,7 +7224,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7316,7 +7247,7 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7338,7 +7269,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7359,7 +7290,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7382,7 +7313,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7403,7 +7334,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7425,7 +7356,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7448,7 +7379,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7471,7 +7402,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7494,7 +7425,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7516,7 +7447,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7537,7 +7468,7 @@
         "heightCm": 191,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7560,7 +7491,7 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7583,7 +7514,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7605,7 +7536,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7628,20 +7559,20 @@
         "age": 39,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
       "id": "ares-sofiane-el-fatni",
       "organizationId": "ares",
       "name": "Sofiane El Fatni",
-      "record": "3-1-0",
-      "wins": 3,
+      "record": "4-1-0",
+      "wins": 4,
       "losses": 1,
       "draws": 0,
       "country": "France",
       "weightClass": "Lightweight",
-      "ranking": 8,
+      "ranking": 6,
       "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2025/06/Sofiane-El-Fetni-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
@@ -7649,19 +7580,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:31.650Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 2,
-        "subWins": 1,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 1,
-        "wins": 3,
-        "losses": 1,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-soslan-gagloev",
@@ -7681,7 +7601,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7703,7 +7623,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7724,7 +7644,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7744,7 +7664,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7765,7 +7685,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -7789,7 +7709,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7811,7 +7731,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7833,7 +7753,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7855,7 +7775,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7875,7 +7795,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7896,7 +7816,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7919,7 +7839,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -7942,7 +7862,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7962,7 +7882,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -7982,19 +7902,20 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
       "id": "ares-turpal-susurov",
       "organizationId": "ares",
       "name": "Turpal Susurov",
-      "record": "1-1-0",
+      "record": "1-2-0",
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "draws": 0,
       "country": "France",
       "weightClass": "Featherweight",
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2026/05/Turpal-Susurov-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
@@ -8003,19 +7924,8 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:30.604Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 0,
-        "decWins": 1,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 1,
-        "wins": 1,
-        "losses": 1,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-turpal-younousov",
@@ -8036,15 +7946,16 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
       "id": "ares-ulysse-obame-ndong",
       "organizationId": "ares",
       "name": "Ulysse Obame Ndong",
-      "record": "1-1-0",
-      "wins": 1,
+      "nickname": "Le caméléon",
+      "record": "3-1-0",
+      "wins": 3,
       "losses": 1,
       "draws": 0,
       "country": "France",
@@ -8058,7 +7969,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8082,7 +7993,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8105,7 +8016,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8126,19 +8037,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:29.035Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 0,
-        "subWins": 1,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 1,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
     },
     {
       "id": "ares-virgil-augen",
@@ -8158,7 +8058,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8181,7 +8081,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8201,7 +8101,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8222,19 +8122,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:30.078Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 1,
-        "subWins": 1,
-        "decWins": 0,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 2,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-wahbi-brahem",
@@ -8254,40 +8143,29 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
       "id": "ares-walid-masmoudi",
       "organizationId": "ares",
       "name": "Walid Masmoudi",
-      "record": "4-0-0",
-      "wins": 4,
+      "record": "5-0-0",
+      "wins": 5,
       "losses": 0,
       "draws": 0,
       "country": "France",
       "weightClass": "Lightweight",
-      "ranking": 6,
-      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2025/06/Walid-Masmoudi-700x700.png",
+      "ranking": 1,
+      "imageUrl": "https://www.aresfighting.com/wp-content/uploads/2025/06/Walid-Masmoudi-CHAMP-700x700.png",
       "stats": {
         "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:24.507Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 3,
-        "subWins": 0,
-        "decWins": 1,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 4,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
+      "source": "merged"
     },
     {
       "id": "ares-wernei-cardoso",
@@ -8308,7 +8186,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8331,7 +8209,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8353,7 +8231,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8375,7 +8253,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8399,7 +8277,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8419,7 +8297,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8441,7 +8319,7 @@
         "age": 41,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8461,7 +8339,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8484,7 +8362,7 @@
         "heightCm": 196,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.025Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.269Z",
       "source": "merged"
     },
     {
@@ -8505,7 +8383,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8528,7 +8406,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8549,7 +8427,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8571,7 +8449,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8594,7 +8472,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8614,7 +8492,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8636,7 +8514,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8656,7 +8534,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8679,7 +8557,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
@@ -8700,7 +8578,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.026Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
       "source": "merged"
     },
     {
@@ -8724,7 +8602,7 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.278Z",
       "source": "merged"
     },
     {
@@ -8747,14 +8625,14 @@
         "age": 42,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-04T19:16:16.027Z",
+      "lastSyncedAt": "2026-06-07T18:09:12.279Z",
       "source": "merged"
     },
     {
       "id": "ares-zaurbek-sabanov",
       "organizationId": "ares",
       "name": "Zaurbek Sabanov",
-      "record": "3-0-0",
+      "record": "4-0-0",
       "wins": 4,
       "losses": 0,
       "draws": 0,
@@ -8768,19 +8646,8 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:27.449Z",
-      "source": "merged",
-      "externalMethodCounts": {
-        "koWins": 3,
-        "subWins": 0,
-        "decWins": 1,
-        "koLosses": 0,
-        "subLosses": 0,
-        "decLosses": 0,
-        "wins": 4,
-        "losses": 0,
-        "source": "sherdog"
-      }
+      "lastSyncedAt": "2026-06-07T18:09:12.277Z",
+      "source": "merged"
     }
   ]
 }

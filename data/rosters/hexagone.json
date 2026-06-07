@@ -1,8 +1,8 @@
 {
   "meta": {
     "organizationId": "hexagone",
-    "fighterCount": 60,
-    "lastSyncedAt": "2026-06-03T22:33:25.282Z",
+    "fighterCount": 78,
+    "lastSyncedAt": "2026-06-07T18:38:27.285Z",
     "source": "hexagonemma.fr"
   },
   "fighters": [
@@ -25,7 +25,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -47,7 +47,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.901Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.527Z",
       "source": "merged"
     },
     {
@@ -69,7 +69,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -91,7 +91,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -113,7 +113,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -135,7 +135,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -156,7 +156,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -177,7 +177,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -199,7 +199,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -221,7 +221,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -243,7 +243,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -265,7 +265,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -287,7 +287,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -309,7 +309,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -331,7 +331,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged",
       "ranking": 1
     },
@@ -354,7 +354,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -376,7 +376,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -398,7 +398,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -420,7 +420,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -442,7 +442,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -464,7 +464,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -486,7 +486,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -508,7 +508,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -530,7 +530,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -552,7 +552,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -574,7 +574,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -586,18 +586,20 @@
       "losses": 0,
       "draws": 0,
       "country": "France",
-      "weightClass": "Featherweight",
-      "imageUrl": "https://hexagonemma.fr/wp-content/uploads/2025/03/Landouzy-1.png",
+      "weightClass": "Bantamweight",
       "stats": {
         "strikingAccuracy": 50,
-        "takedownAccuracy": 38,
-        "reachCm": 183,
-        "heightCm": 171,
-        "age": 29,
-        "winStreak": 0
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 26,
+        "winStreak": 0,
+        "finishingRate": 100
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
     },
     {
       "id": "hexagone-allan-taibi-jouve",
@@ -617,7 +619,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -639,7 +641,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -661,7 +663,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -683,30 +685,32 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
       "id": "hexagone-anas-azizoun",
       "organizationId": "hexagone",
       "name": "Anas Azizoun",
-      "record": "0-0-0",
-      "wins": 0,
-      "losses": 0,
+      "record": "5-2-0",
+      "wins": 5,
+      "losses": 2,
       "draws": 0,
       "country": "France",
       "weightClass": "Bantamweight",
-      "imageUrl": "https://hexagonemma.fr/wp-content/uploads/2024/02/A_Azizoun500.png",
       "stats": {
         "strikingAccuracy": 50,
-        "takedownAccuracy": 38,
-        "reachCm": 183,
-        "heightCm": 183,
-        "age": 29,
-        "winStreak": 0
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 27,
+        "winStreak": 0,
+        "finishingRate": 60
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
-      "source": "merged"
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
     },
     {
       "id": "hexagone-anas-kamal",
@@ -727,7 +731,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -749,7 +753,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -771,7 +775,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -793,7 +797,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -815,7 +819,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -837,7 +841,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -859,7 +863,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -881,7 +885,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -903,7 +907,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -925,7 +929,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -947,7 +951,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -969,7 +973,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -991,7 +995,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1013,7 +1017,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1035,7 +1039,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1057,7 +1061,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1079,7 +1083,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1100,7 +1104,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.902Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1121,7 +1125,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1142,7 +1146,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1164,7 +1168,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1186,7 +1190,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1208,7 +1212,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1230,7 +1234,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1252,7 +1256,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.529Z",
       "source": "merged"
     },
     {
@@ -1273,7 +1277,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.530Z",
       "source": "merged"
     },
     {
@@ -1295,7 +1299,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.530Z",
       "source": "merged"
     },
     {
@@ -1316,8 +1320,444 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:59:29.903Z",
+      "lastSyncedAt": "2026-06-07T18:09:26.530Z",
       "source": "merged"
+    },
+    {
+      "id": "hexagone-paul-denis-navero",
+      "organizationId": "hexagone",
+      "name": "Paul Denis Navero",
+      "nickname": "Dena",
+      "record": "3-0-0",
+      "wins": 3,
+      "losses": 0,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Featherweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 22,
+        "winStreak": 0,
+        "finishingRate": 100
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.284Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-anzor-baybatyrov",
+      "organizationId": "hexagone",
+      "name": "Anzor Baybatyrov",
+      "nickname": "Black Borz",
+      "record": "6-2-0",
+      "wins": 6,
+      "losses": 2,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Featherweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 25,
+        "winStreak": 0,
+        "finishingRate": 100
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-samba-sima",
+      "organizationId": "hexagone",
+      "name": "Samba Sima",
+      "record": "3-0-0",
+      "wins": 3,
+      "losses": 0,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Flyweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 24,
+        "winStreak": 0,
+        "finishingRate": 100
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-leonardo-de-oliveira-barbosa",
+      "organizationId": "hexagone",
+      "name": "Leonardo de Oliveira Barbosa",
+      "record": "11-7-0",
+      "wins": 11,
+      "losses": 7,
+      "draws": 0,
+      "country": "Brazil",
+      "weightClass": "Flyweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 35,
+        "winStreak": 0,
+        "finishingRate": 82
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-noelle-grandjean",
+      "organizationId": "hexagone",
+      "name": "Noelle Grandjean",
+      "record": "5-3-0",
+      "wins": 5,
+      "losses": 3,
+      "draws": 0,
+      "country": "Switzerland",
+      "weightClass": "Women's Strawweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 30,
+        "winStreak": 0,
+        "finishingRate": 60
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-mathilde-aschenbrenner",
+      "organizationId": "hexagone",
+      "name": "Mathilde Aschenbrenner",
+      "record": "3-0-0",
+      "wins": 3,
+      "losses": 0,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Women's Strawweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 29,
+        "winStreak": 0,
+        "finishingRate": 100
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-damien-lapilus",
+      "organizationId": "hexagone",
+      "name": "Damien Lapilus",
+      "nickname": "The Walking Dead",
+      "record": "22-15-0",
+      "wins": 22,
+      "losses": 15,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Lightweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 38,
+        "winStreak": 0,
+        "finishingRate": 68
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-ryan-eren-agbo",
+      "organizationId": "hexagone",
+      "name": "Ryan Eren Agbo",
+      "nickname": "La Pieuvre",
+      "record": "5-1-0",
+      "wins": 5,
+      "losses": 1,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Lightweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 25,
+        "winStreak": 0,
+        "finishingRate": 100
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-youssouf-ouattara",
+      "organizationId": "hexagone",
+      "name": "Youssouf Ouattara",
+      "record": "4-1-0",
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Bantamweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 27,
+        "winStreak": 0,
+        "finishingRate": 75
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-nezar-bahaji",
+      "organizationId": "hexagone",
+      "name": "Nezar Bahaji",
+      "record": "4-2-0",
+      "wins": 4,
+      "losses": 2,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Bantamweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 27,
+        "winStreak": 0,
+        "finishingRate": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-muhammed-fatih-ozturk",
+      "organizationId": "hexagone",
+      "name": "Muhammed-Fatih Ozturk",
+      "record": "3-2-0",
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "country": "Turkey",
+      "weightClass": "Bantamweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 27,
+        "winStreak": 0,
+        "finishingRate": 67
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-abdul-hussainkhil",
+      "organizationId": "hexagone",
+      "name": "Abdul Hussainkhil",
+      "record": "1-0-0",
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "country": "Afghanistan",
+      "weightClass": "Bantamweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 25,
+        "winStreak": 0,
+        "finishingRate": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-guillaume-delattre",
+      "organizationId": "hexagone",
+      "name": "Guillaume Delattre",
+      "record": "3-2-0",
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Featherweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 28,
+        "winStreak": 0,
+        "finishingRate": 0
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-malik-bendaho",
+      "organizationId": "hexagone",
+      "name": "Malik Bendaho",
+      "record": "4-1-0",
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "country": "Algeria",
+      "weightClass": "Featherweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 22,
+        "winStreak": 0,
+        "finishingRate": 50
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-tamerlan-albiekov",
+      "organizationId": "hexagone",
+      "name": "Tamerlan Albiekov",
+      "record": "4-1-0",
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Heavyweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 25,
+        "winStreak": 0,
+        "finishingRate": 75
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-samuele-di-guardo",
+      "organizationId": "hexagone",
+      "name": "Samuele Di Guardo",
+      "record": "4-3-0",
+      "wins": 4,
+      "losses": 3,
+      "draws": 0,
+      "country": "Italy",
+      "weightClass": "Heavyweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 27,
+        "winStreak": 0,
+        "finishingRate": 75
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-mazri-ammar",
+      "organizationId": "hexagone",
+      "name": "Mazri Ammar",
+      "record": "3-1-0",
+      "wins": 3,
+      "losses": 1,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Featherweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 27,
+        "winStreak": 0,
+        "finishingRate": 33
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
+    },
+    {
+      "id": "hexagone-nessim-khettou",
+      "organizationId": "hexagone",
+      "name": "Nessim Khettou",
+      "record": "1-1-0",
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "country": "France",
+      "weightClass": "Featherweight",
+      "stats": {
+        "strikingAccuracy": 50,
+        "takedownAccuracy": 40,
+        "strikeDefense": 55,
+        "takedownDefense": 55,
+        "reachCm": 180,
+        "heightCm": 178,
+        "age": 26,
+        "winStreak": 0,
+        "finishingRate": 100
+      },
+      "lastSyncedAt": "2026-06-07T18:38:27.285Z",
+      "source": "hexagonemma.fr"
     }
   ]
 }

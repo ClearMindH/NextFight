@@ -1,5 +1,6 @@
 import type { EventSyncResult, ScrapedEvent, ScrapedFight } from '@/lib/event-sync/types'
 import { TOP_RANKED_LIMIT } from '@/lib/fighter-ranking'
+import { decodeHtmlEntities } from '@/utils/format'
 
 export const UFC_EVENTS_URL = 'https://www.ufc.com/events'
 export const UFC_BASE = 'https://www.ufc.com'
@@ -158,6 +159,11 @@ function parseUfcCornerImage(block: string, side: 'red' | 'blue'): string | unde
   return raw.startsWith('http') ? raw : `${UFC_BASE}${raw.startsWith('/') ? '' : '/'}${raw}`
 }
 
+function decode(raw?: string): string | undefined {
+  const trimmed = raw?.trim()
+  return trimmed ? decodeHtmlEntities(trimmed) : undefined
+}
+
 function parseUfcCornerFromBlock(
   block: string,
   side: 'red' | 'blue',
@@ -171,12 +177,11 @@ function parseUfcCornerFromBlock(
 
   const imageUrl = parseUfcCornerImage(block, side)
   const slug = cornerChunk.match(/\/athlete\/([^"?\s#]+)/)?.[1]
-  const given = cornerChunk.match(/c-listing-fight__corner-given-name">([^<]+)/)?.[1]?.trim()
-  const family = cornerChunk.match(/c-listing-fight__corner-family-name">([^<]+)/)?.[1]?.trim()
-  const plain = cornerChunk
-    .match(/\/athlete\/[^"]+">\s*([^<]+?)\s*<\/a>/)?.[1]
-    ?.replace(/\s+/g, ' ')
-    .trim()
+  const given = decode(cornerChunk.match(/c-listing-fight__corner-given-name">([^<]+)/)?.[1])
+  const family = decode(cornerChunk.match(/c-listing-fight__corner-family-name">([^<]+)/)?.[1])
+  const plain = decode(
+    cornerChunk.match(/\/athlete\/[^"]+">\s*([^<]+?)\s*<\/a>/)?.[1]?.replace(/\s+/g, ' '),
+  )
 
   const fullName = [given, family].filter(Boolean).join(' ').trim() || plain || ''
 
