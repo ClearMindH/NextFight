@@ -85,7 +85,7 @@ export const ufcSeeds: SeedInput[] = [
   // Heavyweight
   { name: 'Jon Jones', nickname: 'Bones', record: '28-1-0', country: 'USA', weightClass: 'Heavyweight', ranking: 1, stance: 'Orthodox', stats: s(57, 45, 215, 193, 37, 4, { slpm: 4.29, tdAvg: 1.82 }) },
   { name: 'Tom Aspinall', record: '15-3-0', country: 'UK', weightClass: 'Heavyweight', ranking: 2, stats: s(61, 42, 198, 196, 32, 3, { slpm: 7.22, tdAvg: 0.89 }) },
-  { name: 'Ciryl Gane', record: '12-2-0', country: 'France', weightClass: 'Heavyweight', ranking: 3, stats: s(58, 33, 206, 193, 34, 1) },
+  { name: 'Ciryl Gane', record: '13-2-0', country: 'France', weightClass: 'Heavyweight', ranking: 1, stats: s(58, 33, 206, 193, 34, 1) },
   { name: 'Curtis Blaydes', record: '18-4-0', country: 'USA', weightClass: 'Heavyweight', ranking: 4, stats: s(52, 48, 203, 193, 34, 2) },
   { name: 'Sergei Pavlovich', record: '19-3-0', country: 'Russia', weightClass: 'Heavyweight', ranking: 5, stats: s(55, 25, 213, 188, 32, 1) },
   // Light Heavyweight

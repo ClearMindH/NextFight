@@ -18,35 +18,34 @@ const SEEDS_BY_ORG: Record<OrganizationId, SeedInput[]> = {
   hexagone: hexagoneSeeds,
 }
 
-const seedRankingIndex = new Map<string, number>()
-
-function seedKey(orgId: OrganizationId, name: string): string {
-  return `${orgId}:${slugifyId(name)}`
-}
-
-function buildSeedRankingIndex(): void {
-  if (seedRankingIndex.size > 0) return
-  for (const orgId of Object.keys(SEEDS_BY_ORG) as OrganizationId[]) {
-    for (const seed of SEEDS_BY_ORG[orgId]) {
-      if (!isTopRankedInDivision(seed.ranking)) continue
-      seedRankingIndex.set(seedKey(orgId, seed.name), seed.ranking!)
-    }
-  }
+function seedMatchesName(seed: SeedInput, name: string): boolean {
+  return slugifyId(seed.name) === slugifyId(name)
 }
 
 /** Classement connu depuis les seeds officiels NextFight (top 15 / champion). */
 export function getSeedRanking(
   orgId: OrganizationId,
   name: string,
+  weightClass?: string,
 ): number | undefined {
-  buildSeedRankingIndex()
-  return seedRankingIndex.get(seedKey(orgId, name))
+  const seeds = SEEDS_BY_ORG[orgId] ?? []
+  const ranked = seeds.filter(
+    (seed) => seedMatchesName(seed, name) && isTopRankedInDivision(seed.ranking),
+  )
+  if (ranked.length === 0) return undefined
+
+  if (weightClass) {
+    const inDivision = ranked.find((seed) => seed.weightClass === weightClass)
+    return inDivision?.ranking
+  }
+
+  return ranked[0]?.ranking
 }
 
 /** Complète le classement roster si absent ou hors top 15. */
 export function mergeSeedRanking(fighter: Fighter): Fighter {
   if (isTopRankedInDivision(fighter.ranking)) return fighter
-  const fromSeed = getSeedRanking(fighter.organizationId, fighter.name)
+  const fromSeed = getSeedRanking(fighter.organizationId, fighter.name, fighter.weightClass)
   if (!fromSeed) return fighter
   return { ...fighter, ranking: fromSeed }
 }

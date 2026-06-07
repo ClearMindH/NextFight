@@ -41,4 +41,17 @@ describe('roster-seed-rankings', () => {
     const unranked = { ...base, name: 'Abraham Bably', id: 'pfl-abraham-bably' }
     expect(mergeSeedRanking(unranked).ranking).toBeUndefined()
   })
+
+  it('does not apply LHW seed ranking when fighter is listed at heavyweight', () => {
+    const pereiraHw: Fighter = {
+      ...base,
+      id: 'ufc-alex-pereira',
+      organizationId: 'ufc',
+      name: 'Alex Pereira',
+      weightClass: 'Heavyweight',
+    }
+    expect(getSeedRanking('ufc', 'Alex Pereira', 'Heavyweight')).toBeUndefined()
+    expect(getSeedRanking('ufc', 'Alex Pereira', 'Light Heavyweight')).toBe(1)
+    expect(mergeSeedRanking(pereiraHw).ranking).toBeUndefined()
+  })
 })
