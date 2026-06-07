@@ -7,7 +7,7 @@ import type { Fight } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { FightAnalysisPanel } from '@/components/FightAnalysisPanel'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
-import { methodLabels, formatPercent, formatPredictedRound } from '@/utils/format'
+import { formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface PredictionCardProps {
@@ -57,16 +57,7 @@ export function PredictionCard({
         />
       </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5 text-center">
-        <Metric label="Méthode" value={methodLabels[fight.model.predictedMethod]} />
-        <Metric
-          label="Fin prévue"
-          value={formatPredictedRound(
-            fight.model.predictedMethod,
-            fight.model.predictedRound,
-            fight.scheduledRounds,
-          )}
-        />
+      <div className="mt-6 grid grid-cols-1 gap-4 border-t border-border pt-5 text-center">
         <Metric label="Confiance" value={formatPercent(fight.model.confidence)} highlight />
       </div>
 

@@ -388,6 +388,20 @@ async function main(): Promise<void> {
     merged = filterEventsInWeekend(merged, window)
   }
 
+  // Conserver les événements passés / terminés (avec leurs pronostics figés et
+  // résultats) qui ne sont pas réapparus dans le scrape : ils servent au bilan.
+  const now = Date.now()
+  const mergedIds = new Set(merged.map((e) => e.id))
+  const retainedPast = existing.filter(
+    (e) =>
+      !mergedIds.has(e.id) &&
+      (e.status === 'completed' || new Date(e.date).getTime() < now),
+  )
+  if (retainedPast.length > 0) {
+    console.log(`  Conservés (passés) : ${retainedPast.length} event(s)`)
+  }
+
+  merged = [...retainedPast, ...merged]
   merged.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   saveEventsRaw({ events: merged, updatedAt: new Date().toISOString() })

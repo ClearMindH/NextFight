@@ -27,7 +27,7 @@ export function Footer() {
           <div>
             <NextFightBrand href={null} iconSize="md" />
             <p className="mt-3 text-sm text-muted leading-relaxed">
-              Pronostics MMA et analyses statistiques pour les grandes promotions. Outil informatif —
+              Pronostics MMA et analyses statistiques pour les grandes organisations. Outil informatif —
               pas de paris sportifs.
             </p>
           </div>

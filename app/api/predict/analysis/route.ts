@@ -68,8 +68,6 @@ export async function POST(request: Request) {
         fighterAProbability: prediction.fighterAProbability,
         fighterBProbability: prediction.fighterBProbability,
         confidence: prediction.confidence,
-        predictedMethod: prediction.predictedMethod,
-        predictedRound: prediction.predictedRound,
         predictedWinnerId: prediction.predictedWinnerId,
       },
       narrative,

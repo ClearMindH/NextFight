@@ -49,6 +49,28 @@ describe('parseUfcAthleteLastFights', () => {
     expect(bouts[1].opponentName).toMatch(/Vettori/i)
     expect(dedupeRecentBouts([...bouts, ...bouts]).length).toBe(2)
   })
+
+  it('recovers full opponent name from slug when alt is a caption and link text is last-name only', () => {
+    const snippet = `
+<article class="c-card-event--athlete-results">
+  <div class="c-card-event--athlete-results__red-image win">
+    <a href="https://www.ufc.com/athlete/alessandro-costa"><img alt="Alessandro Costa" /></a>
+  </div>
+  <div class="c-card-event--athlete-results__blue-image loss">
+    <a href="https://www.ufc.com/athlete/stewart-nicoll"><img alt="Alessandro Costa of Brazil punches an opponent in 2022 (Photo Getty)" /></a>
+  </div>
+  <h3 class="c-card-event--athlete-results__headline">
+    <a href="https://www.ufc.com/athlete/stewart-nicoll">Nicoll</a>
+  </h3>
+  <div class="c-card-event--athlete-results__date">15 Mar. 2024</div>
+  <div class="c-card-event--athlete-results__result-label">Méthode</div>
+  <div class="c-card-event--athlete-results__result-text">Decision - Unanimous</div>
+</article>`
+    const bouts = parseUfcAthleteLastFights(snippet, 'Alessandro Costa', 'alessandro-costa')
+    expect(bouts.length).toBe(1)
+    expect(bouts[0].opponentName).toBe('Stewart Nicoll')
+    expect(bouts[0].result).toBe('win')
+  })
 })
 
 describe('parseUfcAthleteNickname', () => {

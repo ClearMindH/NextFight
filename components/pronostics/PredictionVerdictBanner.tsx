@@ -22,7 +22,7 @@ export function PredictionVerdictBanner({
 
   if (variant === 'compact') {
     return (
-      <p className={cn('text-sm font-medium text-[#c9b896]', className)}>
+      <p className={cn('text-sm font-medium text-gold-soft', className)}>
         <span className="text-[10px] font-semibold uppercase tracking-wider text-muted mr-2">
           Pronostic
         </span>
@@ -60,7 +60,7 @@ export function PredictionVerdictBanner({
   return (
     <div
       className={cn(
-        'rounded-xl border border-white/[0.08] bg-[#0c1219]/60 px-4 py-3 text-center sm:px-5',
+        'rounded-xl border border-white/[0.08] bg-surface/60 px-4 py-3 text-center sm:px-5',
         className,
       )}
     >

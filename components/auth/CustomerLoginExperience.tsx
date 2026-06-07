@@ -31,7 +31,7 @@ const COPY: Record<
     switchHref: '/register',
     switchLabel: 'Créer un accès',
     aside:
-      'Modèle statistique par affrontement : probabilités, méthode prédite et comparaison des profils.',
+      'Modèle statistique par affrontement : probabilités de victoire et comparaison des profils.',
   },
   register: {
     eyebrow: 'Accès local',
@@ -237,7 +237,7 @@ export function CustomerLoginExperience({
             </div>
 
             <p className="mt-8 text-[11px] text-[#5c5c5c] leading-relaxed">
-              Outil informatif — aucun pari proposé. Les marques des promotions appartiennent à
+              Outil informatif — aucun pari proposé. Les marques des organisations appartiennent à
               leurs détenteurs.
             </p>
           </div>

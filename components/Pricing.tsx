@@ -13,16 +13,16 @@ export function Pricing() {
   const monthly = paidPlans.find((p) => p.id === 'premium_monthly')
 
   return (
-    <section id="pricing" className="section-padding border-t border-border bg-[#050505]">
+    <section id="pricing" className="section-padding border-t border-border bg-background">
       <div className="container-content">
         <FadeIn className="mx-auto max-w-lg text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#8a8278]">
+          <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-muted-warm">
             Nos offres
           </p>
           <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
             Tarifs
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-[#8a8278]">
+          <p className="mt-3 text-sm leading-relaxed text-muted-warm">
             Gratuit pour le co-main. Premium pour toutes les cartes et analyses.
           </p>
         </FadeIn>
@@ -30,13 +30,13 @@ export function Pricing() {
         <div className="mx-auto mt-10 flex max-w-lg flex-col gap-4 sm:max-w-xl">
           {annual && (
             <FadeIn>
-              <div className="rounded-[1.25rem] border border-[#c9b896]/35 bg-[#0f0e0c] px-6 py-7 sm:px-8">
+              <div className="rounded-[1.25rem] border border-gold-soft/35 bg-[#0f0e0c] px-6 py-7 sm:px-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.24em] text-[#8a8278]">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-muted-warm">
                       Premium annuel
                     </p>
-                    <p className="mt-2 text-sm text-[#8a8278]">{annual.description}</p>
+                    <p className="mt-2 text-sm text-muted-warm">{annual.description}</p>
                   </div>
                   <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
                     {annual.priceLabel}
@@ -56,10 +56,10 @@ export function Pricing() {
               <div className="rounded-[1.25rem] border border-[#1f1d1a] bg-[#0a0a0a] px-6 py-7 sm:px-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.24em] text-[#8a8278]">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-muted-warm">
                       Premium mensuel
                     </p>
-                    <p className="mt-2 text-sm text-[#8a8278]">{monthly.description}</p>
+                    <p className="mt-2 text-sm text-muted-warm">{monthly.description}</p>
                   </div>
                   <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
                     {monthly.priceLabel}
@@ -70,7 +70,7 @@ export function Pricing() {
                   <StripeCheckoutButton
                     planId={monthly.id}
                     className={cn(
-                      '!rounded-full !border-[#c9b896]/40 !text-[#c9b896] hover:!bg-[#c9b896]/10',
+                      '!rounded-full !border-gold-soft/40 !text-gold-soft hover:!bg-gold-soft/10',
                     )}
                   >
                     {monthly.cta}
@@ -84,7 +84,7 @@ export function Pricing() {
         <p className="mx-auto mt-8 max-w-lg text-center">
           <Link
             href="/pricing"
-            className="text-sm text-[#8a8278] transition-colors hover:text-[#c9b896]"
+            className="text-sm text-muted-warm transition-colors hover:text-gold-soft"
           >
             Voir l’offre gratuite et les détails →
           </Link>

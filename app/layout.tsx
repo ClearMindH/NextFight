@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { siteMetadata } from '@/lib/seo'
 import './globals.css'
+
+/** ID de mesure GA4 (ex. G-XXXXXXXXXX). Vide en local → aucun script chargé. */
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,8 +28,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${GeistSans.variable} ${bebasNeue.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${GeistSans.variable} ${bebasNeue.variable}`}>
       <body className="font-sans antialiased">{children}</body>
+      {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   )
 }

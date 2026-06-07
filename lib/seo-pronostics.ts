@@ -7,7 +7,7 @@ const siteUrl = getSiteUrl()
 
 export function buildPronosticsMetadata(org: Organization): Metadata {
   const title = `Pronostics ${org.name} — Analyses MMA | NextFight`
-  const description = `Pronostics ${org.fullName} : probabilités de victoire, méthode, round et analyses détaillées. ${org.descriptionFr}`
+  const description = `Pronostics ${org.fullName} : probabilités de victoire et analyses détaillées. ${org.descriptionFr}`
 
   return {
     title,
@@ -104,7 +104,7 @@ export function buildPronosticsJsonLd(
       applicationCategory: 'SportsApplication',
       operatingSystem: 'Web',
       description:
-        'Moteur statistique de pronostics MMA : probabilités, méthode, round et analyses de combat.',
+        'Moteur statistique de pronostics MMA : probabilités de victoire et analyses de combat.',
       offers: {
         '@type': 'Offer',
         price: '0',

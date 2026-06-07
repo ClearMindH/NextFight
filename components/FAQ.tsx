@@ -16,7 +16,7 @@ export function FAQ() {
         <FadeIn className="text-center">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">FAQ</p>
           <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold tracking-tight">
-            Frequently asked questions
+            Questions fréquentes
           </h2>
         </FadeIn>
 

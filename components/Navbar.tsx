@@ -8,10 +8,12 @@ import { organizations } from '@/data/organizations'
 import { NextFightBrand } from '@/components/NextFightBrand'
 import { OrgBrandLogo } from '@/components/OrgBrandLogo'
 import { OrgBrandTagline } from '@/components/OrgBrandName'
+import { useSubscription } from '@/hooks/useSubscription'
 import { cn } from '@/utils/cn'
 
 const staticLinks = [
   { href: '/#events', label: 'Combats' },
+  { href: '/resultats', label: 'Résultats' },
   { href: '/pricing', label: 'Tarifs' },
 ]
 
@@ -21,6 +23,8 @@ export function Navbar() {
   const [promoOpen, setPromoOpen] = useState(false)
   const [mobilePromoOpen, setMobilePromoOpen] = useState(false)
   const promoRef = useRef<HTMLDivElement>(null)
+  const { status, isPremium, loading } = useSubscription()
+  const loggedIn = Boolean(status.email)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -61,7 +65,7 @@ export function Navbar() {
               aria-expanded={promoOpen}
               aria-haspopup="true"
             >
-              Promotions
+              Organisations
               <ChevronDown
                 size={14}
                 className={cn('transition-transform duration-200', promoOpen && 'rotate-180')}
@@ -105,7 +109,7 @@ export function Navbar() {
                     onClick={() => setPromoOpen(false)}
                     className="mt-1 block rounded-xl px-3 py-2 text-center text-xs text-muted transition-colors hover:bg-background/60 hover:text-gold"
                   >
-                    Voir toutes les promotions
+                    Voir toutes les organisations
                   </Link>
                 </motion.div>
               )}
@@ -120,18 +124,32 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          {!loading && !loggedIn && (
+            <Link
+              href="/login"
+              className="text-sm text-muted transition-colors hover:text-foreground"
+            >
+              Se connecter
+            </Link>
+          )}
           <Link
             href="/account"
             className="text-sm text-muted transition-colors hover:text-foreground"
           >
             Compte
           </Link>
-          <Link
-            href="/pricing"
-            className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-transform hover:scale-[1.02]"
-          >
-            Premium
-          </Link>
+          {isPremium ? (
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gold">
+              Premium
+            </span>
+          ) : (
+            <Link
+              href="/pricing"
+              className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-transform hover:scale-[1.02]"
+            >
+              Passer Premium
+            </Link>
+          )}
         </div>
 
         <button
@@ -159,7 +177,7 @@ export function Navbar() {
                 onClick={() => setMobilePromoOpen((o) => !o)}
                 className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card hover:text-foreground"
               >
-                Promotions
+                Organisations
                 <ChevronDown
                   size={16}
                   className={cn('transition-transform', mobilePromoOpen && 'rotate-180')}
@@ -202,20 +220,36 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              {!loading && !loggedIn && (
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card hover:text-foreground"
+                >
+                  Se connecter
+                </Link>
+              )}
               <Link
                 href="/account"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card"
+                className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card"
               >
                 Compte
+                {isPremium && (
+                  <span className="rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gold">
+                    Premium
+                  </span>
+                )}
               </Link>
-              <Link
-                href="/pricing"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 rounded-full bg-foreground px-4 py-2.5 text-center text-sm font-medium text-background"
-              >
-                Premium
-              </Link>
+              {!isPremium && (
+                <Link
+                  href="/pricing"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-2 rounded-full bg-foreground px-4 py-2.5 text-center text-sm font-medium text-background"
+                >
+                  Passer Premium
+                </Link>
+              )}
             </nav>
           </motion.div>
         )}

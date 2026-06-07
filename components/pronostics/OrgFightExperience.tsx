@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
-import { FightStatsComparison } from '@/components/fight/FightStatsComparison'
+import { RecentResults } from '@/components/fight/RecentResults'
 import { PremiumGate } from '@/components/premium/PremiumGate'
 import {
   canAccessFightPrediction,
@@ -12,12 +12,7 @@ import {
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
-import {
-  formatShortDate,
-  formatPercent,
-  formatPredictedRound,
-  methodLabels,
-} from '@/utils/format'
+import { formatShortDate, formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 interface OrgFightExperienceProps {
@@ -58,26 +53,11 @@ export function OrgFightExperience({
   const favoriteProb = Math.max(redProb, blueProb)
   const showPrediction = hasAccess || !enforceAccess
   const isPreview = variant === 'preview'
-  const showStats = !isPreview && showPrediction
 
-  const kpiItems = isPreview
-    ? [
-        { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-        { label: 'Confiance', value: formatPercent(fight.model.confidence) },
-      ]
-    : [
-        { label: 'Méthode', value: methodLabels[fight.model.predictedMethod] },
-        {
-          label: 'Fin prévue',
-          value: formatPredictedRound(
-            fight.model.predictedMethod,
-            fight.model.predictedRound,
-            fight.scheduledRounds,
-          ),
-        },
-        { label: 'Confiance', value: formatPercent(fight.model.confidence) },
-        { label: 'Lecture', value: convictionLabel(favoriteProb) },
-      ]
+  const kpiItems = [
+    { label: 'Confiance', value: formatPercent(fight.model.confidence) },
+    { label: 'Lecture', value: convictionLabel(favoriteProb) },
+  ]
 
   const predictionBlock = (
     <div className={cn('space-y-6', !isPreview && 'space-y-8')}>
@@ -102,8 +82,7 @@ export function OrgFightExperience({
 
       <div
         className={cn(
-          'mx-auto grid max-w-3xl gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08]',
-          isPreview ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-4',
+          'mx-auto grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08]',
         )}
       >
         {kpiItems.map((item) => (
@@ -117,19 +96,8 @@ export function OrgFightExperience({
         ))}
       </div>
 
-      {showStats && (
-        <FightStatsComparison
-          red={fight.redCorner}
-          blue={fight.blueCorner}
-          compact
-          level="minimal"
-        />
-      )}
-
-      {isPreview && (
-        <p className="text-center text-xs text-[#8a8278]">
-          Statistiques détaillées et pronostics complets sur chaque combat ci-dessous.
-        </p>
+      {showPrediction && (
+        <RecentResults red={fight.redCorner} blue={fight.blueCorner} />
       )}
     </div>
   )

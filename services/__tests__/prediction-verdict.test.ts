@@ -29,15 +29,15 @@ function miniFight(overrides: Partial<Fight['model']> & { redName?: string; blue
 }
 
 describe('buildPredictionVerdict', () => {
-  it('formats decision pick like Bonfim à la décision', () => {
+  it('annonce uniquement le vainqueur, sans méthode', () => {
     const v = buildPredictionVerdict(
       miniFight({ redWinProbability: 43, predictedMethod: 'decision', predictedRound: 5 }),
     )
-    expect(v.headline).toBe('Bonfim à la décision')
+    expect(v.headline).toBe('Bonfim vainqueur')
     expect(v.probabilityLine).toContain('57')
   })
 
-  it('includes round for finish', () => {
+  it('ne mentionne ni round ni KO/TKO pour une finition', () => {
     const v = buildPredictionVerdict(
       miniFight({
         redWinProbability: 70,
@@ -46,6 +46,6 @@ describe('buildPredictionVerdict', () => {
         scheduledRounds: 3,
       }),
     )
-    expect(v.headline).toBe('Muhammad par KO/TKO en R2')
+    expect(v.headline).toBe('Muhammad vainqueur')
   })
 })

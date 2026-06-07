@@ -20,6 +20,11 @@
     "sync:ares-roster": "tsx scripts/sync-ares-com.ts",
     "sync:events": "tsx scripts/sync-events.ts",
     "sync:events:weekend": "tsx scripts/sync-events.ts --weekend",
+    "freeze:predictions": "tsx scripts/freeze-predictions.ts",
+    "sync:results": "tsx scripts/sync-fight-results.ts",
+    "refresh:opponent-names": "tsx scripts/refresh-opponent-names.ts",
+    "sync:opponent-tiers": "tsx scripts/sync-opponent-tiers.ts",
+    "sync:external-tiers": "tsx scripts/sync-external-opponent-tiers.ts",
     "sync:enrich-cards": "tsx scripts/sync-enrich-cards.ts",
     "sync:external-records": "tsx scripts/sync-external-records.ts",
     "sync:card-rankings": "tsx scripts/sync-card-rankings.ts",
@@ -32,6 +37,7 @@
     "stripe:setup": "tsx scripts/stripe-setup.ts"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.7",
     "@supabase/supabase-js": "^2.107.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",

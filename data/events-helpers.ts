@@ -18,6 +18,20 @@ export function getUpcomingEventsByOrg(orgId: OrganizationId): Event[] {
   return sortByDate(getEventsByOrg(orgId).filter((e) => e.status === 'upcoming'))
 }
 
+export function isCompletedEvent(e: Event): boolean {
+  return e.status === 'completed'
+}
+
+/** Événements terminés, du plus récent au plus ancien. */
+export function getCompletedEventsSorted(limit?: number): Event[] {
+  const list = sortByDate(getEvents().filter(isCompletedEvent)).reverse()
+  return limit != null ? list.slice(0, limit) : list
+}
+
+export function getCompletedEventsByOrg(orgId: OrganizationId): Event[] {
+  return sortByDate(getEventsByOrg(orgId).filter(isCompletedEvent)).reverse()
+}
+
 export function partitionEventsByPredictions(events: Event[]) {
   const published: Event[] = []
   const preparing: Event[] = []
