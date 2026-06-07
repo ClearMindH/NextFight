@@ -1,15 +1,50 @@
 import { getAllFightersFromStore } from '@/lib/roster-store'
+import { isTopRankedInDivision } from '@/lib/fighter-ranking'
 import type { Fighter } from '@/types'
 
 function normalizeFighterName(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]/g, '')
 }
 
-function tierFromFighter(hit: Fighter): number {
-  if (hit.ranking && hit.ranking <= 15) return 90 - (hit.ranking - 1) * 4
-  const total = (hit.wins ?? 0) + (hit.losses ?? 0)
-  if (total >= 10) return 58
-  return 55
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value))
+}
+
+/**
+ * Qualité d'un combattant (0–100) à partir des données réelles du roster :
+ * palmarès (taux de victoire + expérience), classement et signaux de forme.
+ *
+ * - Non classés : socle ≈ 30–72 selon le palmarès.
+ * - Classés (#1–#15) : bande élite monotone (#1 ≈ 94 … #15 ≈ 68), toujours
+ *   au-dessus d'un journalier non classé.
+ */
+export function tierFromFighter(hit: Fighter): number {
+  const wins = hit.wins ?? 0
+  const losses = hit.losses ?? 0
+  const draws = hit.draws ?? 0
+  const total = wins + losses + draws
+
+  const winRate = total > 0 ? wins / total : 0.5
+  // Expérience : ~25 combats → 1.
+  const experience = Math.min(1, Math.log10(total + 1) / Math.log10(26))
+
+  let score = 30 + winRate * 30 + experience * 12
+
+  const finishing = hit.stats?.finishingRate
+  if (finishing != null) {
+    score += ((clamp(finishing, 0, 100) - 40) / 100) * 6
+  }
+
+  const streak = hit.stats?.winStreak ?? 0
+  score += Math.min(6, streak * 1.2)
+
+  if (isTopRankedInDivision(hit.ranking)) {
+    // #1 ≈ 94, #15 ≈ 68 ; le palmarès ne peut que rehausser un classé.
+    const ranked = 94 - (hit.ranking - 1) * (26 / 14)
+    score = Math.max(score, ranked)
+  }
+
+  return Math.round(clamp(score, 20, 99))
 }
 
 /** Qualité estimée de l'adversaire (0–100) à partir du roster. */

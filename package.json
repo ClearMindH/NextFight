@@ -22,6 +22,7 @@
     "sync:events:weekend": "tsx scripts/sync-events.ts --weekend",
     "freeze:predictions": "tsx scripts/freeze-predictions.ts",
     "sync:results": "tsx scripts/sync-fight-results.ts",
+    "sync:opponent-tiers": "tsx scripts/sync-opponent-tiers.ts",
     "sync:enrich-cards": "tsx scripts/sync-enrich-cards.ts",
     "sync:external-records": "tsx scripts/sync-external-records.ts",
     "sync:card-rankings": "tsx scripts/sync-card-rankings.ts",
