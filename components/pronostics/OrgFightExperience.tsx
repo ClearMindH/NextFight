@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
-import { FightStatsComparison } from '@/components/fight/FightStatsComparison'
+import { RecentResults } from '@/components/fight/RecentResults'
 import { PremiumGate } from '@/components/premium/PremiumGate'
 import {
   canAccessFightPrediction,
@@ -53,7 +53,6 @@ export function OrgFightExperience({
   const favoriteProb = Math.max(redProb, blueProb)
   const showPrediction = hasAccess || !enforceAccess
   const isPreview = variant === 'preview'
-  const showStats = !isPreview && showPrediction
 
   const kpiItems = [
     { label: 'Confiance', value: formatPercent(fight.model.confidence) },
@@ -97,19 +96,8 @@ export function OrgFightExperience({
         ))}
       </div>
 
-      {showStats && (
-        <FightStatsComparison
-          red={fight.redCorner}
-          blue={fight.blueCorner}
-          compact
-          level="minimal"
-        />
-      )}
-
-      {isPreview && (
-        <p className="text-center text-xs text-[#8a8278]">
-          Statistiques détaillées et pronostics complets sur chaque combat ci-dessous.
-        </p>
+      {showPrediction && (
+        <RecentResults red={fight.redCorner} blue={fight.blueCorner} />
       )}
     </div>
   )

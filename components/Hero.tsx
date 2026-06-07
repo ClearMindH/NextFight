@@ -10,7 +10,7 @@ const HERO_SRC = process.env.NEXT_PUBLIC_HERO_BACKGROUND ?? '/images/hero-bg.jpg
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src={HERO_SRC}
@@ -70,10 +70,10 @@ export function Hero() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="/ufc-pronostics"
+            href="#promotions"
             className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/10"
           >
-            Pronostics UFC
+            Voir les pronostics
             <ArrowRight size={16} />
           </Link>
           <Link

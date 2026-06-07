@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${GeistSans.variable} ${bebasNeue.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${GeistSans.variable} ${bebasNeue.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   )

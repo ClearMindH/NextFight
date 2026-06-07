@@ -18,7 +18,15 @@ export function OrgSeoPage({ org }: OrgSeoPageProps) {
     <main className="pt-16">
       <section className="section-padding border-b border-border">
         <div className="container-content max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">{org.name}</p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">{org.name}</p>
+            <Link
+              href={org.seoPathFr}
+              className="text-xs text-muted transition-colors hover:text-foreground"
+            >
+              Français
+            </Link>
+          </div>
           <h1 className="mt-4 font-display text-3xl sm:text-4xl font-semibold tracking-tight">
             {org.name} Predictions & Fight Previews
           </h1>

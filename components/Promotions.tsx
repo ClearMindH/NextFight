@@ -25,13 +25,13 @@ export function Promotions() {
         <FadeIn className="mx-auto max-w-2xl text-center">
           <p className="inline-flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-gold">
             <span className="h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(201,162,39,0.8)]" />
-            Promotions
+            Organisations
           </p>
           <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
             Pronostics par organisation
           </h2>
           <p className="mt-3 text-sm text-muted sm:text-base">
-            Une page par promotion avec calendrier, pronostics et analyses — interface claire et
+            Une page par organisation avec calendrier, pronostics et analyses — interface claire et
             lisible.
           </p>
         </FadeIn>
