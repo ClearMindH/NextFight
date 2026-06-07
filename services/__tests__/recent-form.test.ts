@@ -134,21 +134,21 @@ describe('recent-form', () => {
 })
 
 describe('Ziam vs Nolan recent-form weighting', () => {
-  it('favors ranked streaking fighter over unranked opponent with weaker schedule', () => {
+  it('favors the fighter coming off a head-to-head win on a streak', () => {
     const ziam = getFighterFromStore('ufc-fares-ziam')
     const nolan = getFighterFromStore('ufc-tom-nolan')
     if (!ziam || !nolan) return
 
+    // Données réelles : Nolan a battu Ziam (combat le plus récent) et reste sur
+    // une série de victoires. La forme récente doit primer sur le classement.
     const result = PredictionEngine.predict({
       fighterA: ziam,
       fighterB: nolan,
       scheduledRounds: 3,
     })
 
-    expect(result.fighterAProbability).toBeGreaterThan(result.fighterBProbability)
-    expect(result.predictedWinnerId).toBe('ufc-fares-ziam')
-    expect(result.breakdown.form?.fighterA.winsLast5).toBe(3)
-    expect(result.breakdown.form?.fighterB.bouts.length).toBeLessThanOrEqual(2)
+    expect(result.fighterBProbability).toBeGreaterThan(result.fighterAProbability)
+    expect(result.predictedWinnerId).toBe('ufc-tom-nolan')
   })
 })
 

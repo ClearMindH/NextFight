@@ -179,6 +179,41 @@ function opponentNameFromSlug(slug: string): string {
     .join(' ')
 }
 
+/** Un `alt` exploitable est un nom propre court, pas une légende de photo. */
+function isCleanNameAlt(alt: string): boolean {
+  const trimmed = alt.trim()
+  if (trimmed.length < 2 || trimmed.length > 40) return false
+  if (/\d/.test(trimmed)) return false
+  return !/\b(of|in|at|during|punches|kicks|photo|getty|zuffa|llc|ufc)\b/i.test(trimmed)
+}
+
+/**
+ * Nom d'adversaire le plus complet et fiable. Le slug UFC encode toujours le nom
+ * entier (`stewart-nicoll` → « Stewart Nicoll »), contrairement au texte du lien
+ * souvent réduit au nom de famille. On ne préfère l'`alt` que s'il est propre
+ * (vraies majuscules/diacritiques) et au moins aussi complet que le slug.
+ */
+function chooseOpponentName(
+  opponentSlug: string,
+  altName?: string,
+  linkText?: string,
+): string {
+  const slugName = opponentNameFromSlug(opponentSlug)
+  const slugTokens = slugName.split(/\s+/).filter(Boolean).length
+
+  const alt = altName?.trim()
+  if (alt && isCleanNameAlt(alt) && alt.split(/\s+/).filter(Boolean).length >= slugTokens) {
+    return alt
+  }
+
+  // Le slug reste la source la plus fiable dès qu'il porte un prénom + nom.
+  if (slugTokens >= 2) return slugName
+
+  // En dernier recours seulement (slug mono-token), le texte du lien.
+  const link = linkText?.trim()
+  return link && link.length >= slugName.length ? link : slugName
+}
+
 /** Historique « athlete-results » sur UFC.com (plusieurs combats réels). */
 export function parseUfcAthleteResultsHistory(
   html: string,
@@ -228,12 +263,14 @@ export function parseUfcAthleteResultsHistory(
         'i',
       ),
     )?.[1]
-    const opponentName =
-      opponentAlt?.trim() ||
-      raw.match(
-        new RegExp(`/athlete/${opponentSlug}[^>]*>([^<]+)</a>`, 'i'),
-      )?.[1]?.trim() ||
-      opponentNameFromSlug(opponentSlug)
+    const opponentLinkText = raw.match(
+      new RegExp(`/athlete/${opponentSlug}[^>]*>([^<]+)</a>`, 'i'),
+    )?.[1]
+    const opponentName = chooseOpponentName(
+      opponentSlug,
+      opponentAlt,
+      opponentLinkText,
+    )
 
     bouts.push({
       opponentName,

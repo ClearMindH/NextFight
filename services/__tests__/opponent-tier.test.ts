@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { tierFromFighter } from '@/lib/opponent-tier'
+import { tierFromFighter, tierFromRecord } from '@/lib/opponent-tier'
+import { tierFromExternalCounts } from '@/lib/external-opponent-tier'
 import type { Fighter } from '@/types'
 
 function fighter(p: {
@@ -60,5 +61,51 @@ describe('tierFromFighter', () => {
     const t = tierFromFighter(fighter({}))
     expect(t).toBeGreaterThan(40)
     expect(t).toBeLessThan(60)
+  })
+})
+
+describe('tierFromRecord', () => {
+  it('récompense un meilleur ratio victoires', () => {
+    const strong = tierFromRecord({ wins: 20, losses: 1 })
+    const weak = tierFromRecord({ wins: 5, losses: 10 })
+    expect(strong).toBeGreaterThan(weak)
+  })
+
+  it('reste borné 20–99', () => {
+    expect(tierFromRecord({ wins: 40, losses: 0, finishingRate: 95, winStreak: 15 })).toBeLessThanOrEqual(99)
+    expect(tierFromRecord({ wins: 0, losses: 20 })).toBeGreaterThanOrEqual(20)
+  })
+})
+
+describe('tierFromExternalCounts', () => {
+  it('dérive un tier depuis un palmarès externe', () => {
+    const t = tierFromExternalCounts({
+      koWins: 6,
+      subWins: 2,
+      decWins: 2,
+      koLosses: 0,
+      subLosses: 1,
+      decLosses: 0,
+      wins: 10,
+      losses: 1,
+      source: 'sherdog',
+    })
+    expect(t).toBeGreaterThan(55)
+    expect(t).toBeLessThanOrEqual(99)
+  })
+
+  it('note bas un palmarès négatif', () => {
+    const t = tierFromExternalCounts({
+      koWins: 1,
+      subWins: 0,
+      decWins: 1,
+      koLosses: 4,
+      subLosses: 2,
+      decLosses: 2,
+      wins: 2,
+      losses: 8,
+      source: 'sherdog',
+    })
+    expect(t).toBeLessThan(50)
   })
 })

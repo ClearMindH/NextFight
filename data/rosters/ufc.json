@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ufc",
     "fighterCount": 1164,
-    "lastSyncedAt": "2026-06-05T13:41:03.348Z",
+    "lastSyncedAt": "2026-06-07T17:19:24.624Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -854,28 +854,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Nicoll",
+          "opponentName": "Matt Schnell",
+          "result": "win",
+          "method": "ko_tko",
+          "round": 1,
+          "opponentTier": 61,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Stewart Nicoll",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Coria",
+          "opponentName": "Alden Coria",
           "result": "loss",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 9
-        },
-        {
-          "opponentName": "Borjas",
-          "result": "win",
-          "method": "ko_tko",
-          "round": 2,
-          "opponentTier": 50,
-          "monthsAgo": 29
         }
       ],
       "nickname": "Nono"
@@ -1854,19 +1854,19 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Fakhretdinov",
+          "opponentName": "Rinat Fakhretdinov",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 9
         },
         {
-          "opponentName": "Williams",
+          "opponentName": "Khaos Williams",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 12
         }
       ],
@@ -2416,28 +2416,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Alencar",
+          "opponentName": "Ketlen Souza",
+          "result": "loss",
+          "method": "ko_tko",
+          "round": 1,
+          "opponentTier": 68,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Talita Alencar",
           "result": "loss",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Rodriguez",
+          "opponentName": "Piera Rodriguez",
           "result": "win",
           "method": "decision",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 29
-        },
-        {
-          "opponentName": "Godinez",
-          "result": "loss",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 36
         }
       ],
       "nickname": "Sorriso"
@@ -2663,19 +2663,19 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Perez",
+          "opponentName": "Ailin Perez",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 35
         },
         {
-          "opponentName": "Dumont",
+          "opponentName": "Norma Dumont",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 36
         }
       ],
@@ -2763,27 +2763,27 @@
       "ranking": 8,
       "recentBouts": [
         {
-          "opponentName": "Perez",
+          "opponentName": "Alex Perez",
           "result": "win",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 6
+          "opponentTier": 64,
+          "monthsAgo": 7
         },
         {
-          "opponentName": "Ochoa",
+          "opponentName": "Jose Ochoa",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Kape",
+          "opponentName": "Manel Kape",
           "result": "loss",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 92,
           "monthsAgo": 15
         }
       ],
@@ -3056,27 +3056,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Topuria",
+          "opponentName": "Aleksandre Topuria",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 6
+          "opponentTier": 94,
+          "monthsAgo": 7
         },
         {
-          "opponentName": "Katona",
+          "opponentName": "Brad Katona",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Nurmagomedov",
+          "opponentName": "Umar Nurmagomedov",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 27
         }
       ],
@@ -3538,28 +3538,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "de Ridder",
+          "opponentName": "Edmen Shahbazyan",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 64,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Reinier De Ridder",
           "result": "win",
           "method": "ko_tko",
           "round": 4,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Vettori",
+          "opponentName": "Marvin Vettori",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 11
-        },
-        {
-          "opponentName": "Hernandez",
-          "result": "loss",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 16
         }
       ],
       "ranking": 4,
@@ -3834,27 +3834,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Rodrigues",
+          "opponentName": "Gregory Rodrigues",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Vettori",
+          "opponentName": "Marvin Vettori",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 6
         },
         {
-          "opponentName": "McVey",
+          "opponentName": "Jackson Mcvey",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 11
         }
       ],
@@ -4501,27 +4501,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Oleksiejczuk",
+          "opponentName": "Cezary Oleksiejczuk",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Alhassan",
+          "opponentName": "Abdul Razak Alhassan",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Potieria",
+          "opponentName": "Ihor Potieria",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 20
         }
       ],
@@ -4837,28 +4837,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Edwards",
+          "opponentName": "Priscila Cachoeira",
+          "result": "win",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 60,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Joselyne Edwards",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 16
         },
         {
-          "opponentName": "Santos",
+          "opponentName": "Yana Santos",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 29
-        },
-        {
-          "opponentName": "Nunes",
-          "result": "win",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 27
         }
       ]
     },
@@ -5498,27 +5498,27 @@
       "ranking": 13,
       "recentBouts": [
         {
-          "opponentName": "Dolidze",
+          "opponentName": "Roman Dolidze",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 2
+          "opponentTier": 64,
+          "monthsAgo": 3
         },
         {
-          "opponentName": "Tulio",
+          "opponentName": "Marco Tulio",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Anders",
+          "opponentName": "Eryk Anders",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 17
         }
       ],
@@ -5631,19 +5631,19 @@
       "ranking": 3,
       "recentBouts": [
         {
-          "opponentName": "Volkov",
+          "opponentName": "Alexander Volkov",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 18
         },
         {
-          "opponentName": "Spivac",
+          "opponentName": "Serghei Spivac",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 33
         }
       ],
@@ -5902,27 +5902,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Filho",
+          "opponentName": "Jafel Filho",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Tumendemberel",
+          "opponentName": "Nyamjargal Tumendemberel",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Nascimento",
+          "opponentName": "Allan Nascimento",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 7
         }
       ],
@@ -5983,27 +5983,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Long",
+          "opponentName": "Xiao Long",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Barcelos",
+          "opponentName": "Raoni Barcelos",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 12
         },
         {
-          "opponentName": "Figueiredo",
+          "opponentName": "Deiveson Figueiredo",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 29
         }
       ],
@@ -6837,19 +6837,19 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Morono",
+          "opponentName": "Alex Morono",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Sezinando",
+          "opponentName": "Rodrigo Sezinando",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 9
         }
       ]
@@ -7851,27 +7851,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Gatto",
+          "opponentName": "Melissa Gatto",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Silva",
+          "opponentName": "Karine Silva",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Belbita",
+          "opponentName": "Diana Belbita",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 17
         }
       ],
@@ -8376,15 +8376,23 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Bunes",
+          "opponentName": "Bruno Silva",
+          "result": "win",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 68,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Felipe Bunes",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Vergara",
+          "opponentName": "Cj Vergara",
           "result": "win",
           "method": "submission",
           "round": 1,
@@ -8701,11 +8709,11 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Pericic",
+          "opponentName": "Brando Pericic",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 8
         }
       ],
@@ -9704,28 +9712,28 @@
       "ranking": 11,
       "recentBouts": [
         {
-          "opponentName": "Brown",
+          "opponentName": "Belal Muhammad",
+          "result": "win",
+          "method": "decision",
+          "round": 5,
+          "opponentTier": 87,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Randy Brown",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Thompson",
+          "opponentName": "Stephen Thompson",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 11
-        },
-        {
-          "opponentName": "Williams",
-          "result": "win",
-          "method": "submission",
-          "round": 2,
-          "opponentTier": 50,
-          "monthsAgo": 17
         }
       ],
       "nickname": "Marretinha"
@@ -9989,27 +9997,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Le",
+          "opponentName": "Quang Le",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 79,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Romious",
+          "opponentName": "Cortavious Romious",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 19
         },
         {
-          "opponentName": "McGhee",
+          "opponentName": "Marcus Mcghee",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 29
         }
       ],
@@ -10140,27 +10148,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Vallejos",
+          "opponentName": "Kevin Vallejos",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 72,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Onama",
+          "opponentName": "David Onama",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 16
         },
         {
-          "opponentName": "Allen",
+          "opponentName": "Arnold Allen",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 22
         }
       ],
@@ -11135,27 +11143,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Emmers",
+          "opponentName": "Jamall Emmers",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Delgado",
+          "opponentName": "Jose Delgado",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Gomis",
+          "opponentName": "William Gomis",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 15
         }
       ],
@@ -11316,28 +11324,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Park",
+          "opponentName": "Jun Yong Park",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Muniz",
+          "opponentName": "Andre Muniz",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 58,
           "monthsAgo": 16
         },
         {
-          "opponentName": "Whittaker",
+          "opponentName": "Robert Whittaker",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 23
+          "opponentTier": 77,
+          "monthsAgo": 24
         }
       ],
       "ranking": 15
@@ -11397,27 +11405,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Sy",
+          "opponentName": "Oumar Sy",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Bukauskas",
+          "opponentName": "Modestas Bukauskas",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Aslan",
+          "opponentName": "Ibo Aslan",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 16
         }
       ],
@@ -11709,19 +11717,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Lane",
+          "opponentName": "Junior Tafa",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 2
+          "opponentTier": 57,
+          "monthsAgo": 0
         },
         {
-          "opponentName": "Aslan",
+          "opponentName": "Austen Lane",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 63,
+          "monthsAgo": 3
+        },
+        {
+          "opponentName": "Ibo Aslan",
+          "result": "win",
+          "method": "ko_tko",
+          "round": 1,
+          "opponentTier": 64,
           "monthsAgo": 6
         }
       ],
@@ -12308,27 +12324,27 @@
       "ranking": 11,
       "recentBouts": [
         {
-          "opponentName": "Page",
+          "opponentName": "Michael Page",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Rodrigues",
+          "opponentName": "Gregory Rodrigues",
           "result": "win",
           "method": "ko_tko",
           "round": 4,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Borralho",
+          "opponentName": "Caio Borralho",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 28
         }
       ],
@@ -13130,27 +13146,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Pinto",
+          "opponentName": "Mario Pinto",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 71,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Hines",
+          "opponentName": "Alvin Hines",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Tybura",
+          "opponentName": "Marcin Tybura",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 19
         }
       ]
@@ -13334,28 +13350,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Thomson",
+          "opponentName": "Jordan Leavitt",
+          "result": "win",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 65,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Isaac Thomson",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Sabatini",
+          "opponentName": "Pat Sabatini",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 17
-        },
-        {
-          "opponentName": "Gomis",
-          "result": "loss",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 20
         }
       ],
       "nickname": "Tubarao"
@@ -15347,27 +15363,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Pimblett",
+          "opponentName": "Paddy Pimblett",
           "result": "win",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 85,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Fiziev",
+          "opponentName": "Rafael Fiziev",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 75,
           "monthsAgo": 15
         },
         {
-          "opponentName": "Holloway",
+          "opponentName": "Max Holloway",
           "result": "loss",
           "method": "ko_tko",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 88,
           "monthsAgo": 29
         }
       ],
@@ -15950,15 +15966,15 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Rodriguez",
+          "opponentName": "Imanol Rodriguez",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Mudaerji",
+          "opponentName": "Sumudaerji",
           "result": "loss",
           "method": "decision",
           "round": 3,
@@ -15966,11 +15982,11 @@
           "monthsAgo": 16
         },
         {
-          "opponentName": "Rodriguez",
+          "opponentName": "Luis Rodriguez",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 14
         }
       ],
@@ -16480,27 +16496,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Meerschaert",
+          "opponentName": "Gerald Meerschaert",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Pereira",
+          "opponentName": "Michel Pereira",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 94,
           "monthsAgo": 16
         },
         {
-          "opponentName": "Anders",
+          "opponentName": "Eryk Anders",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 36
         }
       ]
@@ -18103,23 +18119,23 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Oleksiejczuk",
+          "opponentName": "Michal Oleksiejczuk",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Magomedov",
+          "opponentName": "Shara Magomedov",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 71,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Silva",
+          "opponentName": "Bruno Silva Blindado",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
@@ -18632,27 +18648,27 @@
       "ranking": 7,
       "recentBouts": [
         {
-          "opponentName": "Oliveira",
+          "opponentName": "Vinicius Oliveira",
           "result": "win",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Nurmagomedov",
+          "opponentName": "Umar Nurmagomedov",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Mix",
+          "opponentName": "Patrick Mix",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 12
         }
       ]
@@ -19085,19 +19101,19 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Borshchev",
+          "opponentName": "Viacheslav Borshchev",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 55,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Green",
+          "opponentName": "Gabe Green",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 17
         }
       ],
@@ -19631,27 +19647,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Silva",
+          "opponentName": "Jean Silva",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 16
         },
         {
-          "opponentName": "Lutz",
+          "opponentName": "Tucker Lutz",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 35
         },
         {
-          "opponentName": "Culibao",
+          "opponentName": "Joshua Culibao",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 36
         }
       ],
@@ -19839,27 +19855,27 @@
       "ranking": 13,
       "recentBouts": [
         {
-          "opponentName": "Pimblett",
+          "opponentName": "Paddy Pimblett",
           "result": "loss",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 85,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Oliveira",
+          "opponentName": "Charles Oliveira",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 19
         },
         {
-          "opponentName": "Poirier",
+          "opponentName": "Dustin Poirier",
           "result": "loss",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 36
         }
       ],
@@ -22178,28 +22194,28 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Sygula",
+          "opponentName": "Chelsea Chandler",
+          "result": "loss",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 57,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Klaudia Sygula",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Edwards",
+          "opponentName": "Joselyne Edwards",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
-        },
-        {
-          "opponentName": "Nunes",
-          "result": "win",
-          "method": "ko_tko",
-          "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 15
         }
       ],
       "nickname": "Zombie Girl"
@@ -22437,27 +22453,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Ruffy",
+          "opponentName": "Mauricio Ruffy",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 79,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Bahamondes",
+          "opponentName": "Ignacio Bahamondes",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 11
+          "opponentTier": 63,
+          "monthsAgo": 12
         },
         {
-          "opponentName": "Gaethje",
+          "opponentName": "Justin Gaethje",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 15
         }
       ],
@@ -24157,7 +24173,7 @@
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 59,
           "monthsAgo": 3
         }
       ],
@@ -25640,27 +25656,27 @@
       "ranking": 9,
       "recentBouts": [
         {
-          "opponentName": "Onama",
+          "opponentName": "David Onama",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Kattar",
+          "opponentName": "Calvin Kattar",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Nelson",
+          "opponentName": "Kyle Nelson",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 21
         }
       ],
@@ -26774,31 +26790,33 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Brasil",
+          "opponentName": "Ariane Carnelossi",
+          "result": "win",
+          "method": "ko_tko",
+          "round": 1,
+          "opponentTier": 65,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Bruna Brasil",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 58,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Rodriguez",
+          "opponentName": "Piera Rodriguez",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 17
-        },
-        {
-          "opponentName": "Hill",
-          "result": "loss",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 17
         }
       ],
-      "nickname": "Esquentadinha"
+      "nickname": "Esquentadinha",
+      "imageUrl": "https://ufc.com/images/2026-06/SOUZA_KETLEN_06-06.png",
+      "lastSyncedAt": "2026-06-07T15:10:46.938Z"
     },
     {
       "id": "ufc-tony-desouza",
@@ -26824,27 +26842,27 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Carneiro",
+          "opponentName": "Roan Carneiro",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 36
         },
         {
-          "opponentName": "Alves",
+          "opponentName": "Thiago Alves",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 36
         },
         {
-          "opponentName": "Hazelett",
+          "opponentName": "Dustin Hazelett",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 36
         }
       ]
@@ -26980,27 +26998,27 @@
       "ranking": 8,
       "recentBouts": [
         {
-          "opponentName": "Blanchfield",
+          "opponentName": "Erin Blanchfield",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 92,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Araujo",
+          "opponentName": "Viviane Araujo",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Namajunas",
+          "opponentName": "Rose Namajunas",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 23
         }
       ]
@@ -27737,27 +27755,27 @@
       "ranking": 12,
       "recentBouts": [
         {
-          "opponentName": "Moura",
+          "opponentName": "Eduarda Moura",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 5
         },
         {
-          "opponentName": "da Silva",
+          "opponentName": "Ariane Da Silva",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 12
         },
         {
-          "opponentName": "Brasil",
+          "opponentName": "Bruna Brasil",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 58,
           "monthsAgo": 17
         }
       ],
@@ -28425,11 +28443,19 @@
       "source": "merged",
       "recentBouts": [
         {
-          "opponentName": "Judice",
+          "opponentName": "Jeisla Chaves",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 68,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Carli Judice",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 15
         }
       ],
@@ -28650,35 +28676,36 @@
         "tdAvg": 2.14,
         "subAvg": 0.14
       },
-      "lastSyncedAt": "2026-06-03T22:35:30.675Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.359Z",
       "source": "ufc.com",
       "ranking": 5,
       "recentBouts": [
         {
-          "opponentName": "Machado Garry",
+          "opponentName": "Gabriel Bonfim",
+          "result": "loss",
+          "method": "decision",
+          "round": 5,
+          "opponentTier": 75,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Ian Machado Garry",
           "result": "loss",
           "method": "decision",
           "round": 3,
           "opponentTier": 50,
-          "monthsAgo": 6
+          "monthsAgo": 7
         },
         {
-          "opponentName": "Della Maddalena",
+          "opponentName": "Jack Della Maddalena",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 90,
           "monthsAgo": 17
-        },
-        {
-          "opponentName": "Edwards",
-          "result": "win",
-          "method": "decision",
-          "round": 5,
-          "opponentTier": 50,
-          "monthsAgo": 22
         }
-      ]
+      ],
+      "imageUrl": "https://ufc.com/images/2026-06/MUHAMMAD_BELAL_06-06.png"
     },
     {
       "id": "ufc-edmen-shahbazyan",
@@ -28705,35 +28732,36 @@
         "tdAvg": 1.62,
         "subAvg": 0.4
       },
-      "lastSyncedAt": "2026-06-03T22:35:32.064Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.983Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Muniz",
+          "opponentName": "Brendan Allen",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 88,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Andre Muniz",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 58,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Petroski",
+          "opponentName": "Andre Petroski",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 12
-        },
-        {
-          "opponentName": "Budka",
-          "result": "win",
-          "method": "ko_tko",
-          "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 17
         }
       ],
-      "nickname": "The Golden Boy"
+      "nickname": "The Golden Boy",
+      "imageUrl": "https://ufc.com/images/2026-06/SHAHBAZYAN_EDMEN_06-06.png"
     },
     {
       "id": "ufc-fares-ziam",
@@ -28765,28 +28793,28 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Sadykhov",
+          "opponentName": "Tom Nolan",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 66,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Nazim Sadykhov",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Davis",
+          "opponentName": "Mike Davis",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
-        },
-        {
-          "opponentName": "Frevola",
-          "result": "win",
-          "method": "ko_tko",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 20
         }
       ],
       "ranking": 14,
@@ -28822,28 +28850,28 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Campbell",
+          "opponentName": "Fares Ziam",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 70,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Charlie Campbell",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Borshchev",
+          "opponentName": "Viacheslav Borshchev",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 55,
           "monthsAgo": 17
-        },
-        {
-          "opponentName": "Reyes",
-          "result": "win",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 29
         }
       ],
       "nickname": "Big Train",
@@ -28884,32 +28912,32 @@
         "tdAvg": 3.24,
         "subAvg": 1.19
       },
-      "lastSyncedAt": "2026-06-05T13:40:41.360Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.506Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Nurmagomedov",
+          "opponentName": "Santiago Luna",
+          "result": "win",
+          "method": "submission",
+          "round": 3,
+          "opponentTier": 68,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Said Nurmagomedov",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Silva",
+          "opponentName": "Jean Silva",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 17
-        },
-        {
-          "opponentName": "Gracie",
-          "result": "win",
-          "method": "ko_tko",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 18
         }
       ],
       "nickname": "Thug Nasty",
@@ -28923,7 +28951,8 @@
         "wins": 18,
         "losses": 3,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/MITCHELL_BRYCE_06-06.png"
     },
     {
       "id": "ufc-shiyunia-tafua",
@@ -28950,14 +28979,14 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:46.485Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.403Z",
       "source": "ufc.com",
       "recentBouts": [
         {
           "opponentName": "Kevin Christian",
           "result": "win",
           "method": "decision",
-          "opponentTier": 55,
+          "opponentTier": 62,
           "monthsAgo": 4
         }
       ],
@@ -28972,7 +29001,8 @@
         "wins": 7,
         "losses": 5,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/TAFA_JUNIOR_06-06.png"
     },
     {
       "id": "ufc-matt-schnell",
@@ -28999,32 +29029,32 @@
         "tdAvg": 0.6,
         "subAvg": 1.21
       },
-      "lastSyncedAt": "2026-06-05T13:40:47.006Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.598Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Morales",
+          "opponentName": "Alessandro Costa",
+          "result": "loss",
+          "method": "ko_tko",
+          "round": 1,
+          "opponentTier": 64,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Joseph Morales",
           "result": "loss",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Flick",
+          "opponentName": "Jimmy Flick",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 16
-        },
-        {
-          "opponentName": "Durden",
-          "result": "loss",
-          "method": "submission",
-          "round": 2,
-          "opponentTier": 50,
-          "monthsAgo": 21
         }
       ],
       "nickname": "Danger",
@@ -29038,7 +29068,8 @@
         "wins": 17,
         "losses": 10,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/SCHNELL_MATT_06-06.png"
     },
     {
       "id": "ufc-marcus-mcghee",
@@ -29065,32 +29096,32 @@
         "tdAvg": 0.31,
         "subAvg": 0.31
       },
-      "lastSyncedAt": "2026-06-05T13:40:48.913Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.309Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Yan",
+          "opponentName": "John Yannis",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 61,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Petr Yan",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Martinez",
+          "opponentName": "Jonathan Martinez",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 19
-        },
-        {
-          "opponentName": "Bolanos",
-          "result": "win",
-          "method": "ko_tko",
-          "round": 2,
-          "opponentTier": 50,
-          "monthsAgo": 29
         }
       ],
       "nickname": "The Maniac",
@@ -29104,7 +29135,8 @@
         "wins": 10,
         "losses": 2,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/MCGHEE_MARCUS_06-06.png"
     },
     {
       "id": "ufc-john-yannis",
@@ -29131,23 +29163,31 @@
         "tdAvg": 0,
         "subAvg": 0
       },
-      "lastSyncedAt": "2026-06-05T13:40:50.353Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.851Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Siraj",
+          "opponentName": "Marcus Mcghee",
+          "result": "loss",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 64,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Jamie Siraj",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Bashi",
+          "opponentName": "Austin Bashi",
           "result": "loss",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 17
         }
       ],
@@ -29161,7 +29201,8 @@
         "wins": 10,
         "losses": 4,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/YANNIS_JOHN_06-06.png"
     },
     {
       "id": "ufc-bruno-silva",
@@ -29188,32 +29229,32 @@
         "tdAvg": 2.01,
         "subAvg": 0.25
       },
-      "lastSyncedAt": "2026-06-05T13:40:52.966Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.649Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Johnson",
+          "opponentName": "Edgar Chairez",
+          "result": "loss",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 62,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Charles Johnson",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Park",
+          "opponentName": "Hyunsung Park",
           "result": "win",
           "method": "submission",
           "round": 3,
           "opponentTier": 50,
           "monthsAgo": 8
-        },
-        {
-          "opponentName": "Van",
-          "result": "loss",
-          "method": "ko_tko",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 12
         }
       ],
       "ranking": 15,
@@ -29228,7 +29269,8 @@
         "wins": 23,
         "losses": 13,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/SILVA_BRUNO_06-06.png"
     },
     {
       "id": "ufc-jordan-leavitt",
@@ -29255,32 +29297,32 @@
         "tdAvg": 3.15,
         "subAvg": 1.05
       },
-      "lastSyncedAt": "2026-06-05T13:40:58.622Z",
+      "lastSyncedAt": "2026-06-07T15:10:46.680Z",
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "del Valle",
-          "result": "win",
-          "method": "decision",
-          "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 4
-        },
-        {
-          "opponentName": "Holobaugh",
-          "result": "win",
-          "method": "submission",
-          "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 12
-        },
-        {
-          "opponentName": "Hooper",
+          "opponentName": "Joanderson Brito",
           "result": "loss",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 31
+          "opponentTier": 65,
+          "monthsAgo": 0
+        },
+        {
+          "opponentName": "Yadier Del Valle",
+          "result": "win",
+          "method": "decision",
+          "round": 3,
+          "opponentTier": 67,
+          "monthsAgo": 4
+        },
+        {
+          "opponentName": "Kurt Holobaugh",
+          "result": "win",
+          "method": "submission",
+          "round": 1,
+          "opponentTier": 65,
+          "monthsAgo": 12
         }
       ],
       "nickname": "The Monkey King",
@@ -29294,7 +29336,8 @@
         "wins": 13,
         "losses": 3,
         "source": "sherdog"
-      }
+      },
+      "imageUrl": "https://ufc.com/images/2026-06/LEAVITT_JORDAN_06-06.png"
     },
     {
       "id": "ufc-ilia-topuria",
@@ -29326,27 +29369,27 @@
       "ranking": 1,
       "recentBouts": [
         {
-          "opponentName": "Oliveira",
+          "opponentName": "Charles Oliveira",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Holloway",
+          "opponentName": "Max Holloway",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 88,
           "monthsAgo": 19
         },
         {
-          "opponentName": "Volkanovski",
+          "opponentName": "Alexander Volkanovski",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 29
         }
       ],
@@ -29381,23 +29424,23 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Ankalaev",
+          "opponentName": "Magomed Ankalaev",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 92,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Ankalaev",
+          "opponentName": "Magomed Ankalaev",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 92,
           "monthsAgo": 15
         },
         {
-          "opponentName": "Rountree Jr.",
+          "opponentName": "Khalil Rountree Jr",
           "result": "win",
           "method": "ko_tko",
           "round": 4,
@@ -29438,27 +29481,27 @@
       "ranking": 3,
       "recentBouts": [
         {
-          "opponentName": "Yadong",
+          "opponentName": "Song Yadong",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Dvalishvili",
+          "opponentName": "Merab Dvalishvili",
           "result": "loss",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 94,
           "monthsAgo": 12
         },
         {
-          "opponentName": "Dvalishvili",
+          "opponentName": "Merab Dvalishvili",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 94,
           "monthsAgo": 21
         }
       ],
@@ -29494,27 +29537,27 @@
       "ranking": 6,
       "recentBouts": [
         {
-          "opponentName": "Vera",
+          "opponentName": "Marlon Vera",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Aldo",
+          "opponentName": "Jose Aldo",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Munhoz",
+          "opponentName": "Pedro Munhoz",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 19
         }
       ]
@@ -29549,27 +29592,27 @@
       "ranking": 5,
       "recentBouts": [
         {
-          "opponentName": "Blaydes",
+          "opponentName": "Curtis Blaydes",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 88,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Freeman",
+          "opponentName": "Denzel Freeman",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Gimenis",
+          "opponentName": "Max Gimenis",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 7
         }
       ]
@@ -29604,15 +29647,15 @@
       "ranking": 9,
       "recentBouts": [
         {
-          "opponentName": "Fiziev",
+          "opponentName": "Rafael Fiziev",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 75,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Saint Denis",
+          "opponentName": "Benoit Saint Denis",
           "result": "loss",
           "method": "submission",
           "round": 2,
@@ -29620,7 +29663,7 @@
           "monthsAgo": 9
         },
         {
-          "opponentName": "Green",
+          "opponentName": "Bobby Green",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
@@ -29658,27 +29701,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Vieira",
+          "opponentName": "Rodolfo Vieira",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 7
         },
         {
-          "opponentName": "de Ridder",
+          "opponentName": "Reinier De Ridder",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Craig",
+          "opponentName": "Paul Craig",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 19
         }
       ]
@@ -29713,27 +29756,27 @@
       "ranking": 2,
       "recentBouts": [
         {
-          "opponentName": "Royval",
+          "opponentName": "Brandon Royval",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 88,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Almabayev",
+          "opponentName": "Asu Almabayev",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 81,
           "monthsAgo": 15
         },
         {
-          "opponentName": "Silva",
+          "opponentName": "Bruno Silva",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 18
         }
       ],
@@ -29769,27 +29812,27 @@
       "ranking": 5,
       "recentBouts": [
         {
-          "opponentName": "Albazi",
+          "opponentName": "Amir Albazi",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 88,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Ulanbekov",
+          "opponentName": "Tagir Ulanbekov",
           "result": "win",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 6
+          "opponentTier": 67,
+          "monthsAgo": 7
         },
         {
-          "opponentName": "Bagautinov",
+          "opponentName": "Ali Bagautinov",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 36
         }
       ],
@@ -29824,27 +29867,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Lopes",
+          "opponentName": "Bruno Lopes",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 92,
           "monthsAgo": 2
         },
         {
-          "opponentName": "Bellato",
+          "opponentName": "Rodolfo Bellato",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Erslan",
+          "opponentName": "Ivan Erslan",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 17
         }
       ]
@@ -29878,27 +29921,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Bautista",
+          "opponentName": "Mario Bautista",
           "result": "loss",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 83,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Phillips",
+          "opponentName": "Kyler Phillips",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Nurmagomedov",
+          "opponentName": "Said Nurmagomedov",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 17
         }
       ],
@@ -29936,7 +29979,7 @@
           "opponentName": "Hyder Amil",
           "result": "win",
           "method": "decision",
-          "opponentTier": 55,
+          "opponentTier": 65,
           "monthsAgo": 4
         }
       ]
@@ -29970,27 +30013,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Barez",
+          "opponentName": "Daniel Barez",
           "result": "win",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 15
         },
         {
-          "opponentName": "dos Santos",
+          "opponentName": "Felipe Dos Santos",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 21
         },
         {
-          "opponentName": "Raposo",
+          "opponentName": "Mitch Raposo",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 24
         }
       ],
@@ -30046,19 +30089,19 @@
       "ranking": 14,
       "recentBouts": [
         {
-          "opponentName": "Rendon",
+          "opponentName": "Montserrat Rendon",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 59,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Alekseeva",
+          "opponentName": "Irina Alekseeva",
           "result": "win",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 55,
           "monthsAgo": 8
         }
       ],
@@ -30093,11 +30136,11 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Sygula",
+          "opponentName": "Klaudia Sygula",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 19
         }
       ],
@@ -30156,27 +30199,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Durden",
+          "opponentName": "Cody Durden",
           "result": "win",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Filho",
+          "opponentName": "Jafel Filho",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 12
         },
         {
-          "opponentName": "Hernandez",
+          "opponentName": "Carlos Hernandez",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 90,
           "monthsAgo": 36
         }
       ],
@@ -30214,7 +30257,7 @@
           "opponentName": "Azat Maksum",
           "result": "win",
           "method": "decision",
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 4
         }
       ]
@@ -30249,27 +30292,27 @@
       "ranking": 9,
       "recentBouts": [
         {
-          "opponentName": "Cornolle",
+          "opponentName": "Nora Cornolle",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Perez",
+          "opponentName": "Ailin Perez",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Kianzad",
+          "opponentName": "Pannie Kianzad",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 29
         }
       ]
@@ -30304,23 +30347,23 @@
       "ranking": 11,
       "recentBouts": [
         {
-          "opponentName": "Croden",
+          "opponentName": "Melissa Croden",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Lisboa",
+          "opponentName": "Tainara Lisboa",
           "result": "win",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 17
         },
         {
-          "opponentName": "O&#039;Neill",
+          "opponentName": "Casey Oneill",
           "result": "loss",
           "method": "decision",
           "round": 3,
@@ -30358,27 +30401,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Dawson",
+          "opponentName": "Grant Dawson",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Dober",
+          "opponentName": "Drew Dober",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 14
         },
         {
-          "opponentName": "Bahamondes",
+          "opponentName": "Ignacio Bahamondes",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 21
         }
       ],
@@ -30413,27 +30456,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Ziam",
+          "opponentName": "Fares Ziam",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Motta",
+          "opponentName": "Nikolas Motta",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
-          "monthsAgo": 11
+          "opponentTier": 64,
+          "monthsAgo": 12
         },
         {
-          "opponentName": "Bonfim",
+          "opponentName": "Ismael Bonfim",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
         }
       ],
@@ -30469,27 +30512,27 @@
       "ranking": 14,
       "recentBouts": [
         {
-          "opponentName": "Silva",
+          "opponentName": "Bruno Silva",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Perez",
+          "opponentName": "Alex Perez",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Kavanagh",
+          "opponentName": "Loneer Kavanagh",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 85,
           "monthsAgo": 16
         }
       ],
@@ -30524,27 +30567,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Barriault",
+          "opponentName": "Marc Andre Barriault",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Meerschaert",
+          "opponentName": "Gerald Meerschaert",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Dumas",
+          "opponentName": "Sedriques Dumas",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 17
         }
       ],
@@ -30603,20 +30646,20 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Ribeiro",
+          "opponentName": "Brendson Ribeiro",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Cerqueira",
+          "opponentName": "Rafael Cerqueira",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 6
+          "opponentTier": 62,
+          "monthsAgo": 7
         }
       ],
       "nickname": "The Hunter"
@@ -30650,27 +30693,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Jacoby",
+          "opponentName": "Dustin Jacoby",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Cerqueira",
+          "opponentName": "Rafael Cerqueira",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Menifield",
+          "opponentName": "Alonzo Menifield",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 16
         }
       ],
@@ -30705,27 +30748,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Stoltzfus",
+          "opponentName": "Dustin Stoltzfus",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 17
         },
         {
-          "opponentName": "McConico",
+          "opponentName": "Eric Mcconico",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 16
         },
         {
-          "opponentName": "Buckley",
+          "opponentName": "Joaquin Buckley",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 29
         }
       ],
@@ -30760,28 +30803,28 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Gautier",
+          "opponentName": "Ateba Gautier",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Klein",
+          "opponentName": "Nick Klein",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 61,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Duncan",
+          "opponentName": "Christian Leroy Duncan",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 14
+          "opponentTier": 72,
+          "monthsAgo": 15
         }
       ]
     },
@@ -30814,27 +30857,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Basharat",
+          "opponentName": "Farid Basharat",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 71,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Johns",
+          "opponentName": "Miles Johns",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Font",
+          "opponentName": "Rob Font",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 16
         }
       ]
@@ -30868,19 +30911,19 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Poirier",
+          "opponentName": "Dustin Poirier",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 36
         },
         {
-          "opponentName": "Poirier",
+          "opponentName": "Dustin Poirier",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 36
         }
       ],
@@ -30916,27 +30959,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Oliveira",
+          "opponentName": "Charles Oliveira",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Poirier",
+          "opponentName": "Dustin Poirier",
           "result": "win",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Topuria",
+          "opponentName": "Ilia Topuria",
           "result": "loss",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 94,
           "monthsAgo": 19
         }
       ],
@@ -30973,23 +31016,23 @@
       "ranking": 6,
       "recentBouts": [
         {
-          "opponentName": "Gaethje",
+          "opponentName": "Justin Gaethje",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Chandler",
+          "opponentName": "Michael Chandler",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 72,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Green",
+          "opponentName": "Bobby Green",
           "result": "win",
           "method": "submission",
           "round": 1,
@@ -31032,7 +31075,7 @@
           "opponentName": "Dan Hooker",
           "result": "win",
           "method": "decision",
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 4
         }
       ],
@@ -31068,27 +31111,27 @@
       "ranking": 4,
       "recentBouts": [
         {
-          "opponentName": "Dvalishvili",
+          "opponentName": "Merab Dvalishvili",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 94,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Figueiredo",
+          "opponentName": "Deiveson Figueiredo",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Nurmagomedov",
+          "opponentName": "Umar Nurmagomedov",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 29
         }
       ]
@@ -31123,27 +31166,27 @@
       "ranking": 4,
       "recentBouts": [
         {
-          "opponentName": "Kape",
+          "opponentName": "Manel Kape",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 92,
           "monthsAgo": 6
         },
         {
-          "opponentName": "Van",
+          "opponentName": "Joshua Van",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Taira",
+          "opponentName": "Tatsuro Taira",
           "result": "win",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 20
         }
       ],
@@ -31179,28 +31222,28 @@
       "ranking": 6,
       "recentBouts": [
         {
-          "opponentName": "Moreno",
+          "opponentName": "Brandon Moreno",
           "result": "win",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Johnson",
+          "opponentName": "Charles Johnson",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 70,
           "monthsAgo": 16
         },
         {
-          "opponentName": "dos Santos",
+          "opponentName": "Felipe Dos Santos",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
-          "monthsAgo": 14
+          "opponentTier": 61,
+          "monthsAgo": 15
         }
       ]
     },
@@ -31258,28 +31301,28 @@
       "ranking": 10,
       "recentBouts": [
         {
-          "opponentName": "de Ridder",
+          "opponentName": "Reinier De Ridder",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Chimaev",
+          "opponentName": "Khamzat Chimaev",
           "result": "loss",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 90,
           "monthsAgo": 19
         },
         {
-          "opponentName": "Aliskerov",
+          "opponentName": "Ikram Aliskerov",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
-          "monthsAgo": 23
+          "opponentTier": 68,
+          "monthsAgo": 24
         }
       ],
       "nickname": "The Reaper"
@@ -31314,27 +31357,27 @@
       "ranking": 12,
       "recentBouts": [
         {
-          "opponentName": "Bukauskas",
+          "opponentName": "Modestas Bukauskas",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Guskov",
+          "opponentName": "Bogdan Guskov",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 67,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Reyes",
+          "opponentName": "Dominick Reyes",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 66,
           "monthsAgo": 17
         }
       ],
@@ -31369,19 +31412,19 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Marcos",
+          "opponentName": "Daniel Marcos",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 60,
           "monthsAgo": 18
         },
         {
-          "opponentName": "Salvador",
+          "opponentName": "Vinicius Salvador",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 29
         }
       ]
@@ -31415,11 +31458,11 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Schultz",
+          "opponentName": "Wes Schultz",
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 3
         }
       ],
@@ -31457,7 +31500,7 @@
           "opponentName": "Kai Kamaka",
           "result": "win",
           "method": "decision",
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 4
         }
       ],
@@ -31492,19 +31535,19 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Pereira",
+          "opponentName": "Michel Pereira",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 94,
           "monthsAgo": 4
         },
         {
-          "opponentName": "McVey",
+          "opponentName": "Jackson Mcvey",
           "result": "win",
           "method": "submission",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 7
         }
       ],
@@ -31539,27 +31582,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Idiris",
+          "opponentName": "Alibi Idiris",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 4
         },
         {
-          "opponentName": "Erceg",
+          "opponentName": "Steve Erceg",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Gurule",
+          "opponentName": "Luis Gurule",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 17
         }
       ],
@@ -31590,27 +31633,27 @@
       "source": "event-card",
       "recentBouts": [
         {
-          "opponentName": "Anders",
+          "opponentName": "Eryk Anders",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 3
         },
         {
-          "opponentName": "Bryczek",
+          "opponentName": "Robert Bryczek",
           "result": "loss",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 9
         },
         {
-          "opponentName": "Meerschaert",
+          "opponentName": "Gerald Meerschaert",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 17
         }
       ]
@@ -31644,27 +31687,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Gibson Jr.",
+          "opponentName": "Lance Gibson Jr",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 2
         },
         {
-          "opponentName": "Hernandez",
+          "opponentName": "Alexander Hernandez",
           "result": "loss",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 90,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Miller",
+          "opponentName": "Jim Miller",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 17
         }
       ],
@@ -31699,19 +31742,19 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Davis",
+          "opponentName": "Mike Davis",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Moises",
+          "opponentName": "Thiago Moises",
           "result": "loss",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 27
         }
       ]
@@ -31765,27 +31808,27 @@
       "source": "event-card",
       "recentBouts": [
         {
-          "opponentName": "Zha",
+          "opponentName": "Yi Zha",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 43,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Ramos",
+          "opponentName": "Ricardo Ramos",
           "result": "win",
           "method": "submission",
           "round": 1,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Naimov",
+          "opponentName": "Muhammad Naimov",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
         }
       ],
@@ -31820,27 +31863,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Brown",
+          "opponentName": "Randy Brown",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 5
         },
         {
-          "opponentName": "Malott",
+          "opponentName": "Mike Malott",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 69,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Rodriguez",
+          "opponentName": "Daniel Rodriguez",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 11
         }
       ],
@@ -31876,28 +31919,28 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Ricci",
+          "opponentName": "Tabatha Ricci",
           "result": "loss",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 10
         },
         {
-          "opponentName": "Dern",
+          "opponentName": "Mackenzie Dern",
           "result": "loss",
           "method": "submission",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 65,
           "monthsAgo": 17
         },
         {
-          "opponentName": "Namajunas",
+          "opponentName": "Rose Namajunas",
           "result": "loss",
           "method": "decision",
           "round": 5,
-          "opponentTier": 50,
-          "monthsAgo": 26
+          "opponentTier": 61,
+          "monthsAgo": 27
         }
       ]
     },
@@ -31931,27 +31974,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Hill",
+          "opponentName": "Angela Hill",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 58,
           "monthsAgo": 7
         },
         {
-          "opponentName": "Martinez",
+          "opponentName": "Melissa Martinez",
           "result": "win",
           "method": "ko_tko",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 64,
           "monthsAgo": 11
         },
         {
-          "opponentName": "Dudakova",
+          "opponentName": "Viktoriia Dudakova",
           "result": "win",
           "method": "ko_tko",
           "round": 2,
-          "opponentTier": 50,
+          "opponentTier": 63,
           "monthsAgo": 17
         }
       ],
@@ -31986,27 +32029,27 @@
       "source": "ufc.com",
       "recentBouts": [
         {
-          "opponentName": "Walker",
+          "opponentName": "Brogan Walker",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 45,
           "monthsAgo": 8
         },
         {
-          "opponentName": "Moura",
+          "opponentName": "Eduarda Moura",
           "result": "loss",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 68,
           "monthsAgo": 19
         },
         {
-          "opponentName": "Aldrich",
+          "opponentName": "Jj Aldrich",
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 50,
+          "opponentTier": 62,
           "monthsAgo": 29
         }
       ]
