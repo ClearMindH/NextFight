@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-/** Fond d’accueil — UFC octagon (WallpaperCave, copie locale) */
+/** Fond d’accueil — tunnel de marche d’aréna MMA (logos retirés, copie locale) */
 const HERO_SRC = process.env.NEXT_PUBLIC_HERO_BACKGROUND ?? '/images/hero-bg.jpg'
 
 export function Hero() {
@@ -21,9 +21,21 @@ export function Hero() {
           sizes="100vw"
         />
       </div>
-      <div className="absolute inset-0 bg-background/45" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/25" />
+      {/* Assombrissement de base pour la lisibilité du texte */}
+      <div className="absolute inset-0 bg-background/55" />
+      {/* Teinte dorée pour s'accorder à la charte (gold #c9a227) */}
+      <div className="absolute inset-0 bg-gold/10 mix-blend-overlay" />
+      {/* Dégradés haut/bas pour fondre le wallpaper dans le fond noir */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/5" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40" />
+      {/* Vignettage radial doré subtil */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(circle at 50% 40%, rgba(201,162,39,0.12) 0%, rgba(5,5,5,0) 45%, rgba(5,5,5,0.7) 100%)',
+        }}
+      />
 
       <div className="relative z-10 container-content px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
         <motion.p
