@@ -490,7 +490,218 @@
           }
         }
       ]
+    },
+    {
+      "id": "hexagone-mma-45",
+      "organizationId": "hexagone",
+      "name": "Hexagone MMA 45: Dena vs Anzor",
+      "date": "2026-06-12T17:00:00.000Z",
+      "venue": "LDLC Arena",
+      "city": "Lyon",
+      "country": "France",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "hexagone-mma-45-f1",
+          "eventId": "hexagone-mma-45",
+          "order": 1,
+          "weightClass": "Catchweight",
+          "isTitle": false,
+          "isMainEvent": true,
+          "scheduledRounds": 3,
+          "redId": "hexagone-paul-denis-navero",
+          "blueId": "hexagone-anzor-baybatyrov"
+        },
+        {
+          "id": "hexagone-mma-45-f2",
+          "eventId": "hexagone-mma-45",
+          "order": 2,
+          "weightClass": "Flyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-samba-sima",
+          "blueId": "hexagone-leonardo-de-oliveira-barbosa"
+        },
+        {
+          "id": "hexagone-mma-45-f3",
+          "eventId": "hexagone-mma-45",
+          "order": 3,
+          "weightClass": "Women's Strawweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-noelle-grandjean",
+          "blueId": "hexagone-mathilde-aschenbrenner"
+        },
+        {
+          "id": "hexagone-mma-45-f4",
+          "eventId": "hexagone-mma-45",
+          "order": 4,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-damien-lapilus",
+          "blueId": "hexagone-ryan-eren-agbo"
+        },
+        {
+          "id": "hexagone-mma-45-f5",
+          "eventId": "hexagone-mma-45",
+          "order": 5,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-anas-azizoun",
+          "blueId": "hexagone-youssouf-ouattara"
+        },
+        {
+          "id": "hexagone-mma-45-f6",
+          "eventId": "hexagone-mma-45",
+          "order": 6,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-nezar-bahaji",
+          "blueId": "hexagone-muhammed-fatih-ozturk"
+        },
+        {
+          "id": "hexagone-mma-45-f7",
+          "eventId": "hexagone-mma-45",
+          "order": 7,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-allan-landouzy",
+          "blueId": "hexagone-abdul-hussainkhil"
+        },
+        {
+          "id": "hexagone-mma-45-f8",
+          "eventId": "hexagone-mma-45",
+          "order": 8,
+          "weightClass": "Featherweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-guillaume-delattre",
+          "blueId": "hexagone-malik-bendaho"
+        },
+        {
+          "id": "hexagone-mma-45-f9",
+          "eventId": "hexagone-mma-45",
+          "order": 9,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-tamerlan-albiekov",
+          "blueId": "hexagone-samuele-di-guardo"
+        },
+        {
+          "id": "hexagone-mma-45-f10",
+          "eventId": "hexagone-mma-45",
+          "order": 10,
+          "weightClass": "Featherweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "hexagone-mazri-ammar",
+          "blueId": "hexagone-nessim-khettou"
+        }
+      ]
+    },
+    {
+      "id": "ufc-freedom-250",
+      "organizationId": "ufc",
+      "name": "UFC Freedom 250",
+      "date": "2026-06-15T00:00:00.000Z",
+      "venue": "The White House",
+      "city": "Washington",
+      "country": "United States",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "ufc-freedom-250-f1",
+          "eventId": "ufc-freedom-250",
+          "order": 1,
+          "weightClass": "Lightweight Championship",
+          "isTitle": true,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-ilia-topuria",
+          "blueId": "ufc-justin-gaethje"
+        },
+        {
+          "id": "ufc-freedom-250-f2",
+          "eventId": "ufc-freedom-250",
+          "order": 2,
+          "weightClass": "Heavyweight Combat de championnat intérimaire Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-alex-pereira",
+          "blueId": "ufc-ciryl-gane"
+        },
+        {
+          "id": "ufc-freedom-250-f3",
+          "eventId": "ufc-freedom-250",
+          "order": 3,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-sean-omalley",
+          "blueId": "ufc-aiemann-zahabi"
+        },
+        {
+          "id": "ufc-freedom-250-f4",
+          "eventId": "ufc-freedom-250",
+          "order": 4,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-josh-hokit",
+          "blueId": "ufc-lewis-gonzalez"
+        },
+        {
+          "id": "ufc-freedom-250-f5",
+          "eventId": "ufc-freedom-250",
+          "order": 5,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-mauricio-ruffy",
+          "blueId": "ufc-michael-chandler"
+        },
+        {
+          "id": "ufc-freedom-250-f6",
+          "eventId": "ufc-freedom-250",
+          "order": 6,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-bo-nickal",
+          "blueId": "ufc-kyle-daukaus"
+        },
+        {
+          "id": "ufc-freedom-250-f7",
+          "eventId": "ufc-freedom-250",
+          "order": 7,
+          "weightClass": "Featherweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-henrique-da-silva-lopes",
+          "blueId": "ufc-steve-garcia"
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-06-07T16:37:02.408Z"
+  "updatedAt": "2026-06-07T18:38:27.287Z"
 }

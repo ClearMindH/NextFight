@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "pfl",
     "fighterCount": 31,
-    "lastSyncedAt": "2026-06-03T22:33:25.277Z",
+    "lastSyncedAt": "2026-06-07T18:07:18.470Z",
     "source": "pflmma.com"
   },
   "fighters": [
@@ -25,7 +25,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -48,7 +48,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.600Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.455Z",
       "source": "merged"
     },
     {
@@ -70,7 +70,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -93,7 +93,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -116,7 +116,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -138,7 +138,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -161,7 +161,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -183,7 +183,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -206,7 +206,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -229,7 +229,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -252,7 +252,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged",
       "ranking": 1
     },
@@ -275,7 +275,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -297,7 +297,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -319,7 +319,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -342,7 +342,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -365,7 +365,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -387,7 +387,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -410,7 +410,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -433,7 +433,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -455,7 +455,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -478,7 +478,7 @@
         "age": 42,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -501,7 +501,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -523,7 +523,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -546,7 +546,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -568,7 +568,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -591,7 +591,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -614,7 +614,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -636,7 +636,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -659,7 +659,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -682,7 +682,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     },
     {
@@ -705,7 +705,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:00.601Z",
+      "lastSyncedAt": "2026-06-07T18:07:18.456Z",
       "source": "merged"
     }
   ]

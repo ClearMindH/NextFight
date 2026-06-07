@@ -20,9 +20,13 @@ export function normalizeUfcAthleteSlug(
   const bare = slug.replace(/^ufc-/, '')
   const aliased = UFC_ATHLETE_SLUG_ALIASES[bare] ?? bare
   const nameSlug = slugifyId(fullName)
-  if (nameSlug && aliased !== nameSlug) {
-    const aliasedNorm = slugifyId(aliased.replace(/-/g, ' '))
-    if (aliasedNorm !== nameSlug) return nameSlug
+  if (nameSlug) {
+    // Compare en alphanumérique pur : « sean-omalley » (slug officiel) et
+    // « sean-o-malley » (dérivé de « O'Malley ») désignent la même personne.
+    // On ne retombe sur le nom que si le slug vise vraiment quelqu'un d'autre.
+    const slugAlnum = aliased.replace(/-/g, '')
+    const nameAlnum = nameSlug.replace(/-/g, '')
+    if (slugAlnum !== nameAlnum) return nameSlug
   }
   return aliased
 }

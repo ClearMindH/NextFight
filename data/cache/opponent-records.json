@@ -6,6 +6,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:16:13.407Z"
   },
+  "aleksandarrakic": {
+    "tier": 64,
+    "wins": 14,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:47.205Z"
+  },
   "alexandervolkanovski": {
     "tier": 69,
     "wins": 28,
@@ -69,6 +76,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:19:22.140Z"
   },
+  "armenpetrosyan": {
+    "tier": 60,
+    "wins": 10,
+    "losses": 7,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:25:18.099Z"
+  },
   "austenlane": {
     "tier": 63,
     "wins": 13,
@@ -76,12 +90,33 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:17:12.279Z"
   },
+  "azamatmurzakanov": {
+    "tier": 71,
+    "wins": 16,
+    "losses": 1,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:09.875Z"
+  },
   "azatmaksum": {
     "tier": 67,
     "wins": 15,
     "losses": 3,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:03:09.234Z"
+  },
+  "baisangursusurkaev": {
+    "tier": 73,
+    "wins": 12,
+    "losses": 0,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:53.949Z"
+  },
+  "belalmuhammad": {
+    "tier": 65,
+    "wins": 24,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:35.429Z"
   },
   "benoitsaintdenis": {
     "tier": null,
@@ -119,6 +154,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:40.442Z"
   },
+  "brunosilva": {
+    "tier": 64,
+    "wins": 23,
+    "losses": 13,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:49.726Z"
+  },
   "brunosilvablindado": {
     "tier": null,
     "fetchedAt": "2026-06-07T17:17:29.836Z"
@@ -148,6 +190,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:17:38.045Z"
   },
+  "chrispadilla": {
+    "tier": 66,
+    "wins": 17,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:39.754Z"
+  },
   "cjvergara": {
     "tier": null,
     "fetchedAt": "2026-06-07T17:16:59.002Z"
@@ -158,6 +207,13 @@
     "losses": 4,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:17:04.604Z"
+  },
+  "dakotahope": {
+    "tier": 66,
+    "wins": 11,
+    "losses": 2,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:56.306Z"
   },
   "danhooker": {
     "tier": 63,
@@ -173,12 +229,23 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:17:08.505Z"
   },
+  "diyarnurgozhay": {
+    "tier": 67,
+    "wins": 11,
+    "losses": 2,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:15.825Z"
+  },
   "dominickreyes": {
     "tier": 66,
     "wins": 16,
     "losses": 5,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:59.933Z"
+  },
+  "dontalemayes": {
+    "tier": null,
+    "fetchedAt": "2026-06-07T18:13:07.905Z"
   },
   "dossantos": {
     "tier": 64,
@@ -215,6 +282,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:46.469Z"
   },
+  "edmenshahbazyan": {
+    "tier": 66,
+    "wins": 16,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:33.892Z"
+  },
   "eduardamoura": {
     "tier": 68,
     "wins": 12,
@@ -228,6 +302,13 @@
     "losses": 4,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:48.323Z"
+  },
+  "faresziam": {
+    "tier": 66,
+    "wins": 18,
+    "losses": 5,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:51.962Z"
   },
   "geraldmeerschaert": {
     "tier": 64,
@@ -249,6 +330,13 @@
     "losses": 6,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:16:36.130Z"
+  },
+  "guilhermepat": {
+    "tier": 65,
+    "wins": 6,
+    "losses": 1,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:04.679Z"
   },
   "hyunsungpark": {
     "tier": null,
@@ -279,6 +367,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:16:38.450Z"
   },
+  "jamahalhill": {
+    "tier": 64,
+    "wins": 12,
+    "losses": 4,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:00.270Z"
+  },
   "jamiesiraj": {
     "tier": 66,
     "wins": 14,
@@ -300,12 +395,33 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:19:08.175Z"
   },
+  "jiriprochazka": {
+    "tier": 71,
+    "wins": 32,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:58.296Z"
+  },
+  "joepyfer": {
+    "tier": 69,
+    "wins": 16,
+    "losses": 3,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:25:19.364Z"
+  },
   "jonathanmartinez": {
     "tier": 66,
     "wins": 19,
     "losses": 6,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:06.605Z"
+  },
+  "jordanleavitt": {
+    "tier": 65,
+    "wins": 13,
+    "losses": 4,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:45.065Z"
   },
   "joseochoa": {
     "tier": 67,
@@ -328,6 +444,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:54.312Z"
   },
+  "juniortafa": {
+    "tier": 59,
+    "wins": 7,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:43.110Z"
+  },
   "junyongpark": {
     "tier": 65,
     "wins": 19,
@@ -341,6 +464,13 @@
     "losses": 7,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:03:13.077Z"
+  },
+  "ketlensouza": {
+    "tier": 65,
+    "wins": 17,
+    "losses": 6,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:31.924Z"
   },
   "kevinvallejos": {
     "tier": 72,
@@ -406,6 +536,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:16:44.969Z"
   },
+  "marcusmcghee": {
+    "tier": 68,
+    "wins": 11,
+    "losses": 2,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:37.166Z"
+  },
   "mariopinto": {
     "tier": 71,
     "wins": 12,
@@ -426,6 +563,20 @@
     "losses": 10,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:16:30.658Z"
+  },
+  "masonjones": {
+    "tier": 69,
+    "wins": 18,
+    "losses": 2,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:11.787Z"
+  },
+  "mattschnell": {
+    "tier": 62,
+    "wins": 17,
+    "losses": 11,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:29.759Z"
   },
   "melissamartinez": {
     "tier": 64,
@@ -525,6 +676,13 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:04.542Z"
   },
+  "rhysmckee": {
+    "tier": 65,
+    "wins": 15,
+    "losses": 7,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:13.785Z"
+  },
   "ricardoramos": {
     "tier": 64,
     "wins": 17,
@@ -563,6 +721,13 @@
     "losses": 5,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:18:00.021Z"
+  },
+  "saimonoliveira": {
+    "tier": 67,
+    "wins": 18,
+    "losses": 7,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:02.725Z"
   },
   "sergheispivac": {
     "tier": 67,
@@ -648,12 +813,26 @@
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:16:22.554Z"
   },
+  "vincpichel": {
+    "tier": 64,
+    "wins": 14,
+    "losses": 5,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:12:41.825Z"
+  },
   "viniciussalvador": {
     "tier": 64,
     "wins": 14,
     "losses": 8,
     "source": "sherdog",
     "fetchedAt": "2026-06-07T17:19:01.936Z"
+  },
+  "vitorpetrino": {
+    "tier": 69,
+    "wins": 14,
+    "losses": 2,
+    "source": "sherdog",
+    "fetchedAt": "2026-06-07T18:13:06.637Z"
   },
   "wesschultz": {
     "tier": 65,

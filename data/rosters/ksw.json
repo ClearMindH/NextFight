@@ -2,7 +2,7 @@
   "meta": {
     "organizationId": "ksw",
     "fighterCount": 176,
-    "lastSyncedAt": "2026-06-03T22:33:25.279Z",
+    "lastSyncedAt": "2026-06-07T18:07:32.795Z",
     "source": "kswmma.com"
   },
   "fighters": [
@@ -24,7 +24,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -46,7 +46,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -69,7 +69,7 @@
         "age": 39,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -92,7 +92,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -114,7 +114,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -137,7 +137,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -159,7 +159,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -181,7 +181,7 @@
         "age": 39,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -201,7 +201,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.612Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.773Z",
       "source": "merged"
     },
     {
@@ -223,7 +223,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -246,7 +246,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -268,7 +268,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -290,7 +290,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -309,10 +309,10 @@
         "takedownAccuracy": 38,
         "reachCm": 183,
         "heightCm": 187,
-        "age": 31,
+        "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -333,7 +333,7 @@
         "heightCm": 182,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -356,7 +356,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -379,7 +379,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -401,7 +401,7 @@
         "heightCm": 168,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -424,7 +424,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -446,7 +446,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -469,7 +469,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -492,7 +492,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -515,7 +515,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -538,7 +538,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -560,7 +560,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -582,7 +582,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -604,7 +604,7 @@
         "heightCm": 186,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -627,7 +627,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -650,7 +650,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -672,7 +672,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -694,7 +694,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -716,7 +716,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -739,7 +739,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -760,7 +760,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -782,7 +782,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -805,7 +805,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -826,7 +826,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -848,7 +848,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -871,7 +871,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -893,7 +893,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -916,7 +916,7 @@
         "age": 22,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -938,7 +938,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -960,7 +960,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -982,7 +982,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1003,7 +1003,7 @@
         "heightCm": 176,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1025,7 +1025,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1048,7 +1048,7 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1070,7 +1070,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1090,7 +1090,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1110,7 +1110,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1132,7 +1132,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1154,7 +1154,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1174,7 +1174,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1189,7 +1189,7 @@
       "weightClass": "Featherweight",
       "imageUrl": "https://www.kswmma.com/storage/2026-05/1779878105-kowalski2.png.450.webp",
       "stats": {
-        "strikingAccuracy": 53,
+        "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "heightCm": 173,
@@ -1199,7 +1199,7 @@
         "finishingRate": 41,
         "strengthOfSchedule": 40
       },
-      "lastSyncedAt": "2026-06-03T18:58:28.200Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1221,7 +1221,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1242,7 +1242,7 @@
         "heightCm": 169,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1263,7 +1263,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1285,7 +1285,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1308,7 +1308,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1331,7 +1331,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1352,7 +1352,7 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1372,7 +1372,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1393,7 +1393,7 @@
         "heightCm": 169,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1415,7 +1415,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1436,7 +1436,7 @@
         "heightCm": 176,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1457,7 +1457,7 @@
         "heightCm": 192,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1480,7 +1480,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1503,7 +1503,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1524,7 +1524,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1546,7 +1546,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1569,7 +1569,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1590,7 +1590,7 @@
         "heightCm": 201,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1612,7 +1612,7 @@
         "age": 22,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1634,7 +1634,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1649,7 +1649,7 @@
       "weightClass": "Featherweight",
       "imageUrl": "https://www.kswmma.com/storage/2026-05/1778862869-wrobel.png.450.webp",
       "stats": {
-        "strikingAccuracy": 53,
+        "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "heightCm": 173,
@@ -1659,7 +1659,7 @@
         "finishingRate": 41,
         "strengthOfSchedule": 40
       },
-      "lastSyncedAt": "2026-06-03T18:56:39.204Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1681,7 +1681,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1704,7 +1704,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1726,7 +1726,7 @@
         "age": 24,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1747,7 +1747,7 @@
         "heightCm": 174,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1769,7 +1769,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1791,7 +1791,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1813,7 +1813,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1835,7 +1835,7 @@
         "age": 3,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1857,7 +1857,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1880,7 +1880,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1902,7 +1902,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1924,7 +1924,7 @@
         "heightCm": 182,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1944,7 +1944,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -1967,7 +1967,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -1989,7 +1989,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2012,7 +2012,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2035,7 +2035,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2056,7 +2056,7 @@
         "heightCm": 186,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2079,7 +2079,7 @@
         "age": 45,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2102,7 +2102,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2125,7 +2125,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2147,7 +2147,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2170,7 +2170,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2193,7 +2193,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2216,7 +2216,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2238,7 +2238,7 @@
         "heightCm": 170,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2261,7 +2261,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2282,7 +2282,7 @@
         "heightCm": 176,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2302,7 +2302,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2323,7 +2323,7 @@
         "heightCm": 178,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2346,7 +2346,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2367,7 +2367,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2387,7 +2387,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2410,7 +2410,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2432,7 +2432,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2455,7 +2455,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2478,7 +2478,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2499,7 +2499,7 @@
         "heightCm": 188,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2521,7 +2521,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2544,7 +2544,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2567,7 +2567,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2589,7 +2589,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2611,7 +2611,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2632,7 +2632,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2653,7 +2653,7 @@
         "heightCm": 157,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2675,7 +2675,7 @@
         "heightCm": 190,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2696,7 +2696,7 @@
         "heightCm": 180,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2718,7 +2718,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2741,7 +2741,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2762,7 +2762,7 @@
         "age": 21,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2784,7 +2784,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2807,7 +2807,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2830,7 +2830,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2853,7 +2853,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2876,7 +2876,7 @@
         "age": 40,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2891,7 +2891,7 @@
       "weightClass": "Heavyweight",
       "imageUrl": "https://www.kswmma.com/storage/2026-05/1778709680-chudzik.png.450.webp",
       "stats": {
-        "strikingAccuracy": 53,
+        "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "heightCm": 180,
@@ -2901,7 +2901,7 @@
         "finishingRate": 41,
         "strengthOfSchedule": 40
       },
-      "lastSyncedAt": "2026-06-03T18:56:39.224Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -2924,7 +2924,7 @@
         "age": 28,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2946,7 +2946,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2966,7 +2966,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -2981,7 +2981,7 @@
       "weightClass": "Heavyweight",
       "imageUrl": "https://www.kswmma.com/storage/2026-06/1780488091-bozovic.png.450.webp",
       "stats": {
-        "strikingAccuracy": 53,
+        "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "winStreak": 0,
@@ -2990,7 +2990,7 @@
         "finishingRate": 41,
         "strengthOfSchedule": 40
       },
-      "lastSyncedAt": "2026-06-03T18:56:39.228Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3011,7 +3011,7 @@
         "heightCm": 187,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3031,7 +3031,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3054,7 +3054,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3077,7 +3077,7 @@
         "age": 38,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3099,7 +3099,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3121,7 +3121,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3144,7 +3144,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3167,7 +3167,7 @@
         "age": 34,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3188,7 +3188,7 @@
         "heightCm": 182,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3211,7 +3211,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3232,7 +3232,7 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3255,7 +3255,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3277,7 +3277,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3298,7 +3298,7 @@
         "heightCm": 175,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3321,7 +3321,7 @@
         "age": 32,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3344,7 +3344,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3366,7 +3366,7 @@
         "age": 25,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3381,7 +3381,7 @@
       "weightClass": "Lightweight",
       "imageUrl": "https://www.kswmma.com/storage/2026-05/1778951829-hassaini.png.450.webp",
       "stats": {
-        "strikingAccuracy": 53,
+        "strikingAccuracy": 50,
         "takedownAccuracy": 38,
         "reachCm": 183,
         "winStreak": 0,
@@ -3390,7 +3390,7 @@
         "finishingRate": 41,
         "strengthOfSchedule": 40
       },
-      "lastSyncedAt": "2026-06-03T18:56:39.219Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3410,7 +3410,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3433,7 +3433,7 @@
         "age": 36,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3454,7 +3454,7 @@
         "heightCm": 187,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3475,7 +3475,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3497,7 +3497,7 @@
         "age": 26,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3518,7 +3518,7 @@
         "heightCm": 185,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3540,7 +3540,7 @@
         "age": 27,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3563,7 +3563,7 @@
         "age": 31,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3585,7 +3585,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3608,7 +3608,7 @@
         "age": 37,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3631,7 +3631,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3654,7 +3654,7 @@
         "age": 33,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3675,7 +3675,7 @@
         "heightCm": 184,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3697,7 +3697,7 @@
         "age": 35,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3720,7 +3720,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3743,7 +3743,7 @@
         "age": 23,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3766,7 +3766,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3787,7 +3787,7 @@
         "heightCm": 181,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3809,7 +3809,7 @@
         "age": 22,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.774Z",
       "source": "merged"
     },
     {
@@ -3832,7 +3832,7 @@
         "age": 30,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.615Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3852,7 +3852,7 @@
         "reachCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3873,7 +3873,7 @@
         "heightCm": 183,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     },
     {
@@ -3896,7 +3896,7 @@
         "age": 29,
         "winStreak": 0
       },
-      "lastSyncedAt": "2026-06-03T17:56:13.614Z",
+      "lastSyncedAt": "2026-06-07T18:07:32.775Z",
       "source": "merged"
     }
   ]
