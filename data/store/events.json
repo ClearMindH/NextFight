@@ -8,7 +8,7 @@
       "venue": "Adidas Arena",
       "city": "Paris",
       "country": "France",
-      "status": "upcoming",
+      "status": "completed",
       "predictionsStatus": "published",
       "fights": [
         {
@@ -26,6 +26,12 @@
             "redWinProbability": 46,
             "confidence": 54,
             "capturedAt": "2026-06-07T16:30:25.764Z"
+          },
+          "result": {
+            "winnerId": "ares-alvi-dasuyev",
+            "method": "submission",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
           }
         },
         {
@@ -43,6 +49,12 @@
             "redWinProbability": 57,
             "confidence": 56,
             "capturedAt": "2026-06-07T16:30:25.764Z"
+          },
+          "result": {
+            "winnerId": "ares-walid-masmoudi",
+            "method": "decision",
+            "round": 3,
+            "source": "boxemag.ouest-france.fr"
           }
         },
         {
@@ -60,6 +72,12 @@
             "redWinProbability": 38,
             "confidence": 55,
             "capturedAt": "2026-06-07T16:30:25.764Z"
+          },
+          "result": {
+            "winnerId": "ares-zaurbek-sabanov",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
           }
         },
         {
@@ -77,6 +95,12 @@
             "redWinProbability": 58.5,
             "confidence": 57,
             "capturedAt": "2026-06-07T16:30:25.764Z"
+          },
+          "result": {
+            "winnerId": "ares-benoit-prigent",
+            "method": "decision",
+            "round": 3,
+            "source": "boxemag.ouest-france.fr"
           }
         },
         {
@@ -128,6 +152,12 @@
             "redWinProbability": 40,
             "confidence": 54,
             "capturedAt": "2026-06-07T16:30:25.764Z"
+          },
+          "result": {
+            "winnerId": "ares-sofiane-el-fatni",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
           }
         },
         {
@@ -145,6 +175,12 @@
             "redWinProbability": 57,
             "confidence": 54,
             "capturedAt": "2026-06-07T16:30:25.764Z"
+          },
+          "result": {
+            "winnerId": "ares-ludmila-scurco",
+            "method": "decision",
+            "round": 3,
+            "source": "boxemag.ouest-france.fr"
           }
         },
         {
@@ -456,5 +492,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-07T16:32:01.234Z"
+  "updatedAt": "2026-06-07T16:37:02.408Z"
 }
