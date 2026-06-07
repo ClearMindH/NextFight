@@ -1,4 +1,4 @@
-import type { OrganizationId } from '@/types'
+import type { FightResult, OrganizationId, PredictionSnapshot } from '@/types'
 import type { PlanId, SubscriptionStatus } from '@/types/subscription'
 
 export interface FightInput {
@@ -11,6 +11,10 @@ export interface FightInput {
   scheduledRounds: number
   redId: string
   blueId: string
+  /** Pronostic figé (persisté pour le bilan). */
+  predictionSnapshot?: PredictionSnapshot
+  /** Résultat réel renseigné a posteriori. */
+  result?: FightResult
 }
 
 export interface EventInput {

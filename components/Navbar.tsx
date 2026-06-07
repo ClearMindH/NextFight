@@ -13,6 +13,7 @@ import { cn } from '@/utils/cn'
 
 const staticLinks = [
   { href: '/#events', label: 'Combats' },
+  { href: '/resultats', label: 'Résultats' },
   { href: '/pricing', label: 'Tarifs' },
 ]
 

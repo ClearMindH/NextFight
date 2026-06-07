@@ -77,6 +77,25 @@ export interface Fighter {
   source: 'ufc-api' | 'roster-seed' | 'merged' | 'event-card' | 'ufc.com'
 }
 
+/** Pronostic figé au moment où la carte est verrouillée, pour un bilan honnête. */
+export interface PredictionSnapshot {
+  predictedWinnerId: string
+  redWinProbability: number
+  confidence: number
+  /** ISO date de capture du pronostic. */
+  capturedAt: string
+}
+
+/** Résultat réel d'un combat. Méthode/round stockés mais non affichés. */
+export interface FightResult {
+  /** Vainqueur réel ; null = nul / no contest. */
+  winnerId: string | null
+  method?: FightMethod
+  round?: number
+  /** Origine de la donnée (ex. 'recent-bouts', 'manual'). */
+  source?: string
+}
+
 export interface Fight {
   id: string
   eventId: string
@@ -98,6 +117,10 @@ export interface Fight {
       form?: import('./recent-form').FormMatchupInsight
     }
   }
+  /** Pronostic figé (événements verrouillés ou passés). */
+  predictionSnapshot?: PredictionSnapshot
+  /** Résultat réel (événements terminés). */
+  result?: FightResult
 }
 
 export interface Event {

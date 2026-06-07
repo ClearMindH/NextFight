@@ -20,7 +20,13 @@
           "isMainEvent": true,
           "scheduledRounds": 5,
           "redId": "ares-alvi-dasuyev",
-          "blueId": "ares-mohamed-soumah"
+          "blueId": "ares-mohamed-soumah",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-mohamed-soumah",
+            "redWinProbability": 46,
+            "confidence": 54,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f2",
@@ -31,7 +37,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-magomed-giri-umarkhadzhiev",
-          "blueId": "ares-walid-masmoudi"
+          "blueId": "ares-walid-masmoudi",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-magomed-giri-umarkhadzhiev",
+            "redWinProbability": 57,
+            "confidence": 56,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f3",
@@ -42,7 +54,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-ivan-romanov",
-          "blueId": "ares-zaurbek-sabanov"
+          "blueId": "ares-zaurbek-sabanov",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-zaurbek-sabanov",
+            "redWinProbability": 38,
+            "confidence": 55,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f4",
@@ -53,7 +71,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-benoit-prigent",
-          "blueId": "ares-abdoulaye-dione"
+          "blueId": "ares-abdoulaye-dione",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-benoit-prigent",
+            "redWinProbability": 58.5,
+            "confidence": 57,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f5",
@@ -64,7 +88,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-vincent-yerly",
-          "blueId": "ares-axel-iridjie"
+          "blueId": "ares-axel-iridjie",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-vincent-yerly",
+            "redWinProbability": 63,
+            "confidence": 58,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f6",
@@ -75,7 +105,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-wael-kambouche",
-          "blueId": "ares-turpal-susurov"
+          "blueId": "ares-turpal-susurov",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-wael-kambouche",
+            "redWinProbability": 72,
+            "confidence": 66,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f7",
@@ -86,7 +122,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-maher-belkhadir",
-          "blueId": "ares-sofiane-el-fatni"
+          "blueId": "ares-sofiane-el-fatni",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-sofiane-el-fatni",
+            "redWinProbability": 40,
+            "confidence": 54,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f8",
@@ -97,7 +139,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-melissa-nebbache",
-          "blueId": "ares-ludmila-scurco"
+          "blueId": "ares-ludmila-scurco",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-melissa-nebbache",
+            "redWinProbability": 57,
+            "confidence": 54,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         },
         {
           "id": "ares-3297-f9",
@@ -108,7 +156,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ares-mouhamed-gueye",
-          "blueId": "ares-ian-kuchler"
+          "blueId": "ares-ian-kuchler",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ares-mouhamed-gueye",
+            "redWinProbability": 57,
+            "confidence": 54,
+            "capturedAt": "2026-06-07T16:30:25.764Z"
+          }
         }
       ]
     },
@@ -120,7 +174,7 @@
       "venue": "Meta APEX",
       "city": "Las Vegas",
       "country": "United States",
-      "status": "upcoming",
+      "status": "completed",
       "predictionsStatus": "published",
       "fights": [
         {
@@ -132,7 +186,19 @@
           "isMainEvent": true,
           "scheduledRounds": 5,
           "redId": "ufc-belal-muhammad",
-          "blueId": "ufc-gabriel-bonfim"
+          "blueId": "ufc-gabriel-bonfim",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-gabriel-bonfim",
+            "redWinProbability": 22,
+            "confidence": 92,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-gabriel-bonfim",
+            "method": "decision",
+            "round": 5,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f2",
@@ -143,7 +209,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-brendan-allen",
-          "blueId": "ufc-edmen-shahbazyan"
+          "blueId": "ufc-edmen-shahbazyan",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-brendan-allen",
+            "redWinProbability": 65.8,
+            "confidence": 81,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-brendan-allen",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f3",
@@ -154,7 +232,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-fares-ziam",
-          "blueId": "ufc-tom-nolan"
+          "blueId": "ufc-tom-nolan",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-fares-ziam",
+            "redWinProbability": 63.2,
+            "confidence": 76,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-tom-nolan",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f4",
@@ -165,7 +255,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-bryce-mitchell",
-          "blueId": "ufc-juan-andres-luna"
+          "blueId": "ufc-juan-andres-luna",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-juan-andres-luna",
+            "redWinProbability": 48,
+            "confidence": 73,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-bryce-mitchell",
+            "method": "submission",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f5",
@@ -176,7 +278,19 @@
           "isMainEvent": false,
           "scheduledRounds": 5,
           "redId": "ufc-iwo-baraniewski",
-          "blueId": "ufc-shiyunia-tafua"
+          "blueId": "ufc-shiyunia-tafua",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-iwo-baraniewski",
+            "redWinProbability": 69.3,
+            "confidence": 83,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-iwo-baraniewski",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f6",
@@ -187,7 +301,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-matt-schnell",
-          "blueId": "ufc-alessandro-costa"
+          "blueId": "ufc-alessandro-costa",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-alessandro-costa",
+            "redWinProbability": 30.9,
+            "confidence": 92,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-alessandro-costa",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f7",
@@ -198,7 +324,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-marcus-mcghee",
-          "blueId": "ufc-john-yannis"
+          "blueId": "ufc-john-yannis",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-john-yannis",
+            "redWinProbability": 45.2,
+            "confidence": 75,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-marcus-mcghee",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f8",
@@ -209,7 +347,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-bruno-silva",
-          "blueId": "ufc-edgar-chairez"
+          "blueId": "ufc-edgar-chairez",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-edgar-chairez",
+            "redWinProbability": 40.3,
+            "confidence": 81,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-edgar-chairez",
+            "method": "submission",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f9",
@@ -220,7 +370,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-priscila-cachoeira",
-          "blueId": "ufc-chelsea-chandler"
+          "blueId": "ufc-chelsea-chandler",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-priscila-cachoeira",
+            "redWinProbability": 61.2,
+            "confidence": 86,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-chelsea-chandler",
+            "method": "submission",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f10",
@@ -231,7 +393,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-jordan-leavitt",
-          "blueId": "ufc-joanderson-brito"
+          "blueId": "ufc-joanderson-brito",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-jordan-leavitt",
+            "redWinProbability": 72.4,
+            "confidence": 92,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-joanderson-brito",
+            "method": "submission",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f11",
@@ -242,7 +416,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-jeisla-chaves",
-          "blueId": "ufc-yuneisy-duben"
+          "blueId": "ufc-yuneisy-duben",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-jeisla-chaves",
+            "redWinProbability": 52,
+            "confidence": 59,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-jeisla-chaves",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-fight-night-june-06-2026-f12",
@@ -253,10 +439,22 @@
           "isMainEvent": false,
           "scheduledRounds": 5,
           "redId": "ufc-ketlen-souza",
-          "blueId": "ufc-ariane-carnelossi"
+          "blueId": "ufc-ariane-carnelossi",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-ketlen-souza",
+            "redWinProbability": 58.8,
+            "confidence": 75,
+            "capturedAt": "2026-06-07T16:30:26.717Z"
+          },
+          "result": {
+            "winnerId": "ufc-ketlen-souza",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         }
       ]
     }
   ],
-  "updatedAt": "2026-06-04T19:06:28.488Z"
+  "updatedAt": "2026-06-07T16:32:01.234Z"
 }
