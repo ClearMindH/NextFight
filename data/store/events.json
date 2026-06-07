@@ -667,7 +667,7 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-josh-hokit",
-          "blueId": "ufc-lewis-gonzalez"
+          "blueId": "ufc-derrick-lewis"
         },
         {
           "id": "ufc-freedom-250-f5",
@@ -695,11 +695,11 @@
           "id": "ufc-freedom-250-f7",
           "eventId": "ufc-freedom-250",
           "order": 7,
-          "weightClass": "Featherweight Championship",
-          "isTitle": true,
+          "weightClass": "Featherweight",
+          "isTitle": false,
           "isMainEvent": false,
-          "scheduledRounds": 5,
-          "redId": "ufc-henrique-da-silva-lopes",
+          "scheduledRounds": 3,
+          "redId": "ufc-diego-lopes",
           "blueId": "ufc-steve-garcia"
         }
       ]
