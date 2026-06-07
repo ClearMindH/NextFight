@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import { siteMetadata } from '@/lib/seo'
+import { buildSiteJsonLd } from '@/lib/seo-site-jsonld'
 import './globals.css'
 
 /** ID de mesure GA4 (ex. G-XXXXXXXXXX). Vide en local → aucun script chargé. */
@@ -29,7 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${GeistSans.variable} ${bebasNeue.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <OrgJsonLd data={buildSiteJsonLd()} />
+        {children}
+      </body>
       {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   )
