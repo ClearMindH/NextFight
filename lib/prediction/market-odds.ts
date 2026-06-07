@@ -23,10 +23,10 @@ export const UFC_MARKET_ODDS: Record<string, MarketOddsEntry> = {
   'ufc-freedom-250-f1': { redAmerican: -1000, blueAmerican: 525, source: 'consensus' },
   'ufc-freedom-250-f2': { redAmerican: -120, blueAmerican: -110, source: 'consensus' },
   'ufc-freedom-250-f3': { redAmerican: -500, blueAmerican: 325, source: 'consensus' },
-  'ufc-freedom-250-f4': { redAmerican: -325, blueAmerican: 240, source: 'consensus' },
+  'ufc-freedom-250-f4': { redAmerican: -330, blueAmerican: 265, source: 'ufc.com' },
   'ufc-freedom-250-f5': { redAmerican: -650, blueAmerican: 400, source: 'consensus' },
   'ufc-freedom-250-f6': { redAmerican: -375, blueAmerican: 260, source: 'consensus' },
-  'ufc-freedom-250-f7': { redAmerican: -200, blueAmerican: 150, source: 'consensus' },
+  'ufc-freedom-250-f7': { redAmerican: -185, blueAmerican: 155, source: 'ufc.com' },
 }
 
 /** Overrides validés manuellement (prioritaires sur le modèle statistique). */

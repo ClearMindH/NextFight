@@ -12,8 +12,8 @@ export default function HomePage() {
       <LandingAnnouncement />
       <Hero />
       <HowItWorks />
-      <Promotions />
       <UpcomingEvents />
+      <Promotions />
       <Pricing />
       <FAQ />
     </main>

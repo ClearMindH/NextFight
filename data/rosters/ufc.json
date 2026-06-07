@@ -1,8 +1,8 @@
 {
   "meta": {
     "organizationId": "ufc",
-    "fighterCount": 1167,
-    "lastSyncedAt": "2026-06-07T18:25:19.992Z",
+    "fighterCount": 1169,
+    "lastSyncedAt": "2026-06-07T19:17:54.505Z",
     "source": "ufc.com"
   },
   "fighters": [
@@ -25726,7 +25726,7 @@
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 68,
+          "opponentTier": 50,
           "monthsAgo": 7
         },
         {
@@ -25734,7 +25734,7 @@
           "result": "win",
           "method": "decision",
           "round": 3,
-          "opponentTier": 64,
+          "opponentTier": 50,
           "monthsAgo": 11
         },
         {
@@ -25742,7 +25742,7 @@
           "result": "win",
           "method": "ko_tko",
           "round": 1,
-          "opponentTier": 64,
+          "opponentTier": 50,
           "monthsAgo": 21
         }
       ]
@@ -32159,6 +32159,119 @@
           "monthsAgo": 19
         }
       ]
+    },
+    {
+      "id": "ufc-derrick-lewis",
+      "organizationId": "ufc",
+      "name": "Derrick Lewis",
+      "record": "29-13-0",
+      "wins": 29,
+      "losses": 13,
+      "draws": 0,
+      "country": "United States",
+      "weightClass": "Heavyweight",
+      "ranking": 9,
+      "stats": {
+        "strikingAccuracy": 40,
+        "strikeDefense": 52,
+        "takedownAccuracy": 1,
+        "takedownDefense": 8,
+        "reachCm": 183,
+        "heightCm": 178,
+        "age": 40,
+        "winStreak": 0,
+        "finishingRate": 72,
+        "slpm": 2.46,
+        "sapm": 2.57,
+        "tdAvg": 0.55,
+        "subAvg": 0
+      },
+      "lastSyncedAt": "2026-06-07T19:17:34.666Z",
+      "source": "ufc.com",
+      "nickname": "The Black Beast",
+      "recentBouts": [
+        {
+          "opponentName": "Waldo Cortes Acosta",
+          "result": "loss",
+          "method": "ko_tko",
+          "round": 2,
+          "opponentTier": 67,
+          "monthsAgo": 4
+        },
+        {
+          "opponentName": "Tallison Teixeira",
+          "result": "win",
+          "method": "ko_tko",
+          "round": 1,
+          "opponentTier": 50,
+          "monthsAgo": 11
+        },
+        {
+          "opponentName": "Rodrigo Nascimento Ferreira",
+          "result": "win",
+          "method": "ko_tko",
+          "round": 3,
+          "opponentTier": 64,
+          "monthsAgo": 29
+        }
+      ],
+      "imageUrl": "https://ufc.com/images/2026-01/LEWIS_DERRICK_01-24.png"
+    },
+    {
+      "id": "ufc-diego-lopes",
+      "organizationId": "ufc",
+      "name": "Diego Lopes",
+      "record": "27-8-0",
+      "wins": 27,
+      "losses": 8,
+      "draws": 0,
+      "country": "Brazil",
+      "weightClass": "Featherweight",
+      "ranking": 2,
+      "stats": {
+        "strikingAccuracy": 46,
+        "strikeDefense": 69,
+        "takedownAccuracy": 1,
+        "takedownDefense": 11,
+        "reachCm": 183,
+        "heightCm": 178,
+        "age": 30,
+        "winStreak": 0,
+        "finishingRate": 63,
+        "slpm": 3.83,
+        "sapm": 4.56,
+        "tdAvg": 0.88,
+        "subAvg": 1.38
+      },
+      "lastSyncedAt": "2026-06-07T19:17:36.679Z",
+      "source": "ufc.com",
+      "recentBouts": [
+        {
+          "opponentName": "Alexander Volkanovski",
+          "result": "loss",
+          "method": "decision",
+          "round": 5,
+          "opponentTier": 94,
+          "monthsAgo": 5
+        },
+        {
+          "opponentName": "Jean Silva",
+          "result": "win",
+          "method": "ko_tko",
+          "round": 2,
+          "opponentTier": 72,
+          "monthsAgo": 9
+        },
+        {
+          "opponentName": "Alexander Volkanovski",
+          "result": "loss",
+          "method": "decision",
+          "round": 5,
+          "opponentTier": 94,
+          "monthsAgo": 17
+        }
+      ],
+      "imageUrl": "https://ufc.com/images/2026-01/LOPES_DIEGO_01-31.png"
     }
   ]
 }
