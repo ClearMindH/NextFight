@@ -500,6 +500,7 @@
       "city": "Lyon",
       "country": "France",
       "status": "upcoming",
+      "predictionsStatus": "published",
       "fights": [
         {
           "id": "hexagone-mma-45-f1",
@@ -622,6 +623,7 @@
       "city": "Washington",
       "country": "United States",
       "status": "upcoming",
+      "predictionsStatus": "published",
       "fights": [
         {
           "id": "ufc-freedom-250-f1",
