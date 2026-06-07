@@ -7,6 +7,7 @@ import { mergeFighterForDisplay } from '@/lib/fighter-display'
 import { getFighterFromStore } from '@/lib/roster-store'
 import { buildPredictionSnapshot } from '@/lib/prediction-snapshot'
 import { deriveFightResult } from '@/lib/derive-fight-result'
+import { applyMarketOdds } from '@/lib/prediction/market-odds'
 
 const STORE_PATH = path.join(process.cwd(), 'data', 'store', 'events.json')
 
@@ -58,11 +59,17 @@ function hydrateFight(input: FightInput): Fight | null {
   const redCorner = mergeFighterForDisplay(redRaw)
   const blueCorner = mergeFighterForDisplay(blueRaw)
 
-  const prediction = PredictionEngine.predict({
+  const rawPrediction = PredictionEngine.predict({
     fighterA: redCorner,
     fighterB: blueCorner,
     scheduledRounds: input.scheduledRounds,
   })
+  const prediction = applyMarketOdds(
+    rawPrediction,
+    input.id,
+    redCorner.id,
+    blueCorner.id,
+  )
 
   return {
     ...input,
