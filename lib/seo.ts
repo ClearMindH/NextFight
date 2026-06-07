@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { Organization } from '@/types'
 import { getSiteName, getSiteUrl } from '@/lib/site'
+import { SITE_LOGO_PATH, SITE_LOGO_SIZE } from '@/lib/seo-site-jsonld'
 
 const siteUrl = getSiteUrl()
 
@@ -44,6 +45,18 @@ export const siteMetadata: Metadata = {
     'PFL picks',
   ],
   metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      {
+        url: SITE_LOGO_PATH,
+        sizes: `${SITE_LOGO_SIZE}x${SITE_LOGO_SIZE}`,
+        type: 'image/png',
+      },
+    ],
+    apple: [{ url: SITE_LOGO_PATH, sizes: `${SITE_LOGO_SIZE}x${SITE_LOGO_SIZE}` }],
+  },
   openGraph: {
     title: `${siteName} — Prédictions MMA`,
     description: 'Pronostics et analyses statistiques pour les grandes cartes MMA.',
@@ -66,4 +79,7 @@ export const siteMetadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
+  verification: {
+    google: 'ftLvZblBcr_aWIfhgDEa2X1yxNi3cGJFPfsT1A4krp8',
+  },
 }
