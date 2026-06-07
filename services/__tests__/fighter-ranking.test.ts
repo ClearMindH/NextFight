@@ -13,7 +13,8 @@ describe('fighter-ranking', () => {
   })
 
   it('formats badge labels', () => {
-    expect(getDivisionRankingBadge(1)).toBe('C')
+    expect(getDivisionRankingBadge(1)).toBe('#1')
+    expect(getDivisionRankingBadge(1, true)).toBe('C')
     expect(getDivisionRankingBadge(8)).toBe('#8')
     expect(getDivisionRankingBadge(20)).toBeNull()
   })

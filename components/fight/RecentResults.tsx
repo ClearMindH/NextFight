@@ -22,6 +22,11 @@ const RESULT_META: Record<BoutResult, { short: string; label: string; className:
   win: { short: 'V', label: 'Victoire', className: 'border-gold/40 bg-gold/10 text-gold' },
   loss: { short: 'D', label: 'Défaite', className: 'border-red-500/40 bg-red-500/10 text-red-400' },
   draw: { short: 'N', label: 'Nul', className: 'border-white/15 bg-white/[0.06] text-muted' },
+  no_contest: {
+    short: 'NC',
+    label: 'No contest',
+    className: 'border-amber-500/35 bg-amber-500/10 text-amber-300',
+  },
 }
 
 function whenLabel(monthsAgo: number): string {

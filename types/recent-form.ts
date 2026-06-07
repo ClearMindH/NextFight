@@ -1,6 +1,6 @@
 import type { FightMethod } from './index'
 
-export type BoutResult = 'win' | 'loss' | 'draw'
+export type BoutResult = 'win' | 'loss' | 'draw' | 'no_contest'
 
 export const MAX_RECENT_BOUTS = 5
 

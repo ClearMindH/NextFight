@@ -12,10 +12,12 @@ export function isTopRankedInDivision(
   )
 }
 
-/** Libellé badge portrait : champion (#1) → « C », sinon « #N ». */
+/** Libellé badge portrait : classement officiel division → « #N » (champion via `isChampion`). */
 export function getDivisionRankingBadge(
   ranking: number | undefined | null,
+  isChampion = false,
 ): string | null {
+  if (isChampion) return 'C'
   if (!isTopRankedInDivision(ranking)) return null
-  return ranking === 1 ? 'C' : `#${ranking}`
+  return `#${ranking}`
 }

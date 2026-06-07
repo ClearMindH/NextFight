@@ -5,6 +5,7 @@ import { getRecentBoutsForPrediction } from '@/services/prediction/recent-form'
 function inferWinStreakFromRecent(bouts: ReturnType<typeof getRecentBoutsForPrediction>): number {
   let streak = 0
   for (const bout of bouts) {
+    if (bout.result === 'no_contest') break
     if (bout.result === 'win') streak += 1
     else break
   }

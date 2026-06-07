@@ -5610,7 +5610,7 @@
       "draws": 0,
       "country": "Unknown",
       "weightClass": "Heavyweight",
-      "ranking": 3,
+      "ranking": 1,
       "imageUrl": "https://ufc.com/images/2025-10/GANE_CIRYL_10-25.png",
       "stats": {
         "strikingAccuracy": 61,
@@ -5631,6 +5631,14 @@
       "lastSyncedAt": "2026-06-07T18:07:12.174Z",
       "source": "merged",
       "recentBouts": [
+        {
+          "opponentName": "Tom Aspinall",
+          "result": "no_contest",
+          "method": "decision",
+          "round": 1,
+          "opponentTier": 96,
+          "monthsAgo": 8
+        },
         {
           "opponentName": "Alexander Volkov",
           "result": "win",
@@ -28751,7 +28759,7 @@
       "losses": 3,
       "draws": 0,
       "country": "Unknown",
-      "ranking": 1,
+      "weightClass": "Heavyweight",
       "imageUrl": "https://ufc.com/images/2025-10/PEREIRA_ALEX_10-04.png",
       "stats": {
         "strikingAccuracy": 54,
