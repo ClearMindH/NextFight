@@ -11,8 +11,16 @@ const SIZE_CLASS = {
   md: 'text-4xl sm:text-[2.75rem] leading-none',
   lg: 'text-5xl sm:text-6xl leading-none',
   xl: 'text-6xl sm:text-7xl md:text-[5.25rem] leading-none',
-  /** Cartes promotions — taille proche d’un logo */
-  logo: 'text-[2.75rem] sm:text-[3.25rem] xl:text-[3.5rem] leading-[0.85]',
+  logo: 'text-[2.5rem] sm:text-[3rem] xl:text-[3.25rem] leading-none',
+} as const
+
+const CLEAN_SIZE_CLASS = {
+  xs: 'text-lg',
+  sm: 'text-2xl',
+  md: 'text-3xl sm:text-4xl',
+  lg: 'text-4xl sm:text-5xl',
+  xl: 'text-5xl sm:text-6xl',
+  logo: 'text-4xl sm:text-[2.75rem] xl:text-[3rem]',
 } as const
 
 interface OrgBrandNameProps {
@@ -20,6 +28,8 @@ interface OrgBrandNameProps {
   size?: keyof typeof SIZE_CLASS
   /** Nom complet pour Hexagone MMA au lieu du sigle */
   showFullName?: boolean
+  /** Typo nette pour cartes (sans skew / ombre logo) */
+  tone?: 'brand' | 'clean'
   className?: string
 }
 
@@ -27,11 +37,44 @@ export function OrgBrandName({
   orgId,
   size = 'md',
   showFullName = false,
+  tone = 'brand',
   className,
 }: OrgBrandNameProps) {
   const org = getOrganization(orgId)
   const brand = getOrgBrand(orgId)
   if (!org) return null
+
+  if (tone === 'clean') {
+    const cleanSize = CLEAN_SIZE_CLASS[size]
+    if (org.id === 'hexagone' && !showFullName) {
+      return (
+        <span
+          className={cn(
+            'inline-flex flex-wrap items-baseline justify-center gap-x-1.5 font-display font-semibold tracking-tight',
+            cleanSize,
+            className,
+          )}
+        >
+          <span className={brand.cleanNameClass}>Hexagone</span>
+          <span className="text-foreground/90">MMA</span>
+        </span>
+      )
+    }
+
+    const label = showFullName && org.id === 'hexagone' ? 'Hexagone MMA' : org.name
+    return (
+      <span
+        className={cn(
+          'font-display font-semibold tracking-tight',
+          cleanSize,
+          brand.cleanNameClass,
+          className,
+        )}
+      >
+        {label}
+      </span>
+    )
+  }
 
   const wordmark = cn('org-wordmark-base inline-block', brand.logoClass, SIZE_CLASS[size], className)
 
@@ -55,10 +98,7 @@ export function OrgBrandName({
   const label = showFullName && org.id === 'hexagone' ? 'Hexagone MMA' : org.name
 
   return (
-    <span
-      className={cn(wordmark, brand.nameClass)}
-      style={brand.nameStyle}
-    >
+    <span className={cn(wordmark, brand.nameClass)} style={brand.nameStyle}>
       {label}
     </span>
   )

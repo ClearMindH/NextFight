@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import type { Fight } from '@/types'
@@ -61,13 +61,13 @@ export function PredictionCard({
         <Metric label="Confiance" value={formatPercent(fight.model.confidence)} highlight />
       </div>
 
-      <Link
+      <FastLink
         href={`/fight/${fight.id}`}
         className="mt-5 flex items-center justify-center gap-1.5 text-xs text-gold hover:underline underline-offset-4"
       >
         Full fight breakdown
         <ArrowUpRight className="h-3.5 w-3.5" />
-      </Link>
+      </FastLink>
 
       {showAnalysis && (
         <FightAnalysisPanel fight={fight} eventName={eventName} />

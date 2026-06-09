@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { FastLink } from '@/components/navigation/FastLink'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { organizations } from '@/data/organizations'
@@ -23,8 +24,16 @@ export function Navbar() {
   const [promoOpen, setPromoOpen] = useState(false)
   const [mobilePromoOpen, setMobilePromoOpen] = useState(false)
   const promoRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
   const { status, isPremium, loading } = useSubscription()
   const loggedIn = Boolean(status.email)
+
+  useEffect(() => {
+    if (!promoOpen && !mobilePromoOpen) return
+    for (const org of organizations) {
+      router.prefetch(org.seoPathFr)
+    }
+  }, [promoOpen, mobilePromoOpen, router])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -46,7 +55,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-200',
         scrolled ? 'bg-background/95 border-b border-border backdrop-blur-md' : 'bg-transparent',
       )}
     >
@@ -93,24 +102,24 @@ export function Navbar() {
                   <ul className="space-y-0.5">
                     {organizations.map((org) => (
                         <li key={org.id}>
-                          <Link
+                          <FastLink
                             href={org.seoPathFr}
                             onClick={() => setPromoOpen(false)}
                             className="group flex flex-col items-start gap-1 rounded-xl px-3 py-3.5 transition-colors hover:bg-background/60"
                           >
                             <OrgBrandLogo orgId={org.id} size="md" glow="soft" />
                             <OrgBrandTagline orgId={org.id} className="opacity-80" />
-                          </Link>
+                          </FastLink>
                         </li>
                     ))}
                   </ul>
-                  <Link
+                  <FastLink
                     href="/#promotions"
                     onClick={() => setPromoOpen(false)}
                     className="mt-1 block rounded-xl px-3 py-2 text-center text-xs text-muted transition-colors hover:bg-background/60 hover:text-gold"
                   >
                     Voir toutes les organisations
-                  </Link>
+                  </FastLink>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -125,30 +134,30 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           {!loading && !loggedIn && (
-            <Link
+            <FastLink
               href="/login"
               className="text-sm text-muted transition-colors hover:text-foreground"
             >
               Se connecter
-            </Link>
+            </FastLink>
           )}
-          <Link
+          <FastLink
             href="/account"
             className="text-sm text-muted transition-colors hover:text-foreground"
           >
             Compte
-          </Link>
+          </FastLink>
           {isPremium ? (
             <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gold">
               Premium
             </span>
           ) : (
-            <Link
+            <FastLink
               href="/pricing"
               className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-transform hover:scale-[1.02]"
             >
               Passer Premium
-            </Link>
+            </FastLink>
           )}
         </div>
 
@@ -168,7 +177,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.18 }}
             className="border-t border-border bg-background md:hidden overflow-hidden"
           >
             <nav className="flex flex-col gap-1 px-4 py-4">
@@ -193,7 +202,7 @@ export function Navbar() {
                     className="overflow-hidden pl-2"
                   >
                     {organizations.map((org) => (
-                      <Link
+                      <FastLink
                         key={org.id}
                         href={org.seoPathFr}
                         onClick={() => {
@@ -204,32 +213,32 @@ export function Navbar() {
                       >
                         <OrgBrandLogo orgId={org.id} size="md" glow="soft" />
                         <OrgBrandTagline orgId={org.id} className="text-left" />
-                      </Link>
+                      </FastLink>
                     ))}
                   </motion.div>
                 )}
               </AnimatePresence>
 
               {staticLinks.map((link) => (
-                <Link
+                <FastLink
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card hover:text-foreground"
                 >
                   {link.label}
-                </Link>
+                </FastLink>
               ))}
               {!loading && !loggedIn && (
-                <Link
+                <FastLink
                   href="/login"
                   onClick={() => setMobileOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card hover:text-foreground"
                 >
                   Se connecter
-                </Link>
+                </FastLink>
               )}
-              <Link
+              <FastLink
                 href="/account"
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card"
@@ -240,15 +249,15 @@ export function Navbar() {
                     Premium
                   </span>
                 )}
-              </Link>
+              </FastLink>
               {!isPremium && (
-                <Link
+                <FastLink
                   href="/pricing"
                   onClick={() => setMobileOpen(false)}
                   className="mt-2 rounded-full bg-foreground px-4 py-2.5 text-center text-sm font-medium text-background"
                 >
                   Passer Premium
-                </Link>
+                </FastLink>
               )}
             </nav>
           </motion.div>
@@ -260,9 +269,9 @@ export function Navbar() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="group relative text-sm text-muted transition-colors hover:text-foreground">
+    <FastLink href={href} className="group relative text-sm text-muted transition-colors hover:text-foreground">
       {children}
-      <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-    </Link>
+      <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-200 group-hover:w-full" />
+    </FastLink>
   )
 }

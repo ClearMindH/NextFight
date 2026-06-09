@@ -1,9 +1,11 @@
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import type { Organization } from '@/types'
 import type { Event } from '@/types'
 import { getMainFight, getFreePreviewFight } from '@/lib/event-helpers'
 import { isEventPredictionsPublished } from '@/lib/event-predictions'
 import { EventPredictionsBadge } from '@/components/pronostics/EventPredictionsBadge'
+import { FighterMatchupLine } from '@/components/FighterMatchupLine'
+import { getOrgEventFlag } from '@/lib/org-flag'
 import { formatShortDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -15,6 +17,8 @@ interface OrgEventCalendarProps {
 
 export function OrgEventCalendar({ org, events, activeEventId }: OrgEventCalendarProps) {
   if (events.length <= 1) return null
+
+  const { emoji, regionLabel } = getOrgEventFlag(org.id)
 
   return (
     <section className="border-b border-white/[0.06] bg-[#060a10]/40">
@@ -41,31 +45,34 @@ export function OrgEventCalendar({ org, events, activeEventId }: OrgEventCalenda
 
             return (
               <li key={event.id}>
-                <Link
+                <FastLink
                   href={href}
                   className={cn(
-                    'flex flex-col gap-2 px-5 py-4 transition-colors sm:flex-row sm:items-center sm:justify-between',
+                    'flex flex-col gap-3 px-5 py-4 transition-colors sm:flex-row sm:items-start sm:justify-between sm:gap-6',
                     isActive ? 'bg-white/[0.04]' : 'hover:bg-white/[0.02]',
                   )}
                 >
                   <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <span className="text-lg leading-none" title={regionLabel} aria-hidden>
+                        {emoji}
+                      </span>
                       <p className="font-medium">{event.name}</p>
                       <EventPredictionsBadge event={event} />
                     </div>
                     {linkFight && (
-                      <p className="mt-0.5 text-sm text-muted">
-                        {linkFight.redCorner.name} vs {linkFight.blueCorner.name}
+                      <div className="mt-3">
+                        <FighterMatchupLine red={linkFight.redCorner} blue={linkFight.blueCorner} />
                         {!published && (
-                          <span className="text-[#5c5c5c]"> · analyse à venir</span>
+                          <p className="mt-1.5 text-xs text-[#5c5c5c]">Analyse à venir</p>
                         )}
-                      </p>
+                      </div>
                     )}
                   </div>
                   <span className="text-xs text-muted tabular-nums shrink-0">
                     {formatShortDate(event.date)}
                   </span>
-                </Link>
+                </FastLink>
               </li>
             )
           })}

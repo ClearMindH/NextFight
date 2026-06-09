@@ -1,11 +1,11 @@
-import { buildPredictionVerdict } from '@/lib/prediction-verdict'
+import { buildPredictionVerdict, fighterShortName } from '@/lib/prediction-verdict'
 import type { Fight } from '@/types'
 import { cn } from '@/utils/cn'
 
 type PredictionVerdictBannerProps = {
   fight: Pick<Fight, 'model' | 'redCorner' | 'blueCorner' | 'scheduledRounds'>
-  /** compact = liste carte ; default = page combat */
-  variant?: 'default' | 'compact' | 'prominent'
+  /** compact = liste carte ; inline = listes accueil ; default = page combat */
+  variant?: 'default' | 'compact' | 'prominent' | 'inline'
   className?: string
   showProbability?: boolean
 }
@@ -16,9 +16,32 @@ export function PredictionVerdictBanner({
   className,
   showProbability = true,
 }: PredictionVerdictBannerProps) {
-  const { headline, probabilityLine } = buildPredictionVerdict(fight, {
+  const verdict = buildPredictionVerdict(fight, {
     includeProbability: showProbability,
   })
+  const { headline, probabilityLine, winner, winnerProbability } = verdict
+
+  if (variant === 'inline') {
+    const lastName = fighterShortName(winner.name)
+    return (
+      <div className={cn('flex items-end justify-between gap-4', className)}>
+        <div className="min-w-0">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-muted">
+            Pronostic
+          </p>
+          <p className="mt-1 font-display text-lg font-semibold leading-tight tracking-tight sm:text-xl">
+            <span className="text-gold">{lastName}</span>
+            <span className="font-normal text-foreground/75"> vainqueur</span>
+          </p>
+        </div>
+        {showProbability && (
+          <span className="shrink-0 rounded-lg border border-gold/20 bg-gold/[0.08] px-3 py-1.5 font-display text-base font-semibold tabular-nums text-gold">
+            {Math.round(winnerProbability)}%
+          </span>
+        )}
+      </div>
+    )
+  }
 
   if (variant === 'compact') {
     return (

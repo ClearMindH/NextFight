@@ -5,8 +5,6 @@ import { notFound } from 'next/navigation'
 
 const org = getOrganization('pfl')
 
-export const dynamic = 'force-dynamic'
-
 export const metadata = org ? buildPronosticsMetadata(org) : {}
 
 export default function PflPronosticsPage() {

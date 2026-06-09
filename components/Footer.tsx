@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { NextFightBrand } from '@/components/NextFightBrand'
 import { organizations } from '@/data/organizations'
 import { OrgBrandLogo } from '@/components/OrgBrandLogo'
@@ -40,7 +40,7 @@ export function Footer() {
                   const org = organizations.find((o) => o.seoPathFr === item.href)
                   return (
                     <li key={item.href}>
-                      <Link
+                      <FastLink
                         href={item.href}
                         className="inline-block py-0.5 transition-opacity hover:opacity-90"
                       >
@@ -49,7 +49,7 @@ export function Footer() {
                         ) : (
                           <span className="text-sm text-muted hover:text-foreground">{item.label}</span>
                         )}
-                      </Link>
+                      </FastLink>
                     </li>
                   )
                 })}

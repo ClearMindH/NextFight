@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { cn } from '@/utils/cn'
 
 const LOGO_SRC = '/brand/nextfight-logo.png'
@@ -60,9 +60,9 @@ export function NextFightBrand({
 
   if (href) {
     return (
-      <Link href={href} className={cn('group', layout)} aria-label="NextFight — accueil">
+      <FastLink href={href} className={cn('group', layout)} aria-label="NextFight — accueil">
         {content}
-      </Link>
+      </FastLink>
     )
   }
 

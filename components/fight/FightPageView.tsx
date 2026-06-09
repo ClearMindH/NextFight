@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { ArrowLeft } from 'lucide-react'
 import type { FightPageData } from '@/lib/fights'
 import { OrgFightExperience } from '@/components/pronostics/OrgFightExperience'
@@ -36,13 +36,13 @@ export function FightPageView({ data }: FightPageViewProps) {
   return (
     <div className="min-h-screen bg-[#050505] pt-16">
       <div className="container-content border-b border-white/[0.06] px-4 py-6 sm:px-6 lg:px-8">
-        <Link
+        <FastLink
           href={`${organization.seoPathFr}#pronostic`}
           className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
           Pronostics {organization.name}
-        </Link>
+        </FastLink>
       </div>
 
       <OrgFightExperience

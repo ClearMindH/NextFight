@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { Lock, ChevronRight } from 'lucide-react'
 import type { Event, Fight, Organization } from '@/types'
 import { sortFightsByCardOrder, getMainFight, getFreePreviewFight } from '@/lib/event-helpers'
@@ -10,7 +10,7 @@ import {
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
-import { FightCardMiniPortrait } from '@/components/fight/FightCardMiniPortrait'
+import { FighterMatchupLine } from '@/components/FighterMatchupLine'
 import { cn } from '@/utils/cn'
 
 interface OrgEventFightCardListProps {
@@ -98,7 +98,7 @@ function FightCardRow({
 
   return (
     <li>
-      <Link href={href} prefetch className={rowClass}>
+      <FastLink href={href} className={rowClass}>
         <FightRowContent fight={fight} unlocked={hasAccess} />
         <span
           className={cn(
@@ -119,7 +119,7 @@ function FightCardRow({
             </>
           )}
         </span>
-      </Link>
+      </FastLink>
     </li>
   )
 }
@@ -134,15 +134,8 @@ function FightRowContent({ fight, unlocked }: { fight: Fight; unlocked: boolean 
         <span className="text-[10px] text-[#5c5c5c]">·</span>
         <span className="text-xs text-[#6b6b6b]">{fight.weightClass}</span>
       </div>
-      <div className="mt-3 flex items-center gap-3">
-        <div className="flex items-center -space-x-2">
-          <FightCardMiniPortrait fighter={fight.redCorner} corner="red" />
-          <FightCardMiniPortrait fighter={fight.blueCorner} corner="blue" />
-        </div>
-        <p className="font-medium text-[#f5f2eb]">
-          {fight.redCorner.name}{' '}
-          <span className="font-normal text-[#6b6b6b]">vs</span> {fight.blueCorner.name}
-        </p>
+      <div className="mt-3">
+        <FighterMatchupLine red={fight.redCorner} blue={fight.blueCorner} />
       </div>
       {unlocked ? (
         <div className="mt-2">
