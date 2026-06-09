@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { Fighter } from '@/types'
 import {
+  DISPLAY_FIGHTER_PHOTOS,
   FIGHTER_PORTRAIT_PLACEHOLDER,
   getFighterPortraitUrl,
   hasFighterPortrait,
@@ -26,9 +27,10 @@ describe('fighter-portrait', () => {
     expect(hasFighterPortrait(base)).toBe(false)
   })
 
-  it('uses roster image when imageUrl is set', () => {
+  it('does not expose UFC photos on the public site', () => {
     const withPhoto = { ...base, imageUrl: 'https://ufc.com/photo.jpg' }
-    expect(getFighterPortraitUrl(withPhoto)).toBe('https://ufc.com/photo.jpg')
-    expect(hasFighterPortrait(withPhoto)).toBe(true)
+    expect(DISPLAY_FIGHTER_PHOTOS).toBe(false)
+    expect(getFighterPortraitUrl(withPhoto)).toBe(FIGHTER_PORTRAIT_PLACEHOLDER)
+    expect(hasFighterPortrait(withPhoto)).toBe(false)
   })
 })

@@ -18,8 +18,8 @@ export function Promotions() {
   )
 
   return (
-    <section id="promotions" className="relative overflow-hidden intel-dashboard-section">
-      <div className="pointer-events-none absolute inset-0 intel-dashboard-grid opacity-60" />
+    <section id="promotions" className="relative overflow-hidden bg-[#0c0c10]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(255,255,255,0.04),transparent)]" />
 
       <div className="container-content relative section-padding">
         <FadeIn className="mx-auto max-w-2xl text-center">

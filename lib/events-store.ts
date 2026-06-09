@@ -40,6 +40,11 @@ function invalidateHydratedCache(): void {
   hydratedCache = null
 }
 
+/** Force le rechargement des combattants (pays, records) après mise à jour roster. */
+export function invalidateEventsHydratedCache(): void {
+  invalidateHydratedCache()
+}
+
 export function saveEventsRaw(data: EventsStoreFile): void {
   const dir = path.dirname(STORE_PATH)
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })

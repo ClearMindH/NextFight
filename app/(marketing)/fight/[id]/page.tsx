@@ -7,7 +7,6 @@ interface FightPageProps {
   params: Promise<{ id: string }>
 }
 
-export const dynamic = 'force-dynamic'
 export const dynamicParams = true
 
 export function generateStaticParams() {

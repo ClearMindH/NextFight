@@ -52,9 +52,9 @@ export const organizations: Organization[] = [
     slug: 'hexagone-mma',
     seoPath: '/hexagone-mma-predictions',
     seoPathFr: '/hexagone-mma-pronostics',
-    description: 'Canadian promotion focused on developing North American contenders.',
+    description: 'French promotion with arena events and a growing European roster.',
     descriptionFr:
-      'Promotion canadienne qui développe les prétendants nord-américains — pronostics et analyses Hexagone MMA.',
+      'Promotion française : cartes en arène, talents locaux et internationaux — pronostics et analyses Hexagone MMA.',
   },
 ]
 

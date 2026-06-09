@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
 import {
@@ -79,7 +79,7 @@ export function LandingAnnouncement() {
 
             <div className="mt-6 flex flex-col gap-2.5">
               {LANDING_ANNOUNCEMENT.items.map((item) => (
-                <Link
+                <FastLink
                   key={item.href}
                   href={item.href}
                   onClick={dismiss}
@@ -90,7 +90,7 @@ export function LandingAnnouncement() {
                     <span className="ml-2 text-xs font-normal text-muted">{item.dateLabel}</span>
                   </span>
                   <ArrowRight size={16} className="shrink-0 text-gold" aria-hidden />
-                </Link>
+                </FastLink>
               ))}
             </div>
 

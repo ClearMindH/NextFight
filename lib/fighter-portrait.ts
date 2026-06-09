@@ -4,7 +4,11 @@ import { isValidImageSrc } from '@/lib/image-url'
 /** Silhouette générique (toutes orgs) quand aucune photo roster */
 export const FIGHTER_PORTRAIT_PLACEHOLDER = '/fighters/fighter-placeholder.svg'
 
+/** Photos tierces (UFC, etc.) désactivées sur le site public. */
+export const DISPLAY_FIGHTER_PHOTOS = false
+
 export function hasFighterPortrait(fighter: Fighter): boolean {
+  if (!DISPLAY_FIGHTER_PHOTOS) return false
   const url = fighter.imageUrl?.trim()
   return Boolean(url && isValidImageSrc(url))
 }

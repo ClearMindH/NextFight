@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { motion } from 'framer-motion'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
@@ -187,13 +187,13 @@ export function OrgFightExperience({
 
         {enforceAccess && !hasAccess && (
           <p className="mt-8 text-center text-sm text-muted">
-            <Link href="/pricing" className="text-gold hover:underline underline-offset-4">
+            <FastLink href="/pricing" className="text-gold hover:underline underline-offset-4">
               Passer en Premium
-            </Link>
+            </FastLink>
             {' · '}
-            <Link href={org.seoPathFr} className="hover:text-foreground transition-colors">
+            <FastLink href={org.seoPathFr} className="hover:text-foreground transition-colors">
               Retour aux pronostics {org.name}
-            </Link>
+            </FastLink>
           </p>
         )}
       </div>

@@ -24,6 +24,9 @@ type SubscriptionSnapshot = {
   loading: boolean
 }
 
+/** Snapshot SSR stable — ne jamais recréer l’objet dans getServerSnapshot. */
+const SERVER_SNAPSHOT: SubscriptionSnapshot = { status: FREE_DEFAULT, loading: true }
+
 let snapshot: SubscriptionSnapshot = { status: FREE_DEFAULT, loading: true }
 let inflight: Promise<void> | null = null
 const listeners = new Set<() => void>()
@@ -91,10 +94,7 @@ function ensureSubscriptionLoaded(): void {
 }
 
 export function useSubscription() {
-  const store = useSyncExternalStore(subscribe, getSnapshot, () => ({
-    status: FREE_DEFAULT,
-    loading: true,
-  }))
+  const store = useSyncExternalStore(subscribe, getSnapshot, () => SERVER_SNAPSHOT)
 
   const [stalePremium] = useState(readCachedPremium)
 

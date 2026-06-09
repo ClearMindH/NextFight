@@ -109,6 +109,19 @@ body {
     animation-duration: 3s;
   }
 
+  .nav-progress-bar {
+    animation: nav-progress 0.5s ease-in-out infinite;
+  }
+
+  @keyframes nav-progress {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(350%);
+    }
+  }
+
   @keyframes org-logo-shine {
     0%,
     100% {

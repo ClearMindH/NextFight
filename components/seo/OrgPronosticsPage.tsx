@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { FastLink } from '@/components/navigation/FastLink'
 import { OrgPageHeader } from '@/components/pronostics/OrgPageHeader'
 import { OrgFeaturedFightSection } from '@/components/pronostics/OrgFeaturedFightSection'
 import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
@@ -47,12 +47,12 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
               Accédez à tous les combats de la carte, y compris le main event, et aux analyses
               détaillées.
             </p>
-            <Link
+            <FastLink
               href="/pricing"
               className="mt-6 inline-flex rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-gold/40 hover:text-gold"
             >
               Voir les offres
-            </Link>
+            </FastLink>
           </div>
         </section>
       </main>
