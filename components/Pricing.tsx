@@ -8,6 +8,7 @@ import { cn } from '@/utils/cn'
 
 /** Bloc tarifs accueil — version compacte. Détail : /pricing */
 export function Pricing() {
+  const freePlan = STRIPE_PLANS.find((p) => p.id === 'free')
   const paidPlans = STRIPE_PLANS.filter((p) => isPaidPlan(p.id))
   const annual = paidPlans.find((p) => p.id === 'premium_annual')
   const monthly = paidPlans.find((p) => p.id === 'premium_monthly')
@@ -28,32 +29,34 @@ export function Pricing() {
         </FadeIn>
 
         <div className="mx-auto mt-10 flex max-w-lg flex-col gap-4 sm:max-w-xl">
-          {annual && (
+          {freePlan && (
             <FadeIn>
-              <div className="rounded-[1.25rem] border border-gold-soft/35 bg-[#0f0e0c] px-6 py-7 sm:px-8">
+              <div className="rounded-[1.25rem] border border-[#1f1d1a] bg-[#0a0a0a] px-6 py-7 sm:px-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.24em] text-muted-warm">
-                      Premium annuel
+                      {freePlan.name}
                     </p>
-                    <p className="mt-2 text-sm text-muted-warm">{annual.description}</p>
+                    <p className="mt-2 text-sm text-muted-warm">{freePlan.description}</p>
                   </div>
                   <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
-                    {annual.priceLabel}
-                    <span className="text-sm font-normal text-[#6b6b6b]">{annual.period}</span>
+                    {freePlan.priceLabel}
                   </p>
                 </div>
                 <div className="mt-6">
-                  <StripeCheckoutButton planId={annual.id} highlighted className="!rounded-full">
-                    {annual.cta}
-                  </StripeCheckoutButton>
+                  <Link
+                    href="/fight/ufc-freedom-250-f2"
+                    className="block w-full rounded-full border border-[#2a2824] py-3 text-center text-sm font-medium text-foreground transition-colors hover:border-gold-soft/45 hover:bg-[#11100e]"
+                  >
+                    Essayer Gane vs Pereira
+                  </Link>
                 </div>
               </div>
             </FadeIn>
           )}
           {monthly && (
             <FadeIn delay={0.06}>
-              <div className="rounded-[1.25rem] border border-[#1f1d1a] bg-[#0a0a0a] px-6 py-7 sm:px-8">
+              <div className="rounded-[1.25rem] border border-gold-soft/35 bg-[#0f0e0c] px-6 py-7 sm:px-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.24em] text-muted-warm">
@@ -67,13 +70,36 @@ export function Pricing() {
                   </p>
                 </div>
                 <div className="mt-6">
+                  <StripeCheckoutButton planId={monthly.id} highlighted className="!rounded-full">
+                    {monthly.cta}
+                  </StripeCheckoutButton>
+                </div>
+              </div>
+            </FadeIn>
+          )}
+          {annual && (
+            <FadeIn delay={0.12}>
+              <div className="rounded-[1.25rem] border border-[#1f1d1a] bg-[#0a0a0a] px-6 py-7 sm:px-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-muted-warm">
+                      Premium annuel
+                    </p>
+                    <p className="mt-2 text-sm text-muted-warm">{annual.description}</p>
+                  </div>
+                  <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
+                    {annual.priceLabel}
+                    <span className="text-sm font-normal text-[#6b6b6b]">{annual.period}</span>
+                  </p>
+                </div>
+                <div className="mt-6">
                   <StripeCheckoutButton
-                    planId={monthly.id}
+                    planId={annual.id}
                     className={cn(
                       '!rounded-full !border-gold-soft/40 !text-gold-soft hover:!bg-gold-soft/10',
                     )}
                   >
-                    {monthly.cta}
+                    {annual.cta}
                   </StripeCheckoutButton>
                 </div>
               </div>
@@ -86,7 +112,7 @@ export function Pricing() {
             href="/pricing"
             className="text-sm text-muted-warm transition-colors hover:text-gold-soft"
           >
-            Voir l’offre gratuite et les détails →
+            Voir tous les détails des offres →
           </Link>
         </p>
       </div>

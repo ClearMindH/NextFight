@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { MicrosoftClarity } from '@/components/analytics/MicrosoftClarity'
 import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import { siteMetadata } from '@/lib/seo'
 import { buildSiteJsonLd } from '@/lib/seo-site-jsonld'
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <OrgJsonLd data={buildSiteJsonLd()} />
         {children}
+        <MicrosoftClarity />
       </body>
       {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
