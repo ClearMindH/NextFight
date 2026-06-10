@@ -15,7 +15,7 @@ export function OrgSeoPage({ org }: OrgSeoPageProps) {
   const mainFight = featured ? getFreePreviewFight(featured) : null
 
   return (
-    <main className="pt-16">
+    <main className="pt-site-header">
       <section className="section-padding border-b border-border">
         <div className="container-content max-w-3xl">
           <div className="flex items-center justify-between gap-4">

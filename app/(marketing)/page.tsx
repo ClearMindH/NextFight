@@ -1,5 +1,6 @@
 import { Hero } from '@/components/Hero'
 import { HowItWorks } from '@/components/HowItWorks'
+import { SocialProofSection } from '@/components/conversion/SocialProofSection'
 import { LandingAnnouncement } from '@/components/LandingAnnouncement'
 import { Promotions } from '@/components/Promotions'
 import { UpcomingEvents } from '@/components/UpcomingEvents'
@@ -12,6 +13,7 @@ export default function HomePage() {
       <LandingAnnouncement />
       <Hero />
       <HowItWorks />
+      <SocialProofSection />
       <UpcomingEvents />
       <Promotions />
       <Pricing />

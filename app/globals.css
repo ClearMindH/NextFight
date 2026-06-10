@@ -9,6 +9,11 @@
   --muted: #8b8b8b;
   --card: #111111;
   --border: #1f1f1f;
+  --site-header-h: 4rem;
+}
+
+.pt-site-header {
+  padding-top: var(--site-header-h);
 }
 
 html {

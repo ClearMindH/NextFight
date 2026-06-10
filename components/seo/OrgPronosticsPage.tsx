@@ -24,7 +24,7 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
   return (
     <>
       <OrgJsonLd data={jsonLd} />
-      <main className="pt-16 bg-[#050505]">
+      <main className="pt-site-header bg-[#050505]">
         <OrgPageHeader org={org} />
 
         {featured && featured.fights.length > 0 && (

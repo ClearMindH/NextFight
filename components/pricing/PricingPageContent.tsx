@@ -1,7 +1,8 @@
-'use client'
-
 import Link from 'next/link'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
+import { PlanComparisonTable } from '@/components/conversion/PlanComparisonTable'
+import { PremiumPreviewSection } from '@/components/conversion/PremiumPreviewSection'
+import { SocialProofSection } from '@/components/conversion/SocialProofSection'
 import { STRIPE_PLANS, isPaidPlan } from '@/lib/stripe-plans'
 import type { PlanId } from '@/types/subscription'
 import { cn } from '@/utils/cn'
@@ -9,7 +10,7 @@ import { cn } from '@/utils/cn'
 const FAQ = [
   {
     q: 'Puis-je annuler quand je veux ?',
-    a: 'Oui, depuis le portail Stripe accessible dans votre compte.',
+    a: 'Oui, depuis votre compte ou le portail Stripe.',
   },
   {
     q: 'Le gratuit suffit-il pour tester ?',
@@ -39,31 +40,6 @@ function Divider() {
   )
 }
 
-function PlanFeatures({ items, accent }: { items: string[]; accent?: boolean }) {
-  return (
-    <ul className="mt-5 space-y-2.5">
-      {items.map((f) => (
-        <li
-          key={f}
-          className={cn(
-            'flex gap-3 text-sm leading-relaxed',
-            accent ? 'text-[#f5f2eb]' : 'text-[#8a8278]',
-          )}
-        >
-          <span
-            className={cn(
-              'mt-[0.45rem] h-1 w-1 shrink-0 rounded-full',
-              accent ? 'bg-[#c9b896]' : 'bg-[#5c5c5c]',
-            )}
-            aria-hidden
-          />
-          {f}
-        </li>
-      ))}
-    </ul>
-  )
-}
-
 function PricingOfferCard({
   label,
   title,
@@ -71,7 +47,6 @@ function PricingOfferCard({
   price,
   period,
   badge,
-  features,
   children,
   featured,
 }: {
@@ -81,7 +56,6 @@ function PricingOfferCard({
   price: string
   period?: string
   badge?: string
-  features: string[]
   children: React.ReactNode
   featured?: boolean
 }) {
@@ -126,7 +100,6 @@ function PricingOfferCard({
       </div>
 
       <p className="mt-4 text-sm leading-relaxed text-[#8a8278]">{description}</p>
-      <PlanFeatures items={features} accent={featured} />
       <div className="mt-7">{children}</div>
     </article>
   )
@@ -157,25 +130,39 @@ export function PricingPageContent() {
               title={freePlan.name}
               description={freePlan.description}
               price={freePlan.priceLabel}
-              features={freePlan.features}
             >
               <Link
-                href="/ufc-pronostics"
+                href="/fight/ufc-freedom-250-f2"
                 className="block w-full rounded-full border border-[#2a2824] py-3.5 text-center text-sm font-medium text-[#f5f2eb] transition-colors hover:border-[#c9b896]/45 hover:bg-[#11100e]"
               >
-                Découvrir les pronostics
+                Voir l&apos;analyse gratuite Gane vs Pereira
               </Link>
             </PricingOfferCard>
 
             <PricingOfferCard
               label="Offre 02"
+              title="Premium mensuel"
+              description={monthlyPlan.description}
+              price={monthlyPlan.priceLabel}
+              period={monthlyPlan.period}
+              featured
+            >
+              <StripeCheckoutButton
+                planId={'premium_monthly' as PlanId}
+                highlighted
+                className="!w-full !rounded-full !py-3.5 !text-sm !font-semibold"
+              >
+                {monthlyPlan.cta}
+              </StripeCheckoutButton>
+            </PricingOfferCard>
+
+            <PricingOfferCard
+              label="Offre 03"
               title="Premium annuel"
               description={annualPlan.description}
               price={annualPlan.priceLabel}
               period={annualPlan.period}
               badge={`−${savingsPct}%`}
-              features={annualPlan.features}
-              featured
             >
               <p className="mb-4 text-center text-xs text-[#c9b896]">
                 ≈ {(annualPrice / 12).toFixed(2).replace('.', ',')}€ / mois · économisez environ{' '}
@@ -183,26 +170,9 @@ export function PricingPageContent() {
               </p>
               <StripeCheckoutButton
                 planId={'premium_annual' as PlanId}
-                highlighted
-                className="!w-full !rounded-full !py-3.5 !text-sm !font-semibold"
-              >
-                {annualPlan.cta}
-              </StripeCheckoutButton>
-            </PricingOfferCard>
-
-            <PricingOfferCard
-              label="Offre 03"
-              title="Premium mensuel"
-              description={monthlyPlan.description}
-              price={monthlyPlan.priceLabel}
-              period={monthlyPlan.period}
-              features={monthlyPlan.features.filter((f) => !f.includes('Économisez'))}
-            >
-              <StripeCheckoutButton
-                planId={'premium_monthly' as PlanId}
                 className="!w-full !rounded-full !border !border-[#c9b896]/40 !bg-transparent !py-3.5 !text-sm !font-medium !text-[#c9b896] hover:!bg-[#c9b896]/10"
               >
-                {monthlyPlan.cta}
+                {annualPlan.cta}
               </StripeCheckoutButton>
             </PricingOfferCard>
           </div>
@@ -213,6 +183,9 @@ export function PricingPageContent() {
           </p>
         </div>
       </section>
+
+      <PlanComparisonTable />
+      <PremiumPreviewSection />
 
       <section className="border-t border-[#1a1816]">
         <div className="container-content section-padding">
@@ -234,9 +207,12 @@ export function PricingPageContent() {
         </div>
       </section>
 
+      <SocialProofSection className="border-t-0" compact />
+
       <section className="border-t border-[#1a1816] pb-16 pt-10">
         <div className="container-content text-center">
-          <p className="font-display text-lg text-[#f5f2eb]">Prêt pour la prochaine carte ?</p>
+          <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — Samedi 15 juin</p>
+          <p className="mt-2 text-sm text-[#8a8278]">Topuria vs Gaethje analysé en détail pour les membres Premium.</p>
           <div className="mx-auto mt-6 flex max-w-xs flex-col gap-3">
             {isPaidPlan('premium_annual') && (
               <StripeCheckoutButton
@@ -244,14 +220,14 @@ export function PricingPageContent() {
                 highlighted
                 className="!w-full !rounded-full !py-3.5 !text-sm"
               >
-                Commencer Premium
+                Débloquer Topuria vs Gaethje →
               </StripeCheckoutButton>
             )}
             <Link
-              href="/ufc-pronostics"
+              href="/fight/ufc-freedom-250-f2"
               className="text-sm text-[#8a8278] transition-colors hover:text-[#c9b896]"
             >
-              Continuer en gratuit
+              Voir l&apos;analyse gratuite Gane vs Pereira
             </Link>
           </div>
         </div>
