@@ -211,7 +211,7 @@ export function PricingPageContent() {
 
       <section className="border-t border-[#1a1816] pb-16 pt-10">
         <div className="container-content text-center">
-          <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — Samedi 15 juin</p>
+          <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — Dimanche 16 juin</p>
           <p className="mt-2 text-sm text-[#8a8278]">Topuria vs Gaethje analysé en détail pour les membres Premium.</p>
           <div className="mx-auto mt-6 flex max-w-xs flex-col gap-3">
             {isPaidPlan('premium_annual') && (
