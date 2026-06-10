@@ -35,9 +35,9 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <OrgJsonLd data={buildSiteJsonLd()} />
         {children}
+        <MicrosoftClarity />
       </body>
       {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
-      <MicrosoftClarity />
     </html>
   )
 }
