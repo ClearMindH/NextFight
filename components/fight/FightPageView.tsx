@@ -12,6 +12,7 @@ import {
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { useUserActivity } from '@/hooks/useUserActivity'
+import { FightPremiumTeaser } from '@/components/conversion/FightPremiumTeaser'
 
 interface FightPageViewProps {
   data: FightPageData
@@ -53,6 +54,8 @@ export function FightPageView({ data }: FightPageViewProps) {
         enforceAccess
         variant="detail"
       />
+
+      <FightPremiumTeaser event={event} fightId={fight.id} />
 
       <OrgEventFightCardList org={organization} event={event} excludeFightId={fight.id} />
 
