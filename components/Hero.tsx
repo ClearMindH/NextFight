@@ -1,100 +1,66 @@
-'use client'
-
-import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-
-/** Fond d’accueil — tunnel de marche d’aréna MMA (logos retirés, copie locale) */
-const HERO_SRC = process.env.NEXT_PUBLIC_HERO_BACKGROUND ?? '/images/hero-bg.jpg'
+import { getHeroShowcaseData } from '@/lib/hero-showcase'
+import { HeroCredibilityBar } from '@/components/HeroCredibilityBar'
+import { HeroContent } from '@/components/HeroContent'
+import { HeroFightPreview } from '@/components/HeroFightPreview'
+import { HeroPreviewAside } from '@/components/HeroPreviewAside'
 
 export function Hero() {
+  const data = getHeroShowcaseData()
+
+  if (!data) {
+    return (
+      <section className="border-b border-white/[0.06] bg-[#050505] pt-site-header">
+        <div className="container-content section-padding text-center">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-[#f5f2eb]">
+            Analysez chaque combat MMA avec des statistiques avancées.
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-sm text-[#8a8278]">
+            Probabilités de victoire, comparaisons détaillées et analyses pour l&apos;UFC, PFL,
+            KSW, ARES et Hexagone MMA.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/ufc-pronostics"
+              className="inline-flex items-center gap-2 rounded-full bg-[#f5f2eb] px-6 py-3 text-sm font-semibold text-[#0a0a0a]"
+            >
+              Voir l&apos;analyse UFC de cette semaine
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 rounded-full border border-[#c9b896]/35 px-6 py-3 text-sm font-medium text-[#c9b896]"
+            >
+              Découvrir Premium
+            </Link>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <section className="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src={HERO_SRC}
-          alt="Ambiance octogone MMA"
-          fill
-          priority
-          className="object-cover object-center scale-[0.88]"
-          sizes="100vw"
-        />
-      </div>
-      {/* Assombrissement de base pour la lisibilité du texte */}
-      <div className="absolute inset-0 bg-background/55" />
-      {/* Teinte dorée pour s'accorder à la charte (gold #c9a227) */}
-      <div className="absolute inset-0 bg-gold/10 mix-blend-overlay" />
-      {/* Dégradés haut/bas pour fondre le wallpaper dans le fond noir */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/5" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40" />
-      {/* Vignettage radial doré subtil */}
+    <section className="relative overflow-hidden border-b border-white/[0.06] bg-[#050505]">
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(circle at 50% 40%, rgba(201,162,39,0.12) 0%, rgba(5,5,5,0) 45%, rgba(5,5,5,0.7) 100%)',
-        }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_15%_0%,rgba(201,162,39,0.1),transparent_55%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_0%,black_20%,transparent_75%)]"
+        aria-hidden
       />
 
-      <div className="relative z-10 container-content px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-xs font-medium uppercase tracking-[0.25em] text-gold"
-        >
-          Pronostics MMA
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-6 font-display text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl mx-auto"
-        >
-          Pronostics MMA fiables pour chaque combat.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed"
-        >
-          Pronostics et analyses statistiques pour l&apos;UFC, la PFL, le KSW, ARES et Hexagone MMA —
-          sans paris sportifs.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link
-            href="#promotions"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/10"
-          >
-            Voir les pronostics
-            <ArrowRight size={16} />
-          </Link>
-          <Link
-            href="#events"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm font-medium backdrop-blur transition-colors hover:border-gold/40 hover:text-gold"
-          >
-            Prochains combats
-          </Link>
-        </motion.div>
+      <div className="container-content relative px-4 pb-10 pt-28 sm:px-6 sm:pb-12 sm:pt-32 lg:px-8 lg:pb-14">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 xl:gap-16">
+          <HeroContent data={data} />
+          <HeroPreviewAside>
+            <HeroFightPreview data={data} />
+          </HeroPreviewAside>
+        </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <a href="#events" className="text-xs text-muted hover:text-foreground transition-colors">
-          Voir le calendrier ↓
-        </a>
-      </motion.div>
+      <HeroCredibilityBar stats={data.credibility} />
     </section>
   )
 }
