@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import {
   isEventCountdownActive,
   UFC_FREEDOM_250_EVENT_START,
+  UFC_FREEDOM_250_TIME_LABEL,
 } from '@/lib/event-urgency'
 import { cn } from '@/utils/cn'
 
@@ -98,6 +99,14 @@ export function EventCountdown({ className, variant = 'default' }: EventCountdow
         <Unit value={parts.minutes} label="Min" compact={compact} />
         <Unit value={parts.seconds} label="Sec" compact={compact} />
       </div>
+      <p
+        className={cn(
+          'text-center leading-snug text-[#8a8278]',
+          compact ? 'mt-2 text-[9px]' : 'mt-3 text-[10px]',
+        )}
+      >
+        {UFC_FREEDOM_250_TIME_LABEL}
+      </p>
     </div>
   )
 }

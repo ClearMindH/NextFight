@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { FastLink } from '@/components/navigation/FastLink'
 import {
   EVENT_URGENCY_BANNER_HEIGHT_PX,
+  UFC_FREEDOM_250_EVENT_LABEL,
   isEventUrgencyBannerActive,
 } from '@/lib/event-urgency'
 
@@ -32,7 +33,7 @@ export function EventUrgencyBanner() {
     >
       <p className="truncate sm:whitespace-normal">
         <span aria-hidden>🥊 </span>
-        UFC Freedom 250 — Dimanche 16 juin · Topuria vs Gaethje ·{' '}
+        UFC Freedom 250 — {UFC_FREEDOM_250_EVENT_LABEL} · Topuria vs Gaethje ·{' '}
         <FastLink
           href="/ufc-pronostics"
           className="underline underline-offset-2 transition-opacity hover:opacity-90"

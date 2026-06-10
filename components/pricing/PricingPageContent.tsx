@@ -6,6 +6,11 @@ import { PlanComparisonTable } from '@/components/conversion/PlanComparisonTable
 import { PremiumPreviewSection } from '@/components/conversion/PremiumPreviewSection'
 import { PricingCredibilityStats } from '@/components/conversion/PricingCredibilityStats'
 import { SocialProofSection } from '@/components/conversion/SocialProofSection'
+import {
+  UFC_FREEDOM_250_DATE_LABEL,
+  UFC_FREEDOM_250_EVENT_LABEL,
+  UFC_FREEDOM_250_TIME_LABEL,
+} from '@/lib/event-urgency'
 import { STRIPE_PLANS, isPaidPlan } from '@/lib/stripe-plans'
 import type { PlanId } from '@/types/subscription'
 import { cn } from '@/utils/cn'
@@ -157,7 +162,7 @@ export function PricingPageContent() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-1.5 rounded-full border border-[#B91C1C]/35 bg-[#1a0a0a]/80 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8a0a0]">
               <Sparkles className="h-3 w-3" aria-hidden />
-              UFC Freedom 250 · Dimanche 16 juin
+              UFC Freedom 250 · {UFC_FREEDOM_250_EVENT_LABEL}
             </p>
             <h1 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2rem]">
               Débloquez tous les pronostics MMA
@@ -318,7 +323,8 @@ export function PricingPageContent() {
       <section className="border-t border-[#1a1816] pb-16 pt-8">
         <div className="container-content">
           <div className="mx-auto max-w-xl rounded-2xl border border-[#c9b896]/25 bg-gradient-to-b from-[#12100c] to-[#0a0a0a] px-6 py-8 text-center">
-            <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — Dimanche 16 juin</p>
+            <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — {UFC_FREEDOM_250_DATE_LABEL}</p>
+            <p className="mt-1 text-xs text-[#c9b896]">Début carte principale · {UFC_FREEDOM_250_TIME_LABEL}</p>
             <p className="mt-1.5 text-xs text-[#8a8278]">
               Topuria vs Gaethje analysé en détail pour les membres Premium.
             </p>
