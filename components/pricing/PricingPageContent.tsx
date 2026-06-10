@@ -176,12 +176,11 @@ export function PricingPageContent() {
             </div>
           </div>
 
-          {/* Grille principale : urgence + 3 offres */}
+          {/* Grille principale : bénéfices + 3 offres */}
           <div className="mx-auto mt-6 max-w-5xl lg:mt-8">
             <div className="grid gap-4 lg:grid-cols-[11rem_1fr] lg:gap-5 xl:grid-cols-[12rem_1fr]">
-              {/* Colonne urgence — desktop */}
-              <aside className="hidden lg:flex lg:flex-col lg:gap-3">
-                <EventCountdown variant="compact" />
+              {/* Colonne bénéfices — desktop */}
+              <aside className="hidden lg:block">
                 <div className="rounded-xl border border-[#1f1d1a] bg-[#0a0a0a]/90 p-3">
                   <p className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#c9b896]">
                     <Lock className="h-3 w-3" aria-hidden />
@@ -268,20 +267,22 @@ export function PricingPageContent() {
               </div>
             </div>
 
-            {/* Mobile : countdown + bénéfices */}
-            <div className="mt-4 space-y-3 lg:hidden">
-              <EventCountdown variant="compact" />
-              <div className="flex flex-wrap justify-center gap-1.5">
-                {PREMIUM_HIGHLIGHTS.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center gap-1 rounded-full border border-[#1f1d1a] bg-[#0a0a0a] px-2 py-1 text-[9px] text-[#9a9288]"
-                  >
-                    <Check className="h-2.5 w-2.5 text-[#c9b896]" aria-hidden />
-                    {item}
-                  </span>
-                ))}
-              </div>
+            {/* Compteur sous les tarifs — toutes tailles d’écran */}
+            <div className="mx-auto mt-5 max-w-lg sm:mt-6">
+              <EventCountdown />
+            </div>
+
+            {/* Mobile : bénéfices */}
+            <div className="mt-3 flex flex-wrap justify-center gap-1.5 lg:hidden">
+              {PREMIUM_HIGHLIGHTS.map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-1 rounded-full border border-[#1f1d1a] bg-[#0a0a0a] px-2 py-1 text-[9px] text-[#9a9288]"
+                >
+                  <Check className="h-2.5 w-2.5 text-[#c9b896]" aria-hidden />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
