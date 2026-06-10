@@ -9,6 +9,8 @@ import type { Organization } from '@/types'
 import { getUpcomingEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
 import { getFreePreviewFight } from '@/lib/event-helpers'
 import { buildPronosticsJsonLd } from '@/lib/seo-pronostics'
+import { EventCountdown } from '@/components/conversion/EventCountdown'
+import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
 
 interface OrgPronosticsPageProps {
   org: Organization
@@ -24,12 +26,21 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
   return (
     <>
       <OrgJsonLd data={jsonLd} />
-      <main className="pt-site-header bg-[#050505]">
+      <main className={org.id === 'ufc' ? 'pb-24 pt-site-header bg-[#050505] md:pb-0' : 'pt-site-header bg-[#050505]'}>
         <OrgPageHeader org={org} />
+
+        {org.id === 'ufc' && (
+          <div className="container-content px-4 pb-2 pt-4 sm:px-6 lg:px-8">
+            <EventCountdown className="mx-auto max-w-xl" />
+          </div>
+        )}
 
         {featured && featured.fights.length > 0 && (
           <>
             <OrgFeaturedFightSection org={org} event={featured} />
+            {org.id === 'ufc' ? (
+              <UfcPronosticsConversion event={featured} showBanner />
+            ) : null}
             <OrgEventFightCardList org={org} event={featured} />
           </>
         )}
