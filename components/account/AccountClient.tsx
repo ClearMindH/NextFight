@@ -20,6 +20,7 @@ import { planDisplayName } from '@/lib/subscription-constants'
 import { useSubscription } from '@/hooks/useSubscription'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import { BillingPortalButton } from '@/components/stripe/BillingPortalButton'
+import { CancelSubscriptionButton } from '@/components/stripe/CancelSubscriptionButton'
 import { formatShortDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -131,6 +132,7 @@ export function AccountClient() {
                 plan={status.plan}
                 isPremium={isPremium}
                 periodEnd={status.currentPeriodEnd}
+                cancelAtPeriodEnd={status.cancelAtPeriodEnd}
                 loading={loading}
               />
             )}
@@ -143,6 +145,8 @@ export function AccountClient() {
                 loading={loading}
                 email={status.email}
                 periodEnd={status.currentPeriodEnd}
+                cancelAtPeriodEnd={status.cancelAtPeriodEnd}
+                isManualBilling={status.isManualBilling}
               />
             )}
           </motion.div>
@@ -230,11 +234,13 @@ function ScreenPlan({
   plan,
   isPremium,
   periodEnd,
+  cancelAtPeriodEnd,
   loading,
 }: {
   plan: PlanId
   isPremium: boolean
   periodEnd: string | null
+  cancelAtPeriodEnd: boolean
   loading: boolean
 }) {
   return (
@@ -258,7 +264,7 @@ function ScreenPlan({
             {isPremium ? 'Membre Premium' : 'Accès limité'}
           </p>
           {isPremium && periodEnd && (
-            <PremiumRenewalInfo periodEnd={periodEnd} />
+            <PremiumRenewalInfo periodEnd={periodEnd} cancelAtPeriodEnd={cancelAtPeriodEnd} />
           )}
           {!isPremium && (
             <p className="mt-6 max-w-xs mx-auto text-sm text-[#6b6b6b] leading-relaxed">
@@ -319,10 +325,27 @@ function ScreenAccess({
   )
 }
 
-function PremiumRenewalInfo({ periodEnd }: { periodEnd: string }) {
+function PremiumRenewalInfo({
+  periodEnd,
+  cancelAtPeriodEnd,
+}: {
+  periodEnd: string
+  cancelAtPeriodEnd?: boolean
+}) {
   const end = new Date(periodEnd)
   const daysLeft = Math.ceil((end.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
   const expiringSoon = daysLeft <= 7
+
+  if (cancelAtPeriodEnd) {
+    return (
+      <div className="mt-6 space-y-2 text-sm">
+        <p className="text-amber-300/90">
+          Annulation programmée — accès Premium jusqu’au {formatShortDate(periodEnd)}
+        </p>
+        <p className="text-xs text-[#8a8278]">Aucun nouveau prélèvement ne sera effectué.</p>
+      </div>
+    )
+  }
 
   return (
     <div className="mt-6 space-y-2 text-sm">
@@ -331,14 +354,14 @@ function PremiumRenewalInfo({ periodEnd }: { periodEnd: string }) {
         {daysLeft > 0 && (
           <span className="block text-xs mt-1">
             {expiringSoon
-              ? `⚠️ Plus que ${daysLeft} jour${daysLeft > 1 ? 's' : ''}`
+              ? `Plus que ${daysLeft} jour${daysLeft > 1 ? 's' : ''}`
               : `(dans ${daysLeft} jours)`}
           </span>
         )}
       </p>
       {expiringSoon && (
         <p className="text-xs text-[#8a8278]">
-          Renouvellement automatique sauf annulation via Stripe.
+          Renouvellement automatique sauf annulation.
         </p>
       )}
     </div>
@@ -350,11 +373,15 @@ function ScreenBilling({
   loading,
   email,
   periodEnd,
+  cancelAtPeriodEnd,
+  isManualBilling,
 }: {
   isPremium: boolean
   loading: boolean
   email: string | null
   periodEnd: string | null
+  cancelAtPeriodEnd: boolean
+  isManualBilling: boolean
 }) {
   if (loading) {
     return <p className="text-center text-sm text-[#6b6b6b]">Chargement…</p>
@@ -368,17 +395,25 @@ function ScreenBilling({
         </div>
         <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-[#5c5c5c]">Facturation</p>
         <p className="mt-3 text-sm text-[#6b6b6b] leading-relaxed max-w-xs mx-auto">
-          Modifiez votre carte, consultez vos factures ou annulez via le portail Stripe.
+          {isManualBilling
+            ? 'Abonnement Premium actif sur ce compte. Vous pouvez le résilier ci-dessous.'
+            : 'Modifiez votre carte et vos factures via Stripe, ou annulez le renouvellement.'}
         </p>
         {periodEnd && (
           <div className="mt-6 max-w-xs mx-auto text-left">
-            <PremiumRenewalInfo periodEnd={periodEnd} />
+            <PremiumRenewalInfo periodEnd={periodEnd} cancelAtPeriodEnd={cancelAtPeriodEnd} />
           </div>
         )}
-        <div className="mt-8">
-          <BillingPortalButton className="w-full rounded-xl bg-[#f5f2eb] text-[#0c0c0c] hover:scale-[1.01]">
-            Gérer l&apos;abonnement
-          </BillingPortalButton>
+        <div className="mt-8 space-y-3">
+          {!isManualBilling && (
+            <BillingPortalButton className="w-full rounded-xl bg-[#f5f2eb] text-[#0c0c0c] hover:scale-[1.01]">
+              Gérer la facturation Stripe
+            </BillingPortalButton>
+          )}
+          <CancelSubscriptionButton
+            manualBilling={isManualBilling}
+            alreadyScheduled={cancelAtPeriodEnd}
+          />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <QuickLink href="/ufc-pronostics" label="UFC" />

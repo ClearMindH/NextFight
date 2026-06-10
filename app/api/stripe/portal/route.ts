@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getCustomerEmailFromCookie } from '@/lib/auth-cookie'
 import { getStripe, getSiteUrl, isStripeConfigured } from '@/lib/stripe'
-import { getSubscriptionByEmail } from '@/lib/subscription-store'
+import { getSubscriptionByEmail, isManualBillingCustomer } from '@/lib/subscription-store'
 
 export const runtime = 'nodejs'
 
@@ -16,15 +16,32 @@ export async function POST() {
   }
 
   const record = await getSubscriptionByEmail(email)
-  if (!record?.stripeCustomerId) {
-    return NextResponse.json({ error: 'No billing account found' }, { status: 404 })
+  if (!record?.stripeCustomerId || isManualBillingCustomer(record)) {
+    return NextResponse.json(
+      {
+        error:
+          'Facturation Stripe indisponible pour ce compte. Utilisez « Annuler l’abonnement » ci-dessous.',
+      },
+      { status: 404 },
+    )
   }
 
   const stripe = getStripe()
-  const session = await stripe.billingPortal.sessions.create({
-    customer: record.stripeCustomerId,
-    return_url: `${getSiteUrl()}/account`,
-  })
 
-  return NextResponse.json({ url: session.url })
+  try {
+    const session = await stripe.billingPortal.sessions.create({
+      customer: record.stripeCustomerId,
+      return_url: `${getSiteUrl()}/account`,
+    })
+    return NextResponse.json({ url: session.url })
+  } catch (err) {
+    console.error('[stripe portal]', err)
+    return NextResponse.json(
+      {
+        error:
+          'Portail Stripe indisponible. Utilisez « Annuler l’abonnement » ou contactez le support.',
+      },
+      { status: 502 },
+    )
+  }
 }

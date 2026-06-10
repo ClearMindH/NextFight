@@ -9,6 +9,8 @@ const FREE_DEFAULT: SubscriptionStatusResponse = {
   isPremium: false,
   status: 'inactive',
   currentPeriodEnd: null,
+  cancelAtPeriodEnd: false,
+  isManualBilling: false,
   features: {
     allPredictions: false,
     detailedAnalysis: false,
