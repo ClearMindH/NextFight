@@ -48,7 +48,7 @@ export const STRIPE_PLANS: StripePlanConfig[] = [
       'Probabilités de victoire',
       'Pages combat Premium',
     ],
-    cta: "S'abonner",
+    cta: 'Débloquer tous les combats',
   },
   {
     id: 'premium_annual',
@@ -67,7 +67,7 @@ export const STRIPE_PLANS: StripePlanConfig[] = [
       'Pages combat Premium',
       'Économisez ~33% vs mensuel',
     ],
-    cta: "S'abonner",
+    cta: 'Accéder à toute la saison',
   },
 ]
 

@@ -18,7 +18,12 @@ const staticLinks = [
   { href: '/pricing', label: 'Tarifs' },
 ]
 
-export function Navbar() {
+type NavbarProps = {
+  /** Décalage sous la bannière urgence (px). */
+  topOffset?: number
+}
+
+export function Navbar({ topOffset = 0 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [promoOpen, setPromoOpen] = useState(false)
@@ -55,9 +60,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-200',
+        'fixed left-0 right-0 z-50 transition-all duration-200',
         scrolled ? 'bg-background/95 border-b border-border backdrop-blur-md' : 'bg-transparent',
       )}
+      style={{ top: topOffset }}
     >
       <div className="container-content flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <NextFightBrand iconSize="md" />

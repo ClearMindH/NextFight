@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/Navbar'
+import { SiteHeader } from '@/components/layouts/SiteHeader'
 import { Footer } from '@/components/Footer'
 import { NavigationProgress } from '@/components/navigation/NavigationProgress'
 import { RoutePrefetcher } from '@/components/navigation/RoutePrefetcher'
@@ -13,7 +13,7 @@ export function MarketingLayout({ children }: { children: React.ReactNode }) {
     <>
       <NavigationProgress />
       <RoutePrefetcher extraRoutes={fightPrefetchRoutes} />
-      <Navbar />
+      <SiteHeader />
       {children}
       <Footer />
     </>

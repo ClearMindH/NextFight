@@ -27,7 +27,7 @@ export function TrackRecordView({ events }: TrackRecordViewProps) {
   const hasData = trackRecord.summary.total > 0
 
   return (
-    <main className="pt-16">
+    <main className="pt-site-header">
       <section className="section-padding border-b border-border">
         <div className="container-content max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Bilan</p>

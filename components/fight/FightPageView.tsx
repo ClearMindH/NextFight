@@ -34,7 +34,7 @@ export function FightPageView({ data }: FightPageViewProps) {
       : `Combat ${fight.order}`
 
   return (
-    <div className="min-h-screen bg-[#050505] pt-16">
+    <div className="min-h-screen bg-[#050505] pt-site-header">
       <div className="container-content border-b border-white/[0.06] px-4 py-6 sm:px-6 lg:px-8">
         <FastLink
           href={`${organization.seoPathFr}#pronostic`}
