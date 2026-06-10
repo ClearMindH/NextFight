@@ -1,6 +1,6 @@
 import type { HeroCredibilityStats } from '@/lib/hero-showcase'
 import { formatHeroStatCount } from '@/lib/hero-showcase'
-import { BarChart3, RefreshCw, Swords, Users } from 'lucide-react'
+import { BarChart3, Building2, RefreshCw, Target, Users } from 'lucide-react'
 
 type HeroCredibilityBarProps = {
   stats: HeroCredibilityStats
@@ -8,12 +8,6 @@ type HeroCredibilityBarProps = {
 
 export function HeroCredibilityBar({ stats }: HeroCredibilityBarProps) {
   const items = [
-    {
-      key: 'fights',
-      display: formatHeroStatCount(stats.analyzedFights),
-      label: 'combats analysés',
-      icon: Swords,
-    },
     {
       key: 'fighters',
       display: formatHeroStatCount(stats.fightersTracked),
@@ -23,8 +17,24 @@ export function HeroCredibilityBar({ stats }: HeroCredibilityBarProps) {
     {
       key: 'stats',
       display: `${stats.statMetrics}+`,
-      label: 'statistiques disponibles',
+      label: 'statistiques par combat',
       icon: BarChart3,
+    },
+    ...(stats.highConfidenceAccuracy != null
+      ? [
+          {
+            key: 'accuracy' as const,
+            display: `${stats.highConfidenceAccuracy}%`,
+            label: `précision forte conviction (${stats.highConfidenceTotal})`,
+            icon: Target,
+          },
+        ]
+      : []),
+    {
+      key: 'orgs',
+      display: String(stats.organizationsCovered),
+      label: 'organisations couvertes',
+      icon: Building2,
     },
     {
       key: 'update',
@@ -32,12 +42,12 @@ export function HeroCredibilityBar({ stats }: HeroCredibilityBarProps) {
       label: null,
       icon: RefreshCw,
     },
-  ] as const
+  ]
 
   return (
     <div className="border-t border-white/[0.06] bg-[#060606]/80">
       <div className="container-content px-4 py-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 sm:gap-4">
           {items.map(({ key, label, icon: Icon, display }) => (
             <div
               key={key}

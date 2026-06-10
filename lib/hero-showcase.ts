@@ -1,6 +1,7 @@
 import { getEvents } from '@/data/events'
 import { getUpcomingEventsByOrg } from '@/data/events-helpers'
-import { getMainFight } from '@/lib/event-helpers'
+import { getFreePreviewFight, getMainFight } from '@/lib/event-helpers'
+import { getTrackRecord } from '@/lib/track-record'
 import { getFightPageData } from '@/lib/fights'
 import { getAllFighters } from '@/lib/rosters'
 import { buildPredictionVerdict, fighterShortName } from '@/lib/prediction-verdict'
@@ -8,7 +9,8 @@ import type { Fight } from '@/types'
 import type { FightPageData } from '@/lib/fights'
 import type { FighterScoreProfile } from '@/types/prediction'
 
-const SHOWCASE_FIGHT_ID = 'ufc-freedom-250-f1'
+/** Co-main gratuit — ne pas exposer le main event sur la homepage. */
+const SHOWCASE_FIGHT_ID = 'ufc-freedom-250-f2'
 
 const ADVANTAGE_DIMENSIONS: {
   key: keyof FighterScoreProfile
@@ -22,10 +24,13 @@ const ADVANTAGE_DIMENSIONS: {
 ]
 
 export type HeroCredibilityStats = {
-  analyzedFights: number
   fightersTracked: number
   statMetrics: number
+  organizationsCovered: number
   updateLabel: string
+  /** Précision sur pronostics à forte conviction (confiance ≥ 80 %), si échantillon suffisant. */
+  highConfidenceAccuracy: number | null
+  highConfidenceTotal: number
 }
 
 export type HeroFightAdvantage = {
@@ -50,9 +55,9 @@ function resolveShowcaseFight(): FightPageData | undefined {
   const featured = ufcEvents.find((e) => e.predictionsStatus !== 'preparing') ?? ufcEvents[0]
   if (!featured) return undefined
 
-  const main = getMainFight(featured)
-  if (!main) return undefined
-  return getFightPageData(main.id)
+  const free = getFreePreviewFight(featured) ?? getMainFight(featured)
+  if (!free) return undefined
+  return getFightPageData(free.id)
 }
 
 function getFightAdvantages(fight: Fight): HeroFightAdvantage[] {
@@ -91,15 +96,17 @@ function getFightAdvantages(fight: Fight): HeroFightAdvantage[] {
 }
 
 function getCredibilityStats(): HeroCredibilityStats {
-  const analyzedFights = getEvents()
-    .filter((e) => e.status === 'upcoming' && e.predictionsStatus !== 'preparing')
-    .reduce((sum, event) => sum + event.fights.length, 0)
+  const track = getTrackRecord(getEvents())
+  const strong = track.byConfidence.find((b) => b.label === 'Forte conviction')
 
   return {
-    analyzedFights: Math.max(analyzedFights, 1),
     fightersTracked: getAllFighters().length,
     statMetrics: 32,
+    organizationsCovered: 5,
     updateLabel: 'Mise à jour hebdomadaire',
+    highConfidenceAccuracy:
+      strong && strong.total >= 2 ? strong.accuracy : null,
+    highConfidenceTotal: strong?.total ?? 0,
   }
 }
 
@@ -114,7 +121,7 @@ export function getHeroShowcaseData(): HeroShowcaseData | null {
     verdict: buildPredictionVerdict(fight),
     advantages: getFightAdvantages(fight),
     credibility: getCredibilityStats(),
-    analysisHref: '/ufc-pronostics',
+    analysisHref: `/fight/${SHOWCASE_FIGHT_ID}`,
   }
 }
 

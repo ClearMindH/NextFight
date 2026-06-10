@@ -1,19 +1,23 @@
 import type { FightMethod } from '@/types'
 
+const FR_DATE_OPTS = { timeZone: 'UTC' } as const
+
 export function formatEventDate(iso: string): string {
-  return new Intl.DateTimeFormat('en-US', {
+  return new Intl.DateTimeFormat('fr-FR', {
     weekday: 'short',
-    month: 'short',
     day: 'numeric',
+    month: 'short',
     year: 'numeric',
+    ...FR_DATE_OPTS,
   }).format(new Date(iso))
 }
 
 export function formatShortDate(iso: string): string {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
+  return new Intl.DateTimeFormat('fr-FR', {
     day: 'numeric',
+    month: 'short',
     year: 'numeric',
+    ...FR_DATE_OPTS,
   }).format(new Date(iso))
 }
 

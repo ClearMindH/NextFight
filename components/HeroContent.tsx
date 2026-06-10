@@ -70,7 +70,7 @@ export function HeroContent({ data }: HeroContentProps) {
             transition={{ duration: 0.5, delay: 0.28 }}
             className="mt-4 text-xs text-[#5c5c5c]"
           >
-            Exemple en direct · {showcase.event.name}
+            Aperçu gratuit · co-main · {showcase.event.name}
           </motion.p>
     </div>
   )

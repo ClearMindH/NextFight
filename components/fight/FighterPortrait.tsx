@@ -14,6 +14,8 @@ interface FighterPortraitProps {
   corner: 'red' | 'blue'
   probability?: number
   className?: string
+  /** Carte réduite — pages pronostics org (face-à-face, moins de scroll). */
+  compact?: boolean
 }
 
 export function FighterPortrait({
@@ -21,6 +23,7 @@ export function FighterPortrait({
   corner,
   probability,
   className,
+  compact = false,
 }: FighterPortraitProps) {
   const [displayFighter, setDisplayFighter] = useState(() => applyFighterDisplayPatch(fighter))
   const isRed = corner === 'red'
@@ -68,7 +71,8 @@ export function FighterPortrait({
     >
       <div
         className={cn(
-          'relative w-full max-w-[280px] rounded-2xl border px-6 py-8 text-center',
+          'relative w-full rounded-2xl border text-center',
+          compact ? 'max-w-none px-3 py-3.5 sm:px-4 sm:py-4' : 'max-w-[280px] px-6 py-8',
           isRed
             ? 'border-red-500/35 border-l-4 border-l-red-500/80 bg-red-500/[0.06]'
             : 'border-blue-500/35 border-l-4 border-l-blue-500/80 bg-blue-500/[0.06]',
@@ -77,8 +81,10 @@ export function FighterPortrait({
         {rankingBadge && (
           <div
             className={cn(
-              'absolute top-3 right-3 flex h-8 min-w-[2.25rem] items-center justify-center',
-              'rounded-lg border px-2 font-display text-xs font-bold tabular-nums',
+              'absolute flex items-center justify-center rounded-lg border font-display font-bold tabular-nums',
+              compact
+                ? 'top-2 right-2 h-6 min-w-[1.75rem] px-1.5 text-[10px]'
+                : 'top-3 right-3 h-8 min-w-[2.25rem] px-2 text-xs',
               isRed
                 ? 'border-red-400/50 bg-red-600/90 text-white'
                 : 'border-blue-400/50 bg-blue-600/90 text-white',
@@ -89,40 +95,65 @@ export function FighterPortrait({
           </div>
         )}
 
+        {!compact && (
+          <p
+            className={cn(
+              'text-[10px] font-medium uppercase tracking-[0.2em]',
+              isRed ? 'text-red-400/90' : 'text-blue-400/90',
+            )}
+          >
+            {isRed ? 'Coin rouge' : 'Coin bleu'}
+          </p>
+        )}
+
         <p
           className={cn(
-            'text-[10px] font-medium uppercase tracking-[0.2em]',
-            isRed ? 'text-red-400/90' : 'text-blue-400/90',
+            'leading-none',
+            compact ? 'mt-1 text-2xl sm:text-3xl' : 'mt-4 text-4xl sm:text-5xl',
           )}
+          aria-hidden
         >
-          {isRed ? 'Coin rouge' : 'Coin bleu'}
-        </p>
-
-        <p className="mt-4 text-4xl leading-none sm:text-5xl" aria-hidden>
           {flag}
         </p>
 
-        <h2 className="mt-4 font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+        <h2
+          className={cn(
+            'font-display font-semibold tracking-tight text-foreground',
+            compact
+              ? 'mt-2 text-sm leading-tight sm:text-base'
+              : 'mt-4 text-xl sm:text-2xl',
+          )}
+        >
           {displayFighter.name}
         </h2>
 
-        {nickname && (
+        {nickname && !compact && (
           <p className="mt-2 text-sm italic leading-snug text-gold/90">&ldquo;{nickname}&rdquo;</p>
         )}
 
-        <p className="mt-3 text-base font-semibold tabular-nums text-[#f5f2eb]">
+        <p
+          className={cn(
+            'font-semibold tabular-nums text-[#f5f2eb]',
+            compact ? 'mt-1.5 text-xs sm:text-sm' : 'mt-3 text-base',
+          )}
+        >
           {displayFighter.record}
         </p>
 
-        {countryLabel && (
+        {countryLabel && !compact && (
           <p className="mt-1 text-xs text-muted">{countryLabel}</p>
         )}
       </div>
 
       {probability != null && (
-        <div className="mt-4 text-center">
+        <div className={cn('text-center', compact ? 'mt-2' : 'mt-4')}>
           <p className="text-[10px] uppercase tracking-wider text-muted">Probabilité</p>
-          <p className="font-display text-3xl font-semibold tabular-nums text-gold">
+          <p
+            className={cn(
+              'font-display font-semibold tabular-nums text-gold',
+              compact ? 'text-xl sm:text-2xl' : 'text-3xl',
+            )}
+          >
             {Math.round(probability)}%
           </p>
         </div>

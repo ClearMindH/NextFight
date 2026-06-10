@@ -8,6 +8,7 @@ import { FighterMatchupLine } from '@/components/FighterMatchupLine'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { useEvents } from '@/hooks/useEvents'
 import { useSubscription } from '@/hooks/useSubscription'
+import { isUpcomingEvent } from '@/lib/event-upcoming'
 import { getOrganization } from '@/data/organizations'
 import { getOrgBrand } from '@/lib/org-brand'
 import { formatShortDate } from '@/utils/format'
@@ -19,7 +20,7 @@ export function UpcomingEvents() {
   const { events } = useEvents()
   const { isPremium } = useSubscription()
   const upcoming = [...events]
-    .filter((e) => e.status === 'upcoming')
+    .filter((e) => isUpcomingEvent(e))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, 6)
 

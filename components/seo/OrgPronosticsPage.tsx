@@ -10,6 +10,9 @@ import { getUpcomingEventsByOrg, partitionEventsByPredictions } from '@/data/eve
 import { getFreePreviewFight } from '@/lib/event-helpers'
 import { buildPronosticsJsonLd } from '@/lib/seo-pronostics'
 import { EventCountdown } from '@/components/conversion/EventCountdown'
+import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLockedBanner'
+import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
+import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
 
 interface OrgPronosticsPageProps {
@@ -38,9 +41,9 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         {featured && featured.fights.length > 0 && (
           <>
             <OrgFeaturedFightSection org={org} event={featured} />
-            {org.id === 'ufc' ? (
-              <UfcPronosticsConversion event={featured} showBanner />
-            ) : null}
+            <OrgMainEventTeaser org={org} event={featured} />
+            <OrgPremiumLockedBanner event={featured} />
+            {org.id === 'ufc' ? <UfcPronosticsConversion event={featured} /> : null}
             <OrgEventFightCardList org={org} event={featured} />
           </>
         )}
@@ -51,19 +54,14 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
 
         <OrgEventCalendar org={org} events={orgEvents} activeEventId={featured?.id} />
 
-        <section className="section-padding">
+        <section className="section-padding border-t border-white/[0.06]">
           <div className="container-content max-w-3xl">
-            <h2 className="font-display text-xl font-semibold tracking-tight">Premium</h2>
-            <p className="mt-2 text-sm text-muted leading-relaxed">
-              Accédez à tous les combats de la carte, y compris le main event, et aux analyses
-              détaillées.
+            <PremiumAnalysisUnlock />
+            <p className="mt-4 text-center text-xs text-muted">
+              <FastLink href="/resultats" className="hover:text-foreground transition-colors">
+                Consulter le bilan transparent des pronostics passés →
+              </FastLink>
             </p>
-            <FastLink
-              href="/pricing"
-              className="mt-6 inline-flex rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-gold/40 hover:text-gold"
-            >
-              Voir les offres
-            </FastLink>
           </div>
         </section>
       </main>

@@ -8,6 +8,7 @@ import { cn } from '@/utils/cn'
 interface RecentResultsProps {
   red: Fighter
   blue: Fighter
+  compact?: boolean
 }
 
 /** Combats récents (< 2 ans), du plus récent au plus ancien, ≤ 5. */
@@ -75,17 +76,32 @@ function FighterColumn({ fighter }: { fighter: Fighter }) {
   )
 }
 
-export function RecentResults({ red, blue }: RecentResultsProps) {
+export function RecentResults({ red, blue, compact }: RecentResultsProps) {
   const hasData = recentBouts(red).length > 0 || recentBouts(blue).length > 0
   if (!hasData) return null
 
   return (
-    <section className="rounded-2xl border border-border bg-card/50 p-4 sm:p-5">
+    <section
+      className={cn(
+        'rounded-2xl border border-border bg-card/50',
+        compact ? 'p-3 sm:p-4' : 'p-4 sm:p-5',
+      )}
+    >
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Forme récente</p>
-      <h2 className="mt-1 font-display text-base font-semibold tracking-tight">
+      <h2
+        className={cn(
+          'mt-1 font-display font-semibold tracking-tight',
+          compact ? 'text-sm' : 'text-base',
+        )}
+      >
         5 derniers résultats
       </h2>
-      <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+      <div
+        className={cn(
+          'mt-3 grid grid-cols-2 gap-3 sm:gap-4',
+          !compact && 'mt-4 gap-6 sm:gap-8',
+        )}
+      >
         <FighterColumn fighter={red} />
         <FighterColumn fighter={blue} />
       </div>

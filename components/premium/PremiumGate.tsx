@@ -14,8 +14,8 @@ interface PremiumGateProps {
 }
 
 export function PremiumGate({
-  title = 'Contenu Premium',
-  description = 'Passez à Premium pour débloquer cette fonctionnalité.',
+  title = 'Pronostic Premium',
+  description = 'Débloquez les probabilités, la comparaison complète et la justification du modèle pour ce combat.',
   className,
   children,
   blur = true,
@@ -40,7 +40,7 @@ export function PremiumGate({
         <p className="mt-2 text-sm text-muted max-w-sm">{description}</p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full max-w-xs">
           <StripeCheckoutButton planId="premium_monthly" highlighted className="flex-1">
-            Premium 9,99€/mois
+            Débloquer cette analyse
           </StripeCheckoutButton>
           <Link
             href="/pricing"
@@ -49,6 +49,7 @@ export function PremiumGate({
             Voir les offres
           </Link>
         </div>
+        <p className="mt-3 text-[11px] text-[#5c5c5c]">Premium · 9,99€/mois · annulable</p>
       </div>
     </div>
   )

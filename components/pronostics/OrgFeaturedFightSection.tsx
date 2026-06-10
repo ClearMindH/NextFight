@@ -14,10 +14,7 @@ export function OrgFeaturedFightSection({ org, event }: OrgFeaturedFightSectionP
   const { isPremium, loading: subLoading } = useSubscription()
   const mainFight = getMainFight(event)
   const freeFight = getFreePreviewFight(event)
-  const fight =
-    subLoading || isPremium
-      ? (mainFight ?? freeFight)
-      : (freeFight ?? mainFight)
+  const fight = isPremium ? (mainFight ?? freeFight) : freeFight
 
   if (!fight) return null
 
@@ -33,7 +30,7 @@ export function OrgFeaturedFightSection({ org, event }: OrgFeaturedFightSectionP
       event={event}
       fight={fight}
       accessLabel={accessLabel}
-      enforceAccess={false}
+      enforceAccess
       variant="preview"
     />
   )

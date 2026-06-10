@@ -1,26 +1,26 @@
 export type Testimonial = {
   nom: string
   texte: string
-  abonnement: string
+  anciennete: string
 }
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     nom: 'Thomas R.',
     texte:
-      "J'utilise NextFight avant chaque carte UFC. Les probabilités sont vraiment basées sur des stats, pas sur l'opinion. Ça change tout.",
-    abonnement: 'Premium mensuel',
+      'La comparaison striking %, défense et KO power m’aide à comprendre chaque carte UFC.',
+    anciennete: 'Premium depuis 8 mois',
   },
   {
     nom: 'Maxime D.',
     texte:
-      "Le face-à-face statistique m'aide à vraiment comprendre chaque combat avant de le regarder. L'abonnement annuel vaut largement le prix.",
-    abonnement: 'Premium annuel',
+      'Le grappling et la dynamique récente sont décisifs sur les cartes serrées — exactement ce que je cherchais.',
+    anciennete: 'Premium annuel · 1 an',
   },
   {
     nom: 'Karim B.',
     texte:
-      "J'ai commencé avec le gratuit sur le co-main, j'ai vu la qualité et j'ai pris le Premium direct. Topuria vs Gaethje est déjà analysé en détail.",
-    abonnement: 'Premium mensuel',
+      'Co-main gratuit, puis Premium pour Topuria vs Gaethje : les facteurs du modèle sont limpides.',
+    anciennete: 'Premium depuis 3 mois',
   },
 ]
