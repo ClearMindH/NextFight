@@ -111,6 +111,10 @@ export interface Fight {
     predictedMethod: FightMethod
     predictedRound: number
     confidence: number
+    /** Probabilité rouge avant blend marché / override (hydratation). */
+    rawRedWinProbability?: number
+    /** Note affichée quand le pronostic final diffère du modèle brut ou du marché. */
+    adjustmentNote?: string
     breakdown?: {
       red: FighterScoreProfile
       blue: FighterScoreProfile

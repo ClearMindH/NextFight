@@ -4,18 +4,21 @@ import {
   isEventPredictionsPublished,
   isEventPredictionsPreparing,
 } from '@/lib/event-predictions'
+import { isUpcomingEvent } from '@/lib/event-upcoming'
+
+export { isPastEventDate, isUpcomingEvent } from '@/lib/event-upcoming'
 
 function sortByDate(events: Event[]): Event[] {
   return [...events].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 }
 
 export function getUpcomingEventsSorted(limit?: number): Event[] {
-  const list = sortByDate(getEvents().filter((e) => e.status === 'upcoming'))
+  const list = sortByDate(getEvents().filter((e) => isUpcomingEvent(e)))
   return limit != null ? list.slice(0, limit) : list
 }
 
 export function getUpcomingEventsByOrg(orgId: OrganizationId): Event[] {
-  return sortByDate(getEventsByOrg(orgId).filter((e) => e.status === 'upcoming'))
+  return sortByDate(getEventsByOrg(orgId).filter((e) => isUpcomingEvent(e)))
 }
 
 export function isCompletedEvent(e: Event): boolean {

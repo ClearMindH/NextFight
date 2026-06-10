@@ -7,6 +7,7 @@ import { mergeFighterForDisplay } from '@/lib/fighter-display'
 import { getFighterFromStore } from '@/lib/roster-store'
 import { buildPredictionSnapshot } from '@/lib/prediction-snapshot'
 import { deriveFightResult } from '@/lib/derive-fight-result'
+import { buildPredictionAdjustment } from '@/lib/prediction-adjustment'
 import { applyMarketOdds } from '@/lib/prediction/market-odds'
 
 const STORE_PATH = path.join(process.cwd(), 'data', 'store', 'events.json')
@@ -75,6 +76,13 @@ function hydrateFight(input: FightInput): Fight | null {
     redCorner.id,
     blueCorner.id,
   )
+  const adjustment = buildPredictionAdjustment(
+    input.id,
+    rawPrediction.fighterAProbability,
+    prediction.fighterAProbability,
+    redCorner,
+    blueCorner,
+  )
 
   return {
     ...input,
@@ -86,7 +94,11 @@ function hydrateFight(input: FightInput): Fight | null {
       prediction.breakdown.form && prediction.breakdown.form.fighterB.bouts.length > 0
         ? { ...blueCorner, recentBouts: prediction.breakdown.form.fighterB.bouts }
         : blueCorner,
-    model: PredictionEngine.toFightModel(prediction),
+    model: {
+      ...PredictionEngine.toFightModel(prediction),
+      rawRedWinProbability: rawPrediction.fighterAProbability,
+      ...(adjustment ? { adjustmentNote: adjustment.note } : {}),
+    },
   }
 }
 

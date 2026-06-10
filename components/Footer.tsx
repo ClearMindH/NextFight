@@ -1,12 +1,12 @@
 import { FastLink } from '@/components/navigation/FastLink'
 import { NextFightBrand } from '@/components/NextFightBrand'
 import { organizations } from '@/data/organizations'
-import { OrgBrandLogo } from '@/components/OrgBrandLogo'
+import { getOrgEventFlag } from '@/lib/org-flag'
 
 const footerNav = {
   Pronostics: organizations.map((o) => ({
     href: o.seoPathFr,
-    label: `${o.name}`,
+    orgId: o.id,
   })),
   Site: [
     { href: '/#events', label: 'Combats à venir' },
@@ -17,6 +17,26 @@ const footerNav = {
     { href: '/cgu', label: 'CGU' },
     { href: '/politique-de-confidentialite', label: 'Confidentialité' },
   ],
+}
+
+function FooterOrgLink({ orgId, href }: { orgId: string; href: string }) {
+  const org = organizations.find((o) => o.id === orgId)
+  if (!org) return null
+  const { emoji, regionLabel } = getOrgEventFlag(org.id)
+
+  return (
+    <FastLink
+      href={href}
+      className="inline-flex items-center gap-2 py-0.5 text-sm text-muted transition-colors hover:text-foreground"
+    >
+      <span className="text-base leading-none" title={regionLabel} aria-hidden>
+        {emoji}
+      </span>
+      <span className="font-display font-medium tracking-tight">
+        {org.id === 'hexagone' ? 'Hexagone MMA' : org.name}
+      </span>
+    </FastLink>
+  )
 }
 
 export function Footer() {
@@ -36,23 +56,20 @@ export function Footer() {
             <div key={title}>
               <p className="text-xs font-medium uppercase tracking-wider text-muted">{title}</p>
               <ul className="mt-4 space-y-2">
-                {items.map((item) => {
-                  const org = organizations.find((o) => o.seoPathFr === item.href)
-                  return (
-                    <li key={item.href}>
+                {items.map((item) => (
+                  <li key={item.href}>
+                    {'orgId' in item ? (
+                      <FooterOrgLink orgId={item.orgId} href={item.href} />
+                    ) : (
                       <FastLink
                         href={item.href}
-                        className="inline-block py-0.5 transition-opacity hover:opacity-90"
+                        className="inline-block py-0.5 text-sm text-muted transition-colors hover:text-foreground"
                       >
-                        {org ? (
-                          <OrgBrandLogo orgId={org.id} size="sm" glow="soft" className="origin-left" />
-                        ) : (
-                          <span className="text-sm text-muted hover:text-foreground">{item.label}</span>
-                        )}
+                        {item.label}
                       </FastLink>
-                    </li>
-                  )
-                })}
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}

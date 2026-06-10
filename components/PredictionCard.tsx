@@ -7,6 +7,7 @@ import type { Fight } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { FightAnalysisPanel } from '@/components/FightAnalysisPanel'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
+import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { formatPercent } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -60,6 +61,8 @@ export function PredictionCard({
       <div className="mt-6 grid grid-cols-1 gap-4 border-t border-border pt-5 text-center">
         <Metric label="Confiance" value={formatPercent(fight.model.confidence)} highlight />
       </div>
+
+      <PredictionKeyFactors fight={fight} className="mt-5 !bg-card/40" />
 
       <FastLink
         href={`/fight/${fight.id}`}

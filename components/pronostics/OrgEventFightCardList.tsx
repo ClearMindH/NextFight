@@ -10,6 +10,7 @@ import {
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
+import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
 import { cn } from '@/utils/cn'
 
@@ -34,8 +35,9 @@ function fightRoleLabel(fight: Fight): string {
 }
 
 export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCardListProps) {
-  const { isPremium, loading } = useSubscription()
-  const featured = featuredFightForUser(event, isPremium)
+  const { isPremium, loading: subLoading } = useSubscription()
+  const effectivePremium = !subLoading && isPremium
+  const featured = featuredFightForUser(event, effectivePremium)
   const hiddenIds = new Set(
     [featured?.id, excludeFightId].filter((id): id is string => Boolean(id)),
   )
@@ -54,11 +56,11 @@ export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCa
           <h2 className="mt-2 font-display text-xl font-semibold tracking-tight sm:text-2xl">
             {onFightPage
               ? `${cardFights.length} autre${cardFights.length > 1 ? 's' : ''} combat${cardFights.length > 1 ? 's' : ''} sur cette carte`
-              : isPremium
+              : effectivePremium
                 ? `${event.fights.length} combats · pronostics Premium`
                 : `${cardFights.length} combat${cardFights.length > 1 ? 's' : ''} sur la carte`}
           </h2>
-          {!isPremium && !loading && (
+          {!effectivePremium && !subLoading && (
             <p className="mt-2 text-sm text-[#8a8278] leading-relaxed">
               {onFightPage
                 ? 'Explorez les autres combats — abonnez-vous Premium pour ouvrir chaque pronostic.'
@@ -73,7 +75,8 @@ export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCa
               key={fight.id}
               fight={fight}
               event={event}
-              isPremium={isPremium}
+              isPremium={effectivePremium}
+              accessReady={!subLoading}
             />
           ))}
         </ul>
@@ -86,12 +89,14 @@ function FightCardRow({
   fight,
   event,
   isPremium,
+  accessReady,
 }: {
   fight: Fight
   event: Event
   isPremium: boolean
+  accessReady: boolean
 }) {
-  const hasAccess = canAccessFightPrediction(fight, event, isPremium)
+  const hasAccess = accessReady && canAccessFightPrediction(fight, event, isPremium)
   const href = getFightDetailHref(fight, event, isPremium)
   const rowClass =
     'group flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6'
@@ -114,7 +119,7 @@ function FightCardRow({
           ) : (
             <>
               <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
-              Voir les tarifs
+              Débloquer cette analyse
               <ChevronRight className="h-4 w-4 opacity-60" />
             </>
           )}
@@ -142,7 +147,14 @@ function FightRowContent({ fight, unlocked }: { fight: Fight; unlocked: boolean 
           <PredictionVerdictBanner fight={fight} variant="compact" />
         </div>
       ) : (
-        <p className="mt-2 text-xs text-[#8a8278]">Pronostic détaillé · Premium</p>
+        <div className="mt-3">
+          <PredictionKeyFactors
+            fight={fight}
+            compact
+            hideFooter
+            className="!mx-0 !max-w-none !bg-transparent !px-0 !py-0 !border-0"
+          />
+        </div>
       )}
     </div>
   )

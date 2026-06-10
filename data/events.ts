@@ -13,9 +13,11 @@ export function getEvent(id: string): Event | undefined {
   return getEvents().find((e) => e.id === id)
 }
 
+import { isUpcomingEvent } from '@/lib/event-upcoming'
+
 export function getUpcomingEvents(limit = 6): Event[] {
   return [...getEvents()]
-    .filter((e) => e.status === 'upcoming')
+    .filter((e) => isUpcomingEvent(e))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, limit)
 }

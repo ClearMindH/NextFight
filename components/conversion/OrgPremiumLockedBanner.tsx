@@ -33,15 +33,15 @@ export function OrgPremiumLockedBanner({ event, className }: OrgPremiumLockedBan
         <p className="flex items-center gap-2 text-sm text-[#f5f2eb]">
           <Lock className="h-4 w-4 shrink-0 text-[#B91C1C]" aria-hidden />
           <span>
-            {lockedCount} combat{lockedCount > 1 ? 's' : ''} verrouillé
-            {lockedCount > 1 ? 's' : ''} sur cette carte · Débloquez tout pour 9,99€/mois
+            {lockedCount} analyse{lockedCount > 1 ? 's' : ''} Premium sur cette carte · comparaison
+            stats, facteurs décisifs et justification du modèle
           </span>
         </p>
         <Link
           href="/pricing"
           className="shrink-0 rounded-full bg-[#B91C1C] px-5 py-2 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90"
         >
-          Passer Premium →
+          Débloquer cette analyse →
         </Link>
       </div>
     </div>

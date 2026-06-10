@@ -49,7 +49,7 @@ export function HeroFightPreview({ data }: HeroFightPreviewProps) {
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c9b896]">
-                {organization.name} · Aperçu live
+                {organization.name} · Co-main gratuit
               </p>
               <p className="mt-1 truncate font-display text-sm font-semibold text-[#f5f2eb] sm:text-base">
                 {event.name}

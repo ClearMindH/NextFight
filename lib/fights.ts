@@ -1,4 +1,5 @@
-import { getEvents, getEventsByOrg } from '@/data/events'
+import { getEvents } from '@/data/events'
+import { getUpcomingEventsByOrg } from '@/data/events-helpers'
 import { getOrganization } from '@/data/organizations'
 import type { Event, Fight, Organization } from '@/types'
 
@@ -32,7 +33,7 @@ export function getFightPageData(fightId: string): FightPageData | undefined {
       fight,
       event,
       organization,
-      orgEvents: events.filter((e) => e.organizationId === event.organizationId),
+      orgEvents: getUpcomingEventsByOrg(event.organizationId),
     }
   }
   return undefined
