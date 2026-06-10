@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { ClarityStylesheetUnmaskHeadScript } from '@/components/analytics/ClarityStylesheetUnmask'
 import { MicrosoftClarity } from '@/components/analytics/MicrosoftClarity'
 import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import { siteMetadata } from '@/lib/seo'
@@ -32,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${GeistSans.variable} ${bebasNeue.variable}`}>
+      <head>
+        <ClarityStylesheetUnmaskHeadScript />
+      </head>
       <body className="font-sans antialiased">
         <OrgJsonLd data={buildSiteJsonLd()} />
         {children}
