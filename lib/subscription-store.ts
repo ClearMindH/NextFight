@@ -52,6 +52,11 @@ export async function setSubscriptionInactive(email: string): Promise<void> {
   })
 }
 
+/** Abonnement accordé manuellement (script admin), sans facturation Stripe réelle. */
+export function isManualBillingCustomer(record: SubscriptionRecord): boolean {
+  return record.stripeCustomerId.startsWith('manual-')
+}
+
 export function isActivePremium(record: SubscriptionRecord | null): boolean {
   if (!record) return false
   if (!isPaidPlan(record.plan)) return false

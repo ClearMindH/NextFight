@@ -3,6 +3,7 @@ import {
   buildFreeSubscription,
   getSubscriptionByEmail,
   isActivePremium,
+  isManualBillingCustomer,
 } from '@/lib/subscription-store'
 
 export async function buildSubscriptionStatus(
@@ -21,6 +22,8 @@ export async function buildSubscriptionStatus(
     isPremium: premium,
     status: record?.status ?? 'inactive',
     currentPeriodEnd: record?.currentPeriodEnd ?? null,
+    cancelAtPeriodEnd: record?.cancelAtPeriodEnd ?? false,
+    isManualBilling: record ? isManualBillingCustomer(record) : false,
     features: {
       allPredictions: premium,
       detailedAnalysis: premium,
@@ -38,6 +41,8 @@ function freeStatus(email: string | null): SubscriptionStatusResponse {
     isPremium: false,
     status: 'inactive',
     currentPeriodEnd: null,
+    cancelAtPeriodEnd: false,
+    isManualBilling: false,
     features: {
       allPredictions: false,
       detailedAnalysis: false,

@@ -20,12 +20,12 @@ export function BillingPortalButton({ className, children }: BillingPortalButton
       const res = await fetch('/api/stripe/portal', { method: 'POST' })
       const data = (await res.json()) as { url?: string; error?: string }
       if (!res.ok || !data.url) {
-        setError(data.error ?? 'Portal unavailable')
+        setError(data.error ?? 'Portail indisponible')
         return
       }
       window.location.href = data.url
     } catch {
-      setError('Network error')
+      setError('Erreur réseau')
     } finally {
       setLoading(false)
     }

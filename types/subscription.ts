@@ -25,6 +25,10 @@ export interface SubscriptionStatusResponse {
   isPremium: boolean
   status: SubscriptionStatus
   currentPeriodEnd: string | null
+  /** Renouvellement désactivé — accès Premium jusqu’à currentPeriodEnd. */
+  cancelAtPeriodEnd: boolean
+  /** Premium accordé manuellement (sans portail Stripe). */
+  isManualBilling: boolean
   features: {
     allPredictions: boolean
     detailedAnalysis: boolean
