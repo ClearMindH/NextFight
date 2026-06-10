@@ -7,7 +7,7 @@ export interface LandingAnnouncementItem {
 /** Bannière temporaire d’accueil — désactiver ou dépasser `expiresAt` pour la retirer. */
 export const LANDING_ANNOUNCEMENT = {
   enabled: true,
-  expiresAt: '2026-06-17T23:59:59.000Z',
+  expiresAt: '2026-06-15T12:00:00.000Z',
   title: 'Pronostics disponibles',
   description:
     'Nous venons de publier les pronostics complets pour les deux prochaines cartes.',
@@ -15,7 +15,7 @@ export const LANDING_ANNOUNCEMENT = {
     {
       label: 'UFC Freedom 250',
       href: '/ufc-pronostics',
-      dateLabel: 'Dimanche 16 juin',
+      dateLabel: 'Dimanche 14 juin · 20h00 EDT',
     },
     {
       label: 'Hexagone MMA 45',

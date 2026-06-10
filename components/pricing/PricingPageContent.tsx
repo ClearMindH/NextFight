@@ -6,6 +6,11 @@ import { PlanComparisonTable } from '@/components/conversion/PlanComparisonTable
 import { PremiumPreviewSection } from '@/components/conversion/PremiumPreviewSection'
 import { PricingCredibilityStats } from '@/components/conversion/PricingCredibilityStats'
 import { SocialProofSection } from '@/components/conversion/SocialProofSection'
+import {
+  UFC_FREEDOM_250_DATE_LABEL,
+  UFC_FREEDOM_250_EVENT_LABEL,
+  UFC_FREEDOM_250_TIME_LABEL,
+} from '@/lib/event-urgency'
 import { STRIPE_PLANS, isPaidPlan } from '@/lib/stripe-plans'
 import type { PlanId } from '@/types/subscription'
 import { cn } from '@/utils/cn'
@@ -157,7 +162,7 @@ export function PricingPageContent() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-1.5 rounded-full border border-[#B91C1C]/35 bg-[#1a0a0a]/80 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8a0a0]">
               <Sparkles className="h-3 w-3" aria-hidden />
-              UFC Freedom 250 · Dimanche 16 juin
+              UFC Freedom 250 · {UFC_FREEDOM_250_EVENT_LABEL}
             </p>
             <h1 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2rem]">
               Débloquez tous les pronostics MMA
@@ -171,12 +176,11 @@ export function PricingPageContent() {
             </div>
           </div>
 
-          {/* Grille principale : urgence + 3 offres */}
+          {/* Grille principale : bénéfices + 3 offres */}
           <div className="mx-auto mt-6 max-w-5xl lg:mt-8">
             <div className="grid gap-4 lg:grid-cols-[11rem_1fr] lg:gap-5 xl:grid-cols-[12rem_1fr]">
-              {/* Colonne urgence — desktop */}
-              <aside className="hidden lg:flex lg:flex-col lg:gap-3">
-                <EventCountdown variant="compact" />
+              {/* Colonne bénéfices — desktop */}
+              <aside className="hidden lg:block">
                 <div className="rounded-xl border border-[#1f1d1a] bg-[#0a0a0a]/90 p-3">
                   <p className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#c9b896]">
                     <Lock className="h-3 w-3" aria-hidden />
@@ -263,20 +267,22 @@ export function PricingPageContent() {
               </div>
             </div>
 
-            {/* Mobile : countdown + bénéfices */}
-            <div className="mt-4 space-y-3 lg:hidden">
-              <EventCountdown variant="compact" />
-              <div className="flex flex-wrap justify-center gap-1.5">
-                {PREMIUM_HIGHLIGHTS.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center gap-1 rounded-full border border-[#1f1d1a] bg-[#0a0a0a] px-2 py-1 text-[9px] text-[#9a9288]"
-                  >
-                    <Check className="h-2.5 w-2.5 text-[#c9b896]" aria-hidden />
-                    {item}
-                  </span>
-                ))}
-              </div>
+            {/* Compteur sous les tarifs — toutes tailles d’écran */}
+            <div className="mx-auto mt-5 max-w-lg sm:mt-6">
+              <EventCountdown />
+            </div>
+
+            {/* Mobile : bénéfices */}
+            <div className="mt-3 flex flex-wrap justify-center gap-1.5 lg:hidden">
+              {PREMIUM_HIGHLIGHTS.map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-1 rounded-full border border-[#1f1d1a] bg-[#0a0a0a] px-2 py-1 text-[9px] text-[#9a9288]"
+                >
+                  <Check className="h-2.5 w-2.5 text-[#c9b896]" aria-hidden />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -318,7 +324,8 @@ export function PricingPageContent() {
       <section className="border-t border-[#1a1816] pb-16 pt-8">
         <div className="container-content">
           <div className="mx-auto max-w-xl rounded-2xl border border-[#c9b896]/25 bg-gradient-to-b from-[#12100c] to-[#0a0a0a] px-6 py-8 text-center">
-            <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — Dimanche 16 juin</p>
+            <p className="font-display text-lg text-[#f5f2eb]">UFC Freedom 250 — {UFC_FREEDOM_250_DATE_LABEL}</p>
+            <p className="mt-1 text-xs text-[#c9b896]">Début carte principale · {UFC_FREEDOM_250_TIME_LABEL}</p>
             <p className="mt-1.5 text-xs text-[#8a8278]">
               Topuria vs Gaethje analysé en détail pour les membres Premium.
             </p>
