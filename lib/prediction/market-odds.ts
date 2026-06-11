@@ -35,12 +35,13 @@ export const PREDICTION_OVERRIDES: Record<string, PredictionOverride> = {
     winnerCorner: 'blue',
     winnerProbability: 52,
     reason:
-      'Pick éditorial : Gane mobile et technique, avantage sur la distance face au power striking de Pereira.',
+      'Notre lecture : Gane gagne sur la mobilité et la gestion à distance — Pereira doit toucher pour imposer son power, plus difficile sur 5 rounds.',
   },
   'ufc-freedom-250-f3': {
     winnerCorner: 'red',
     winnerProbability: 78,
-    reason: "Alignement bookmakers (-500) : O'Malley favori malgré la forme récente de Zahabi.",
+    reason:
+      "Notre lecture : O'Malley garde l'avantage en boxe, reach et gestion de distance malgré la forme récente de Zahabi.",
   },
 }
 

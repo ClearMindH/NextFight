@@ -1,0 +1,30 @@
+import { getCompletedEventsSorted } from '@/data/events-helpers'
+import { getScoredFights, summarize, type TrackRecordSummary } from '@/lib/track-record'
+
+const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6
+
+export type PublicTrackRecord = TrackRecordSummary & {
+  periodLabel: string
+}
+
+/** Bilan public affiché sur les pages conversion (6 derniers mois). */
+export function getPublicTrackRecord(now: Date = new Date()): PublicTrackRecord {
+  const cutoff = now.getTime() - SIX_MONTHS_MS
+  const events = getCompletedEventsSorted().filter(
+    (event) => new Date(event.date).getTime() >= cutoff,
+  )
+  const scored = getScoredFights(events)
+  const summary = summarize(scored)
+
+  return {
+    ...summary,
+    periodLabel: '6 derniers mois',
+  }
+}
+
+export function formatTrackRecordHeadline(record: PublicTrackRecord): string {
+  if (record.total === 0) {
+    return 'Bilan transparent des pronostics passés'
+  }
+  return `${record.correct}/${record.total} pronostics corrects`
+}

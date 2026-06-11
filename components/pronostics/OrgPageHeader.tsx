@@ -1,12 +1,14 @@
+import type { ReactNode } from 'react'
 import { FastLink } from '@/components/navigation/FastLink'
 import { OrgBrandLogo } from '@/components/OrgBrandLogo'
 import type { Organization } from '@/types'
 
 interface OrgPageHeaderProps {
   org: Organization
+  belowTitle?: ReactNode
 }
 
-export function OrgPageHeader({ org }: OrgPageHeaderProps) {
+export function OrgPageHeader({ org, belowTitle }: OrgPageHeaderProps) {
   return (
     <header className="border-b border-white/[0.08] bg-[#0c0c10]">
       <div className="container-content section-padding pb-8 pt-4">
@@ -23,6 +25,7 @@ export function OrgPageHeader({ org }: OrgPageHeaderProps) {
           Pronostics {org.name}
         </h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">{org.descriptionFr}</p>
+        {belowTitle ? <div className="mt-4">{belowTitle}</div> : null}
       </div>
     </header>
   )

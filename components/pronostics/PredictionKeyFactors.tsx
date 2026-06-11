@@ -8,6 +8,8 @@ type PredictionKeyFactorsProps = {
   className?: string
   compact?: boolean
   hideFooter?: boolean
+  /** 1 = un facteur visible, les autres en aperçu flouté (combats verrouillés). */
+  visibleFactorCount?: number
 }
 
 export function PredictionKeyFactors({
@@ -15,8 +17,12 @@ export function PredictionKeyFactors({
   className,
   compact,
   hideFooter,
+  visibleFactorCount,
 }: PredictionKeyFactorsProps) {
   const factors = getPredictionKeyFactors(fight)
+  const teaser = visibleFactorCount != null && visibleFactorCount < factors.length
+  const visibleFactors = teaser ? factors.slice(0, visibleFactorCount) : factors
+  const hiddenCount = teaser ? factors.length - visibleFactorCount : 0
 
   return (
     <div
@@ -40,7 +46,7 @@ export function PredictionKeyFactors({
         </p>
       )}
       <ul className={cn('mt-3 space-y-2', compact && 'mt-2 space-y-1.5')}>
-        {factors.map((factor) => (
+        {visibleFactors.map((factor) => (
           <li
             key={factor.label}
             className={cn(
@@ -74,8 +80,27 @@ export function PredictionKeyFactors({
             )}
           </li>
         ))}
+        {teaser &&
+          factors.slice(visibleFactorCount).map((factor) => (
+            <li
+              key={`locked-${factor.label}`}
+              aria-hidden
+              className={cn(
+                'flex items-center justify-between gap-3 blur-[5px] select-none opacity-45',
+                compact ? 'text-xs' : 'text-sm',
+              )}
+            >
+              <span className="text-[#c8c0b4]">{factor.label}</span>
+              <span className="font-medium text-[#8a8278]">{factor.leaderName}</span>
+            </li>
+          ))}
       </ul>
-      {!hideFooter && (
+      {teaser && hiddenCount > 0 && (
+        <p className="mt-2 text-[10px] text-[#6f6a62]">
+          +{hiddenCount} facteur{hiddenCount > 1 ? 's' : ''} et justification complète · Premium
+        </p>
+      )}
+      {!hideFooter && !teaser && (
         <p className="mt-3 text-[10px] text-[#5c5c5c]">
           Détail chiffré et comparaison complète · Premium
         </p>

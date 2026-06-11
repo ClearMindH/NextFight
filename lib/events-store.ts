@@ -76,12 +76,15 @@ function hydrateFight(input: FightInput): Fight | null {
     redCorner.id,
     blueCorner.id,
   )
+  const fightModel = PredictionEngine.toFightModel(prediction)
   const adjustment = buildPredictionAdjustment(
-    input.id,
+    {
+      id: input.id,
+      model: fightModel,
+      redCorner,
+      blueCorner,
+    },
     rawPrediction.fighterAProbability,
-    prediction.fighterAProbability,
-    redCorner,
-    blueCorner,
   )
 
   return {
@@ -95,7 +98,7 @@ function hydrateFight(input: FightInput): Fight | null {
         ? { ...blueCorner, recentBouts: prediction.breakdown.form.fighterB.bouts }
         : blueCorner,
     model: {
-      ...PredictionEngine.toFightModel(prediction),
+      ...fightModel,
       rawRedWinProbability: rawPrediction.fighterAProbability,
       ...(adjustment ? { adjustmentNote: adjustment.note } : {}),
     },

@@ -1,5 +1,7 @@
 'use client'
 
+import { Fragment } from 'react'
+import Link from 'next/link'
 import { FastLink } from '@/components/navigation/FastLink'
 import { Lock, ChevronRight } from 'lucide-react'
 import type { Event, Fight, Organization } from '@/types'
@@ -12,6 +14,7 @@ import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
+import { UfcInlinePricingBlock } from '@/components/conversion/UfcInlinePricingBlock'
 import { cn } from '@/utils/cn'
 
 interface OrgEventFightCardListProps {
@@ -34,7 +37,7 @@ function fightRoleLabel(fight: Fight): string {
   return `Combat ${fight.order}`
 }
 
-export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCardListProps) {
+export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFightCardListProps) {
   const { isPremium, loading: subLoading } = useSubscription()
   const effectivePremium = !subLoading && isPremium
   const featured = featuredFightForUser(event, effectivePremium)
@@ -70,14 +73,19 @@ export function OrgEventFightCardList({ event, excludeFightId }: OrgEventFightCa
         </div>
 
         <ul className="mx-auto mt-6 max-w-4xl divide-y divide-white/[0.06] rounded-2xl border border-white/[0.08] bg-[#0c1219]/40">
-          {cardFights.map((fight) => (
-            <FightCardRow
-              key={fight.id}
-              fight={fight}
-              event={event}
-              isPremium={effectivePremium}
-              accessReady={!subLoading}
-            />
+          {cardFights.map((fight, index) => (
+            <Fragment key={fight.id}>
+              <FightCardRow
+                fight={fight}
+                event={event}
+                isPremium={effectivePremium}
+                accessReady={!subLoading}
+                showInlinePricingTeaser={!effectivePremium && !onFightPage}
+              />
+              {org.id === 'ufc' && !effectivePremium && !onFightPage && index === 1 ? (
+                <UfcInlinePricingBlock />
+              ) : null}
+            </Fragment>
           ))}
         </ul>
       </div>
@@ -90,41 +98,61 @@ function FightCardRow({
   event,
   isPremium,
   accessReady,
+  showInlinePricingTeaser,
 }: {
   fight: Fight
   event: Event
   isPremium: boolean
   accessReady: boolean
+  showInlinePricingTeaser: boolean
 }) {
   const hasAccess = accessReady && canAccessFightPrediction(fight, event, isPremium)
   const href = getFightDetailHref(fight, event, isPremium)
-  const rowClass =
-    'group flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6'
 
   return (
-    <li>
-      <FastLink href={href} className={rowClass}>
+    <li className="px-5 py-4 transition-colors hover:bg-white/[0.03]">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
         <FightRowContent fight={fight} unlocked={hasAccess} />
-        <span
+        <FastLink
+          href={href}
           className={cn(
-            'inline-flex items-center gap-1 text-sm font-medium shrink-0',
-            hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] group-hover:text-[#c9b896]',
+            'inline-flex items-center gap-1 text-sm font-medium shrink-0 self-start',
+            hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] hover:text-[#c9b896]',
           )}
         >
           {hasAccess ? (
             <>
               Voir le pronostic
-              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              <ChevronRight className="h-4 w-4" />
             </>
           ) : (
             <>
               <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
-              Débloquer cette analyse
+              Aperçu verrouillé
               <ChevronRight className="h-4 w-4 opacity-60" />
             </>
           )}
-        </span>
-      </FastLink>
+        </FastLink>
+      </div>
+
+      {!hasAccess && showInlinePricingTeaser && (
+        <div className="mt-3 border-t border-white/[0.06] pt-3">
+          <PredictionKeyFactors
+            fight={fight}
+            compact
+            hideFooter
+            visibleFactorCount={1}
+            className="!mx-0 !max-w-none !rounded-lg !border-white/[0.06] !bg-[#0a0f14]/80 !px-3 !py-3"
+          />
+          <Link
+            href="/pricing"
+            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-[#c9b896] transition-colors hover:text-[#e8dcc4]"
+          >
+            Voir l&apos;analyse complète → 9,99€/mois
+            <ChevronRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      )}
     </li>
   )
 }
@@ -146,16 +174,7 @@ function FightRowContent({ fight, unlocked }: { fight: Fight; unlocked: boolean 
         <div className="mt-2">
           <PredictionVerdictBanner fight={fight} variant="compact" />
         </div>
-      ) : (
-        <div className="mt-3">
-          <PredictionKeyFactors
-            fight={fight}
-            compact
-            hideFooter
-            className="!mx-0 !max-w-none !bg-transparent !px-0 !py-0 !border-0"
-          />
-        </div>
-      )}
+      ) : null}
     </div>
   )
 }
