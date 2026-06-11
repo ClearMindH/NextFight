@@ -2,6 +2,7 @@ import { FastLink } from '@/components/navigation/FastLink'
 import type { Event, Fight } from '@/types'
 import { fighterShortName } from '@/lib/prediction-verdict'
 import { getTrackRecord } from '@/lib/track-record'
+import { formatTrackRecordContext, getPublicTrackRecord } from '@/lib/public-track-record'
 import { formatEventDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -28,6 +29,7 @@ function matchupLabel(fight: Fight): string {
 
 export function TrackRecordView({ events }: TrackRecordViewProps) {
   const trackRecord = getTrackRecord(events)
+  const publicRecord = getPublicTrackRecord()
   const eventsWithScores = events.filter((e) => scorableFights(e).length > 0)
   const hasData = trackRecord.summary.total > 0
   const strongBucket = trackRecord.byConfidence.find((b) => b.label === 'Forte conviction')
@@ -45,6 +47,10 @@ export function TrackRecordView({ events }: TrackRecordViewProps) {
             Chaque pronostic est <strong className="font-medium text-foreground/90">figé avant
             l&apos;événement</strong>, puis comparé au vainqueur réel. Aucun ajustement a posteriori —
             ce que vous voyez ici est le bilan brut du modèle.
+          </p>
+          <p className="mt-3 text-sm text-muted leading-relaxed">
+            {formatTrackRecordContext(publicRecord)}. Ce tableau ne couvre que les événements déjà
+            archivés sur NextFight.
           </p>
 
           {hasData ? (
