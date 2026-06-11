@@ -172,7 +172,7 @@ export function OrgFightExperience({
             <FightExperienceSkeleton />
           ) : enforceAccess && !hasAccess ? (
             <>
-              <PredictionKeyFactors fight={fight} compact />
+              <PredictionKeyFactors fight={fight} compact locked hideFooter />
               <PremiumGate
                 title="Pronostic Premium"
                 description={

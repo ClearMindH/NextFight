@@ -1,13 +1,26 @@
 import { getPredictionKeyFactors } from '@/lib/prediction-factors'
 import type { Fight } from '@/types'
-import { Check } from 'lucide-react'
+import { Check, Lock } from 'lucide-react'
 import { cn } from '@/utils/cn'
+
+const LOCKED_FACTOR_LABELS = [
+  'Frappe & précision',
+  'Grappling & contrôle',
+  'Dynamique récente',
+  'Bilan & expérience',
+  'Profil de finisseur',
+] as const
 
 type PredictionKeyFactorsProps = {
   fight: Fight
   className?: string
   compact?: boolean
   hideFooter?: boolean
+  /**
+   * Aperçu paywall : aucun vainqueur par critère, pas de lecture matchup
+   * (évite de révéler le pronostic sur main event / combats verrouillés).
+   */
+  locked?: boolean
   /** 1 = un facteur visible, les autres en aperçu flouté (combats verrouillés). */
   visibleFactorCount?: number
 }
@@ -17,12 +30,77 @@ export function PredictionKeyFactors({
   className,
   compact,
   hideFooter,
+  locked = false,
   visibleFactorCount,
 }: PredictionKeyFactorsProps) {
   const factors = getPredictionKeyFactors(fight)
-  const teaser = visibleFactorCount != null && visibleFactorCount < factors.length
+  const teaser =
+    !locked && visibleFactorCount != null && visibleFactorCount < factors.length
   const visibleFactors = teaser ? factors.slice(0, visibleFactorCount) : factors
   const hiddenCount = teaser ? factors.length - visibleFactorCount : 0
+
+  if (locked) {
+    const visibleLabels = LOCKED_FACTOR_LABELS.slice(0, 2)
+    const blurredLabels = LOCKED_FACTOR_LABELS.slice(2)
+
+    return (
+      <div
+        className={cn(
+          'mx-auto max-w-3xl rounded-xl border border-white/[0.08] bg-[#0c1219]/60 sm:rounded-2xl',
+          compact ? 'px-3 py-3 sm:px-4' : 'px-4 py-4 sm:px-5',
+          className,
+        )}
+      >
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8a8278]">
+          Facteurs principaux
+        </p>
+        <p
+          className={cn(
+            'mt-2 text-[11px] leading-relaxed text-[#8a8278]',
+            compact && 'text-[10px]',
+          )}
+        >
+          Notre modèle compare plusieurs critères par combattant. Le vainqueur par facteur et la
+          lecture matchup complète sont réservés aux abonnés Premium.
+        </p>
+        <ul className={cn('mt-3 space-y-2', compact && 'mt-2 space-y-1.5')}>
+          {visibleLabels.map((label) => (
+            <li
+              key={label}
+              className={cn(
+                'flex items-center justify-between gap-3 text-sm text-[#c8c0b4]',
+                compact && 'text-xs',
+              )}
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <Check className="h-3.5 w-3.5 shrink-0 text-[#6f6a62]" aria-hidden />
+                <span>{label}</span>
+              </span>
+              <Lock className="h-3 w-3 shrink-0 text-[#6f6a62]" aria-hidden />
+            </li>
+          ))}
+          {blurredLabels.map((label) => (
+            <li
+              key={`locked-${label}`}
+              aria-hidden
+              className={cn(
+                'flex items-center justify-between gap-3 blur-[5px] select-none opacity-40',
+                compact ? 'text-xs' : 'text-sm',
+              )}
+            >
+              <span className="text-[#c8c0b4]">{label}</span>
+              <span className="text-[#8a8278]">···</span>
+            </li>
+          ))}
+        </ul>
+        {!hideFooter && (
+          <p className="mt-2 text-[10px] text-[#6f6a62]">
+            Probabilités, écarts chiffrés et justification du modèle · Premium
+          </p>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div

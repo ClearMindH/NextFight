@@ -43,6 +43,7 @@ export function OrgMainEventTeaser({ org: _org, event }: OrgMainEventTeaserProps
             fight={mainFight}
             compact
             hideFooter
+            locked
             className="mt-4 !mx-0 !max-w-none !border-white/[0.06]"
           />
 

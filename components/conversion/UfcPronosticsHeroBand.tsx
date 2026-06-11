@@ -1,8 +1,5 @@
 import { FastLink } from '@/components/navigation/FastLink'
-import {
-  formatTrackRecordHeadline,
-  getPublicTrackRecord,
-} from '@/lib/public-track-record'
+import { formatTrackRecordContext, getPublicTrackRecord } from '@/lib/public-track-record'
 import { UFC_FREEDOM_250_DATE_LABEL } from '@/lib/event-urgency'
 import { Target, Zap } from 'lucide-react'
 
@@ -28,10 +25,10 @@ export function UfcPronosticsHeroBand() {
             {record.total > 0 ? (
               <>
                 <span className="font-semibold tabular-nums text-[#f5f2eb]">
-                  {record.accuracy}% de pronostics corrects
+                  {record.legacyAccuracy}% historique
                 </span>
                 {' '}
-                ({formatTrackRecordHeadline(record)} sur les {record.periodLabel}) —{' '}
+                — {formatTrackRecordContext(record)} —{' '}
                 <span className="text-[#c9b896]">voir le détail →</span>
               </>
             ) : (

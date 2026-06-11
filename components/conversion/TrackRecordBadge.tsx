@@ -1,5 +1,5 @@
 import { FastLink } from '@/components/navigation/FastLink'
-import { getPublicTrackRecord, formatTrackRecordHeadline } from '@/lib/public-track-record'
+import { formatTrackRecordContext, getPublicTrackRecord } from '@/lib/public-track-record'
 import { Target } from 'lucide-react'
 
 type TrackRecordBadgeProps = {
@@ -28,12 +28,10 @@ export function TrackRecordBadge({ className }: TrackRecordBadgeProps) {
     >
       <Target className="h-4 w-4 shrink-0 text-[#c9b896]" aria-hidden />
       <span className="font-semibold tabular-nums text-[#f5f2eb] group-hover:text-[#fff8ef]">
-        {formatTrackRecordHeadline(record)}
+        {record.legacyAccuracy}% historique
       </span>
-      <span className="text-[#8a8278]">
-        · {record.accuracy}% sur les {record.periodLabel}
-      </span>
-      <span className="text-[#c9b896]">· bilan vérifiable →</span>
+      <span className="text-[#8a8278]">· {formatTrackRecordContext(record)}</span>
+      <span className="text-[#c9b896]">· détail →</span>
     </FastLink>
   )
 }

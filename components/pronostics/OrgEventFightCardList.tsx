@@ -141,7 +141,7 @@ function FightCardRow({
             fight={fight}
             compact
             hideFooter
-            visibleFactorCount={1}
+            locked
             className="!mx-0 !max-w-none !rounded-lg !border-white/[0.06] !bg-[#0a0f14]/80 !px-3 !py-3"
           />
           <Link
