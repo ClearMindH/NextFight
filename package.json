@@ -32,6 +32,7 @@
     "dedupe:recent-bouts": "tsx scripts/dedupe-roster-recent-bouts.ts",
     "sync:ufc-nicknames": "tsx scripts/sync-ufc-card-nicknames.ts",
     "grant:premium": "tsx scripts/grant-premium.ts",
+    "sync:subscription": "tsx scripts/sync-stripe-subscription.ts",
     "revoke:premium": "tsx scripts/revoke-premium.ts",
     "migrate:subscriptions": "tsx scripts/migrate-subscriptions-to-supabase.ts",
     "sync:all": "npm run sync:ufc-roster && npm run sync:pfl-roster && npm run sync:ksw-roster && npm run sync:ares-roster && npm run sync:hexagone-roster && npm run sync:events && npm run sync:enrich-cards",

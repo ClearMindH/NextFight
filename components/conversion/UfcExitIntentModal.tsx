@@ -8,7 +8,7 @@ import { useSubscription } from '@/hooks/useSubscription'
 const STORAGE_KEY = 'nf_ufc_exit_intent_shown'
 
 export function UfcExitIntentModal() {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
   const [open, setOpen] = useState(false)
 
   const dismiss = useCallback(() => {
@@ -21,7 +21,7 @@ export function UfcExitIntentModal() {
   }, [])
 
   useEffect(() => {
-    if (loading || isPremium) return
+    if (isPremium) return
     if (typeof window === 'undefined') return
     if (window.matchMedia('(pointer: coarse)').matches) return
 
@@ -38,9 +38,9 @@ export function UfcExitIntentModal() {
 
     document.addEventListener('mouseleave', onMouseLeave)
     return () => document.removeEventListener('mouseleave', onMouseLeave)
-  }, [isPremium, loading])
+  }, [isPremium])
 
-  if (!open) return null
+  if (!open || isPremium) return null
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 px-4">

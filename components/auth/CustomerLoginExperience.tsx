@@ -26,7 +26,7 @@ const COPY: Record<
     eyebrow: 'Espace membre',
     title: 'Connexion',
     subtitle:
-      'Entrez votre email : nous vous envoyons un lien sécurisé pour accéder à votre espace Premium.',
+      'Entrez l’email utilisé lors du paiement (Apple Pay, Link ou carte) : nous vous envoyons un lien sécurisé pour débloquer votre Premium.',
     submit: 'Recevoir le lien de connexion',
     switchHref: '/register',
     switchLabel: 'Créer un accès',
@@ -214,9 +214,17 @@ export function CustomerLoginExperience({
                       : copy.submit}
                 </button>
                 {useMagicLink && (
-                  <p className="mt-3 text-center text-[11px] text-[#5c5c5c]">
-                    Lien valide 15 min · aucun mot de passe
-                  </p>
+                  <>
+                    <p className="mt-3 text-center text-[11px] text-[#5c5c5c]">
+                      Lien valide 15 min · aucun mot de passe
+                    </p>
+                    <p className="mt-4 rounded-lg border border-[#1f1f1f] bg-[#080808] px-4 py-3 text-left text-[11px] leading-relaxed text-[#6b6b6b]">
+                      <span className="font-medium text-[#8a8278]">Déjà payé avec Apple Pay ou Link ?</span>
+                      {' '}Utilisez l&apos;email affiché sur votre reçu Stripe (souvent celui de votre wallet,
+                      pas forcément votre email habituel). Vous recevrez un lien pour retrouver votre Premium
+                      sur cet appareil ou un autre.
+                    </p>
+                  </>
                 )}
               </div>
             </form>

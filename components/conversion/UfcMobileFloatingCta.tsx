@@ -8,9 +8,9 @@ type UfcMobileFloatingCtaProps = {
 }
 
 export function UfcMobileFloatingCta({ lockedCount = 6 }: UfcMobileFloatingCtaProps) {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
 
-  if (loading || isPremium) return null
+  if (isPremium) return null
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#B91C1C]/40 bg-[#B91C1C] p-3 md:hidden">

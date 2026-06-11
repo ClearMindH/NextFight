@@ -4,6 +4,7 @@ import { PREMIUM_ANALYSIS_FEATURES } from '@/lib/prediction-factors'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import Link from 'next/link'
 import { Lock } from 'lucide-react'
+import { useSubscription } from '@/hooks/useSubscription'
 import { cn } from '@/utils/cn'
 
 type PremiumAnalysisUnlockProps = {
@@ -15,6 +16,10 @@ export function PremiumAnalysisUnlock({
   className,
   showPricingHint = true,
 }: PremiumAnalysisUnlockProps) {
+  const { isPremium } = useSubscription()
+
+  if (isPremium) return null
+
   return (
     <div
       className={cn(

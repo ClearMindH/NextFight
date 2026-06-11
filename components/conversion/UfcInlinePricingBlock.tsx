@@ -61,9 +61,9 @@ type UfcPrimaryCtaSectionProps = {
 
 /** CTA principal au-dessus de la ligne de flottaison — juste après le co-main gratuit. */
 export function UfcPrimaryCtaSection({ lockedCount }: UfcPrimaryCtaSectionProps) {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
 
-  if ((!loading && isPremium) || lockedCount <= 0) return null
+  if (isPremium || lockedCount <= 0) return null
 
   return (
     <section className="border-b border-[#c9b896]/20 bg-gradient-to-b from-[#14100e] to-[#080808]">

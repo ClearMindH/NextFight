@@ -13,9 +13,9 @@ type OrgPremiumLockedBannerProps = {
 }
 
 export function OrgPremiumLockedBanner({ event, className }: OrgPremiumLockedBannerProps) {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
 
-  if (loading || isPremium) return null
+  if (isPremium) return null
 
   const freeFight = getFreePreviewFight(event)
   const lockedCount = event.fights.length - (freeFight ? 1 : 0)

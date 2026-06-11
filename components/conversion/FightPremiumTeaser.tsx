@@ -12,10 +12,10 @@ type FightPremiumTeaserProps = {
 }
 
 export function FightPremiumTeaser({ event, fightId }: FightPremiumTeaserProps) {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
   const freeFight = getFreePreviewFight(event)
 
-  if (loading || isPremium || freeFight?.id !== fightId) return null
+  if (isPremium || freeFight?.id !== fightId) return null
 
   const lockedCount = Math.max(event.fights.length - 1, 0)
   const othersCount = Math.max(lockedCount - 2, 0)

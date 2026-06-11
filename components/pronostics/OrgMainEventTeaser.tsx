@@ -16,11 +16,11 @@ type OrgMainEventTeaserProps = {
 }
 
 export function OrgMainEventTeaser({ org: _org, event }: OrgMainEventTeaserProps) {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
   const mainFight = getMainFight(event)
   const freeFight = getFreePreviewFight(event)
 
-  if (loading || isPremium || !mainFight) return null
+  if (isPremium || !mainFight) return null
   if (freeFight?.id === mainFight.id) return null
 
   return (

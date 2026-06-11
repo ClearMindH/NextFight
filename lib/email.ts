@@ -24,6 +24,7 @@ export async function sendWelcomeSubscriptionEmail(
   const siteUrl = getSiteUrl()
   const unsubscribeUrl = buildUnsubscribeUrl(email)
   const planLabel = planDisplayName(plan)
+  const loginUrl = buildMagicLoginUrl(email)
 
   try {
     await resend.emails.send({
@@ -35,9 +36,13 @@ export async function sendWelcomeSubscriptionEmail(
           <h1 style="font-size:1.5rem">Ton abonnement est confirmé 🥊</h1>
           <p>Tu as accès à tous les pronostics UFC, PFL, KSW, ARES et Hexagone MMA.</p>
           <p>Plan souscrit : <strong>${planLabel}</strong></p>
+          <p style="font-size:14px;color:#444">
+            Aucun mot de passe : utilise le lien ci-dessous pour te connecter sur mobile ou un autre appareil
+            (Apple Pay, Link, etc.).
+          </p>
           <p style="margin:24px 0">
-            <a href="${siteUrl}/account" style="background:#c9b896;color:#0c0c0c;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600">
-              Accéder à mon espace →
+            <a href="${loginUrl ?? `${siteUrl}/login`}" style="background:#c9b896;color:#0c0c0c;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600">
+              Accéder à mon espace Premium →
             </a>
           </p>
           <hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0"/>
