@@ -14,6 +14,7 @@ import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLocked
 import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
 import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
 import { TrackRecordBadge } from '@/components/conversion/TrackRecordBadge'
+import { UfcAboveFoldCta } from '@/components/conversion/UfcAboveFoldCta'
 import { UfcPrimaryCtaSection } from '@/components/conversion/UfcInlinePricingBlock'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
 import { UfcPronosticsHeroBand } from '@/components/conversion/UfcPronosticsHeroBand'
@@ -35,6 +36,11 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
       <main className={org.id === 'ufc' ? 'pb-24 pt-site-header bg-[#050505] md:pb-0' : 'pt-site-header bg-[#050505]'}>
         <OrgPageHeader
           org={org}
+          afterTitle={
+            org.id === 'ufc' && featured ? (
+              <UfcAboveFoldCta lockedCount={featured.fights.length - 1} />
+            ) : undefined
+          }
           belowTitle={org.id === 'ufc' ? <TrackRecordBadge /> : undefined}
         />
 
