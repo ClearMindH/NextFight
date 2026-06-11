@@ -14,6 +14,7 @@ import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLocked
 import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
 import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
 import { TrackRecordBadge } from '@/components/conversion/TrackRecordBadge'
+import { UfcPrimaryCtaSection } from '@/components/conversion/UfcInlinePricingBlock'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
 import { UfcPronosticsHeroBand } from '@/components/conversion/UfcPronosticsHeroBand'
 
@@ -49,6 +50,9 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         {featured && featured.fights.length > 0 && (
           <>
             <OrgFeaturedFightSection org={org} event={featured} />
+            {org.id === 'ufc' ? (
+              <UfcPrimaryCtaSection lockedCount={featured.fights.length - 1} />
+            ) : null}
             <OrgMainEventTeaser org={org} event={featured} />
             <OrgPremiumLockedBanner event={featured} />
             {org.id === 'ufc' ? (
