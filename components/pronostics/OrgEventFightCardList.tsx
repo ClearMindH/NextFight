@@ -83,7 +83,7 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
                 showInlinePricingTeaser={!effectivePremium && !onFightPage}
               />
               {org.id === 'ufc' && !effectivePremium && !onFightPage && index === 1 ? (
-                <UfcInlinePricingBlock />
+                <UfcInlinePricingBlock lockedCount={event.fights.length - 1} />
               ) : null}
             </Fragment>
           ))}
