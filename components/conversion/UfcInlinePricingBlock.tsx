@@ -63,7 +63,7 @@ type UfcPrimaryCtaSectionProps = {
 export function UfcPrimaryCtaSection({ lockedCount }: UfcPrimaryCtaSectionProps) {
   const { isPremium, loading } = useSubscription()
 
-  if (loading || isPremium || lockedCount <= 0) return null
+  if ((!loading && isPremium) || lockedCount <= 0) return null
 
   return (
     <section className="border-b border-[#c9b896]/20 bg-gradient-to-b from-[#14100e] to-[#080808]">
