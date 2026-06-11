@@ -6,12 +6,15 @@ import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2 } from 'lucide-react'
 import type { SubscriptionStatusResponse } from '@/types/subscription'
 import { planDisplayName } from '@/lib/subscription-constants'
+import { applySubscriptionStatus } from '@/hooks/useSubscription'
+
+type VerifyResponse = SubscriptionStatusResponse & { magicLinkSent?: boolean }
 
 export function CheckoutSuccessContent() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
   const [loading, setLoading] = useState(true)
-  const [status, setStatus] = useState<SubscriptionStatusResponse | null>(null)
+  const [status, setStatus] = useState<VerifyResponse | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -21,12 +24,29 @@ export function CheckoutSuccessContent() {
       return
     }
 
-    fetch(`/api/stripe/verify-session?session_id=${encodeURIComponent(sessionId)}`)
-      .then(async (res) => {
-        const data = await res.json()
-        if (!res.ok) throw new Error(data.error ?? 'Verification failed')
-        setStatus(data)
-      })
+    let attempts = 0
+
+    async function verify(): Promise<void> {
+      attempts += 1
+      const res = await fetch(
+        `/api/stripe/verify-session?session_id=${encodeURIComponent(sessionId!)}`,
+        { credentials: 'include', cache: 'no-store' },
+      )
+      const data = (await res.json()) as VerifyResponse & { error?: string }
+
+      if (res.status === 503 && attempts < 4) {
+        await new Promise((r) => setTimeout(r, 1000))
+        return verify()
+      }
+
+      if (!res.ok) throw new Error(data.error ?? 'Verification failed')
+      if (!data.isPremium) throw new Error('Activation Premium en cours — réessayez.')
+
+      setStatus(data)
+      applySubscriptionStatus(data)
+    }
+
+    verify()
       .catch((e) => setError(e instanceof Error ? e.message : 'Erreur'))
       .finally(() => setLoading(false))
   }, [sessionId])
@@ -44,6 +64,13 @@ export function CheckoutSuccessContent() {
         <>
           <h1 className="font-display text-2xl font-semibold">Erreur</h1>
           <p className="mt-3 text-muted text-sm">{error}</p>
+          <p className="mt-4 text-sm text-[#8a8278]">
+            Déjà payé ? Allez sur{' '}
+            <Link href="/login" className="text-gold hover:underline">
+              la connexion
+            </Link>{' '}
+            avec l&apos;email utilisé lors du paiement (Apple Pay, Link ou carte).
+          </p>
           <Link href="/account" className="mt-8 inline-block text-gold text-sm hover:underline">
             Mon compte →
           </Link>
@@ -61,8 +88,11 @@ export function CheckoutSuccessContent() {
           </p>
           {status.email && (
             <p className="mt-2 text-sm text-[#8a8278]">
-              Un email de confirmation a été envoyé à{' '}
-              <span className="text-foreground">{status.email}</span> (vérifiez les spams).
+              Accès lié à{' '}
+              <span className="text-foreground">{status.email}</span>
+              {status.magicLinkSent
+                ? ' — un lien de connexion a aussi été envoyé par email (vérifiez les spams).'
+                : ' (vérifiez les spams pour l’email de confirmation).'}
             </p>
           )}
           <ul className="mt-8 text-sm text-muted text-left space-y-2 max-w-xs mx-auto">

@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server'
-import { setCustomerEmailCookie } from '@/lib/auth-cookie'
+import { applyCustomerEmailCookie } from '@/lib/auth-cookie'
 import { isDevCustomerAuthEnabled, verifyDevCustomerPassword } from '@/lib/dev-auth'
 import { sendMagicLoginEmail } from '@/lib/email'
 import { buildSubscriptionStatus } from '@/lib/premium'
+import { getStripe, isStripeConfigured } from '@/lib/stripe'
+import { syncSubscriptionsForEmail } from '@/lib/stripe-sync'
 
 export const runtime = 'nodejs'
 
@@ -24,9 +26,17 @@ export async function POST(request: Request) {
     if (!verifyDevCustomerPassword(password)) {
       return NextResponse.json({ error: 'Identifiants incorrects' }, { status: 401 })
     }
-    await setCustomerEmailCookie(normalized)
     const status = await buildSubscriptionStatus(normalized)
-    return NextResponse.json({ ok: true, redirect: '/account', ...status })
+    const response = NextResponse.json({ ok: true, redirect: '/account', ...status })
+    return applyCustomerEmailCookie(response, normalized)
+  }
+
+  if (isStripeConfigured()) {
+    try {
+      await syncSubscriptionsForEmail(normalized, getStripe())
+    } catch (err) {
+      console.error('[auth/login] stripe sync failed', err)
+    }
   }
 
   const mail = await sendMagicLoginEmail(normalized)

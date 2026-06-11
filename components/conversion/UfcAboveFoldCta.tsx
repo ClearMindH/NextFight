@@ -13,9 +13,9 @@ type UfcAboveFoldCtaProps = {
  * Bloc conversion above-the-fold — visible sans scroll, juste sous le H1.
  */
 export function UfcAboveFoldCta({ lockedCount, className }: UfcAboveFoldCtaProps) {
-  const { isPremium, loading } = useSubscription()
+  const { isPremium } = useSubscription()
 
-  if (!loading && isPremium) return null
+  if (isPremium) return null
   if (lockedCount <= 0) return null
 
   return (

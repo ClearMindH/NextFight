@@ -39,8 +39,8 @@ function fightRoleLabel(fight: Fight): string {
 
 export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFightCardListProps) {
   const { isPremium, loading: subLoading } = useSubscription()
-  const effectivePremium = !subLoading && isPremium
-  const featured = featuredFightForUser(event, effectivePremium)
+  const featured = featuredFightForUser(event, isPremium)
+  const accessReady = !subLoading || isPremium
   const hiddenIds = new Set(
     [featured?.id, excludeFightId].filter((id): id is string => Boolean(id)),
   )
@@ -59,11 +59,11 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
           <h2 className="mt-2 font-display text-xl font-semibold tracking-tight sm:text-2xl">
             {onFightPage
               ? `${cardFights.length} autre${cardFights.length > 1 ? 's' : ''} combat${cardFights.length > 1 ? 's' : ''} sur cette carte`
-              : effectivePremium
+              : isPremium
                 ? `${event.fights.length} combats · pronostics Premium`
                 : `${cardFights.length} combat${cardFights.length > 1 ? 's' : ''} sur la carte`}
           </h2>
-          {!effectivePremium && !subLoading && (
+          {!isPremium && accessReady && (
             <p className="mt-2 text-sm text-[#8a8278] leading-relaxed">
               {onFightPage
                 ? 'Explorez les autres combats — abonnez-vous Premium pour ouvrir chaque pronostic.'
@@ -78,11 +78,11 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
               <FightCardRow
                 fight={fight}
                 event={event}
-                isPremium={effectivePremium}
-                accessReady={!subLoading}
-                showInlinePricingTeaser={!effectivePremium && !onFightPage}
+                isPremium={isPremium}
+                accessReady={accessReady}
+                showInlinePricingTeaser={!isPremium && accessReady && !onFightPage}
               />
-              {org.id === 'ufc' && !effectivePremium && !onFightPage && index === 1 ? (
+              {org.id === 'ufc' && !isPremium && accessReady && !onFightPage && index === 1 ? (
                 <UfcInlinePricingBlock lockedCount={event.fights.length - 1} />
               ) : null}
             </Fragment>

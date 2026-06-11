@@ -46,12 +46,11 @@ export function OrgFightExperience({
   variant = 'preview',
 }: OrgFightExperienceProps) {
   const { isPremium, loading: subLoading } = useSubscription()
-  const effectivePremium = !subLoading && isPremium
   const hasAccess = enforceAccess
-    ? canAccessFightPrediction(fight, event, effectivePremium)
+    ? canAccessFightPrediction(fight, event, isPremium)
     : true
   const lockMessage = enforceAccess
-    ? getFightAccessMessage(fight, event, effectivePremium)
+    ? getFightAccessMessage(fight, event, isPremium)
     : undefined
 
   const redProb = fight.model.redWinProbability
@@ -168,7 +167,7 @@ export function OrgFightExperience({
         </div>
 
         <div className={cn('mt-5 space-y-4 sm:mt-6', !isPreview && 'sm:space-y-6')}>
-          {enforceAccess && subLoading ? (
+          {enforceAccess && subLoading && !isPremium ? (
             <FightExperienceSkeleton />
           ) : enforceAccess && !hasAccess ? (
             <>

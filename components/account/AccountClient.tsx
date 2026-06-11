@@ -213,15 +213,39 @@ function ScreenProfile({
         {loading ? '—' : email?.split('@')[0] ?? 'Invité'}
       </p>
       <p className="mt-2 max-w-xs text-sm text-[#6b6b6b] leading-relaxed">
-        {email ?? 'Connectez-vous ou finalisez un paiement Stripe pour lier votre email.'}
+        {email
+          ? isPremium
+            ? 'Votre abonnement est actif sur cet appareil.'
+            : 'Pas d’abonnement sur cet email. Utilisez l’email du paiement Apple Pay / carte.'
+          : 'Déjà abonné sans compte ? Connectez-vous avec l’email de paiement.'}
       </p>
       {!email && (
         <Link
           href="/login"
           className="mt-8 inline-block text-sm text-[#c9b896] hover:underline"
         >
-          Se connecter
+          Recevoir mon lien d&apos;accès
         </Link>
+      )}
+      {email && !isPremium && !loading && (
+        <div className="mt-6 flex flex-col items-center gap-3">
+          <Link
+            href="/login"
+            className="text-sm text-[#c9b896] hover:underline"
+          >
+            Changer d&apos;email (lien de connexion)
+          </Link>
+          <button
+            type="button"
+            onClick={async () => {
+              await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' })
+              window.location.href = '/login'
+            }}
+            className="text-xs text-[#5c5c5c] hover:text-[#c9b896] transition-colors"
+          >
+            Se déconnecter de cet email
+          </button>
+        </div>
       )}
       {email && (
         <p className="mt-6 text-xs text-[#4a4a4a]">{email}</p>

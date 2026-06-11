@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { verifyMagicLoginToken } from '@/lib/auth-magic-link'
-import { setCustomerEmailCookie } from '@/lib/auth-cookie'
+import { applyCustomerEmailCookie } from '@/lib/auth-cookie'
 import { getSiteUrl } from '@/lib/site'
+import { getStripe, isStripeConfigured } from '@/lib/stripe'
+import { syncSubscriptionsForEmail } from '@/lib/stripe-sync'
 
 export const runtime = 'nodejs'
 
@@ -18,6 +20,14 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${getSiteUrl()}/login?error=invalid_token`)
   }
 
-  await setCustomerEmailCookie(email)
-  return NextResponse.redirect(`${getSiteUrl()}/account`)
+  if (isStripeConfigured()) {
+    try {
+      await syncSubscriptionsForEmail(email, getStripe())
+    } catch (err) {
+      console.error('[auth/verify] stripe sync failed', err)
+    }
+  }
+
+  const response = NextResponse.redirect(`${getSiteUrl()}/account`)
+  return applyCustomerEmailCookie(response, email)
 }

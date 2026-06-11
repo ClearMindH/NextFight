@@ -9,14 +9,11 @@ import {
 import { isPaidPlan } from '@/lib/stripe-plans'
 import type { PlanId } from '@/types/subscription'
 import { sendWelcomeSubscriptionEmail } from '@/lib/email'
-
-function emailFromCustomer(
-  customer: Stripe.Customer | Stripe.DeletedCustomer | string | null,
-): string | null {
-  if (!customer || typeof customer === 'string') return null
-  if ('deleted' in customer && customer.deleted) return null
-  return customer.email?.toLowerCase().trim() ?? null
-}
+import {
+  ensureStripeCustomerEmail,
+  resolveEmailFromCompletedSession,
+  resolveStripeCustomerEmail,
+} from '@/lib/stripe-sync'
 
 function periodEndIso(subscription: Stripe.Subscription): string | null {
   const end =
@@ -32,6 +29,7 @@ function priceIdFromSubscription(subscription: Stripe.Subscription): string | un
 export async function syncSubscriptionFromStripe(
   subscription: Stripe.Subscription,
   stripe: Stripe,
+  hintEmail?: string | null,
 ): Promise<void> {
   const customerId =
     typeof subscription.customer === 'string'
@@ -44,14 +42,23 @@ export async function syncSubscriptionFromStripe(
       : subscription.customer
 
   const existingByCustomer = await getSubscriptionByCustomerId(customerId)
-  const email =
-    emailFromCustomer(customer) ?? existingByCustomer?.email ?? null
+  const email = await resolveStripeCustomerEmail(
+    stripe,
+    customerId,
+    customer,
+    hintEmail ?? existingByCustomer?.email ?? null,
+  )
 
-  if (!email) return
+  if (!email) {
+    console.error('[stripe] syncSubscription: no email for customer', customerId)
+    return
+  }
+
+  await ensureStripeCustomerEmail(stripe, customerId, email)
 
   const priceId = priceIdFromSubscription(subscription)
   const planFromMeta = subscription.metadata?.planId as PlanId | undefined
-  const plan =
+  const resolvedPlan =
     planFromMeta && isPaidPlan(planFromMeta)
       ? planFromMeta
       : resolvePlanFromSubscription(priceId, 'free')
@@ -60,7 +67,11 @@ export async function syncSubscriptionFromStripe(
   const isPremiumActive = status === 'active' || status === 'trialing'
 
   const wasPremium = existingByCustomer?.status === 'active' || existingByCustomer?.status === 'trialing'
-  const recordPlan = isPremiumActive && isPaidPlan(plan) ? plan : 'free'
+  const recordPlan = isPremiumActive
+    ? isPaidPlan(resolvedPlan)
+      ? resolvedPlan
+      : 'premium_monthly'
+    : 'free'
 
   await upsertSubscription({
     email,
@@ -85,27 +96,44 @@ export async function handleCheckoutCompleted(
   const customerId =
     typeof session.customer === 'string' ? session.customer : session.customer?.id
 
-  const email =
-    session.customer_details?.email?.toLowerCase().trim() ??
-    session.customer_email?.toLowerCase().trim() ??
-    null
+  const customerObject =
+    session.customer && typeof session.customer !== 'string' ? session.customer : null
 
-  if (!email || !customerId) return
+  let resolvedEmail = resolveEmailFromCompletedSession(session)
+
+  if (!customerId) {
+    console.error('[stripe] checkout.session.completed: missing customer', session.id)
+    return
+  }
+
+  if (!resolvedEmail) {
+    resolvedEmail = await resolveStripeCustomerEmail(
+      stripe,
+      customerId,
+      customerObject,
+      null,
+    )
+    if (!resolvedEmail) {
+      console.error('[stripe] checkout.session.completed: missing email', session.id)
+      return
+    }
+  }
+
+  await ensureStripeCustomerEmail(stripe, customerId, resolvedEmail)
 
   if (session.subscription) {
-    const subId =
+    const subscription =
       typeof session.subscription === 'string'
-        ? session.subscription
-        : session.subscription.id
-    const subscription = await stripe.subscriptions.retrieve(subId)
-    await syncSubscriptionFromStripe(subscription, stripe)
+        ? await stripe.subscriptions.retrieve(session.subscription)
+        : session.subscription
+    await syncSubscriptionFromStripe(subscription, stripe, resolvedEmail)
     return
   }
 
   const planId = (session.metadata?.planId as PlanId) ?? 'premium_monthly'
 
   await upsertSubscription({
-    email,
+    email: resolvedEmail,
     stripeCustomerId: customerId,
     stripeSubscriptionId: null,
     plan: isPaidPlan(planId) ? planId : 'free',
