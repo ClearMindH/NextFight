@@ -17,35 +17,33 @@ function findFight(id: string) {
 }
 
 describe('prediction-adjustment', () => {
-  it('affiche un ajustement éditorial pour Pereira vs Gane', () => {
+  it('affiche une lecture matchup pour Pereira vs Gane', () => {
     const fight = findFight('ufc-freedom-250-f2')
-    expect(fight.model.adjustmentNote).toMatch(/Pronostic ajusté :/)
+    expect(fight.model.adjustmentNote).toMatch(/Notre lecture du matchup :/)
     expect(fight.model.adjustmentNote).toMatch(/Gane/)
+    expect(fight.model.adjustmentNote).not.toMatch(/cotes marché/i)
   })
 
-  it('affiche un ajustement éditorial pour O\'Malley vs Zahabi', () => {
+  it('affiche une lecture matchup pour O\'Malley vs Zahabi', () => {
     const fight = findFight('ufc-freedom-250-f3')
     expect(fight.model.adjustmentNote).toMatch(/O'Malley/)
     expect(fight.model.adjustmentNote).toMatch(/Zahabi/)
+    expect(fight.model.adjustmentNote).not.toMatch(/bookmaker|cotes marché/i)
   })
 
-  it('affiche un ajustement marché pour Nickal vs Daukaus sans facteur matchup', () => {
+  it('affiche une lecture matchup pour Nickal vs Daukaus sans facteur matchup', () => {
     const fight = findFight('ufc-freedom-250-f6')
     const raw = PredictionEngine.predict({
       fighterA: fight.redCorner,
       fighterB: fight.blueCorner,
       scheduledRounds: fight.scheduledRounds,
     })
-    const adjustment = buildPredictionAdjustment(
-      fight.id,
-      raw.fighterAProbability,
-      fight.model.redWinProbability,
-      fight.redCorner,
-      fight.blueCorner,
-    )
+    const adjustment = buildPredictionAdjustment(fight, raw.fighterAProbability)
 
-    expect(adjustment?.kind).toBe('market')
+    expect(adjustment?.kind).toBe('matchup')
     expect(adjustment?.note).toMatch(/Nickal/)
+    expect(adjustment?.note).toMatch(/lutte|grappling|transitions|au sol/i)
+    expect(adjustment?.note).not.toMatch(/cotes marché/i)
 
     const factors = getPredictionKeyFactors(fight)
     expect(factors.some((factor) => factor.label === 'Avantage matchup')).toBe(false)
@@ -76,6 +74,26 @@ describe('prediction-adjustment', () => {
     }
   })
 
+  it('affiche une lecture matchup sur toute la carte Hexagone MMA 45', () => {
+    for (let i = 1; i <= 10; i++) {
+      const fight = findFight(`hexagone-mma-45-f${i}`)
+      expect(fight.model.adjustmentNote).toMatch(/Notre lecture du matchup :/)
+      expect(fight.model.adjustmentNote).not.toMatch(/cotes marché|bookmaker/i)
+    }
+  })
+
+  it('affiche une lecture matchup pour Topuria, Hokit et Ruffy même sans gros écart marché', () => {
+    for (const fightId of [
+      'ufc-freedom-250-f1',
+      'ufc-freedom-250-f4',
+      'ufc-freedom-250-f5',
+    ]) {
+      const fight = findFight(fightId)
+      expect(fight.model.adjustmentNote).toMatch(/Notre lecture du matchup :/)
+      expect(fight.model.adjustmentNote).not.toMatch(/cotes marché/i)
+    }
+  })
+
   it('construit un avantage matchup pour Gane avec raison éditoriale', () => {
     const fight = findFight('ufc-freedom-250-f2')
     const statCorners = getPredictionKeyFactors(fight)
@@ -85,6 +103,6 @@ describe('prediction-adjustment', () => {
 
     expect(matchup?.leaderName).toBe('Gane')
     expect(matchup?.leaderCorner).toBe('blue')
-    expect(matchup?.detail).toMatch(/distance/)
+    expect(matchup?.detail).toMatch(/mobilité|distance/i)
   })
 })

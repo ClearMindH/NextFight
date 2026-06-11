@@ -13,7 +13,9 @@ import { EventCountdown } from '@/components/conversion/EventCountdown'
 import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLockedBanner'
 import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
 import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
+import { TrackRecordBadge } from '@/components/conversion/TrackRecordBadge'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
+import { UfcPronosticsHeroBand } from '@/components/conversion/UfcPronosticsHeroBand'
 
 interface OrgPronosticsPageProps {
   org: Organization
@@ -30,12 +32,18 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
     <>
       <OrgJsonLd data={jsonLd} />
       <main className={org.id === 'ufc' ? 'pb-24 pt-site-header bg-[#050505] md:pb-0' : 'pt-site-header bg-[#050505]'}>
-        <OrgPageHeader org={org} />
+        <OrgPageHeader
+          org={org}
+          belowTitle={org.id === 'ufc' ? <TrackRecordBadge /> : undefined}
+        />
 
         {org.id === 'ufc' && (
-          <div className="container-content px-4 pb-2 pt-4 sm:px-6 lg:px-8">
-            <EventCountdown className="mx-auto max-w-xl" />
-          </div>
+          <>
+            <UfcPronosticsHeroBand />
+            <div className="container-content px-4 pb-2 pt-4 sm:px-6 lg:px-8">
+              <EventCountdown className="mx-auto max-w-xl" />
+            </div>
+          </>
         )}
 
         {featured && featured.fights.length > 0 && (
@@ -43,7 +51,9 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
             <OrgFeaturedFightSection org={org} event={featured} />
             <OrgMainEventTeaser org={org} event={featured} />
             <OrgPremiumLockedBanner event={featured} />
-            {org.id === 'ufc' ? <UfcPronosticsConversion event={featured} /> : null}
+            {org.id === 'ufc' ? (
+              <UfcPronosticsConversion event={featured} lockedCount={featured.fights.length - 1} />
+            ) : null}
             <OrgEventFightCardList org={org} event={featured} />
           </>
         )}
@@ -57,11 +67,13 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         <section className="section-padding border-t border-white/[0.06]">
           <div className="container-content max-w-3xl">
             <PremiumAnalysisUnlock />
-            <p className="mt-4 text-center text-xs text-muted">
-              <FastLink href="/resultats" className="hover:text-foreground transition-colors">
-                Consulter le bilan transparent des pronostics passés →
-              </FastLink>
-            </p>
+            {org.id !== 'ufc' && (
+              <p className="mt-4 text-center text-xs text-muted">
+                <FastLink href="/resultats" className="hover:text-foreground transition-colors">
+                  Consulter le bilan transparent des pronostics passés →
+                </FastLink>
+              </p>
+            )}
           </div>
         </section>
       </main>

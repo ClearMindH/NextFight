@@ -13,6 +13,7 @@ import {
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
+import { PredictionSummary } from '@/components/pronostics/PredictionSummary'
 import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
 import { FightExperienceSkeleton } from '@/components/pronostics/FightExperienceSkeleton'
 import { formatCountryLabel } from '@/lib/country-flag'
@@ -187,6 +188,7 @@ export function OrgFightExperience({
           ) : (
             <>
               {predictionBlock}
+              {isPreview && <PredictionSummary fight={fight} compact />}
               <PredictionKeyFactors fight={fight} compact />
             </>
           )}

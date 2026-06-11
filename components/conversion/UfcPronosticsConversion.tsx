@@ -6,13 +6,17 @@ import type { Event } from '@/types'
 
 type UfcPronosticsConversionProps = {
   event: Event
+  lockedCount?: number
 }
 
-export function UfcPronosticsConversion({ event: _event }: UfcPronosticsConversionProps) {
+export function UfcPronosticsConversion({
+  event: _event,
+  lockedCount = 6,
+}: UfcPronosticsConversionProps) {
   return (
     <>
       <UfcExitIntentModal />
-      <UfcMobileFloatingCta />
+      <UfcMobileFloatingCta lockedCount={lockedCount} />
     </>
   )
 }
