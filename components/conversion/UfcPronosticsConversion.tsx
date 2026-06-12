@@ -7,16 +7,18 @@ import type { Event } from '@/types'
 type UfcPronosticsConversionProps = {
   event: Event
   lockedCount?: number
+  scrollAnchorId?: string
 }
 
 export function UfcPronosticsConversion({
   event: _event,
   lockedCount = 6,
+  scrollAnchorId,
 }: UfcPronosticsConversionProps) {
   return (
     <>
       <UfcExitIntentModal />
-      <UfcMobileFloatingCta lockedCount={lockedCount} />
+      <UfcMobileFloatingCta lockedCount={lockedCount} scrollAnchorId={scrollAnchorId} />
     </>
   )
 }
