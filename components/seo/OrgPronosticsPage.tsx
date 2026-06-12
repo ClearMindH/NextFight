@@ -123,12 +123,19 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         )}
 
         {preparing.map((event) => (
-          <PredictionsPreparingPanel key={event.id} event={event} />
+          <div key={event.id} className="order-7 md:order-7">
+            <PredictionsPreparingPanel event={event} />
+          </div>
         ))}
 
-        <OrgEventCalendar org={org} events={orgEvents} activeEventId={featured?.id} />
+        <OrgEventCalendar
+          org={org}
+          events={orgEvents}
+          activeEventId={featured?.id}
+          className="order-8 md:order-8"
+        />
 
-        <section className="section-padding border-t border-white/[0.06]">
+        <section className="order-9 md:order-9 section-padding border-t border-white/[0.06]">
           <div className="container-content max-w-3xl">
             <PremiumAnalysisUnlock />
             {org.id !== 'ufc' && (
