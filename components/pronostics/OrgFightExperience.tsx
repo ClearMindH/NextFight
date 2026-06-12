@@ -1,7 +1,6 @@
 'use client'
 
 import { FastLink } from '@/components/navigation/FastLink'
-import { motion } from 'framer-motion'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { RecentResults } from '@/components/fight/RecentResults'
@@ -132,19 +131,14 @@ export function OrgFightExperience({
           </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mt-4 text-center sm:mt-5"
-        >
+        <div className="mt-4 text-center sm:mt-5">
           <p className="text-xs text-muted sm:text-sm">{fight.weightClass}</p>
           <h3 className="mt-1 font-display text-lg font-semibold tracking-tight sm:text-xl lg:text-2xl">
             {fight.redCorner.name}
             <span className="mx-2 font-normal text-muted/80 sm:mx-3">vs</span>
             {fight.blueCorner.name}
           </h3>
-        </motion.div>
+        </div>
 
         <div className="mx-auto mt-4 grid max-w-4xl grid-cols-[1fr_auto_1fr] items-end gap-2 sm:mt-5 sm:gap-4">
           <FighterPortrait

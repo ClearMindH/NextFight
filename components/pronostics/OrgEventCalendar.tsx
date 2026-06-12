@@ -13,15 +13,21 @@ interface OrgEventCalendarProps {
   org: Organization
   events: Event[]
   activeEventId?: string
+  className?: string
 }
 
-export function OrgEventCalendar({ org, events, activeEventId }: OrgEventCalendarProps) {
+export function OrgEventCalendar({
+  org,
+  events,
+  activeEventId,
+  className,
+}: OrgEventCalendarProps) {
   if (events.length <= 1) return null
 
   const { emoji, regionLabel } = getOrgEventFlag(org.id)
 
   return (
-    <section className="border-b border-white/[0.06] bg-[#060a10]/40">
+    <section className={cn('border-b border-white/[0.06] bg-[#060a10]/40', className)}>
       <div className="container-content section-padding">
         <h2 className="font-display text-xl font-semibold tracking-tight">
           Calendrier {org.name}

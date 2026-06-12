@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import type { Fighter } from '@/types'
 import { applyFighterDisplayPatch } from '@/lib/fighter-display-client'
 import { getDivisionRankingBadge } from '@/lib/fighter-ranking'
@@ -63,12 +62,7 @@ export function FighterPortrait({
   }, [fighter.id, fighter])
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: isRed ? 0 : 0.1 }}
-      className={cn('relative flex flex-col items-center', className)}
-    >
+    <div className={cn('relative flex flex-col items-center', className)}>
       <div
         className={cn(
           'relative w-full rounded-2xl border text-center',
@@ -158,6 +152,6 @@ export function FighterPortrait({
           </p>
         </div>
       )}
-    </motion.div>
+    </div>
   )
 }
