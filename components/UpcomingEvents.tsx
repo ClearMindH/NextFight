@@ -20,7 +20,7 @@ export function UpcomingEvents() {
   const { events } = useEvents()
   const { isPremium } = useSubscription()
   const upcoming = [...events]
-    .filter((e) => isUpcomingEvent(e))
+    .filter((e) => isUpcomingEvent(e) && e.organizationId === 'ufc')
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, 6)
 
@@ -30,11 +30,10 @@ export function UpcomingEvents() {
         <FadeIn>
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Calendrier</p>
           <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold tracking-tight">
-            Prochains événements
+            Prochain événement UFC
           </h2>
           <p className="mt-2 max-w-xl text-sm text-muted">
-            Cartes à venir visibles tout de suite ; les pronostics complets sont publiés au fil des
-            semaines.
+            UFC Freedom 250 — pronostics complets disponibles maintenant.
           </p>
         </FadeIn>
 

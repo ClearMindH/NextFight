@@ -499,7 +499,7 @@
       "venue": "LDLC Arena",
       "city": "Lyon",
       "country": "France",
-      "status": "upcoming",
+      "status": "completed",
       "predictionsStatus": "published",
       "fights": [
         {
@@ -511,7 +511,19 @@
           "isMainEvent": true,
           "scheduledRounds": 3,
           "redId": "hexagone-paul-denis-navero",
-          "blueId": "hexagone-anzor-baybatyrov"
+          "blueId": "hexagone-anzor-baybatyrov",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-paul-denis-navero",
+            "redWinProbability": 56,
+            "confidence": 56,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-anzor-baybatyrov",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f2",
@@ -522,7 +534,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-samba-sima",
-          "blueId": "hexagone-leonardo-de-oliveira-barbosa"
+          "blueId": "hexagone-leonardo-de-oliveira-barbosa",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-samba-sima",
+            "redWinProbability": 57,
+            "confidence": 55,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-samba-sima",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f3",
@@ -533,7 +557,13 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-noelle-grandjean",
-          "blueId": "hexagone-mathilde-aschenbrenner"
+          "blueId": "hexagone-mathilde-aschenbrenner",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-mathilde-aschenbrenner",
+            "redWinProbability": 38,
+            "confidence": 67,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          }
         },
         {
           "id": "hexagone-mma-45-f4",
@@ -544,7 +574,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-damien-lapilus",
-          "blueId": "hexagone-ryan-eren-agbo"
+          "blueId": "hexagone-ryan-eren-agbo",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-ryan-eren-agbo",
+            "redWinProbability": 47,
+            "confidence": 55,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-damien-lapilus",
+            "method": "decision",
+            "round": 3,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f5",
@@ -555,7 +597,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-anas-azizoun",
-          "blueId": "hexagone-youssouf-ouattara"
+          "blueId": "hexagone-youssouf-ouattara",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-youssouf-ouattara",
+            "redWinProbability": 37,
+            "confidence": 64,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-anas-azizoun",
+            "method": "submission",
+            "round": 2,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f6",
@@ -566,7 +620,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-nezar-bahaji",
-          "blueId": "hexagone-muhammed-fatih-ozturk"
+          "blueId": "hexagone-muhammed-fatih-ozturk",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-muhammed-fatih-ozturk",
+            "redWinProbability": 48,
+            "confidence": 57,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-muhammed-fatih-ozturk",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f7",
@@ -577,7 +643,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-allan-landouzy",
-          "blueId": "hexagone-abdul-hussainkhil"
+          "blueId": "hexagone-abdul-hussainkhil",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-allan-landouzy",
+            "redWinProbability": 55,
+            "confidence": 62,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-allan-landouzy",
+            "method": "decision",
+            "round": 3,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f8",
@@ -588,7 +666,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-guillaume-delattre",
-          "blueId": "hexagone-malik-bendaho"
+          "blueId": "hexagone-malik-bendaho",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-malik-bendaho",
+            "redWinProbability": 42,
+            "confidence": 62,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-malik-bendaho",
+            "method": "decision",
+            "round": 3,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f9",
@@ -599,7 +689,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-tamerlan-albiekov",
-          "blueId": "hexagone-samuele-di-guardo"
+          "blueId": "hexagone-samuele-di-guardo",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-tamerlan-albiekov",
+            "redWinProbability": 55,
+            "confidence": 54,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-tamerlan-albiekov",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
+          }
         },
         {
           "id": "hexagone-mma-45-f10",
@@ -610,7 +712,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "hexagone-mazri-ammar",
-          "blueId": "hexagone-nessim-khettou"
+          "blueId": "hexagone-nessim-khettou",
+          "predictionSnapshot": {
+            "predictedWinnerId": "hexagone-mazri-ammar",
+            "redWinProbability": 57,
+            "confidence": 59,
+            "capturedAt": "2026-06-12T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "hexagone-nessim-khettou",
+            "method": "submission",
+            "round": 1,
+            "source": "boxemag.ouest-france.fr"
+          }
         }
       ]
     },
@@ -705,5 +819,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-07T18:38:27.287Z"
+  "updatedAt": "2026-06-13T10:00:00.000Z"
 }

@@ -6,7 +6,7 @@ import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
 import { PredictionsPreparingPanel } from '@/components/pronostics/PredictionsPreparingPanel'
 import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import type { Organization } from '@/types'
-import { getUpcomingEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
+import { getUpcomingEventsByOrg, getCompletedEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
 import { getFreePreviewFight } from '@/lib/event-helpers'
 import { buildPronosticsJsonLd } from '@/lib/seo-pronostics'
 import { EventCountdown } from '@/components/conversion/EventCountdown'
@@ -18,6 +18,7 @@ import { UfcAboveFoldCta } from '@/components/conversion/UfcAboveFoldCta'
 import { UfcPrimaryCtaSection } from '@/components/conversion/UfcInlinePricingBlock'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
 import { UfcPronosticsHeroBand } from '@/components/conversion/UfcPronosticsHeroBand'
+import { formatShortDate } from '@/utils/format'
 
 interface OrgPronosticsPageProps {
   org: Organization
@@ -25,6 +26,7 @@ interface OrgPronosticsPageProps {
 
 export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
   const orgEvents = getUpcomingEventsByOrg(org.id)
+  const lastCompleted = getCompletedEventsByOrg(org.id)[0]
   const { published, preparing } = partitionEventsByPredictions(orgEvents)
   const featured = published[0]
   const previewFight = featured ? getFreePreviewFight(featured) : null
@@ -69,6 +71,29 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
               <EventCountdown className="mx-auto max-w-xl" />
             </div>
           </div>
+        )}
+
+        {!featured && lastCompleted && (
+          <section className="order-1 border-b border-white/[0.06]">
+            <div className="container-content section-padding max-w-3xl">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted">
+                Dernière carte archivée
+              </p>
+              <h2 className="mt-2 font-display text-xl font-semibold tracking-tight sm:text-2xl">
+                {lastCompleted.name}
+              </h2>
+              <p className="mt-2 text-sm text-muted">
+                {formatShortDate(lastCompleted.date)} · événement terminé — pronostics figés et
+                comparés aux résultats réels.
+              </p>
+              <FastLink
+                href="/resultats"
+                className="mt-5 inline-flex text-sm font-medium text-gold hover:underline underline-offset-4"
+              >
+                Voir le bilan sur cette carte →
+              </FastLink>
+            </div>
+          </section>
         )}
 
         {featured && featured.fights.length > 0 && (

@@ -10,17 +10,12 @@ export const LANDING_ANNOUNCEMENT = {
   expiresAt: '2026-06-15T12:00:00.000Z',
   title: 'Pronostics disponibles',
   description:
-    'Nous venons de publier les pronostics complets pour les deux prochaines cartes.',
+    'Les pronostics complets pour la prochaine carte UFC sont en ligne.',
   items: [
     {
       label: 'UFC Freedom 250',
       href: '/ufc-pronostics',
       dateLabel: 'Dimanche 14 juin · 20h00 EDT',
-    },
-    {
-      label: 'Hexagone MMA 45',
-      href: '/hexagone-mma-pronostics',
-      dateLabel: '12 juin',
     },
   ] satisfies LandingAnnouncementItem[],
 } as const
