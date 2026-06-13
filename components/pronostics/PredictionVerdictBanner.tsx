@@ -92,7 +92,9 @@ export function PredictionVerdictBanner({
       </p>
       <p className="mt-1 text-base font-semibold text-foreground sm:text-lg">{headline}</p>
       {probabilityLine && (
-        <p className="mt-1 text-xs tabular-nums text-muted">{probabilityLine}</p>
+        <p className="mt-1 text-sm font-semibold tabular-nums text-[#f5f2eb] sm:text-base">
+          {probabilityLine}
+        </p>
       )}
     </div>
   )

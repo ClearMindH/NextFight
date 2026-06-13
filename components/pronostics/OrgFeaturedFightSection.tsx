@@ -17,14 +17,15 @@ export function OrgFeaturedFightSection({
   event,
   lockedCount = 0,
 }: OrgFeaturedFightSectionProps) {
-  const { isPremium } = useSubscription()
+  const { isPremium, loading: subLoading } = useSubscription()
+  const confirmedPremium = !subLoading && isPremium
   const mainFight = getMainFight(event)
   const freeFight = getFreePreviewFight(event)
-  const fight = isPremium ? (mainFight ?? freeFight) : freeFight
+  const fight = confirmedPremium ? (mainFight ?? freeFight) : freeFight
 
   if (!fight) return null
 
-  const accessLabel = isPremium
+  const accessLabel = confirmedPremium
     ? 'Combat à la une'
     : freeFight
       ? 'Co-main · pronostic gratuit'

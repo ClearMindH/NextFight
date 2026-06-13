@@ -141,11 +141,19 @@ export function FighterPortrait({
 
       {probability != null && (
         <div className={cn('text-center', compact ? 'mt-2' : 'mt-4')}>
-          <p className="text-[10px] uppercase tracking-wider text-muted">Probabilité</p>
           <p
             className={cn(
-              'font-display font-semibold tabular-nums text-gold',
-              compact ? 'text-xl sm:text-2xl' : 'text-3xl',
+              'text-[10px] font-semibold uppercase tracking-wider',
+              isRed ? 'text-red-400/80' : 'text-blue-400/80',
+            )}
+          >
+            Probabilité
+          </p>
+          <p
+            className={cn(
+              'font-display font-bold tabular-nums',
+              compact ? 'text-2xl sm:text-3xl' : 'text-3xl',
+              isRed ? 'text-red-400' : 'text-blue-400',
             )}
           >
             {Math.round(probability)}%

@@ -52,8 +52,9 @@ export function OrgFightExperience({
   afterVerdict,
 }: OrgFightExperienceProps) {
   const { isPremium, loading: subLoading } = useSubscription()
+  const isFreePreview = canAccessFightPrediction(fight, event, false)
   const hasAccess = enforceAccess
-    ? canAccessFightPrediction(fight, event, isPremium)
+    ? isFreePreview || canAccessFightPrediction(fight, event, isPremium)
     : true
   const lockMessage = enforceAccess
     ? getFightAccessMessage(fight, event, isPremium)
@@ -62,8 +63,7 @@ export function OrgFightExperience({
   const redProb = fight.model.redWinProbability
   const blueProb = 100 - redProb
   const favoriteProb = Math.max(redProb, blueProb)
-  const showPrediction = hasAccess || !enforceAccess
-  const isFreePreview = canAccessFightPrediction(fight, event, false)
+  const revealPrediction = !enforceAccess || isFreePreview || hasAccess
   const showAccessSkeleton =
     enforceAccess && subLoading && !isPremium && !isFreePreview
   const isPreview = variant === 'preview'
@@ -85,11 +85,11 @@ export function OrgFightExperience({
           <div className="bg-red-500/80 transition-all" style={{ width: `${redProb}%` }} />
           <div className="bg-blue-500/70 transition-all" style={{ width: `${blueProb}%` }} />
         </div>
-        <div className="mt-1.5 flex justify-between text-[11px] tabular-nums text-muted sm:text-xs">
-          <span>
+        <div className="mt-1.5 flex justify-between text-xs font-medium tabular-nums sm:text-sm">
+          <span className="text-red-400">
             {fight.redCorner.name.split(' ').pop()} {formatPercent(redProb)}
           </span>
-          <span>
+          <span className="text-blue-400">
             {fight.blueCorner.name.split(' ').pop()} {formatPercent(blueProb)}
           </span>
         </div>
@@ -114,7 +114,7 @@ export function OrgFightExperience({
     <>
       {isPreview && <PredictionSummary fight={fight} compact />}
       <PredictionKeyFactors fight={fight} compact />
-      {showPrediction && (
+      {revealPrediction && (
         <RecentResults red={fight.redCorner} blue={fight.blueCorner} compact={compact} />
       )}
     </>
@@ -179,7 +179,7 @@ export function OrgFightExperience({
           <FighterPortrait
             fighter={fight.redCorner}
             corner="red"
-            probability={showPrediction ? redProb : undefined}
+            probability={revealPrediction ? redProb : undefined}
             compact={compact}
             className="min-w-0"
           />
@@ -189,7 +189,7 @@ export function OrgFightExperience({
           <FighterPortrait
             fighter={fight.blueCorner}
             corner="blue"
-            probability={showPrediction ? blueProb : undefined}
+            probability={revealPrediction ? blueProb : undefined}
             compact={compact}
             className="min-w-0"
           />
@@ -198,7 +198,7 @@ export function OrgFightExperience({
         <div className={cn('mt-4 space-y-4 sm:mt-5', !isPreview && 'sm:space-y-6')}>
           {showAccessSkeleton ? (
             <FightExperienceSkeleton />
-          ) : enforceAccess && !hasAccess ? (
+          ) : enforceAccess && !hasAccess && !isFreePreview ? (
             <>
               <PredictionKeyFactors fight={fight} compact locked hideFooter />
               <PremiumGate
