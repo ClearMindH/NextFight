@@ -40,7 +40,7 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
       <main
         className={
           isUfc
-            ? 'flex flex-col pb-24 pt-site-header bg-[#050505] md:pb-0'
+            ? 'pb-24 pt-site-header bg-[#050505] md:flex md:flex-col md:pb-0'
             : 'flex flex-col pt-site-header bg-[#050505]'
         }
       >
@@ -128,11 +128,13 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
                   <OrgPremiumLockedBanner event={featured} />
                 </div>
 
-                <UfcPronosticsConversion
-                  event={featured}
-                  lockedCount={lockedCount}
-                  scrollAnchorId="ufc-pronos-content-end"
-                />
+                <div className="order-7 md:order-7">
+                  <UfcPronosticsConversion
+                    event={featured}
+                    lockedCount={lockedCount}
+                    scrollAnchorId="ufc-pronos-content-end"
+                  />
+                </div>
               </>
             ) : (
               <>
@@ -148,7 +150,7 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         )}
 
         {preparing.map((event) => (
-          <div key={event.id} className="order-7 md:order-7">
+          <div key={event.id} className="order-8 md:order-8">
             <PredictionsPreparingPanel event={event} />
           </div>
         ))}
@@ -157,10 +159,10 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
           org={org}
           events={orgEvents}
           activeEventId={featured?.id}
-          className="order-8 md:order-8"
+          className="order-9 md:order-9"
         />
 
-        <section className="order-9 md:order-9 section-padding border-t border-white/[0.06]">
+        <section className="order-10 md:order-10 section-padding border-t border-white/[0.06]">
           <div className="container-content max-w-3xl">
             <PremiumAnalysisUnlock />
             {org.id !== 'ufc' && (
