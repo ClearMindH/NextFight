@@ -9,13 +9,10 @@ import type { Organization } from '@/types'
 import { getUpcomingEventsByOrg, getCompletedEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
 import { getFreePreviewFight } from '@/lib/event-helpers'
 import { buildPronosticsJsonLd } from '@/lib/seo-pronostics'
-import { EventCountdown } from '@/components/conversion/EventCountdown'
 import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLockedBanner'
 import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
 import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
 import { TrackRecordBadge } from '@/components/conversion/TrackRecordBadge'
-import { UfcAboveFoldCta } from '@/components/conversion/UfcAboveFoldCta'
-import { UfcPrimaryCtaSection } from '@/components/conversion/UfcInlinePricingBlock'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
 import { UfcPronosticsHeroBand } from '@/components/conversion/UfcPronosticsHeroBand'
 import { formatShortDate } from '@/utils/format'
@@ -41,19 +38,12 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
         <OrgPageHeader
           org={org}
           compactOnMobile={isUfc}
-          afterTitle={
-            isUfc && featured && lockedCount > 0 ? (
-              <div className="hidden md:block">
-                <UfcAboveFoldCta lockedCount={lockedCount} />
-              </div>
-            ) : undefined
-          }
+          tightHero={isUfc}
+          skipBrandRowOnMobile={isUfc}
+          hideDescription={isUfc}
+          showBelowTitleOnMobile={isUfc}
           belowTitle={
-            isUfc ? (
-              <div className="hidden md:block">
-                <TrackRecordBadge />
-              </div>
-            ) : undefined
+            isUfc ? <TrackRecordBadge className="text-xs sm:text-sm" compact /> : undefined
           }
         />
 
@@ -82,16 +72,9 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
 
         {featured && featured.fights.length > 0 && (
           <div className="relative z-10 flex flex-col">
-            {isUfc && (
-              <div className="hidden md:block">
-                <UfcPronosticsHeroBand />
-                <div className="container-content px-4 pb-2 pt-4 sm:px-6 lg:px-8">
-                  <EventCountdown className="mx-auto max-w-xl" />
-                </div>
-              </div>
-            )}
+            {isUfc && <UfcPronosticsHeroBand compact />}
 
-            <OrgFeaturedFightSection org={org} event={featured} />
+            <OrgFeaturedFightSection org={org} event={featured} lockedCount={lockedCount} />
             <OrgEventFightCardList org={org} event={featured} />
 
             {isUfc ? (
@@ -100,11 +83,8 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
                   id="ufc-pronos-content-end"
                   className="border-b border-white/[0.06] px-4 py-3 md:hidden"
                   aria-hidden
-                >
-                  <TrackRecordBadge />
-                </div>
+                />
                 <OrgMainEventTeaser org={org} event={featured} />
-                <UfcPrimaryCtaSection lockedCount={lockedCount} />
                 <div className="hidden md:block">
                   <OrgPremiumLockedBanner event={featured} />
                 </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { FastLink } from '@/components/navigation/FastLink'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
@@ -27,6 +28,10 @@ interface OrgFightExperienceProps {
   enforceAccess?: boolean
   /** Page org : aperçu court sans stats. Page combat : détail avec stats si accès. */
   variant?: 'preview' | 'detail'
+  /** Hub org UFC : moins de métadonnées, portraits remontés. */
+  condensed?: boolean
+  /** CTA conversion juste après le verdict (pronostic visible). */
+  afterVerdict?: ReactNode
 }
 
 function convictionLabel(prob: number): string {
@@ -43,6 +48,8 @@ export function OrgFightExperience({
   accessLabel,
   enforceAccess = false,
   variant = 'preview',
+  condensed = false,
+  afterVerdict,
 }: OrgFightExperienceProps) {
   const { isPremium, loading: subLoading } = useSubscription()
   const hasAccess = enforceAccess
@@ -56,6 +63,9 @@ export function OrgFightExperience({
   const blueProb = 100 - redProb
   const favoriteProb = Math.max(redProb, blueProb)
   const showPrediction = hasAccess || !enforceAccess
+  const isFreePreview = canAccessFightPrediction(fight, event, false)
+  const showAccessSkeleton =
+    enforceAccess && subLoading && !isPremium && !isFreePreview
   const isPreview = variant === 'preview'
   const compact = true
 
@@ -85,21 +95,29 @@ export function OrgFightExperience({
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.08] sm:rounded-2xl">
-        {kpiItems.map((item) => (
-          <div key={item.label} className="bg-[#0c1219] px-3 py-2.5 text-center sm:px-4 sm:py-3">
-            <p className="text-[9px] uppercase tracking-wider text-muted sm:text-[10px]">
-              {item.label}
-            </p>
-            <p className="mt-0.5 text-xs font-semibold tabular-nums sm:text-sm">{item.value}</p>
-          </div>
-        ))}
-      </div>
+      {!condensed && (
+        <div className="mx-auto grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.08] sm:rounded-2xl">
+          {kpiItems.map((item) => (
+            <div key={item.label} className="bg-[#0c1219] px-3 py-2.5 text-center sm:px-4 sm:py-3">
+              <p className="text-[9px] uppercase tracking-wider text-muted sm:text-[10px]">
+                {item.label}
+              </p>
+              <p className="mt-0.5 text-xs font-semibold tabular-nums sm:text-sm">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 
+  const detailBelowVerdict = (
+    <>
+      {isPreview && <PredictionSummary fight={fight} compact />}
+      <PredictionKeyFactors fight={fight} compact />
       {showPrediction && (
         <RecentResults red={fight.redCorner} blue={fight.blueCorner} compact={compact} />
       )}
-    </div>
+    </>
   )
 
   return (
@@ -107,31 +125,43 @@ export function OrgFightExperience({
       <div
         className={cn(
           'container-content px-4 sm:px-6 lg:px-8',
-          isPreview ? 'py-5 sm:py-7' : 'section-padding',
+          condensed ? 'py-3 sm:py-4' : isPreview ? 'py-5 sm:py-7' : 'section-padding',
         )}
       >
         <div className="max-w-4xl">
           {accessLabel && (
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted sm:text-[11px]">
               {accessLabel}
+              {condensed && (
+                <>
+                  <span className="mx-2 text-white/20">·</span>
+                  <span className="normal-case tracking-normal text-[#8a8278]">
+                    {formatShortDate(event.date)} · {event.city}
+                  </span>
+                </>
+              )}
             </p>
           )}
-          <p className="mt-1.5 text-xs text-muted tabular-nums sm:mt-2 sm:text-sm">
-            {formatShortDate(event.date)}
-            <span className="mx-2 text-white/20">·</span>
-            {event.city}
-            {formatCountryLabel(event.country)
-              ? `, ${formatCountryLabel(event.country)}`
-              : event.country
-                ? `, ${event.country}`
-                : ''}
-          </p>
-          <h2 className="mt-2 font-display text-lg font-semibold tracking-tight text-muted sm:text-xl">
-            {event.name}
-          </h2>
+          {!condensed && (
+            <>
+              <p className="mt-1.5 text-xs text-muted tabular-nums sm:mt-2 sm:text-sm">
+                {formatShortDate(event.date)}
+                <span className="mx-2 text-white/20">·</span>
+                {event.city}
+                {formatCountryLabel(event.country)
+                  ? `, ${formatCountryLabel(event.country)}`
+                  : event.country
+                    ? `, ${event.country}`
+                    : ''}
+              </p>
+              <h2 className="mt-2 font-display text-lg font-semibold tracking-tight text-muted sm:text-xl">
+                {event.name}
+              </h2>
+            </>
+          )}
         </div>
 
-        <div className="mt-4 text-center sm:mt-5">
+        <div className={cn('text-center', condensed ? 'mt-2 sm:mt-3' : 'mt-4 sm:mt-5')}>
           <p className="text-xs text-muted sm:text-sm">{fight.weightClass}</p>
           <h3 className="mt-1 font-display text-lg font-semibold tracking-tight sm:text-xl lg:text-2xl">
             {fight.redCorner.name}
@@ -140,7 +170,12 @@ export function OrgFightExperience({
           </h3>
         </div>
 
-        <div className="mx-auto mt-4 grid max-w-4xl grid-cols-[1fr_auto_1fr] items-end gap-2 sm:mt-5 sm:gap-4">
+        <div
+          className={cn(
+            'mx-auto grid max-w-4xl grid-cols-[1fr_auto_1fr] items-end gap-2 sm:gap-4',
+            condensed ? 'mt-2 sm:mt-3' : 'mt-4 sm:mt-5',
+          )}
+        >
           <FighterPortrait
             fighter={fight.redCorner}
             corner="red"
@@ -160,8 +195,8 @@ export function OrgFightExperience({
           />
         </div>
 
-        <div className={cn('mt-5 space-y-4 sm:mt-6', !isPreview && 'sm:space-y-6')}>
-          {enforceAccess && subLoading && !isPremium ? (
+        <div className={cn('mt-4 space-y-4 sm:mt-5', !isPreview && 'sm:space-y-6')}>
+          {showAccessSkeleton ? (
             <FightExperienceSkeleton />
           ) : enforceAccess && !hasAccess ? (
             <>
@@ -181,8 +216,8 @@ export function OrgFightExperience({
           ) : (
             <>
               {predictionBlock}
-              {isPreview && <PredictionSummary fight={fight} compact />}
-              <PredictionKeyFactors fight={fight} compact />
+              {afterVerdict ? <div className="mx-auto max-w-3xl">{afterVerdict}</div> : null}
+              {detailBelowVerdict}
             </>
           )}
         </div>

@@ -1,9 +1,32 @@
 import { FastLink } from '@/components/navigation/FastLink'
+import { EventCountdown } from '@/components/conversion/EventCountdown'
 import { formatTrackRecordContext, getPublicTrackRecord } from '@/lib/public-track-record'
 import { UFC_FREEDOM_250_DATE_LABEL } from '@/lib/event-urgency'
 import { Target, Zap } from 'lucide-react'
 
-export function UfcPronosticsHeroBand() {
+type UfcPronosticsHeroBandProps = {
+  /** Bandeau une ligne + countdown desktop (hub UFC). */
+  compact?: boolean
+}
+
+export function UfcPronosticsHeroBand({ compact = false }: UfcPronosticsHeroBandProps) {
+  if (compact) {
+    return (
+      <div className="border-b border-[#B91C1C]/40 bg-gradient-to-r from-[#1a0808] via-[#140a0a] to-[#0f0a08]">
+        <div className="container-content flex flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <p className="flex items-center gap-1.5 text-xs font-medium text-[#fecaca] sm:text-sm">
+            <Zap className="h-3.5 w-3.5 shrink-0 text-[#f87171]" aria-hidden />
+            UFC Freedom 250 — {UFC_FREEDOM_250_DATE_LABEL} · Analyses disponibles
+          </p>
+          <EventCountdown
+            variant="compact"
+            className="hidden w-full shrink-0 sm:block sm:max-w-[240px]"
+          />
+        </div>
+      </div>
+    )
+  }
+
   const record = getPublicTrackRecord()
 
   return (

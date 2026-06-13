@@ -1,5 +1,11 @@
 'use client'
 
+function errorLabel(error: unknown): string {
+  if (error instanceof Error && error.message) return error.message
+  if (typeof error === 'string' && error) return error
+  return 'Une erreur inattendue est survenue.'
+}
+
 export default function GlobalError({
   error,
   reset,
@@ -23,7 +29,7 @@ export default function GlobalError({
         >
           <h1 style={{ fontSize: '1.5rem' }}>NextFight — erreur critique</h1>
           <p style={{ marginTop: '1rem', color: '#8b8b8b', maxWidth: '28rem' }}>
-            {error.message || 'Une erreur inattendue est survenue.'}
+            {errorLabel(error)}
           </p>
           <button
             type="button"

@@ -1,6 +1,5 @@
 'use client'
 
-import { Fragment } from 'react'
 import Link from 'next/link'
 import { FastLink } from '@/components/navigation/FastLink'
 import { Lock, ChevronRight } from 'lucide-react'
@@ -14,7 +13,6 @@ import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
-import { UfcInlinePricingBlock } from '@/components/conversion/UfcInlinePricingBlock'
 import { cn } from '@/utils/cn'
 
 interface OrgEventFightCardListProps {
@@ -73,19 +71,15 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
         </div>
 
         <ul className="mx-auto mt-6 max-w-4xl divide-y divide-white/[0.06] rounded-2xl border border-white/[0.08] bg-[#0c1219]/40">
-          {cardFights.map((fight, index) => (
-            <Fragment key={fight.id}>
-              <FightCardRow
-                fight={fight}
-                event={event}
-                isPremium={isPremium}
-                accessReady={accessReady}
-                showInlinePricingTeaser={!isPremium && accessReady && !onFightPage}
-              />
-              {org.id === 'ufc' && !isPremium && accessReady && !onFightPage && index === 1 ? (
-                <UfcInlinePricingBlock lockedCount={event.fights.length - 1} />
-              ) : null}
-            </Fragment>
+          {cardFights.map((fight) => (
+            <FightCardRow
+              key={fight.id}
+              fight={fight}
+              event={event}
+              isPremium={isPremium}
+              accessReady={accessReady}
+              showInlinePricingTeaser={!isPremium && accessReady && !onFightPage}
+            />
           ))}
         </ul>
       </div>

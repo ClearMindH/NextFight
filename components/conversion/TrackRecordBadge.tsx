@@ -4,9 +4,11 @@ import { Target } from 'lucide-react'
 
 type TrackRecordBadgeProps = {
   className?: string
+  /** Une ligne courte pour le hero mobile. */
+  compact?: boolean
 }
 
-export function TrackRecordBadge({ className }: TrackRecordBadgeProps) {
+export function TrackRecordBadge({ className, compact = false }: TrackRecordBadgeProps) {
   const record = getPublicTrackRecord()
 
   if (record.total === 0) {
@@ -30,8 +32,14 @@ export function TrackRecordBadge({ className }: TrackRecordBadgeProps) {
       <span className="font-semibold tabular-nums text-[#f5f2eb] group-hover:text-[#fff8ef]">
         {record.legacyAccuracy}% historique
       </span>
-      <span className="text-[#8a8278]">· {formatTrackRecordContext(record)}</span>
-      <span className="text-[#c9b896]">· détail →</span>
+      {compact ? (
+        <span className="text-[#c9b896]">· détail →</span>
+      ) : (
+        <>
+          <span className="text-[#8a8278]">· {formatTrackRecordContext(record)}</span>
+          <span className="text-[#c9b896]">· détail →</span>
+        </>
+      )}
     </FastLink>
   )
 }
