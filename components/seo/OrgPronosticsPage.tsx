@@ -1,20 +1,20 @@
 import { FastLink } from '@/components/navigation/FastLink'
-import { OrgPageHeader } from '@/components/pronostics/OrgPageHeader'
-import { OrgFeaturedFightSection } from '@/components/pronostics/OrgFeaturedFightSection'
-import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
+import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLockedBanner'
 import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
+import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
+import { OrgFeaturedFightSection } from '@/components/pronostics/OrgFeaturedFightSection'
+import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
+import { OrgPageHeader } from '@/components/pronostics/OrgPageHeader'
 import { PredictionsPreparingPanel } from '@/components/pronostics/PredictionsPreparingPanel'
+import { UfcPronosticsPageContent } from '@/components/pronostics/ufc/UfcPronosticsPageContent'
+import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
 import { OrgJsonLd } from '@/components/seo/OrgJsonLd'
 import type { Organization } from '@/types'
-import { getUpcomingEventsByOrg, getCompletedEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
+import { getCompletedEventsByOrg, getUpcomingEventsByOrg, partitionEventsByPredictions } from '@/data/events-helpers'
 import { getFreePreviewFight } from '@/lib/event-helpers'
+import { getPublicTrackRecord } from '@/lib/public-track-record'
 import { buildPronosticsJsonLd } from '@/lib/seo-pronostics'
-import { OrgPremiumLockedBanner } from '@/components/conversion/OrgPremiumLockedBanner'
-import { OrgMainEventTeaser } from '@/components/pronostics/OrgMainEventTeaser'
-import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
-import { TrackRecordBadge } from '@/components/conversion/TrackRecordBadge'
-import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
-import { UfcPronosticsHeroBand } from '@/components/conversion/UfcPronosticsHeroBand'
+import { cn } from '@/utils/cn'
 import { formatShortDate } from '@/utils/format'
 
 interface OrgPronosticsPageProps {
@@ -30,22 +30,23 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
   const jsonLd = buildPronosticsJsonLd(org, previewFight ?? null, featured ?? null)
   const isUfc = org.id === 'ufc'
   const lockedCount = featured ? featured.fights.length - 1 : 0
+  const trackRecord = getPublicTrackRecord()
 
   return (
     <>
       <OrgJsonLd data={jsonLd} />
-      <main className="flex flex-col pt-site-header bg-[#050505] pb-24 md:pb-0">
-        <OrgPageHeader
-          org={org}
-          compactOnMobile={isUfc}
-          tightHero={isUfc}
-          skipBrandRowOnMobile={isUfc}
-          hideDescription={isUfc}
-          showBelowTitleOnMobile={isUfc}
-          belowTitle={
-            isUfc ? <TrackRecordBadge className="text-xs sm:text-sm" compact /> : undefined
-          }
-        />
+      <main
+        className={cn(
+          'flex flex-col pt-site-header pb-24 md:pb-0',
+          isUfc ? 'bg-[#0a0a0a]' : 'bg-[#050505]',
+        )}
+      >
+        {!isUfc && (
+          <OrgPageHeader
+            org={org}
+            compactOnMobile={false}
+          />
+        )}
 
         {!featured && lastCompleted && (
           <section className="border-b border-white/[0.06]">
@@ -72,30 +73,12 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
 
         {featured && featured.fights.length > 0 && (
           <div className="relative z-10 flex flex-col">
-            {isUfc && <UfcPronosticsHeroBand compact />}
-
-            <OrgFeaturedFightSection org={org} event={featured} lockedCount={lockedCount} />
-            <OrgEventFightCardList org={org} event={featured} />
-
             {isUfc ? (
-              <>
-                <div
-                  id="ufc-pronos-content-end"
-                  className="border-b border-white/[0.06] px-4 py-3 md:hidden"
-                  aria-hidden
-                />
-                <OrgMainEventTeaser org={org} event={featured} />
-                <div className="hidden md:block">
-                  <OrgPremiumLockedBanner event={featured} />
-                </div>
-                <UfcPronosticsConversion
-                  event={featured}
-                  lockedCount={lockedCount}
-                  scrollAnchorId="ufc-pronos-content-end"
-                />
-              </>
+              <UfcPronosticsPageContent event={featured} trackRecord={trackRecord} />
             ) : (
               <>
+                <OrgFeaturedFightSection org={org} event={featured} lockedCount={lockedCount} />
+                <OrgEventFightCardList org={org} event={featured} />
                 <OrgMainEventTeaser org={org} event={featured} />
                 <OrgPremiumLockedBanner event={featured} />
               </>
@@ -107,20 +90,17 @@ export function OrgPronosticsPage({ org }: OrgPronosticsPageProps) {
           <PredictionsPreparingPanel key={event.id} event={event} />
         ))}
 
-        <OrgEventCalendar org={org} events={orgEvents} activeEventId={featured?.id} />
+        {!isUfc && (
+          <OrgEventCalendar org={org} events={orgEvents} activeEventId={featured?.id} />
+        )}
 
-        <section className="relative z-0 section-padding border-t border-white/[0.06]">
-          <div className="container-content max-w-3xl">
-            <PremiumAnalysisUnlock />
-            {org.id !== 'ufc' && (
-              <p className="mt-4 text-center text-xs text-muted">
-                <FastLink href="/resultats" className="hover:text-foreground transition-colors">
-                  Consulter le bilan transparent des pronostics passés →
-                </FastLink>
-              </p>
-            )}
-          </div>
-        </section>
+        {!isUfc && (
+          <section className="relative z-0 section-padding border-t border-white/[0.06]">
+            <div className="container-content max-w-3xl">
+              <PremiumAnalysisUnlock />
+            </div>
+          </section>
+        )}
       </main>
     </>
   )
