@@ -55,26 +55,6 @@ export const MATCHUP_READ_OVERRIDES: Record<string, string> = {
     'Nickal domine la lutte et le contrôle des transitions — Daukaus part avec de la forme mais le niveau au sol bascule le matchup.',
   'ufc-freedom-250-f7':
     'Lopes impose son grappling et a affronté une opposition plus relevée — Garcia part fort sur la forme récente mais le profil global favorise Lopes.',
-  'hexagone-mma-45-f1':
-    'Navero arrive invaincu avec un profil de finisseur et une dynamique nette — Baybatyrov a l\'expérience mais le rythme et la forme récente du Français basculent ce catchweight.',
-  'hexagone-mma-45-f2':
-    'Sima impose tempo et taux de finish sur un palmarès clean — Barbosa a le volume de combat mais la dynamique et la constance du Français font pencher le matchup.',
-  'hexagone-mma-45-f3':
-    'Aschenbrenner part invaincue avec une edge en finitions et dynamique — Grandjean a l\'expérience mais le profil récent et le style du matchup favorisent Aschenbrenner.',
-  'hexagone-mma-45-f4':
-    'Agbo combine dynamique, finitions et opposition plus relevée — Lapilus a l\'expérience mais le bilan et le profil du matchup jouent pour le plus jeune.',
-  'hexagone-mma-45-f5':
-    'Ouattara arrive avec un vrai palmarès et un profil de finisseur — Azizoun fait ses débuts pro dans un matchup exigeant où l\'expérience fait la différence.',
-  'hexagone-mma-45-f6':
-    'Ozturk impose son rythme et sa dynamique — Bahaji a le bilan récent mais le tempo et le profil du matchup jouent pour Ozturk.',
-  'hexagone-mma-45-f7':
-    'Landouzy part avec un edge en frappe et finish — Hussainkhil reste dangereux mais le tempo et le profil du Français basculent ce bantamweight.',
-  'hexagone-mma-45-f8':
-    'Bendaho impose rythme et dynamique sur un bilan plus solide — Delattre garde des atouts mais le volume récent et le profil du matchup favorisent Bendaho.',
-  'hexagone-mma-45-f9':
-    'Albiekov arrive avec la dynamique et un bilan plus clean — Di Guardo a l\'expérience lourds mais le profil récent et le tempo basculent le matchup.',
-  'hexagone-mma-45-f10':
-    'Ammar part avec un palmarès plus construit et une opposition relevée — Khettou reste dangereux mais le volume et la constance d\'Ammar font la différence.',
 }
 
 /** @deprecated Utiliser MATCHUP_READ_OVERRIDES */

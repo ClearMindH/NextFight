@@ -32,18 +32,12 @@ const siteName = getSiteName()
 
 export const siteMetadata: Metadata = {
   title: {
-    default: `${siteName} — Prédictions UFC, KSW, Hexagone MMA, PFL`,
+    default: `${siteName} — Pronostics UFC`,
     template: `%s | ${siteName}`,
   },
   description:
-    'Prédictions MMA basées sur les statistiques pour l\'UFC, KSW, Hexagone MMA, ARES et PFL. Outil informatif sans paris sportifs.',
-  keywords: [
-    'prédictions UFC',
-    'pronostics MMA',
-    'KSW predictions',
-    'Hexagone MMA',
-    'PFL picks',
-  ],
+    'Pronostics UFC carte par carte : co-main gratuit, analyses statistiques et probabilités de victoire. Outil informatif sans paris sportifs.',
+  keywords: ['pronostics UFC', 'prédictions UFC', 'McGregor Holloway', 'analyses MMA'],
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   icons: {

@@ -1,19 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { FastLink } from '@/components/navigation/FastLink'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { organizations } from '@/data/organizations'
 import { NextFightBrand } from '@/components/NextFightBrand'
-import { OrgBrandLogo } from '@/components/OrgBrandLogo'
-import { OrgBrandTagline } from '@/components/OrgBrandName'
 import { useSubscription } from '@/hooks/useSubscription'
 import { cn } from '@/utils/cn'
 
-const staticLinks = [
-  { href: '/#events', label: 'Combats' },
+const navLinks = [
+  { href: '/ufc-pronostics', label: 'Pronostics UFC' },
   { href: '/resultats', label: 'Résultats' },
   { href: '/pricing', label: 'Tarifs' },
 ]
@@ -26,35 +22,14 @@ type NavbarProps = {
 export function Navbar({ topOffset = 0 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [promoOpen, setPromoOpen] = useState(false)
-  const [mobilePromoOpen, setMobilePromoOpen] = useState(false)
-  const promoRef = useRef<HTMLDivElement>(null)
-  const router = useRouter()
   const { status, isPremium, loading } = useSubscription()
   const loggedIn = Boolean(status.email)
-
-  useEffect(() => {
-    if (!promoOpen && !mobilePromoOpen) return
-    for (const org of organizations) {
-      router.prefetch(org.seoPathFr)
-    }
-  }, [promoOpen, mobilePromoOpen, router])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    const onPointerDown = (e: MouseEvent) => {
-      if (promoRef.current && !promoRef.current.contains(e.target as Node)) {
-        setPromoOpen(false)
-      }
-    }
-    document.addEventListener('pointerdown', onPointerDown)
-    return () => document.removeEventListener('pointerdown', onPointerDown)
   }, [])
 
   return (
@@ -69,69 +44,7 @@ export function Navbar({ topOffset = 0 }: NavbarProps) {
         <NextFightBrand iconSize="md" />
 
         <nav className="hidden items-center gap-8 md:flex">
-          <div className="relative" ref={promoRef}>
-            <button
-              type="button"
-              onClick={() => setPromoOpen((o) => !o)}
-              className={cn(
-                'group relative flex items-center gap-1 text-sm transition-colors',
-                promoOpen ? 'text-foreground' : 'text-muted hover:text-foreground',
-              )}
-              aria-expanded={promoOpen}
-              aria-haspopup="true"
-            >
-              Organisations
-              <ChevronDown
-                size={14}
-                className={cn('transition-transform duration-200', promoOpen && 'rotate-180')}
-              />
-              <span
-                className={cn(
-                  'absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300',
-                  promoOpen ? 'w-full' : 'w-0 group-hover:w-full',
-                )}
-              />
-            </button>
-
-            <AnimatePresence>
-              {promoOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-1/2 top-full z-50 mt-3 w-[min(100vw-2rem,26rem)] -translate-x-1/2 rounded-2xl border border-border bg-card/95 p-2 shadow-2xl backdrop-blur-xl"
-                >
-                  <p className="px-3 py-2 text-[10px] font-medium uppercase tracking-[0.2em] text-muted">
-                    Choisir une organisation
-                  </p>
-                  <ul className="space-y-0.5">
-                    {organizations.map((org) => (
-                        <li key={org.id}>
-                          <FastLink
-                            href={org.seoPathFr}
-                            onClick={() => setPromoOpen(false)}
-                            className="group flex flex-col items-start gap-1 rounded-xl px-3 py-3.5 transition-colors hover:bg-background/60"
-                          >
-                            <OrgBrandLogo orgId={org.id} size="md" glow="soft" />
-                            <OrgBrandTagline orgId={org.id} className="opacity-80" />
-                          </FastLink>
-                        </li>
-                    ))}
-                  </ul>
-                  <FastLink
-                    href="/#promotions"
-                    onClick={() => setPromoOpen(false)}
-                    className="mt-1 block rounded-xl px-3 py-2 text-center text-xs text-muted transition-colors hover:bg-background/60 hover:text-gold"
-                  >
-                    Voir toutes les organisations
-                  </FastLink>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {staticLinks.map((link) => (
+          {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
             </NavLink>
@@ -169,7 +82,7 @@ export function Navbar({ topOffset = 0 }: NavbarProps) {
 
         <button
           type="button"
-          className="md:hidden text-foreground"
+          className="text-foreground md:hidden"
           onClick={() => setMobileOpen((o) => !o)}
           aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
         >
@@ -184,48 +97,10 @@ export function Navbar({ topOffset = 0 }: NavbarProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.18 }}
-            className="border-t border-border bg-background md:hidden overflow-hidden"
+            className="overflow-hidden border-t border-border bg-background md:hidden"
           >
             <nav className="flex flex-col gap-1 px-4 py-4">
-              <button
-                type="button"
-                onClick={() => setMobilePromoOpen((o) => !o)}
-                className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-card hover:text-foreground"
-              >
-                Organisations
-                <ChevronDown
-                  size={16}
-                  className={cn('transition-transform', mobilePromoOpen && 'rotate-180')}
-                />
-              </button>
-
-              <AnimatePresence>
-                {mobilePromoOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden pl-2"
-                  >
-                    {organizations.map((org) => (
-                      <FastLink
-                        key={org.id}
-                        href={org.seoPathFr}
-                        onClick={() => {
-                          setMobileOpen(false)
-                          setMobilePromoOpen(false)
-                        }}
-                        className="flex flex-col gap-0.5 rounded-lg px-3 py-3 hover:bg-card/80"
-                      >
-                        <OrgBrandLogo orgId={org.id} size="md" glow="soft" />
-                        <OrgBrandTagline orgId={org.id} className="text-left" />
-                      </FastLink>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {staticLinks.map((link) => (
+              {navLinks.map((link) => (
                 <FastLink
                   key={link.href}
                   href={link.href}

@@ -1,14 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
-import {
-  ARES_EVENTS_URL,
-  buildAresScrapedEvent,
-  parseAresEventsListingHtml,
-} from '@/lib/mappers/ares-events-com'
-import {
-  parseUfcEventPageHtml,
-  UFC_BASE,
-} from '@/lib/mappers/ufc-events-com'
+import { parseUfcEventPageHtml, UFC_BASE } from '@/lib/mappers/ufc-events-com'
 import { fetchText } from '@/lib/event-sync/fetch'
 import { ensureCardFightersInRoster } from '@/lib/event-sync/ensure-card-fighters'
 import { getFighterFromStore, upsertFighterInStore } from '@/lib/roster-store'
@@ -59,46 +51,20 @@ export async function syncUfcCardRankingsFromEvent(event: EventInput): Promise<n
   return refreshRankingsFromRosterForEvent(event)
 }
 
-export async function syncAresCardRankingsFromEvent(event: EventInput): Promise<number> {
-  if (event.organizationId !== 'ares') return 0
-  const competitionId = Number(event.id.replace(/^ares-/, ''))
-  if (!Number.isFinite(competitionId)) return refreshRankingsFromRosterForEvent(event)
-
-  const listingHtml = await fetchText(ARES_EVENTS_URL)
-  const listing =
-    parseAresEventsListingHtml(listingHtml).find((l) => l.competitionId === competitionId) ??
-    ({
-      competitionId,
-      name: event.name,
-      dateLabel: '',
-    } as const)
-
-  const pageHtml = await fetchText(`${ARES_EVENTS_URL}?competition=${competitionId}`)
-  const scraped = buildAresScrapedEvent(listing, pageHtml, pageHtml)
-  if (scraped) ensureCardFightersInRoster(scraped)
-  return refreshRankingsFromRosterForEvent(event)
-}
-
 export async function syncCardRankingsForEvents(events: EventInput[]): Promise<{
   ufcUpdated: number
-  aresUpdated: number
-  otherUpdated: number
 }> {
   let ufcUpdated = 0
-  let aresUpdated = 0
-  let otherUpdated = 0
 
   for (const event of events) {
     if (event.organizationId === 'ufc') {
       ufcUpdated += await syncUfcCardRankingsFromEvent(event)
-    } else if (event.organizationId === 'ares') {
-      aresUpdated += await syncAresCardRankingsFromEvent(event)
     } else {
-      otherUpdated += refreshRankingsFromRosterForEvent(event)
+      ufcUpdated += refreshRankingsFromRosterForEvent(event)
     }
   }
 
-  return { ufcUpdated, aresUpdated, otherUpdated }
+  return { ufcUpdated }
 }
 
 export type CardRankingAuditRow = {

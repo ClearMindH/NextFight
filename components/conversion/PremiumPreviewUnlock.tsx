@@ -22,7 +22,7 @@ export function PremiumPreviewUnlock({ otherFightsCount }: PremiumPreviewUnlockP
         href="/pricing"
         className="mt-5 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-transform hover:scale-[1.02]"
       >
-        Débloquer pour 9,99€/mois
+        Débloquer pour 4,99€/mois
       </Link>
     </div>
   )

@@ -83,11 +83,10 @@ describe('getTrackRecord', () => {
   it('ventile par organisation et par confiance', () => {
     const events = [
       event('e1', 'ufc', [fight('f1', { predicted: 'a', actual: 'a', confidence: 85 })]),
-      event('e2', 'pfl', [fight('f2', { predicted: 'a', actual: 'b', confidence: 55 })]),
+      event('e2', 'ufc', [fight('f2', { predicted: 'a', actual: 'b', confidence: 55 })]),
     ]
     const tr = getTrackRecord(events)
-    expect(tr.byOrg.ufc?.accuracy).toBe(100)
-    expect(tr.byOrg.pfl?.accuracy).toBe(0)
+    expect(tr.byOrg.ufc?.accuracy).toBe(50)
     const strong = tr.byConfidence.find((b) => b.label === 'Forte conviction')
     expect(strong?.total).toBe(1)
     expect(strong?.correct).toBe(1)

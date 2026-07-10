@@ -26,14 +26,14 @@ export function UfcAboveFoldCta({ lockedCount, className }: UfcAboveFoldCtaProps
       )}
     >
       <p className="text-sm font-semibold leading-snug text-white sm:text-base">
-        UFC Freedom 250 · Dimanche 15 juin ·{' '}
+        UFC 329 · Dimanche 15 juin ·{' '}
         <span className="text-[#ffedd5]">
           {lockedCount} analyse{lockedCount > 1 ? 's' : ''} disponible
           {lockedCount > 1 ? 's' : ''} maintenant
         </span>
       </p>
       <p className="mt-1.5 text-sm font-medium text-[#fed7aa]">
-        9,99€/mois · Annulable à tout moment
+        4,99€/mois · Annulable à tout moment
       </p>
       <Link
         href="/pricing"

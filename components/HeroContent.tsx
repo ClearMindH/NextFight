@@ -39,8 +39,7 @@ export function HeroContent({ data }: HeroContentProps) {
             transition={{ duration: 0.5, delay: 0.12 }}
             className="mt-4 text-sm leading-relaxed text-[#8a8278] sm:text-base lg:max-w-lg"
           >
-            Probabilités de victoire, comparaisons détaillées et analyses pour l&apos;UFC, PFL,
-            KSW, ARES et Hexagone MMA.
+            Probabilités de victoire, comparaisons détaillées et analyses UFC carte par carte.
           </motion.p>
 
           <motion.div

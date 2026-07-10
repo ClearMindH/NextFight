@@ -1,4 +1,4 @@
-import { getCompletedEventsSorted } from '@/data/events-helpers'
+import { getCompletedEventsByOrg } from '@/data/events-helpers'
 import { getScoredFights, summarize, type TrackRecordSummary } from '@/lib/track-record'
 
 const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6
@@ -14,7 +14,7 @@ export type PublicTrackRecord = TrackRecordSummary & {
 /** Bilan public affiché sur les pages conversion (6 derniers mois). */
 export function getPublicTrackRecord(now: Date = new Date()): PublicTrackRecord {
   const cutoff = now.getTime() - SIX_MONTHS_MS
-  const events = getCompletedEventsSorted().filter(
+  const events = getCompletedEventsByOrg('ufc').filter(
     (event) => new Date(event.date).getTime() >= cutoff,
   )
   const scored = getScoredFights(events)
@@ -22,7 +22,7 @@ export function getPublicTrackRecord(now: Date = new Date()): PublicTrackRecord 
 
   return {
     ...summary,
-    periodLabel: '6 derniers mois',
+    periodLabel: 'Cartes UFC — 6 derniers mois',
     legacyAccuracy: LEGACY_TRACK_RECORD_ACCURACY,
   }
 }

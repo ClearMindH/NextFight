@@ -1,10 +1,6 @@
 /**
  * Sync fighter rosters:
  * - UFC: run `npm run sync:ufc-roster` first (ufc.com active roster), then optional API merge
- * - PFL: run `npm run sync:pfl-roster` first (pflmma.com WT roster)
- * - KSW: run `npm run sync:ksw-roster` first (kswmma.com/zawodnicy)
- * - Hexagone: run `npm run sync:hexagone-roster` first (hexagonemma.fr/combattants)
- * - ARES: run `npm run sync:ares-roster` first (aresfighting.com/fr/athletes)
  *
  * Usage: npm run sync:fighters
  */
@@ -121,7 +117,7 @@ async function main() {
   }
 
   const total = Object.values(rosters).reduce((n, r) => n + r.fighters.length, 0)
-  console.log(`\nDone. ${total} fighters across 5 organizations.`)
+  console.log(`\nDone. ${total} fighters in UFC roster.`)
 }
 
 main().catch((e) => {

@@ -9,7 +9,7 @@ const ROWS = [
   { feature: 'Tous les combats de la carte', free: false, premium: true },
   { feature: 'Probabilités de victoire', free: false, premium: true },
   { feature: 'Analyse détaillée par combat', free: false, premium: true },
-  { feature: 'UFC + PFL + KSW + ARES + Hexagone', free: false, premium: true },
+  { feature: 'Toutes les cartes UFC du mois', free: false, premium: true },
   { feature: 'Accès immédiat, annulation libre', free: false, premium: true },
 ] as const
 
@@ -62,7 +62,7 @@ export function PlanComparisonTable() {
             <div className="hidden sm:block" />
             <div className="col-span-3 p-4 sm:col-span-1 sm:col-start-3 sm:p-5">
               <StripeCheckoutButton
-                planId="premium_annual"
+                planId="premium_monthly"
                 highlighted
                 className="!w-full !rounded-full !py-3 !text-sm !font-semibold"
               >

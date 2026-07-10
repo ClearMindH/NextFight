@@ -7,9 +7,9 @@ import { useSubscription } from '@/hooks/useSubscription'
 import { cn } from '@/utils/cn'
 
 const VALUE_POINTS = [
-  'Toutes les organisations (UFC, PFL, KSW, ARES, Hexagone)',
+  'Toutes les cartes UFC du mois en cours',
   'Modèle statistique + facteurs décisifs par combat',
-  'Bilan transparent et historique vérifiable',
+  'Bilan UFC transparent et vérifiable',
 ] as const
 
 type UfcPricingCtaContentProps = {
@@ -39,7 +39,7 @@ export function UfcPricingCtaContent({
           ? `Débloquez les ${lockedCount} autres analyses de la carte`
           : 'Débloquez toute la carte'}
       </p>
-      <p className="mt-1 text-sm text-[#8a8278]">À partir de 9,99€/mois · annulation libre</p>
+      <p className="mt-1 text-sm text-[#8a8278]">À partir de 4,99€/mois · annulation libre</p>
       {!compact && (
         <ul className="mt-4 space-y-2">
           {VALUE_POINTS.map((point) => (

@@ -46,7 +46,7 @@ export function UfcMobileFloatingCta({
         className="block w-full rounded-lg bg-white py-3.5 text-center text-sm font-bold leading-snug text-[#0a0a0a]"
       >
         <span aria-hidden>🔓 </span>
-        UFC Freedom 250 — Débloquer les {lockedCount} analyses · 9,99€/mois
+        UFC 329 — Débloquer les {lockedCount} analyses · 4,99€/mois
       </Link>
     </div>
   )

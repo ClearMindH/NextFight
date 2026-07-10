@@ -3,7 +3,7 @@ import type { FighterRecentBout } from './recent-form'
 
 export type { FighterRecentBout, FighterFormProfile, FormMatchupInsight } from './recent-form'
 
-export type OrganizationId = 'ufc' | 'pfl' | 'ksw' | 'ares' | 'hexagone'
+export type OrganizationId = 'ufc'
 
 export type FightMethod = 'ko_tko' | 'submission' | 'decision' | 'draw'
 

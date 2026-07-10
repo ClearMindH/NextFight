@@ -36,9 +36,9 @@ function mockFighter(
   }
 }
 
-const ORGS = ['ufc', 'pfl', 'ksw', 'ares', 'hexagone'] as const
+const ORGS = ['ufc'] as const
 
-describe('infer-stats-from-record (all orgs)', () => {
+describe('infer-stats-from-record (UFC)', () => {
   it.each(ORGS)('infers non-default stats for %s placeholders', (orgId) => {
     const raw = mockFighter(orgId)
     const enriched = enrichFighterStatsForPrediction(raw)

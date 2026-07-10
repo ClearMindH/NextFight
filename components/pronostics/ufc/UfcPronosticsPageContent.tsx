@@ -7,7 +7,8 @@ import { getFreePreviewFight, sortFightsByCardOrder } from '@/lib/event-helpers'
 import { canAccessFightPrediction, getFightDetailHref } from '@/lib/fight-access'
 import { buildPredictionVerdict, fighterShortName } from '@/lib/prediction-verdict'
 import type { PublicTrackRecord } from '@/lib/public-track-record'
-import { UFC_FREEDOM_250_DATE_LABEL, UFC_FREEDOM_250_EVENT_LABEL } from '@/lib/event-urgency'
+import { FEATURED_UFC_DATE_LABEL, FEATURED_UFC_EVENT_LABEL } from '@/lib/event-urgency'
+import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 import { useSubscription } from '@/hooks/useSubscription'
 import { FastLink } from '@/components/navigation/FastLink'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
@@ -22,10 +23,10 @@ const ACCENT = '#e8c840'
 const BG = '#0a0a0a'
 
 const FINAL_BENEFITS = [
-  'Tous les combats de chaque carte UFC',
+  'Tous les combats de chaque carte UFC du mois',
   'Probabilités, facteurs et justification du modèle',
-  'UFC · PFL · KSW · ARES · Hexagone MMA',
-  'Bilan transparent vérifiable sur le site',
+  'Main events et cartes PPV inclus',
+  'Bilan UFC transparent sur le site',
   'Annulation libre à tout moment',
 ] as const
 
@@ -86,21 +87,21 @@ function UfcHero({
             className="text-[11px] font-semibold uppercase tracking-[0.22em]"
             style={{ color: ACCENT }}
           >
-            {eventName} · {UFC_FREEDOM_250_DATE_LABEL}
+            {eventName} · {FEATURED_UFC_DATE_LABEL}
           </p>
           <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
             Les pronostics qui battent les cotes bookmakers
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#a8a29e] sm:text-base">
-            Modèle statistique indépendant · {UFC_FREEDOM_250_EVENT_LABEL} · un co-main gratuit,
-            le reste en Premium.
+            Carte par carte · {FEATURED_UFC_EVENT_LABEL} · co-main gratuit, reste de la carte en
+            Premium ({PREMIUM_MONTHLY_PRICE_LABEL}/mois).
           </p>
 
           <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
             {[
-              { value: `${trackRecord.legacyAccuracy}%`, label: 'Historique' },
+              { value: `${trackRecord.legacyAccuracy}%`, label: 'Historique UFC' },
               { value: String(lockedCount), label: 'Analyses carte' },
-              { value: '9,99€', label: 'Par mois' },
+              { value: PREMIUM_MONTHLY_PRICE_LABEL, label: 'Par mois' },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -201,10 +202,11 @@ function UfcFinalOffer({ lockedCount }: { lockedCount: number }) {
             Offre Premium
           </p>
           <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-            Débloquez toute la carte UFC Freedom 250
+            Débloquez toutes les cartes UFC du mois
           </h2>
           <p className="mt-2 text-sm text-[#a8a29e]">
-            {lockedCount} analyse{lockedCount > 1 ? 's' : ''} Premium en plus du co-main gratuit.
+            {lockedCount} analyse{lockedCount > 1 ? 's' : ''} Premium sur cette carte + les
+            prochaines cartes du mois.
           </p>
 
           <ul className="mt-6 space-y-3">
@@ -220,12 +222,10 @@ function UfcFinalOffer({ lockedCount }: { lockedCount: number }) {
           </ul>
 
           <div className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <p className="font-display text-3xl font-semibold tabular-nums text-white">9,99€</p>
-            <p className="text-sm text-[#8a8278]">/mois</p>
-            <span className="text-[#5c5c5c]">·</span>
-            <p className="text-sm text-[#a8a29e]">
-              ou <span className="font-semibold text-white">79€</span>/an
+            <p className="font-display text-3xl font-semibold tabular-nums text-white">
+              {PREMIUM_MONTHLY_PRICE_LABEL}
             </p>
+            <p className="text-sm text-[#8a8278]">/mois · toutes les cartes UFC du mois</p>
           </div>
 
           <div className="mt-6">

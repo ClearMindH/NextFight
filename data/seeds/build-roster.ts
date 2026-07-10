@@ -140,121 +140,9 @@ export const ufcSeeds: SeedInput[] = [
   { name: 'Erin Blanchfield', record: '18-2-0', country: 'USA', weightClass: 'Women\'s Flyweight', ranking: 2, stats: s(51, 44, 165, 163, 25, 3) },
 ]
 
-// ─── PFL ───────────────────────────────────────────────────────────────────
-
-export const pflSeeds: SeedInput[] = [
-  // Heavyweight
-  { name: 'Renan Ferreira', nickname: 'Problema', record: '14-2-0', country: 'Brazil', weightClass: 'Heavyweight', ranking: 1, stats: s(48, 36, 206, 203, 35, 4) },
-  { name: 'Ryan Edwards', record: '14-3-0', country: 'UK', weightClass: 'Heavyweight', ranking: 2, stats: s(46, 40, 198, 193, 31, 2) },
-  { name: 'Patrick Habirora', record: '10-0-0', country: 'Belgium', weightClass: 'Heavyweight', stats: s(50, 42, 198, 193, 28, 4) },
-  { name: 'Denis Golts', record: '12-2-0', country: 'Russia', weightClass: 'Heavyweight', stats: s(49, 38, 195, 191, 30, 2) },
-  // Light Heavyweight
-  { name: 'Fabian Edwards', record: '14-3-0', country: 'UK', weightClass: 'Light Heavyweight', ranking: 1, stats: s(51, 38, 188, 185, 31, 2) },
-  { name: 'Johnny Mix', record: '16-2-0', country: 'USA', weightClass: 'Light Heavyweight', ranking: 2, stats: s(49, 42, 185, 183, 29, 3) },
-  { name: 'Thibault Gouti', record: '9-3-0', country: 'France', weightClass: 'Light Heavyweight', stats: s(47, 36, 188, 183, 34, 1) },
-  // Middleweight
-  { name: 'Logan Storley', record: '17-2-0', country: 'USA', weightClass: 'Middleweight', ranking: 1, stats: s(48, 52, 183, 180, 32, 2) },
-  { name: 'Magomed Umalatov', record: '17-0-0', country: 'Russia', weightClass: 'Welterweight', ranking: 1, stats: s(54, 45, 185, 183, 29, 4) },
-  // Lightweight
-  { name: 'Usman Nurmagomedov', record: '18-0-0', country: 'Russia', weightClass: 'Lightweight', ranking: 1, stats: s(55, 50, 178, 175, 26, 6) },
-  { name: 'Benson Henderson', record: '31-12-0', country: 'USA', weightClass: 'Lightweight', stats: s(46, 40, 178, 175, 41, 0) },
-  { name: 'Olivier Aubin-Mercier', nickname: 'The Canadian Gangster', record: '21-5-0', country: 'Canada', weightClass: 'Lightweight', stats: s(50, 38, 180, 178, 36, 2) },
-  { name: 'Brent Primus', record: '12-3-0', country: 'USA', weightClass: 'Lightweight', stats: s(47, 44, 178, 175, 35, 1) },
-  // Featherweight
-  { name: 'Bekkhan Khaybulaev', nickname: 'Bek', record: '14-0-1', country: 'Russia', weightClass: 'Featherweight', ranking: 1, stats: s(52, 48, 180, 175, 30, 5) },
-  { name: 'Shane Burgos', record: '16-4-0', country: 'USA', weightClass: 'Featherweight', stats: s(52, 36, 178, 175, 32, 1) },
-  { name: 'Gabriel Braga', record: '12-1-0', country: 'Brazil', weightClass: 'Featherweight', stats: s(51, 32, 180, 175, 27, 3) },
-  // Women
-  { name: 'Dakota Ditcheva', record: '12-0-0', country: 'UK', weightClass: 'Women\'s Flyweight', ranking: 1, stats: s(58, 35, 165, 168, 26, 5) },
-  { name: 'Liz Carmouche', record: '20-7-0', country: 'USA', weightClass: 'Women\'s Flyweight', stats: s(47, 44, 163, 163, 41, 1) },
-  { name: 'Denise Kielholtz', record: '8-5-0', country: 'Netherlands', weightClass: 'Women\'s Flyweight', stats: s(49, 40, 165, 168, 35, 1) },
-  { name: 'Larissa Pacheco', record: '23-4-0', country: 'Brazil', weightClass: 'Women\'s Featherweight', stats: s(50, 38, 170, 170, 32, 2) },
-  { name: 'Julia Budd', record: '17-6-0', country: 'Canada', weightClass: 'Women\'s Featherweight', stats: s(48, 42, 168, 168, 40, 0) },
-]
-
-// ─── KSW ───────────────────────────────────────────────────────────────────
-
-export const kswSeeds: SeedInput[] = [
-  // Heavyweight
-  { name: 'Karol Szymanski', record: '9-1-0', country: 'Poland', weightClass: 'Heavyweight', ranking: 1, stats: s(50, 35, 198, 196, 30, 3) },
-  { name: 'Marian Ziółkowski', record: '25-9-1', country: 'Poland', weightClass: 'Heavyweight', ranking: 2, stats: s(48, 36, 195, 193, 35, 1) },
-  { name: 'Anthony Johnson', record: '23-14-0', country: 'USA', weightClass: 'Heavyweight', stats: s(52, 38, 193, 188, 40, 0) },
-  // Light Heavyweight
-  { name: 'Radosław Baran', record: '15-4-0', country: 'Poland', weightClass: 'Light Heavyweight', ranking: 1, stats: s(50, 42, 190, 188, 32, 2) },
-  { name: 'Tomasz Narkun', record: '36-8-0', country: 'Poland', weightClass: 'Light Heavyweight', stats: s(46, 45, 188, 185, 38, 0) },
-  { name: 'Igor Wojtasik', record: '11-2-0', country: 'Poland', weightClass: 'Light Heavyweight', stats: s(49, 40, 188, 186, 29, 3) },
-  // Middleweight
-  { name: 'Mamed Khalidov', nickname: 'Cannibal', record: '35-9-2', country: 'Poland', weightClass: 'Middleweight', ranking: 1, stats: s(49, 44, 185, 185, 43, 2) },
-  { name: 'Antonio Carlos Junior', nickname: 'Soldić', record: '25-5-0', country: 'Croatia', weightClass: 'Middleweight', ranking: 2, stats: s(52, 41, 188, 188, 34, 3) },
-  { name: 'Paweł Polityło', record: '18-4-0', country: 'Poland', weightClass: 'Middleweight', stats: s(47, 43, 185, 183, 33, 1) },
-  // Welterweight
-  { name: 'Michał Dufka', record: '12-1-0', country: 'Poland', weightClass: 'Welterweight', ranking: 1, stats: s(51, 38, 188, 185, 28, 4) },
-  { name: 'Kamil Michalski', record: '11-2-0', country: 'Poland', weightClass: 'Welterweight', ranking: 2, stats: s(48, 42, 185, 183, 27, 2) },
-  { name: 'Bartosz Kuncer', record: '8-1-0', country: 'Poland', weightClass: 'Welterweight', stats: s(49, 40, 185, 183, 27, 4) },
-  { name: 'Maksymilian Szulc', record: '10-2-0', country: 'Poland', weightClass: 'Welterweight', stats: s(50, 36, 186, 183, 26, 2) },
-  // Lightweight
-  { name: 'Islam Nurmagomedov', record: '14-0-0', country: 'Russia', weightClass: 'Lightweight', ranking: 1, stats: s(55, 48, 180, 178, 26, 5) },
-  { name: 'Damian Zwosta', record: '10-3-0', country: 'Poland', weightClass: 'Lightweight', ranking: 2, stats: s(47, 40, 178, 180, 29, 2) },
-  { name: 'Ludovít Klein', record: '22-5-0', country: 'Slovakia', weightClass: 'Lightweight', stats: s(54, 38, 180, 178, 31, 1) },
-  // Featherweight
-  { name: 'Scott Askew', record: '10-2-0', country: 'UK', weightClass: 'Featherweight', ranking: 1, stats: s(52, 36, 180, 178, 29, 3) },
-  { name: 'Kacper Kropiwiec', record: '9-1-0', country: 'Poland', weightClass: 'Featherweight', stats: s(48, 34, 178, 175, 27, 4) },
-  { name: 'Daniel Torres', record: '14-5-0', country: 'Spain', weightClass: 'Featherweight', stats: s(50, 38, 178, 173, 30, 2) },
-]
-
-// ─── ARES ──────────────────────────────────────────────────────────────────
-
-export const aresSeeds: SeedInput[] = [
-  // Heavyweight
-  { name: 'Ciryl Gane', record: '12-2-0', country: 'France', weightClass: 'Heavyweight', ranking: 1, stats: s(58, 33, 206, 193, 34, 1) },
-  { name: 'Ibo Aslan', record: '14-2-0', country: 'Turkey', weightClass: 'Light Heavyweight', ranking: 1, stats: s(54, 30, 190, 188, 29, 3) },
-  { name: 'Cedric Doumbe', record: '5-1-0', country: 'France', weightClass: 'Welterweight', ranking: 1, stats: s(56, 28, 190, 183, 36, 2) },
-  { name: 'Axel Sola', record: '10-1-0', country: 'France', weightClass: 'Welterweight', stats: s(50, 36, 185, 183, 27, 3) },
-  { name: 'Kevin Cureau', record: '12-3-0', country: 'France', weightClass: 'Lightweight', stats: s(48, 40, 178, 175, 30, 2) },
-  { name: 'Jordan Vucenic', record: '13-3-0', country: 'France', weightClass: 'Lightweight', stats: s(49, 38, 178, 175, 31, 2) },
-  { name: 'Thibault Gouti', record: '9-3-0', country: 'France', weightClass: 'Lightweight', stats: s(47, 36, 178, 175, 34, 1) },
-  // Featherweight
-  { name: 'Salahdine Parnasse', record: '8-0-0', country: 'France', weightClass: 'Featherweight', ranking: 1, stats: s(55, 42, 178, 175, 26, 4) },
-  { name: 'Morgan Charriere', record: '20-10-1', country: 'France', weightClass: 'Featherweight', ranking: 2, stats: s(52, 36, 180, 175, 33, 0) },
-  { name: 'Yves Landu', record: '20-9-0', country: 'France', weightClass: 'Featherweight', stats: s(50, 38, 175, 170, 35, 1) },
-  { name: 'Anthony Ribeiro', record: '11-2-0', country: 'France', weightClass: 'Featherweight', stats: s(51, 34, 178, 175, 28, 3) },
-  // Bantamweight
-  { name: 'Taylor Lapilus', record: '21-4-0', country: 'France', weightClass: 'Bantamweight', ranking: 1, stats: s(51, 40, 178, 175, 34, 2) },
-  { name: 'Rimbo Gazikov', record: '9-1-0', country: 'Russia', weightClass: 'Bantamweight', stats: s(52, 44, 175, 170, 28, 4) },
-  { name: 'Mehdi Zatout', record: '14-5-0', country: 'France', weightClass: 'Bantamweight', stats: s(48, 38, 173, 170, 32, 1) },
-  { name: 'Bruno Lopes', record: '10-2-0', country: 'France', weightClass: 'Bantamweight', stats: s(49, 36, 175, 173, 29, 2) },
-]
-
-// ─── Hexagone MMA ──────────────────────────────────────────────────────────
-
-export const hexagoneSeeds: SeedInput[] = [
-  // Middleweight
-  { name: 'Marc-André Barriault', record: '17-6-0', country: 'Canada', weightClass: 'Middleweight', ranking: 1, stats: s(51, 35, 188, 185, 34, 3) },
-  { name: 'Jordan Harris', record: '12-3-0', country: 'Canada', weightClass: 'Middleweight', ranking: 2, stats: s(47, 42, 185, 183, 28, 4) },
-  { name: 'Marc-André Martin', record: '10-2-0', country: 'Canada', weightClass: 'Middleweight', stats: s(49, 38, 186, 183, 30, 2) },
-  // Welterweight
-  { name: 'Alex Morgan', record: '11-2-0', country: 'Canada', weightClass: 'Welterweight', ranking: 1, stats: s(50, 38, 185, 183, 29, 2) },
-  { name: 'Jonathan Meunier', record: '9-1-0', country: 'Canada', weightClass: 'Welterweight', ranking: 2, stats: s(48, 40, 183, 180, 30, 4) },
-  { name: 'Steven Warby', record: '8-2-0', country: 'Canada', weightClass: 'Welterweight', stats: s(47, 36, 183, 180, 28, 1) },
-  // Lightweight
-  { name: 'Pierre Paquette', record: '8-2-0', country: 'Canada', weightClass: 'Lightweight', ranking: 1, stats: s(50, 36, 180, 178, 27, 3) },
-  { name: 'Liam Doyle', record: '10-3-0', country: 'Canada', weightClass: 'Lightweight', ranking: 2, stats: s(49, 38, 178, 175, 28, 2) },
-  { name: 'Charles Jourdain', record: '15-6-1', country: 'Canada', weightClass: 'Featherweight', stats: s(52, 34, 180, 175, 29, 1) },
-  // Featherweight / Bantam / Fly
-  { name: 'Steven Siler', record: '32-17-1', country: 'USA', weightClass: 'Featherweight', stats: s(46, 36, 178, 175, 41, 0) },
-  { name: 'Jesse Arnett', record: '22-8-0', country: 'Canada', weightClass: 'Bantamweight', ranking: 1, stats: s(47, 40, 175, 170, 36, 2) },
-  { name: 'Ali Bagautinov', record: '18-7-0', country: 'Russia', weightClass: 'Flyweight', ranking: 1, stats: s(49, 48, 170, 165, 39, 1) },
-  { name: 'Malcolm Gordon', record: '14-7-0', country: 'Canada', weightClass: 'Flyweight', stats: s(48, 42, 173, 168, 34, 1) },
-  { name: 'Aiemann Zahabi', record: '11-2-0', country: 'Canada', weightClass: 'Bantamweight', stats: s(50, 38, 175, 173, 31, 3) },
-]
-
 export function buildAllRosters(): Record<OrganizationId, OrganizationRoster> {
   return {
     ufc: roster('ufc', ufcSeeds),
-    pfl: roster('pfl', pflSeeds),
-    ksw: roster('ksw', kswSeeds),
-    ares: roster('ares', aresSeeds),
-    hexagone: roster('hexagone', hexagoneSeeds),
   }
 }
 
@@ -262,9 +150,5 @@ export function buildAllRosters(): Record<OrganizationId, OrganizationRoster> {
 export function getSeedCounts(): Record<OrganizationId, number> {
   return {
     ufc: ufcSeeds.length,
-    pfl: pflSeeds.length,
-    ksw: kswSeeds.length,
-    ares: aresSeeds.length,
-    hexagone: hexagoneSeeds.length,
   }
 }

@@ -37,6 +37,14 @@ const nextConfig = {
       { source: '/fighters', destination: '/', permanent: true },
       { source: '/compare', destination: '/', permanent: true },
       { source: '/history', destination: '/', permanent: true },
+      { source: '/pfl-pronostics', destination: '/ufc-pronostics', permanent: true },
+      { source: '/pfl-predictions', destination: '/ufc-pronostics', permanent: true },
+      { source: '/ksw-pronostics', destination: '/ufc-pronostics', permanent: true },
+      { source: '/ksw-predictions', destination: '/ufc-pronostics', permanent: true },
+      { source: '/ares-pronostics', destination: '/ufc-pronostics', permanent: true },
+      { source: '/ares-predictions', destination: '/ufc-pronostics', permanent: true },
+      { source: '/hexagone-mma-pronostics', destination: '/ufc-pronostics', permanent: true },
+      { source: '/hexagone-mma-predictions', destination: '/ufc-pronostics', permanent: true },
     ]
   },
 }

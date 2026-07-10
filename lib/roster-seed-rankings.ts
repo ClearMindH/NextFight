@@ -1,21 +1,10 @@
-import {
-  aresSeeds,
-  hexagoneSeeds,
-  kswSeeds,
-  pflSeeds,
-  ufcSeeds,
-  type SeedInput,
-} from '@/data/seeds/build-roster'
+import { ufcSeeds, type SeedInput } from '@/data/seeds/build-roster'
 import { isTopRankedInDivision } from '@/lib/fighter-ranking'
 import { slugifyId } from '@/lib/mappers/ufc-api'
 import type { Fighter, OrganizationId } from '@/types'
 
 const SEEDS_BY_ORG: Record<OrganizationId, SeedInput[]> = {
   ufc: ufcSeeds,
-  pfl: pflSeeds,
-  ksw: kswSeeds,
-  ares: aresSeeds,
-  hexagone: hexagoneSeeds,
 }
 
 function seedMatchesName(seed: SeedInput, name: string): boolean {

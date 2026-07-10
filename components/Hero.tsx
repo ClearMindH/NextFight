@@ -17,8 +17,7 @@ export function Hero() {
             Analysez chaque combat MMA avec des statistiques avancées.
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sm text-[#8a8278]">
-            Probabilités de victoire, comparaisons détaillées et analyses pour l&apos;UFC, PFL,
-            KSW, ARES et Hexagone MMA.
+            Probabilités de victoire, comparaisons détaillées et analyses UFC carte par carte.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link

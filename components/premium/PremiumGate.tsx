@@ -49,7 +49,7 @@ export function PremiumGate({
             Voir les offres
           </Link>
         </div>
-        <p className="mt-3 text-[11px] text-[#5c5c5c]">Premium · 9,99€/mois · annulable</p>
+        <p className="mt-3 text-[11px] text-[#5c5c5c]">Premium · 4,99€/mois · annulable</p>
       </div>
     </div>
   )

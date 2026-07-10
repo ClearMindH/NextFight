@@ -26,7 +26,6 @@ const CLEAN_SIZE_CLASS = {
 interface OrgBrandNameProps {
   orgId: OrganizationId
   size?: keyof typeof SIZE_CLASS
-  /** Nom complet pour Hexagone MMA au lieu du sigle */
   showFullName?: boolean
   /** Typo nette pour cartes (sans skew / ombre logo) */
   tone?: 'brand' | 'clean'
@@ -36,7 +35,6 @@ interface OrgBrandNameProps {
 export function OrgBrandName({
   orgId,
   size = 'md',
-  showFullName = false,
   tone = 'brand',
   className,
 }: OrgBrandNameProps) {
@@ -45,61 +43,25 @@ export function OrgBrandName({
   if (!org) return null
 
   if (tone === 'clean') {
-    const cleanSize = CLEAN_SIZE_CLASS[size]
-    if (org.id === 'hexagone' && !showFullName) {
-      return (
-        <span
-          className={cn(
-            'inline-flex flex-wrap items-baseline justify-center gap-x-1.5 font-display font-semibold tracking-tight',
-            cleanSize,
-            className,
-          )}
-        >
-          <span className={brand.cleanNameClass}>Hexagone</span>
-          <span className="text-foreground/90">MMA</span>
-        </span>
-      )
-    }
-
-    const label = showFullName && org.id === 'hexagone' ? 'Hexagone MMA' : org.name
     return (
       <span
         className={cn(
           'font-display font-semibold tracking-tight',
-          cleanSize,
+          CLEAN_SIZE_CLASS[size],
           brand.cleanNameClass,
           className,
         )}
       >
-        {label}
+        {org.name}
       </span>
     )
   }
 
   const wordmark = cn('org-wordmark-base inline-block', brand.logoClass, SIZE_CLASS[size], className)
 
-  if (org.id === 'hexagone' && !showFullName) {
-    return (
-      <span
-        className={cn('inline-flex flex-wrap items-baseline justify-center gap-x-2', wordmark)}
-        style={brand.nameStyle}
-      >
-        <span className={brand.nameClass}>Hexagone</span>
-        <span
-          className="bg-gradient-to-b from-white via-[#e8e8e8] to-[#a3a3a3] bg-clip-text text-transparent"
-          style={{ textShadow: '2px 2px 0 #0a0a0a' }}
-        >
-          MMA
-        </span>
-      </span>
-    )
-  }
-
-  const label = showFullName && org.id === 'hexagone' ? 'Hexagone MMA' : org.name
-
   return (
     <span className={cn(wordmark, brand.nameClass)} style={brand.nameStyle}>
-      {label}
+      {org.name}
     </span>
   )
 }

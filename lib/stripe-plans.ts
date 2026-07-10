@@ -1,5 +1,8 @@
 import type { PlanId } from '@/types/subscription'
 
+export const PREMIUM_MONTHLY_PRICE_LABEL = '4,99€'
+export const PREMIUM_MONTHLY_AMOUNT_CENTS = 499
+
 export interface StripePlanConfig {
   id: PlanId
   name: string
@@ -19,55 +22,36 @@ export const STRIPE_PLANS: StripePlanConfig[] = [
   {
     id: 'free',
     name: 'Gratuit',
-    description: 'Pronostics publics limités',
+    description: 'Co-main gratuit sur chaque carte UFC',
     priceLabel: '0€',
     amountCents: 0,
     currency: 'eur',
     priceEnvKey: '',
     features: [
       'Pronostic gratuit sur le co-main de chaque carte',
-      'Calendrier des combats',
-      'Page dédiée par promotion',
+      'Probabilités, verdict et facteurs clés',
+      'Calendrier UFC à venir',
     ],
-    cta: 'Commencer',
+    cta: 'Voir le co-main gratuit',
   },
   {
     id: 'premium_monthly',
     name: 'Premium Mensuel',
-    description: 'Tous les pronostics et analyses détaillées',
-    priceLabel: '9,99€',
+    description: 'Toutes les cartes UFC du mois en cours',
+    priceLabel: PREMIUM_MONTHLY_PRICE_LABEL,
     period: '/mois',
-    amountCents: 999,
+    amountCents: PREMIUM_MONTHLY_AMOUNT_CENTS,
     currency: 'eur',
     interval: 'month',
     priceEnvKey: 'STRIPE_PRICE_PREMIUM_MONTHLY',
     highlighted: true,
     features: [
-      'Tous les pronostics détaillés',
-      'Analyse détaillée par combat',
-      'Probabilités de victoire',
-      'Pages combat Premium',
+      'Tous les combats de chaque carte UFC du mois',
+      'Main events & analyses détaillées',
+      'Probabilités et facteurs du modèle',
+      'Accès immédiat · annulation libre',
     ],
-    cta: 'Débloquer tous les combats',
-  },
-  {
-    id: 'premium_annual',
-    name: 'Premium Annuel',
-    description: 'Meilleur rapport qualité-prix',
-    priceLabel: '79,99€',
-    period: '/an',
-    amountCents: 7999,
-    currency: 'eur',
-    interval: 'year',
-    priceEnvKey: 'STRIPE_PRICE_PREMIUM_ANNUAL',
-    features: [
-      'Tous les pronostics détaillés',
-      'Analyse détaillée par combat',
-      'Probabilités de victoire',
-      'Pages combat Premium',
-      'Économisez ~33% vs mensuel',
-    ],
-    cta: 'Accéder à toute la saison',
+    cta: 'Débloquer toutes les cartes du mois',
   },
 ]
 

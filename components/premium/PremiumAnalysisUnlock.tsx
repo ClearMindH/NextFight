@@ -53,7 +53,7 @@ export function PremiumAnalysisUnlock({
 
       {showPricingHint && (
         <p className="mt-3 text-[11px] text-[#5c5c5c]">
-          Toutes les cartes UFC, PFL, KSW, ARES et Hexagone · à partir de 9,99€/mois
+          Toutes les cartes UFC du mois · à partir de 4,99€/mois
         </p>
       )}
     </div>

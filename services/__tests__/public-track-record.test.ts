@@ -9,7 +9,7 @@ import {
 describe('public-track-record', () => {
   it('expose un bilan sur 6 mois', () => {
     const record = getPublicTrackRecord()
-    expect(record.periodLabel).toBe('6 derniers mois')
+    expect(record.periodLabel).toBe('Cartes UFC — 6 derniers mois')
     expect(record.legacyAccuracy).toBe(LEGACY_TRACK_RECORD_ACCURACY)
     if (record.total > 0) {
       expect(formatTrackRecordHeadline(record)).toMatch(/\d+\/\d+ pronostics corrects/)

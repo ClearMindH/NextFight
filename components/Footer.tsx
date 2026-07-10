@@ -32,9 +32,7 @@ function FooterOrgLink({ orgId, href }: { orgId: string; href: string }) {
       <span className="text-base leading-none" title={regionLabel} aria-hidden>
         {emoji}
       </span>
-      <span className="font-display font-medium tracking-tight">
-        {org.id === 'hexagone' ? 'Hexagone MMA' : org.name}
-      </span>
+      <span className="font-display font-medium tracking-tight">{org.name}</span>
     </FastLink>
   )
 }
@@ -47,7 +45,7 @@ export function Footer() {
           <div>
             <NextFightBrand href={null} iconSize="md" />
             <p className="mt-3 text-sm text-muted leading-relaxed">
-              Pronostics MMA et analyses statistiques pour les grandes organisations. Outil informatif —
+              Pronostics UFC carte par carte. Co-main gratuit, reste en Premium. Outil informatif —
               pas de paris sportifs.
             </p>
           </div>

@@ -16,15 +16,8 @@ function normalizeName(name: string): string {
     .replace(/[^a-z0-9]/g, '')
 }
 
-function slugFromProfileUrl(url: string, orgId: OrganizationId): string | undefined {
-  const patterns: Record<OrganizationId, RegExp> = {
-    ufc: /\/athlete\/([^/?#]+)/i,
-    pfl: /\/fighter\/([^/?#]+)/i,
-    ksw: /\/(?:en\/)?fighter\/([^/?#]+)/i,
-    ares: /\/fr\/athletes\?[^#]*_fighter=(\d+)/i,
-    hexagone: /\/combattants?\/([^/?#]+)/i,
-  }
-  const match = url.match(patterns[orgId])
+function slugFromProfileUrl(url: string): string | undefined {
+  const match = url.match(/\/athlete\/([^/?#]+)/i)
   return match?.[1]
 }
 
@@ -41,7 +34,7 @@ export function resolveFighterId(
 
   const rawSlugs = [
     ref.slug,
-    ref.profileUrl ? slugFromProfileUrl(ref.profileUrl, orgId) : undefined,
+    ref.profileUrl ? slugFromProfileUrl(ref.profileUrl) : undefined,
   ].filter((s): s is string => Boolean(s))
 
   const slugCandidates = [

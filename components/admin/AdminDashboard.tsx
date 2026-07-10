@@ -21,7 +21,7 @@ import { cn } from '@/utils/cn'
 
 type Tab = 'fighters' | 'events' | 'fights' | 'recalculate' | 'subscriptions'
 
-const ORG_IDS: OrganizationId[] = ['ufc', 'pfl', 'ksw', 'ares', 'hexagone']
+const ORG_IDS: OrganizationId[] = ['ufc']
 
 const emptyFighterForm = (): FighterUpsertPayload => ({
   organizationId: 'ufc',

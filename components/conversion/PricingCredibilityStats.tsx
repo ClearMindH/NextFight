@@ -1,20 +1,20 @@
-import { Building2, Calendar, Swords } from 'lucide-react'
+import { Calendar, Swords, Target } from 'lucide-react'
 
 const STATS = [
   {
-    icon: Building2,
-    value: '5 organisations',
-    detail: 'UFC · PFL · KSW · ARES · Hexagone',
+    icon: Target,
+    value: 'UFC uniquement',
+    detail: 'Une carte à la fois, focus total',
   },
   {
     icon: Swords,
-    value: '+200 combats analysés/an',
+    value: '+50 combats/mois',
     detail: 'Pronostics statistiques par carte',
   },
   {
     icon: Calendar,
     value: 'Depuis 2024',
-    detail: 'Modèle affiné événement après événement',
+    detail: 'Modèle affiné carte après carte',
   },
 ] as const
 

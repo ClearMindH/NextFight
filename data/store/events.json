@@ -1,208 +1,6 @@
 {
   "events": [
     {
-      "id": "ares-3297",
-      "organizationId": "ares",
-      "name": "ARES 41",
-      "date": "2026-06-06T17:00:00.000Z",
-      "venue": "Adidas Arena",
-      "city": "Paris",
-      "country": "France",
-      "status": "completed",
-      "predictionsStatus": "published",
-      "fights": [
-        {
-          "id": "ares-3297-f1",
-          "eventId": "ares-3297",
-          "order": 1,
-          "weightClass": "Welterweight (-77kg)",
-          "isTitle": true,
-          "isMainEvent": true,
-          "scheduledRounds": 5,
-          "redId": "ares-alvi-dasuyev",
-          "blueId": "ares-mohamed-soumah",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-mohamed-soumah",
-            "redWinProbability": 46,
-            "confidence": 54,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          },
-          "result": {
-            "winnerId": "ares-alvi-dasuyev",
-            "method": "submission",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "ares-3297-f2",
-          "eventId": "ares-3297",
-          "order": 2,
-          "weightClass": "Lightweight (-70kg)",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-magomed-giri-umarkhadzhiev",
-          "blueId": "ares-walid-masmoudi",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-magomed-giri-umarkhadzhiev",
-            "redWinProbability": 57,
-            "confidence": 56,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          },
-          "result": {
-            "winnerId": "ares-walid-masmoudi",
-            "method": "decision",
-            "round": 3,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "ares-3297-f3",
-          "eventId": "ares-3297",
-          "order": 3,
-          "weightClass": "Heavyweight (+93kg)",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-ivan-romanov",
-          "blueId": "ares-zaurbek-sabanov",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-zaurbek-sabanov",
-            "redWinProbability": 38,
-            "confidence": 55,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          },
-          "result": {
-            "winnerId": "ares-zaurbek-sabanov",
-            "method": "ko_tko",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "ares-3297-f4",
-          "eventId": "ares-3297",
-          "order": 4,
-          "weightClass": "Featherweight (-66kg)",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-benoit-prigent",
-          "blueId": "ares-abdoulaye-dione",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-benoit-prigent",
-            "redWinProbability": 58.5,
-            "confidence": 57,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          },
-          "result": {
-            "winnerId": "ares-benoit-prigent",
-            "method": "decision",
-            "round": 3,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "ares-3297-f5",
-          "eventId": "ares-3297",
-          "order": 5,
-          "weightClass": "Middleweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-vincent-yerly",
-          "blueId": "ares-axel-iridjie",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-vincent-yerly",
-            "redWinProbability": 63,
-            "confidence": 58,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          }
-        },
-        {
-          "id": "ares-3297-f6",
-          "eventId": "ares-3297",
-          "order": 6,
-          "weightClass": "Featherweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-wael-kambouche",
-          "blueId": "ares-turpal-susurov",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-wael-kambouche",
-            "redWinProbability": 72,
-            "confidence": 66,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          }
-        },
-        {
-          "id": "ares-3297-f7",
-          "eventId": "ares-3297",
-          "order": 7,
-          "weightClass": "Lightweight (-70kg)",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-maher-belkhadir",
-          "blueId": "ares-sofiane-el-fatni",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-sofiane-el-fatni",
-            "redWinProbability": 40,
-            "confidence": 54,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          },
-          "result": {
-            "winnerId": "ares-sofiane-el-fatni",
-            "method": "ko_tko",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "ares-3297-f8",
-          "eventId": "ares-3297",
-          "order": 8,
-          "weightClass": "Flyweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-melissa-nebbache",
-          "blueId": "ares-ludmila-scurco",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-melissa-nebbache",
-            "redWinProbability": 57,
-            "confidence": 54,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          },
-          "result": {
-            "winnerId": "ares-ludmila-scurco",
-            "method": "decision",
-            "round": 3,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "ares-3297-f9",
-          "eventId": "ares-3297",
-          "order": 9,
-          "weightClass": "Light Heavyweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "ares-mouhamed-gueye",
-          "blueId": "ares-ian-kuchler",
-          "predictionSnapshot": {
-            "predictedWinnerId": "ares-mouhamed-gueye",
-            "redWinProbability": 57,
-            "confidence": 54,
-            "capturedAt": "2026-06-07T16:30:25.764Z"
-          }
-        }
-      ]
-    },
-    {
       "id": "ufc-fight-night-june-06-2026",
       "organizationId": "ufc",
       "name": "UFC Fight Night: Muhammad vs Bonfim",
@@ -492,243 +290,6 @@
       ]
     },
     {
-      "id": "hexagone-mma-45",
-      "organizationId": "hexagone",
-      "name": "Hexagone MMA 45: Dena vs Anzor",
-      "date": "2026-06-12T17:00:00.000Z",
-      "venue": "LDLC Arena",
-      "city": "Lyon",
-      "country": "France",
-      "status": "completed",
-      "predictionsStatus": "published",
-      "fights": [
-        {
-          "id": "hexagone-mma-45-f1",
-          "eventId": "hexagone-mma-45",
-          "order": 1,
-          "weightClass": "Catchweight",
-          "isTitle": false,
-          "isMainEvent": true,
-          "scheduledRounds": 3,
-          "redId": "hexagone-paul-denis-navero",
-          "blueId": "hexagone-anzor-baybatyrov",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-paul-denis-navero",
-            "redWinProbability": 56,
-            "confidence": 56,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-anzor-baybatyrov",
-            "method": "ko_tko",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f2",
-          "eventId": "hexagone-mma-45",
-          "order": 2,
-          "weightClass": "Flyweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-samba-sima",
-          "blueId": "hexagone-leonardo-de-oliveira-barbosa",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-samba-sima",
-            "redWinProbability": 57,
-            "confidence": 55,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-samba-sima",
-            "method": "ko_tko",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f3",
-          "eventId": "hexagone-mma-45",
-          "order": 3,
-          "weightClass": "Women's Strawweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-noelle-grandjean",
-          "blueId": "hexagone-mathilde-aschenbrenner",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-mathilde-aschenbrenner",
-            "redWinProbability": 38,
-            "confidence": 67,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f4",
-          "eventId": "hexagone-mma-45",
-          "order": 4,
-          "weightClass": "Lightweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-damien-lapilus",
-          "blueId": "hexagone-ryan-eren-agbo",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-ryan-eren-agbo",
-            "redWinProbability": 47,
-            "confidence": 55,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-damien-lapilus",
-            "method": "decision",
-            "round": 3,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f5",
-          "eventId": "hexagone-mma-45",
-          "order": 5,
-          "weightClass": "Bantamweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-anas-azizoun",
-          "blueId": "hexagone-youssouf-ouattara",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-youssouf-ouattara",
-            "redWinProbability": 37,
-            "confidence": 64,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-anas-azizoun",
-            "method": "submission",
-            "round": 2,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f6",
-          "eventId": "hexagone-mma-45",
-          "order": 6,
-          "weightClass": "Bantamweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-nezar-bahaji",
-          "blueId": "hexagone-muhammed-fatih-ozturk",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-muhammed-fatih-ozturk",
-            "redWinProbability": 48,
-            "confidence": 57,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-muhammed-fatih-ozturk",
-            "method": "ko_tko",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f7",
-          "eventId": "hexagone-mma-45",
-          "order": 7,
-          "weightClass": "Bantamweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-allan-landouzy",
-          "blueId": "hexagone-abdul-hussainkhil",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-allan-landouzy",
-            "redWinProbability": 55,
-            "confidence": 62,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-allan-landouzy",
-            "method": "decision",
-            "round": 3,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f8",
-          "eventId": "hexagone-mma-45",
-          "order": 8,
-          "weightClass": "Featherweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-guillaume-delattre",
-          "blueId": "hexagone-malik-bendaho",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-malik-bendaho",
-            "redWinProbability": 42,
-            "confidence": 62,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-malik-bendaho",
-            "method": "decision",
-            "round": 3,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f9",
-          "eventId": "hexagone-mma-45",
-          "order": 9,
-          "weightClass": "Heavyweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-tamerlan-albiekov",
-          "blueId": "hexagone-samuele-di-guardo",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-tamerlan-albiekov",
-            "redWinProbability": 55,
-            "confidence": 54,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-tamerlan-albiekov",
-            "method": "ko_tko",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        },
-        {
-          "id": "hexagone-mma-45-f10",
-          "eventId": "hexagone-mma-45",
-          "order": 10,
-          "weightClass": "Featherweight",
-          "isTitle": false,
-          "isMainEvent": false,
-          "scheduledRounds": 3,
-          "redId": "hexagone-mazri-ammar",
-          "blueId": "hexagone-nessim-khettou",
-          "predictionSnapshot": {
-            "predictedWinnerId": "hexagone-mazri-ammar",
-            "redWinProbability": 57,
-            "confidence": 59,
-            "capturedAt": "2026-06-12T12:00:00.000Z"
-          },
-          "result": {
-            "winnerId": "hexagone-nessim-khettou",
-            "method": "submission",
-            "round": 1,
-            "source": "boxemag.ouest-france.fr"
-          }
-        }
-      ]
-    },
-    {
       "id": "ufc-freedom-250",
       "organizationId": "ufc",
       "name": "UFC Freedom 250",
@@ -736,22 +297,11 @@
       "venue": "The White House",
       "city": "Washington",
       "country": "United States",
-      "status": "upcoming",
+      "status": "completed",
       "predictionsStatus": "published",
       "fights": [
         {
           "id": "ufc-freedom-250-f1",
-          "eventId": "ufc-freedom-250",
-          "order": 1,
-          "weightClass": "Lightweight Championship",
-          "isTitle": true,
-          "isMainEvent": true,
-          "scheduledRounds": 5,
-          "redId": "ufc-ilia-topuria",
-          "blueId": "ufc-justin-gaethje"
-        },
-        {
-          "id": "ufc-freedom-250-f2",
           "eventId": "ufc-freedom-250",
           "order": 2,
           "weightClass": "Heavyweight Combat de championnat intérimaire Championship",
@@ -817,7 +367,707 @@
           "blueId": "ufc-steve-garcia"
         }
       ]
+    },
+    {
+      "id": "ufc-329",
+      "organizationId": "ufc",
+      "name": "UFC 329: McGregor vs Holloway 2",
+      "date": "2026-07-12T01:00:00.000Z",
+      "venue": "T-Mobile Arena",
+      "city": "Las Vegas",
+      "country": "United States",
+      "status": "upcoming",
+      "predictionsStatus": "published",
+      "fights": [
+        {
+          "id": "ufc-329-f1",
+          "eventId": "ufc-329",
+          "order": 1,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-conor-mcgregor",
+          "blueId": "ufc-max-holloway"
+        },
+        {
+          "id": "ufc-329-f2",
+          "eventId": "ufc-329",
+          "order": 2,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-benoit-saint-denis",
+          "blueId": "ufc-paddy-pimblett"
+        },
+        {
+          "id": "ufc-329-f3",
+          "eventId": "ufc-329",
+          "order": 3,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-cory-sandhagen",
+          "blueId": "ufc-mario-bautista"
+        },
+        {
+          "id": "ufc-329-f4",
+          "eventId": "ufc-329",
+          "order": 4,
+          "weightClass": "Flyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-brandon-royval",
+          "blueId": "ufc-loneer-kavanagh"
+        },
+        {
+          "id": "ufc-329-f5",
+          "eventId": "ufc-329",
+          "order": 5,
+          "weightClass": "Lightweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-king-green",
+          "blueId": "ufc-terrance-mckinney"
+        },
+        {
+          "id": "ufc-329-f6",
+          "eventId": "ufc-329",
+          "order": 6,
+          "weightClass": "Light Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-nikita-krylov",
+          "blueId": "ufc-robert-whittaker"
+        },
+        {
+          "id": "ufc-329-f7",
+          "eventId": "ufc-329",
+          "order": 7,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-gable-steveson",
+          "blueId": "ufc-elisha-ellison"
+        },
+        {
+          "id": "ufc-329-f8",
+          "eventId": "ufc-329",
+          "order": 8,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-cody-garbrandt",
+          "blueId": "ufc-adrian-yanez"
+        },
+        {
+          "id": "ufc-329-f9",
+          "eventId": "ufc-329",
+          "order": 9,
+          "weightClass": "Featherweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-riley-dutro",
+          "blueId": "ufc-kai-kamaka-iii"
+        },
+        {
+          "id": "ufc-329-f10",
+          "eventId": "ufc-329",
+          "order": 10,
+          "weightClass": "Flyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-tracy-cortez",
+          "blueId": "ufc-wang-cong"
+        },
+        {
+          "id": "ufc-329-f11",
+          "eventId": "ufc-329",
+          "order": 11,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-damian-pinas",
+          "blueId": "ufc-cesar-almeida"
+        },
+        {
+          "id": "ufc-329-f12",
+          "eventId": "ufc-329",
+          "order": 12,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-farid-basharat",
+          "blueId": "ufc-pablo-garza"
+        },
+        {
+          "id": "ufc-329-f13",
+          "eventId": "ufc-329",
+          "order": 13,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-ryan-gandra",
+          "blueId": "ufc-zachary-reese"
+        },
+        {
+          "id": "ufc-329-f14",
+          "eventId": "ufc-329",
+          "order": 14,
+          "weightClass": "Flyweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-alessandro-costa",
+          "blueId": "ufc-cody-durden"
+        }
+      ]
+    },
+    {
+      "id": "ufc-fight-night-july-18-2026",
+      "organizationId": "ufc",
+      "name": "UFC Fight Night: Du Plessis vs Usman",
+      "date": "2026-07-19T00:00:00.000Z",
+      "venue": "Paycom Center",
+      "city": "Oklahoma City",
+      "country": "United States",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "ufc-fight-night-july-18-2026-f1",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 1,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-dricus-du-plessis",
+          "blueId": "ufc-gugun-gusman"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f2",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 2,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-jared-cannonier",
+          "blueId": "ufc-christian-leroy-duncan"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f3",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 3,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-chase-hooper",
+          "blueId": "ufc-mitch-ramirez"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f4",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 4,
+          "weightClass": "Featherweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-tommy-mcmillen",
+          "blueId": "ufc-alberto-montes"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f5",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 5,
+          "weightClass": "Women's Strawweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-tabatha-ricci",
+          "blueId": "ufc-fatima-kline"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f6",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 6,
+          "weightClass": "Featherweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-austin-bashi",
+          "blueId": "ufc-jose-miguel-delgado"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f7",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 7,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-jean-paul-lebosnoyani",
+          "blueId": "ufc-seokhyeon-ko"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f8",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 8,
+          "weightClass": "Light Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-levi-rodrigues-jr",
+          "blueId": "ufc-felipe-franco"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f9",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 9,
+          "weightClass": "Flyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-alden-coria",
+          "blueId": "ufc-nicolle-caliari"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f10",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 10,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-allen-frye-jr",
+          "blueId": "ufc-alvin-hines"
+        },
+        {
+          "id": "ufc-fight-night-july-18-2026-f11",
+          "eventId": "ufc-fight-night-july-18-2026",
+          "order": 11,
+          "weightClass": "Flyweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-veronica-hardy",
+          "blueId": "ufc-dione-barbosa"
+        }
+      ]
+    },
+    {
+      "id": "ufc-fight-night-july-25-2026",
+      "organizationId": "ufc",
+      "name": "UFC Abu Dhabi",
+      "date": "2026-07-25T16:00:00.000Z",
+      "venue": "Etihad Arena",
+      "city": "Yas Island/Yas West",
+      "country": "United Arab Emirates",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "ufc-fight-night-july-25-2026-f1",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 1,
+          "weightClass": "Light Heavyweight",
+          "isTitle": false,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-magomed-ankalaev",
+          "blueId": "ufc-khalil-rountree-jr"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f2",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 2,
+          "weightClass": "Flyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-steve-erceg",
+          "blueId": "ufc-ramazan-temirov"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f3",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 3,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-islam-dulatov",
+          "blueId": "ufc-wellington-turman"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f4",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 4,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-magomed-zaynukov",
+          "blueId": "ufc-damian-rzepecki"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f5",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 5,
+          "weightClass": "Heavyweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-rizvan-kuniev",
+          "blueId": "ufc-tyrell-fortune"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f6",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 6,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-valter-walker",
+          "blueId": "ufc-thomas-petersen"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f7",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 7,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-uran-satybaldiev",
+          "blueId": "ufc-dustin-jacoby"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f8",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 8,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-ismael-bonfim",
+          "blueId": "ufc-axel-sola"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f9",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 9,
+          "weightClass": "Light Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-magomed-tuchalov",
+          "blueId": "ufc-brendson-ribeiro"
+        },
+        {
+          "id": "ufc-fight-night-july-25-2026-f10",
+          "eventId": "ufc-fight-night-july-25-2026",
+          "order": 10,
+          "weightClass": "Lightweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-nurullo-aliev",
+          "blueId": "ufc-mike-davis"
+        }
+      ]
+    },
+    {
+      "id": "ufc-fight-night-august-01-2026",
+      "organizationId": "ufc",
+      "name": "UFC Fight Night: Medić vs Rodriguez",
+      "date": "2026-08-01T17:00:00.000Z",
+      "venue": "Belgrade Arena",
+      "city": "BG",
+      "country": "Serbia",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "ufc-fight-night-august-01-2026-f1",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 1,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-uros-medic",
+          "blueId": "ufc-daniel-rodriguez"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f2",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 2,
+          "weightClass": "Light Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-jan-b-achowicz",
+          "blueId": "ufc-bogdan-guskov"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f3",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 3,
+          "weightClass": "Heavyweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-aleksandar-rakic",
+          "blueId": "ufc-marcin-tybura"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f4",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 4,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-dusko-todorovic",
+          "blueId": "ufc-robert-valentin"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f5",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 5,
+          "weightClass": "Middleweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-vlasto-cepo",
+          "blueId": "ufc-gilbert-urbina"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f6",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 6,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-ludovit-klein",
+          "blueId": "ufc-tofiq-musayev"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f7",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 7,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-oban-elliott",
+          "blueId": "ufc-michael-oliveira"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f8",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 8,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-mark-vologdin",
+          "blueId": "ufc-josias-musasa"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f9",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 9,
+          "weightClass": "Featherweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-dennis-buzukja",
+          "blueId": "ufc-bogdan-grad"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f10",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 10,
+          "weightClass": "Bantamweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-nina-milosevic",
+          "blueId": "ufc-hailey-cowan"
+        },
+        {
+          "id": "ufc-fight-night-august-01-2026-f11",
+          "eventId": "ufc-fight-night-august-01-2026",
+          "order": 11,
+          "weightClass": "Heavyweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-billy-elekana",
+          "blueId": "ufc-max-gimenis"
+        }
+      ]
+    },
+    {
+      "id": "ufc-fight-night-august-08-2026",
+      "organizationId": "ufc",
+      "name": "UFC Fight Night",
+      "date": "2026-08-08T21:00:00.000Z",
+      "venue": "Meta APEX",
+      "city": "Las Vegas",
+      "country": "United States",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "ufc-fight-night-august-08-2026-f1",
+          "eventId": "ufc-fight-night-august-08-2026",
+          "order": 1,
+          "weightClass": "Lightweight Championship",
+          "isTitle": true,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-mateusz-gamrot",
+          "blueId": "ufc-quillan-salkilld"
+        }
+      ]
+    },
+    {
+      "id": "ufc-330",
+      "organizationId": "ufc",
+      "name": "UFC 330: Makhachev vs Machado Garry",
+      "date": "2026-08-16T01:00:00.000Z",
+      "venue": "Xfinity Mobile Arena",
+      "city": "Philadelphia",
+      "country": "United States",
+      "status": "upcoming",
+      "fights": [
+        {
+          "id": "ufc-330-f1",
+          "eventId": "ufc-330",
+          "order": 1,
+          "weightClass": "Welterweight Championship",
+          "isTitle": true,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-islam-makhachev",
+          "blueId": "ufc-ian-machado-garry"
+        },
+        {
+          "id": "ufc-330-f2",
+          "eventId": "ufc-330",
+          "order": 2,
+          "weightClass": "Women's Strawweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-mackenzie-dern",
+          "blueId": "ufc-gillian-robertson"
+        },
+        {
+          "id": "ufc-330-f3",
+          "eventId": "ufc-330",
+          "order": 3,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-neil-magny",
+          "blueId": "ufc-ramiz-brahimaj"
+        },
+        {
+          "id": "ufc-330-f4",
+          "eventId": "ufc-330",
+          "order": 4,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-jalin-turner",
+          "blueId": "ufc-kaue-fernandes"
+        },
+        {
+          "id": "ufc-330-f5",
+          "eventId": "ufc-330",
+          "order": 5,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-irene-aldana",
+          "blueId": "ufc-chidi-njokuani"
+        },
+        {
+          "id": "ufc-330-f6",
+          "eventId": "ufc-330",
+          "order": 6,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-mansur-abdul-malik",
+          "blueId": "ufc-dustin-stoltzfus"
+        },
+        {
+          "id": "ufc-330-f7",
+          "eventId": "ufc-330",
+          "order": 7,
+          "weightClass": "Welterweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-jeremiah-wells",
+          "blueId": "ufc-myktybek-orolbai"
+        },
+        {
+          "id": "ufc-330-f8",
+          "eventId": "ufc-330",
+          "order": 8,
+          "weightClass": "Middleweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-vicente-luque",
+          "blueId": "ufc-tresean-gore"
+        },
+        {
+          "id": "ufc-330-f9",
+          "eventId": "ufc-330",
+          "order": 9,
+          "weightClass": "Lightweight",
+          "isTitle": false,
+          "isMainEvent": false,
+          "scheduledRounds": 3,
+          "redId": "ufc-edson-barboza",
+          "blueId": "ufc-esteban-ribovics"
+        },
+        {
+          "id": "ufc-330-f10",
+          "eventId": "ufc-330",
+          "order": 10,
+          "weightClass": "Flyweight Championship",
+          "isTitle": true,
+          "isMainEvent": false,
+          "scheduledRounds": 5,
+          "redId": "ufc-erin-blanchfield",
+          "blueId": "ufc-jasmine-jasudavicius"
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-06-13T10:00:00.000Z"
+  "updatedAt": "2026-07-10T11:56:06.128Z"
 }

@@ -33,7 +33,7 @@ export function UpcomingEvents() {
             Prochain événement UFC
           </h2>
           <p className="mt-2 max-w-xl text-sm text-muted">
-            UFC Freedom 250 — pronostics complets disponibles maintenant.
+            UFC 329 — pronostics McGregor vs Holloway disponibles.
           </p>
         </FadeIn>
 

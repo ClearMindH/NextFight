@@ -5,7 +5,7 @@ import type { Fighter, OrganizationId, OrganizationRoster } from '@/types'
 
 const ROSTER_DIR = path.join(process.cwd(), 'data', 'rosters')
 
-const ORG_IDS: OrganizationId[] = ['ufc', 'pfl', 'ksw', 'ares', 'hexagone']
+const ORG_IDS: OrganizationId[] = ['ufc']
 
 function rosterPath(orgId: OrganizationId): string {
   return path.join(ROSTER_DIR, `${orgId}.json`)

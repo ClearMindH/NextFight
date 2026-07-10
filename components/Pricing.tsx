@@ -1,17 +1,15 @@
 'use client'
 
 import Link from 'next/link'
+import { FEATURED_UFC_FREE_FIGHT_ID } from '@/lib/event-urgency'
 import { STRIPE_PLANS, isPaidPlan } from '@/lib/stripe-plans'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import { FadeIn } from '@/components/motion/FadeIn'
-import { cn } from '@/utils/cn'
 
 /** Bloc tarifs accueil — version compacte. Détail : /pricing */
 export function Pricing() {
   const freePlan = STRIPE_PLANS.find((p) => p.id === 'free')
-  const paidPlans = STRIPE_PLANS.filter((p) => isPaidPlan(p.id))
-  const annual = paidPlans.find((p) => p.id === 'premium_annual')
-  const monthly = paidPlans.find((p) => p.id === 'premium_monthly')
+  const monthly = STRIPE_PLANS.find((p) => p.id === 'premium_monthly')
 
   return (
     <section id="pricing" className="section-padding border-t border-border bg-background">
@@ -21,10 +19,10 @@ export function Pricing() {
             Nos offres
           </p>
           <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-            Tarifs
+            Tarifs UFC
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-muted-warm">
-            Gratuit pour le co-main. Premium pour toutes les cartes et analyses.
+            Co-main gratuit sur chaque carte. Premium pour débloquer tous les combats du mois.
           </p>
         </FadeIn>
 
@@ -45,16 +43,16 @@ export function Pricing() {
                 </div>
                 <div className="mt-6">
                   <Link
-                    href="/fight/ufc-freedom-250-f2"
+                    href={`/fight/${FEATURED_UFC_FREE_FIGHT_ID}`}
                     className="block w-full rounded-full border border-[#2a2824] py-3 text-center text-sm font-medium text-foreground transition-colors hover:border-gold-soft/45 hover:bg-[#11100e]"
                   >
-                    Essayer Gane vs Pereira
+                    Essayer le co-main gratuit
                   </Link>
                 </div>
               </div>
             </FadeIn>
           )}
-          {monthly && (
+          {monthly && isPaidPlan(monthly.id) && (
             <FadeIn delay={0.06}>
               <div className="rounded-[1.25rem] border border-gold-soft/35 bg-[#0f0e0c] px-6 py-7 sm:px-8">
                 <div className="flex items-start justify-between gap-4">
@@ -72,34 +70,6 @@ export function Pricing() {
                 <div className="mt-6">
                   <StripeCheckoutButton planId={monthly.id} highlighted className="!rounded-full">
                     {monthly.cta}
-                  </StripeCheckoutButton>
-                </div>
-              </div>
-            </FadeIn>
-          )}
-          {annual && (
-            <FadeIn delay={0.12}>
-              <div className="rounded-[1.25rem] border border-[#1f1d1a] bg-[#0a0a0a] px-6 py-7 sm:px-8">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.24em] text-muted-warm">
-                      Premium annuel
-                    </p>
-                    <p className="mt-2 text-sm text-muted-warm">{annual.description}</p>
-                  </div>
-                  <p className="shrink-0 font-display text-2xl font-semibold tabular-nums">
-                    {annual.priceLabel}
-                    <span className="text-sm font-normal text-[#6b6b6b]">{annual.period}</span>
-                  </p>
-                </div>
-                <div className="mt-6">
-                  <StripeCheckoutButton
-                    planId={annual.id}
-                    className={cn(
-                      '!rounded-full !border-gold-soft/40 !text-gold-soft hover:!bg-gold-soft/10',
-                    )}
-                  >
-                    {annual.cta}
                   </StripeCheckoutButton>
                 </div>
               </div>

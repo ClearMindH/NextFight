@@ -1,7 +1,6 @@
 /**
  * Synchronise les classements (top 15 / champion) des combattants des cartes à venir.
- * - UFC : classements affichés sur UFC.com (carte officielle)
- * - ARES / autres : roster + seeds NextFight
+ * UFC : classements affichés sur UFC.com (carte officielle)
  *
  * Usage: npm run sync:card-rankings
  */
@@ -16,10 +15,8 @@ async function main(): Promise<void> {
 
   console.log(`NextFight — sync classements carte (${events.length} événement(s))\n`)
 
-  const { ufcUpdated, aresUpdated, otherUpdated } = await syncCardRankingsForEvents(events)
+  const { ufcUpdated } = await syncCardRankingsForEvents(events)
   console.log(`  UFC roster mis à jour: ${ufcUpdated}`)
-  console.log(`  ARES roster mis à jour: ${aresUpdated}`)
-  if (otherUpdated) console.log(`  Autres orgs: ${otherUpdated}`)
 
   const audit = auditCardRankings(events)
   const withBadge = audit.filter((r) => r.badge)
@@ -37,7 +34,7 @@ async function main(): Promise<void> {
   }
 
   if (withoutBadge.length > 0) {
-    console.log('\n  Pas de badge (normal si non classé UFC/ARES):')
+    console.log('\n  Pas de badge (normal si non classé UFC):')
     for (const r of withoutBadge) {
       console.log(`    [${r.orgId}] ${r.name}`)
     }

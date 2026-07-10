@@ -142,7 +142,7 @@ function FightCardRow({
             href="/pricing"
             className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-[#c9b896] transition-colors hover:text-[#e8dcc4]"
           >
-            Voir l&apos;analyse complète → 9,99€/mois
+            Voir l&apos;analyse complète → 4,99€/mois
             <ChevronRight className="h-3.5 w-3.5" />
           </Link>
         </div>

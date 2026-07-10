@@ -39,16 +39,16 @@ function mockFighter(overrides: Partial<Fighter> & { stats?: Partial<Fighter['st
 }
 
 describe('PredictionEngine', () => {
-  it('returns valid probabilities when age is missing (ARES roster)', () => {
+  it('returns valid probabilities when age is missing', () => {
     const a = mockFighter({
-      id: 'ares-a',
-      organizationId: 'ares',
+      id: 'ufc-a',
+      organizationId: 'ufc',
       source: 'merged',
       stats: { age: undefined, strikingAccuracy: 50, takedownAccuracy: 38 },
     })
     const b = mockFighter({
-      id: 'ares-b',
-      organizationId: 'ares',
+      id: 'ufc-b',
+      organizationId: 'ufc',
       source: 'merged',
       wins: 3,
       losses: 2,

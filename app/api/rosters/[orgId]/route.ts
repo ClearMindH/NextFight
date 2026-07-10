@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getRoster } from '@/lib/rosters'
 import type { OrganizationId } from '@/types'
 
-const validOrgs: OrganizationId[] = ['ufc', 'pfl', 'ksw', 'ares', 'hexagone']
+const validOrgs: OrganizationId[] = ['ufc']
 
 export async function GET(
   _request: Request,

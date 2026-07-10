@@ -1,12 +1,12 @@
 # NextFight
 
-**Pronostics MMA** — analyses statistiques et pages par promotion pour **UFC**, **PFL**, **KSW**, **ARES** et **Hexagone MMA**. Outil informatif, sans paris sportifs.
+**Pronostics UFC** — analyses statistiques carte par carte. Co-main gratuit, reste en Premium. Outil informatif, sans paris sportifs.
 
 ## Stack
 
 - **Next.js 15** (App Router)
 - **React 19** · **Tailwind CSS** · **Framer Motion**
-- **Stripe** — abonnement Premium
+- **Stripe** — abonnement Premium (4,99€/mois)
 
 ## Getting started
 
@@ -21,15 +21,16 @@ npm run dev
 
 | Route | Purpose |
 |-------|---------|
-| `/` | Accueil — pronostics & calendrier |
-| `/ufc-pronostics` … | Pronostics FR par promotion |
-| `/ufc-predictions` … | Pronostics EN par promotion |
+| `/` | Accueil — carte UFC du week-end |
+| `/ufc-pronostics` | Pronostics UFC (FR) |
+| `/ufc-predictions` | Pronostics UFC (EN) |
 | `/fight/[id]` | Fiche combat + prédiction |
-| `/pricing` | Offres Premium |
+| `/pricing` | Offre Premium 4,99€/mois |
+| `/resultats` | Bilan pronostics UFC |
 | `/account` | Abonnement Stripe |
 | `/admin` | Back-office (voir `docs/ADMIN.md`) |
 
-Les anciennes routes (`/dashboard`, `/events`, `/fighters`, etc.) redirigent vers l’accueil ou les pages pronostics.
+Les anciennes routes multi-promotions redirigent vers `/ufc-pronostics`.
 
 ## Scripts
 
@@ -38,3 +39,4 @@ Les anciennes routes (`/dashboard`, `/events`, `/fighters`, etc.) redirigent ver
 | `npm run dev` | Serveur de développement |
 | `npm run build` | Build production |
 | `npm test` | Tests Vitest |
+| `npm run sync:events` | Sync cartes UFC depuis ufc.com |

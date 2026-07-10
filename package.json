@@ -14,10 +14,6 @@
     "test:watch": "vitest",
     "sync:fighters": "tsx scripts/sync-fighters.ts",
     "sync:ufc-roster": "tsx scripts/sync-ufc-com.ts",
-    "sync:pfl-roster": "tsx scripts/sync-pfl-com.ts",
-    "sync:ksw-roster": "tsx scripts/sync-ksw-com.ts",
-    "sync:hexagone-roster": "tsx scripts/sync-hexagone-com.ts",
-    "sync:ares-roster": "tsx scripts/sync-ares-com.ts",
     "sync:events": "tsx scripts/sync-events.ts",
     "sync:events:weekend": "tsx scripts/sync-events.ts --weekend",
     "freeze:predictions": "tsx scripts/freeze-predictions.ts",
@@ -35,7 +31,7 @@
     "sync:subscription": "tsx scripts/sync-stripe-subscription.ts",
     "revoke:premium": "tsx scripts/revoke-premium.ts",
     "migrate:subscriptions": "tsx scripts/migrate-subscriptions-to-supabase.ts",
-    "sync:all": "npm run sync:ufc-roster && npm run sync:pfl-roster && npm run sync:ksw-roster && npm run sync:ares-roster && npm run sync:hexagone-roster && npm run sync:events && npm run sync:enrich-cards",
+    "sync:all": "npm run sync:ufc-roster && npm run sync:events && npm run sync:enrich-cards",
     "stripe:setup": "tsx scripts/stripe-setup.ts"
   },
   "dependencies": {

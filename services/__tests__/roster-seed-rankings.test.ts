@@ -3,14 +3,15 @@ import { getSeedRanking, mergeSeedRanking } from '@/lib/roster-seed-rankings'
 import type { Fighter } from '@/types'
 
 const base: Fighter = {
-  id: 'pfl-renan-ferreira',
-  organizationId: 'pfl',
-  name: 'Renan Ferreira',
-  record: '14-2-0',
-  wins: 14,
-  losses: 2,
+  id: 'ufc-jon-jones',
+  organizationId: 'ufc',
+  name: 'Jon Jones',
+  record: '28-1-0',
+  wins: 28,
+  losses: 1,
   draws: 0,
-  country: 'Brazil',
+  country: 'USA',
+  weightClass: 'Heavyweight',
   stats: {
     strikingAccuracy: 50,
     takedownAccuracy: 40,
@@ -24,8 +25,8 @@ const base: Fighter = {
 }
 
 describe('roster-seed-rankings', () => {
-  it('returns champion seed for PFL heavyweight #1', () => {
-    expect(getSeedRanking('pfl', 'Renan Ferreira')).toBe(1)
+  it('returns champion seed for UFC heavyweight #1', () => {
+    expect(getSeedRanking('ufc', 'Jon Jones', 'Heavyweight')).toBe(1)
   })
 
   it('merges seed ranking when roster has none', () => {
@@ -38,7 +39,7 @@ describe('roster-seed-rankings', () => {
   })
 
   it('leaves unranked fighters without badge data', () => {
-    const unranked = { ...base, name: 'Abraham Bably', id: 'pfl-abraham-bably' }
+    const unranked = { ...base, name: 'Unknown Fighter', id: 'ufc-unknown-fighter' }
     expect(mergeSeedRanking(unranked).ranking).toBeUndefined()
   })
 
@@ -46,7 +47,6 @@ describe('roster-seed-rankings', () => {
     const pereiraHw: Fighter = {
       ...base,
       id: 'ufc-alex-pereira',
-      organizationId: 'ufc',
       name: 'Alex Pereira',
       weightClass: 'Heavyweight',
     }

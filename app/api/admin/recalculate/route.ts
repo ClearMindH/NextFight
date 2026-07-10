@@ -15,13 +15,7 @@ export async function POST() {
   revalidatePath('/')
   revalidatePath('/fight/[id]', 'page')
   revalidatePath('/api/events')
-  for (const slug of [
-    'ufc',
-    'pfl',
-    'ksw',
-    'ares',
-    'hexagone-mma',
-  ] as const) {
+  for (const slug of ['ufc'] as const) {
     revalidatePath(`/${slug}-pronostics`)
     revalidatePath(`/${slug}-predictions`)
   }

@@ -440,9 +440,7 @@ function ScreenBilling({
           />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <QuickLink href="/ufc-pronostics" label="UFC" />
-          <QuickLink href="/pfl-pronostics" label="PFL" />
-          <QuickLink href="/ksw-pronostics" label="KSW" />
+          <QuickLink href="/ufc-pronostics" label="Pronostics UFC" />
         </div>
       </div>
     )

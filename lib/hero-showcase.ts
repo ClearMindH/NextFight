@@ -5,12 +5,12 @@ import { getTrackRecord } from '@/lib/track-record'
 import { getFightPageData } from '@/lib/fights'
 import { getAllFighters } from '@/lib/rosters'
 import { buildPredictionVerdict, fighterShortName } from '@/lib/prediction-verdict'
+import { FEATURED_UFC_FREE_FIGHT_ID } from '@/lib/event-urgency'
 import type { Fight } from '@/types'
 import type { FightPageData } from '@/lib/fights'
 import type { FighterScoreProfile } from '@/types/prediction'
 
-/** Co-main gratuit — ne pas exposer le main event sur la homepage. */
-const SHOWCASE_FIGHT_ID = 'ufc-freedom-250-f2'
+const SHOWCASE_FIGHT_ID = FEATURED_UFC_FREE_FIGHT_ID
 
 const ADVANTAGE_DIMENSIONS: {
   key: keyof FighterScoreProfile
@@ -102,7 +102,7 @@ function getCredibilityStats(): HeroCredibilityStats {
   return {
     fightersTracked: getAllFighters().length,
     statMetrics: 32,
-    organizationsCovered: 5,
+    organizationsCovered: 1,
     updateLabel: 'Mise à jour hebdomadaire',
     highConfidenceAccuracy:
       strong && strong.total >= 2 ? strong.accuracy : null,
