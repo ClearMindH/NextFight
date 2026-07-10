@@ -1,39 +1,37 @@
 import { FastLink } from '@/components/navigation/FastLink'
-import type { Event, Fight } from '@/types'
-import { fighterShortName } from '@/lib/prediction-verdict'
-import { getTrackRecord } from '@/lib/track-record'
-import { formatTrackRecordContext, getPublicTrackRecord } from '@/lib/public-track-record'
+import {
+  getArchivedUfcFightRecords,
+  getArchivedUfcTrackRecordSummary,
+  groupArchivedRecordsByEvent,
+} from '@/lib/archived-track-record'
+import {
+  formatTrackRecordContext,
+  getPublicTrackRecord,
+  getPublicTrackRecordByConfidence,
+} from '@/lib/public-track-record'
 import { formatEventDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
-interface TrackRecordViewProps {
-  events: Event[]
+function formatMethod(method?: string, round?: number): string | null {
+  if (!method) return null
+  const labels: Record<string, string> = {
+    decision: 'Décision',
+    ko_tko: 'KO/TKO',
+    submission: 'Soumission',
+  }
+  const label = labels[method] ?? method
+  return round ? `${label} · R${round}` : label
 }
 
-function nameById(fight: Fight, id: string | null): string {
-  if (!id) return 'Nul'
-  if (fight.redCorner.id === id) return fighterShortName(fight.redCorner.name)
-  if (fight.blueCorner.id === id) return fighterShortName(fight.blueCorner.name)
-  return '—'
-}
-
-function scorableFights(event: Event): Fight[] {
-  return event.fights.filter(
-    (f) => f.predictionSnapshot && f.result && f.result.winnerId != null,
-  )
-}
-
-function matchupLabel(fight: Fight): string {
-  return `${fighterShortName(fight.redCorner.name)} vs ${fighterShortName(fight.blueCorner.name)}`
-}
-
-export function TrackRecordView({ events }: TrackRecordViewProps) {
-  const trackRecord = getTrackRecord(events)
+export function TrackRecordView() {
+  const records = getArchivedUfcFightRecords()
+  const summary = getArchivedUfcTrackRecordSummary()
   const publicRecord = getPublicTrackRecord()
-  const eventsWithScores = events.filter((e) => scorableFights(e).length > 0)
-  const hasData = trackRecord.summary.total > 0
-  const strongBucket = trackRecord.byConfidence.find((b) => b.label === 'Forte conviction')
-  const markedBucket = trackRecord.byConfidence.find((b) => b.label === 'Favori marqué')
+  const grouped = groupArchivedRecordsByEvent(records)
+  const hasData = summary.total > 0
+  const byConfidence = getPublicTrackRecordByConfidence()
+  const strongBucket = byConfidence.find((b) => b.label === 'Forte conviction')
+  const markedBucket = byConfidence.find((b) => b.label === 'Favori marqué')
 
   return (
     <main className="pt-site-header">
@@ -46,20 +44,19 @@ export function TrackRecordView({ events }: TrackRecordViewProps) {
           <p className="mt-4 text-muted leading-relaxed">
             Chaque pronostic est <strong className="font-medium text-foreground/90">figé avant
             l&apos;événement</strong>, puis comparé au vainqueur réel. Aucun ajustement a posteriori —
-            ce que vous voyez ici est le bilan brut du modèle.
+            ce que vous voyez ici est le bilan brut de nos pronostics UFC archivés sur NextFight.
           </p>
           <p className="mt-3 text-sm text-muted leading-relaxed">
-            {formatTrackRecordContext(publicRecord)}. Ce tableau ne couvre que les événements déjà
-            archivés sur NextFight.
+            {formatTrackRecordContext(publicRecord)}.
           </p>
 
           {hasData ? (
             <>
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <StatCard
-                  value={`${trackRecord.summary.accuracy}%`}
+                  value={`${publicRecord.accuracy}%`}
                   label="Précision globale"
-                  detail={`${trackRecord.summary.correct} / ${trackRecord.summary.total} combats`}
+                  detail={`${summary.correct} / ${summary.total} combats UFC`}
                 />
                 {strongBucket && strongBucket.total > 0 && (
                   <StatCard
@@ -94,8 +91,8 @@ export function TrackRecordView({ events }: TrackRecordViewProps) {
           ) : (
             <div className="mt-8 rounded-2xl border border-border bg-card/50 p-6">
               <p className="text-sm text-muted">
-                Le bilan s&apos;affichera ici dès qu&apos;un événement sera terminé et ses résultats
-                connus.
+                Le bilan s&apos;affichera ici dès qu&apos;un événement UFC sera terminé et ses résultats
+                archivés sur le site.
               </p>
             </div>
           )}
@@ -105,57 +102,67 @@ export function TrackRecordView({ events }: TrackRecordViewProps) {
       {hasData && (
         <section className="section-padding">
           <div className="container-content max-w-3xl space-y-10">
-            {eventsWithScores.map((event) => (
-              <div key={event.id}>
+            {grouped.map((event) => (
+              <div key={event.eventId}>
                 <div className="flex items-baseline justify-between gap-4 border-b border-border pb-3">
                   <h2 className="font-display text-lg font-semibold tracking-tight">
-                    {event.name}
+                    {event.eventName}
                   </h2>
                   <span className="shrink-0 text-xs tabular-nums text-muted">
-                    {formatEventDate(event.date)}
+                    {formatEventDate(event.eventDate)}
                   </span>
                 </div>
-                <ul className="mt-4 space-y-2">
-                  {scorableFights(event).map((fight) => {
-                    const predicted = fight.predictionSnapshot!.predictedWinnerId
-                    const actual = fight.result!.winnerId
-                    const correct = predicted === actual
-                    const confidence = Math.round(fight.predictionSnapshot!.confidence)
+                <ul className="mt-4 space-y-3">
+                  {event.fights.map((fight) => {
+                    const resultLabel = formatMethod(fight.method, fight.round)
 
                     return (
                       <li
-                        key={fight.id}
-                        className="rounded-xl border border-border bg-card/40 px-4 py-3"
+                        key={fight.fightId}
+                        className="rounded-xl border border-border bg-card/40 px-4 py-4"
                       >
                         <div className="flex items-start gap-3">
                           <span
                             className={cn(
                               'mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border text-xs font-semibold',
-                              correct
+                              fight.correct
                                 ? 'border-gold/40 bg-gold/10 text-gold'
                                 : 'border-red-500/40 bg-red-500/10 text-red-400',
                             )}
-                            aria-label={correct ? 'Pronostic correct' : 'Pronostic raté'}
+                            aria-label={fight.correct ? 'Pronostic correct' : 'Pronostic raté'}
                           >
-                            {correct ? '✓' : '✗'}
+                            {fight.correct ? '✓' : '✗'}
                           </span>
-                          <div className="min-w-0 flex-1">
+                          <div className="min-w-0 flex-1 space-y-2">
                             <p className="text-sm font-medium text-foreground/95">
-                              {matchupLabel(fight)}
+                              {fight.redName} vs {fight.blueName}
                             </p>
-                            <p className="mt-1 text-xs text-muted">
+                            <p className="text-xs text-muted">
                               Pronostic :{' '}
                               <span className="font-medium text-foreground/85">
-                                {nameById(fight, predicted)}
+                                {fight.predictedWinnerName}
                               </span>
                               {' · '}
                               Vainqueur :{' '}
                               <span className="font-medium text-foreground/85">
-                                {nameById(fight, actual)}
+                                {fight.actualWinnerName}
                               </span>
                               {' · '}
-                              Confiance {confidence}%
+                              Confiance {Math.round(fight.confidence)}%
+                              {resultLabel ? ` · ${resultLabel}` : ''}
                             </p>
+                            <div className="space-y-1.5 text-xs leading-relaxed">
+                              <p className="text-muted">
+                                <span className="font-medium text-foreground/80">Pourquoi ce pick · </span>
+                                {fight.predictionWhy}
+                              </p>
+                              <p className="text-muted">
+                                <span className="font-medium text-foreground/80">
+                                  {fight.correct ? 'Pourquoi confirmé · ' : 'Pourquoi raté · '}
+                                </span>
+                                {fight.resultWhy}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </li>

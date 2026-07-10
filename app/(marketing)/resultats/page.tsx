@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { getCompletedEventsByOrg } from '@/data/events-helpers'
 import { TrackRecordView } from '@/components/track-record/TrackRecordView'
 
 export const metadata: Metadata = {
@@ -9,6 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function ResultatsPage() {
-  const events = getCompletedEventsByOrg('ufc')
-  return <TrackRecordView events={events} />
+  return <TrackRecordView />
 }

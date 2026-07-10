@@ -43,6 +43,30 @@ export const PREDICTION_OVERRIDES: Record<string, PredictionOverride> = {
     reason:
       "Notre lecture : O'Malley garde l'avantage en boxe, reach et gestion de distance malgré la forme récente de Zahabi.",
   },
+  'ufc-329-f1': {
+    winnerCorner: 'red',
+    winnerProbability: 54,
+    reason:
+      'Notre lecture : McGregor garde le power, la précision en contre et l\'avantage psychologique du retour — Holloway a le volume mais Conor peut imposer son rythme et toucher en début de combat.',
+  },
+  'ufc-329-f4': {
+    winnerCorner: 'blue',
+    winnerProbability: 52,
+    reason:
+      'Notre lecture : Kavanagh arrive avec le tempo, la confiance et un profil en pleine montée — Royval a l\'expérience mais le Britannique peut imposer son rythme sur 3 rounds.',
+  },
+  'ufc-329-f7': {
+    winnerCorner: 'red',
+    winnerProbability: 56,
+    reason:
+      'Notre lecture : Steveson domine la lutte olympique et le contrôle au sol — Ellison a plus de rounds MMA mais le niveau de wrestling bascule le matchup.',
+  },
+  'ufc-329-f10': {
+    winnerCorner: 'red',
+    winnerProbability: 55,
+    reason:
+      'Notre lecture : Cortez impose sa lutte et son expérience UFC — Cong arrive en forme mais doit contenir les takedowns pour tenir la distance.',
+  },
 }
 
 /** Poids du marché dans le blend final (45 % marché / 55 % modèle). */

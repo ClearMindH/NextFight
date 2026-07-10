@@ -1,22 +1,15 @@
 'use client'
 
-import Link from 'next/link'
-import { Lock } from 'lucide-react'
-import type { Event, Fight } from '@/types'
-import { getFreePreviewFight, sortFightsByCardOrder } from '@/lib/event-helpers'
-import { canAccessFightPrediction, getFightDetailHref } from '@/lib/fight-access'
-import { buildPredictionVerdict, fighterShortName } from '@/lib/prediction-verdict'
-import type { PublicTrackRecord } from '@/lib/public-track-record'
+import { FeaturedEventFightCard } from '@/components/pronostics/ufc/FeaturedEventFightCard'
+import type { Event } from '@/types'
+import type { PublicTrackRecord } from '@/lib/public-track-record-format'
+import { formatTrackRecordContext } from '@/lib/public-track-record-format'
 import { FEATURED_UFC_DATE_LABEL, FEATURED_UFC_EVENT_LABEL } from '@/lib/event-urgency'
 import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 import { useSubscription } from '@/hooks/useSubscription'
 import { FastLink } from '@/components/navigation/FastLink'
-import { FighterMatchupLine } from '@/components/FighterMatchupLine'
-import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
-import { PredictionSummary } from '@/components/pronostics/PredictionSummary'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import { UfcPronosticsConversion } from '@/components/conversion/UfcPronosticsConversion'
-import { formatShortDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
 const ACCENT = '#e8c840'
@@ -35,40 +28,6 @@ type UfcPronosticsPageContentProps = {
   trackRecord: PublicTrackRecord
 }
 
-function fightRoleLabel(fight: Fight): string {
-  if (fight.isMainEvent) return 'Main event'
-  if (fight.order === 2) return 'Co-main'
-  return `Combat ${fight.order}`
-}
-
-function ProbabilityBars({
-  fight,
-  className,
-}: {
-  fight: Fight
-  className?: string
-}) {
-  const redProb = fight.model.redWinProbability
-  const blueProb = 100 - redProb
-
-  return (
-    <div className={className}>
-      <div className="flex h-2.5 overflow-hidden rounded-full bg-white/[0.08]">
-        <div className="bg-red-500 transition-all" style={{ width: `${redProb}%` }} />
-        <div className="bg-blue-500 transition-all" style={{ width: `${blueProb}%` }} />
-      </div>
-      <div className="mt-2 flex justify-between text-sm font-semibold tabular-nums">
-        <span className="text-red-400">
-          {fighterShortName(fight.redCorner.name)} {redProb}%
-        </span>
-        <span className="text-blue-400">
-          {fighterShortName(fight.blueCorner.name)} {blueProb}%
-        </span>
-      </div>
-    </div>
-  )
-}
-
 function UfcHero({
   lockedCount,
   eventName,
@@ -78,7 +37,6 @@ function UfcHero({
   eventName: string
   trackRecord: PublicTrackRecord
 }) {
-
   return (
     <section className="border-b border-white/[0.06]" style={{ backgroundColor: BG }}>
       <div className="container-content px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
@@ -99,7 +57,10 @@ function UfcHero({
 
           <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
             {[
-              { value: `${trackRecord.legacyAccuracy}%`, label: 'Historique UFC' },
+              {
+                value: trackRecord.total > 0 ? `${trackRecord.accuracy}%` : '—',
+                label: 'Précision UFC',
+              },
               { value: String(lockedCount), label: 'Analyses carte' },
               { value: PREMIUM_MONTHLY_PRICE_LABEL, label: 'Par mois' },
             ].map((stat) => (
@@ -139,15 +100,32 @@ function UfcHero({
 }
 
 function UfcResultsSection({ trackRecord }: { trackRecord: PublicTrackRecord }) {
-  const cards = [
-    { value: `${trackRecord.legacyAccuracy}%`, label: 'Taux historique', sub: 'Avant NextFight' },
-    { value: String(trackRecord.total), label: 'Pronostics archivés', sub: trackRecord.periodLabel },
-    {
-      value: `${trackRecord.correct}/${trackRecord.total}`,
-      label: 'Vérifiables sur le site',
-      sub: `${trackRecord.accuracy}% de précision`,
-    },
-  ]
+  const cards =
+    trackRecord.total > 0
+      ? [
+          {
+            value: `${trackRecord.accuracy}%`,
+            label: 'Précision UFC',
+            sub: `${trackRecord.correct}/${trackRecord.total} pronostics`,
+          },
+          {
+            value: String(trackRecord.total),
+            label: 'Pronostics archivés',
+            sub: trackRecord.periodLabel,
+          },
+          {
+            value: `${trackRecord.correct}/${trackRecord.total}`,
+            label: 'Corrects',
+            sub: 'Figés avant la carte',
+          },
+        ]
+      : [
+          {
+            value: '—',
+            label: 'Précision UFC',
+            sub: 'Premiers résultats bientôt',
+          },
+        ]
 
   return (
     <section className="border-b border-white/[0.06] bg-[#080808]">
@@ -159,6 +137,7 @@ function UfcResultsSection({ trackRecord }: { trackRecord: PublicTrackRecord }) 
           <h2 className="mt-2 font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">
             Bilan transparent, pas de promesses vides
           </h2>
+          <p className="mt-2 text-sm text-[#8a8278]">{formatTrackRecordContext(trackRecord)}</p>
           <div className="mt-6 grid gap-3 sm:grid-cols-3 sm:gap-4">
             {cards.map((card) => (
               <div
@@ -242,168 +221,6 @@ function UfcFinalOffer({ lockedCount }: { lockedCount: number }) {
   )
 }
 
-function LockedFightRow({
-  fight,
-  event,
-  isPremium,
-}: {
-  fight: Fight
-  event: Event
-  isPremium: boolean
-}) {
-  const hasAccess = canAccessFightPrediction(fight, event, isPremium)
-  const href = getFightDetailHref(fight, event, isPremium)
-
-  return (
-    <li className="rounded-xl border border-white/[0.08] bg-[#0c0c0c] px-4 py-4 sm:px-5">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#8a8278]">
-          {fightRoleLabel(fight)}
-        </span>
-        <span className="text-[10px] text-[#5c5c5c]">·</span>
-        <span className="text-xs text-[#6b6b6b]">{fight.weightClass}</span>
-      </div>
-      <div className="mt-3">
-        <FighterMatchupLine red={fight.redCorner} blue={fight.blueCorner} variant="elegant" />
-      </div>
-
-      {hasAccess ? (
-        <div className="mt-4 space-y-3">
-          <ProbabilityBars fight={fight} />
-          <FastLink href={href} className="text-sm font-medium" style={{ color: ACCENT }}>
-            Voir le pronostic complet →
-          </FastLink>
-        </div>
-      ) : (
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="flex items-center gap-2 text-xs text-[#8a8278]">
-            <Lock className="h-3.5 w-3.5" aria-hidden />
-            Analyse Premium · probabilités et facteurs verrouillés
-          </p>
-          <Link
-            href="/pricing"
-            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[#e8c840]/40 px-4 py-2 text-xs font-semibold transition-colors hover:bg-[#e8c840]/10"
-            style={{ color: ACCENT }}
-          >
-            Débloquer
-          </Link>
-        </div>
-      )}
-    </li>
-  )
-}
-
-function UfcFightCardSection({
-  event,
-  isPremium,
-}: {
-  event: Event
-  isPremium: boolean
-}) {
-  const freeFight = getFreePreviewFight(event)
-  if (!freeFight) return null
-
-  const lockedFights = sortFightsByCardOrder(event).filter((f) => f.id !== freeFight.id)
-  const showFreeAsMain = !isPremium || canAccessFightPrediction(freeFight, event, isPremium)
-  const verdict = buildPredictionVerdict(freeFight)
-
-  return (
-    <section id="carte-combats" className="border-b border-white/[0.06] bg-[#050505]">
-      <div className="container-content section-padding">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
-            Carte combats
-          </p>
-          <h2 className="mt-2 font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">
-            {event.name}
-          </h2>
-          <p className="mt-1 text-sm text-[#8a8278]">
-            {formatShortDate(event.date)} · {event.city}
-          </p>
-
-          {showFreeAsMain && (
-            <article
-              id="combat-gratuit"
-              className="scroll-mt-24 mt-6 rounded-2xl border border-[#e8c840]/30 bg-gradient-to-b from-[#12100a] to-[#0a0a0a] p-5 sm:p-6"
-            >
-              <div className="flex flex-wrap items-center gap-2">
-                <span
-                  className="rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
-                  style={{ backgroundColor: `${ACCENT}22`, color: ACCENT }}
-                >
-                  Pronostic gratuit
-                </span>
-                <span className="text-xs text-[#8a8278]">{freeFight.weightClass}</span>
-              </div>
-
-              <h3 className="mt-4 font-display text-lg font-semibold text-white sm:text-xl">
-                {freeFight.redCorner.name}
-                <span className="mx-2 font-normal text-[#6f6a62]">vs</span>
-                {freeFight.blueCorner.name}
-              </h3>
-
-              <div className="mt-4">
-                <FighterMatchupLine
-                  red={freeFight.redCorner}
-                  blue={freeFight.blueCorner}
-                  variant="elegant"
-                />
-              </div>
-
-              <ProbabilityBars fight={freeFight} className="mt-5" />
-
-              <div className="mt-5 rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-center">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-[#8a8278]">
-                  Pronostic
-                </p>
-                <p className="mt-1 text-base font-semibold text-white sm:text-lg">
-                  {verdict.headline}
-                </p>
-                {verdict.probabilityLine && (
-                  <p className="mt-1 text-sm font-semibold tabular-nums" style={{ color: ACCENT }}>
-                    {verdict.probabilityLine}
-                  </p>
-                )}
-              </div>
-
-              <div className="mt-5 space-y-4">
-                <PredictionSummary fight={freeFight} compact />
-                <PredictionKeyFactors fight={freeFight} compact />
-              </div>
-
-              <FastLink
-                href={`/fight/${freeFight.id}`}
-                className="mt-5 inline-flex text-sm font-semibold transition-opacity hover:opacity-80"
-                style={{ color: ACCENT }}
-              >
-                Voir l&apos;analyse complète du co-main →
-              </FastLink>
-            </article>
-          )}
-
-          {lockedFights.length > 0 && (
-            <div className="mt-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-[#8a8278]">
-                {isPremium ? 'Reste de la carte' : 'Combats Premium'}
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {lockedFights.map((fight) => (
-                  <LockedFightRow
-                    key={fight.id}
-                    fight={fight}
-                    event={event}
-                    isPremium={isPremium}
-                  />
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export function UfcPronosticsPageContent({ event, trackRecord }: UfcPronosticsPageContentProps) {
   const { isPremium, loading: subLoading } = useSubscription()
   const confirmedPremium = !subLoading && isPremium
@@ -412,7 +229,7 @@ export function UfcPronosticsPageContent({ event, trackRecord }: UfcPronosticsPa
   return (
     <div className="relative z-10 flex flex-col">
       <UfcHero lockedCount={lockedCount} eventName={event.name} trackRecord={trackRecord} />
-      <UfcFightCardSection event={event} isPremium={confirmedPremium} />
+      <FeaturedEventFightCard event={event} />
       <UfcResultsSection trackRecord={trackRecord} />
       {!confirmedPremium && <UfcFinalOffer lockedCount={lockedCount} />}
       <div

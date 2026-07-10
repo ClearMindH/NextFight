@@ -269,7 +269,7 @@ export function PricingPageContent() {
                 href={`/fight/${FEATURED_UFC_FREE_FIGHT_ID}`}
                 className="text-xs text-[#8a8278] transition-colors hover:text-[#c9b896]"
               >
-                Voir le co-main gratuit Saint Denis vs Pimblett
+                Voir le co-main gratuit BSD vs Pimblett
               </Link>
             </div>
           </div>

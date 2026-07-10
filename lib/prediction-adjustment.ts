@@ -41,6 +41,34 @@ const BREAKDOWN_DIM_LABELS: Record<(typeof BREAKDOWN_DIMS)[number], string> = {
  * Utilisée pour les notes d'ajustement et le facteur « Avantage matchup ».
  */
 export const MATCHUP_READ_OVERRIDES: Record<string, string> = {
+  'ufc-329-f1':
+    'McGregor garde le power, la précision en contre et l\'avantage psychologique du retour — Holloway a le volume mais Conor peut imposer son rythme et toucher en début de combat.',
+  'ufc-329-f2':
+    'BSD impose pression, chaînage au sol et intensité physique — Pimblett progresse debout mais doit tenir face au grappling et au tempo du Français sur 3 rounds.',
+  'ufc-329-f3':
+    'Bautista monte en puissance avec wrestling et forme récente — Sandhagen reste dangereux en mouvement mais le profil complet de Bautista fait la différence.',
+  'ufc-329-f4':
+    'Kavanagh arrive avec le tempo, la confiance et un profil en pleine montée — Royval a l\'expérience mais le Britannique peut imposer son rythme sur 3 rounds.',
+  'ufc-329-f5':
+    'King Green combine expérience, cardio et lecture de combat — McKinney est explosif mais Green sait absorber le tempo et imposer son rythme sur 5 rounds.',
+  'ufc-329-f6':
+    'Whittaker garde l\'avantage en striking technique, gestion de distance et fight IQ — Krylov reste dangereux mais Robert est plus fiable sur la durée.',
+  'ufc-329-f7':
+    'Steveson domine la lutte olympique et le contrôle au sol — Ellison a plus de rounds MMA mais le niveau de wrestling bascule le matchup.',
+  'ufc-329-f8':
+    'Garbrandt conserve le power et la vitesse en boxe — Yanez est solide mais doit éviter les échanges où le KO de Cody reste le facteur X.',
+  'ufc-329-f9':
+    'Dutro part avec un léger edge sur la forme récente et le profil physique — Kamaka reste dangereux mais le momentum du champion intérimaire fait pencher la balance.',
+  'ufc-329-f10':
+    'Cortez impose sa lutte et son expérience UFC — Cong arrive en forme mais doit contenir les takedowns pour tenir la distance.',
+  'ufc-329-f11':
+    'Almeida combine striking puissant et finitions — Pinas part avec de la forme mais le profil de finisseur brésilien bascule le matchup.',
+  'ufc-329-f12':
+    'Basharat impose contrôle, grappling et constance — Garza reste dangereux debout mais le tempo et le niveau au sol du Britannique font la différence.',
+  'ufc-329-f13':
+    'Gandra domine sur le grappling et le contrôle des transitions — Reese part avec de la forme mais le profil au sol bascule nettement le combat.',
+  'ufc-329-f14':
+    'Costa arrive avec une forme récente excellente, du power et un taux de finish élevé — Durden doit imposer son wrestling pour renverser le favori.',
   'ufc-freedom-250-f1':
     'Topuria impose pression, précision et constance — Gaethje a le power mais devra tenir sur la distance face à un champion invaincu qui monte en volume.',
   'ufc-freedom-250-f2':

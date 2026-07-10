@@ -48,7 +48,7 @@ export function UfcPronosticsHeroBand({ compact = false }: UfcPronosticsHeroBand
             {record.total > 0 ? (
               <>
                 <span className="font-semibold tabular-nums text-[#f5f2eb]">
-                  {record.legacyAccuracy}% historique
+                  {record.accuracy}% UFC
                 </span>
                 {' '}
                 — {formatTrackRecordContext(record)} —{' '}

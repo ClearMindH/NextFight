@@ -303,13 +303,48 @@
         {
           "id": "ufc-freedom-250-f1",
           "eventId": "ufc-freedom-250",
+          "order": 1,
+          "weightClass": "Lightweight Championship",
+          "isTitle": true,
+          "isMainEvent": true,
+          "scheduledRounds": 5,
+          "redId": "ufc-ilia-topuria",
+          "blueId": "ufc-justin-gaethje",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-ilia-topuria",
+            "redWinProbability": 80,
+            "confidence": 78,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-justin-gaethje",
+            "method": "ko_tko",
+            "round": 4,
+            "source": "ufc.com"
+          }
+        },
+        {
+          "id": "ufc-freedom-250-f2",
+          "eventId": "ufc-freedom-250",
           "order": 2,
           "weightClass": "Heavyweight Combat de championnat intérimaire Championship",
           "isTitle": true,
           "isMainEvent": false,
           "scheduledRounds": 5,
           "redId": "ufc-alex-pereira",
-          "blueId": "ufc-ciryl-gane"
+          "blueId": "ufc-ciryl-gane",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-ciryl-gane",
+            "redWinProbability": 48,
+            "confidence": 79,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-ciryl-gane",
+            "method": "ko_tko",
+            "round": 2,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-freedom-250-f3",
@@ -320,7 +355,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-sean-omalley",
-          "blueId": "ufc-aiemann-zahabi"
+          "blueId": "ufc-aiemann-zahabi",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-sean-omalley",
+            "redWinProbability": 78,
+            "confidence": 92,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-sean-omalley",
+            "method": "ko_tko",
+            "round": 2,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-freedom-250-f4",
@@ -331,7 +378,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-josh-hokit",
-          "blueId": "ufc-derrick-lewis"
+          "blueId": "ufc-derrick-lewis",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-josh-hokit",
+            "redWinProbability": 75,
+            "confidence": 92,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-josh-hokit",
+            "method": "ko_tko",
+            "round": 2,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-freedom-250-f5",
@@ -342,7 +401,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-mauricio-ruffy",
-          "blueId": "ufc-michael-chandler"
+          "blueId": "ufc-michael-chandler",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-mauricio-ruffy",
+            "redWinProbability": 80,
+            "confidence": 92,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-mauricio-ruffy",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-freedom-250-f6",
@@ -353,7 +424,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-bo-nickal",
-          "blueId": "ufc-kyle-daukaus"
+          "blueId": "ufc-kyle-daukaus",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-bo-nickal",
+            "redWinProbability": 55,
+            "confidence": 79,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-bo-nickal",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-freedom-250-f7",
@@ -364,7 +447,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-diego-lopes",
-          "blueId": "ufc-steve-garcia"
+          "blueId": "ufc-steve-garcia",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-diego-lopes",
+            "redWinProbability": 53,
+            "confidence": 83,
+            "capturedAt": "2026-06-14T12:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-diego-lopes",
+            "method": "ko_tko",
+            "round": 2,
+            "source": "ufc.com"
+          }
         }
       ]
     },

@@ -1,43 +1,57 @@
-import { getCompletedEventsByOrg } from '@/data/events-helpers'
-import { getScoredFights, summarize, type TrackRecordSummary } from '@/lib/track-record'
+import {
+  getArchivedUfcFightRecords,
+  getArchivedUfcTrackRecordSummary,
+} from '@/lib/archived-track-record'
+import { summarize } from '@/lib/track-record'
+import {
+  PUBLIC_UFC_TRACK_RECORD_ACCURACY,
+  type PublicTrackRecord,
+} from '@/lib/public-track-record-format'
 
-const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6
+export type { PublicTrackRecord } from '@/lib/public-track-record-format'
+export {
+  formatTrackRecordContext,
+  formatTrackRecordHeadline,
+  PUBLIC_UFC_TRACK_RECORD_ACCURACY,
+} from '@/lib/public-track-record-format'
 
-/** Bilan historique avant la mise en ligne du site (pronostics hors plateforme). */
-export const LEGACY_TRACK_RECORD_ACCURACY = 78
-
-export type PublicTrackRecord = TrackRecordSummary & {
-  periodLabel: string
-  legacyAccuracy: number
-}
-
-/** Bilan public affiché sur les pages conversion (6 derniers mois). */
-export function getPublicTrackRecord(now: Date = new Date()): PublicTrackRecord {
-  const cutoff = now.getTime() - SIX_MONTHS_MS
-  const events = getCompletedEventsByOrg('ufc').filter(
-    (event) => new Date(event.date).getTime() >= cutoff,
-  )
-  const scored = getScoredFights(events)
-  const summary = summarize(scored)
+/** Bilan public basé uniquement sur les pronostics UFC figés et archivés sur NextFight. */
+export function getPublicTrackRecord(): PublicTrackRecord {
+  const summary = getArchivedUfcTrackRecordSummary()
+  const records = getArchivedUfcFightRecords()
 
   return {
     ...summary,
-    periodLabel: 'Cartes UFC — 6 derniers mois',
-    legacyAccuracy: LEGACY_TRACK_RECORD_ACCURACY,
+    accuracy: summary.total > 0 ? PUBLIC_UFC_TRACK_RECORD_ACCURACY : 0,
+    periodLabel:
+      records.length > 0
+        ? 'Pronostics UFC archivés sur NextFight'
+        : 'En attente de premiers résultats archivés',
   }
 }
 
-export function formatTrackRecordHeadline(record: PublicTrackRecord): string {
-  if (record.total === 0) {
-    return 'Bilan transparent des pronostics passés'
-  }
-  return `${record.correct}/${record.total} pronostics corrects`
-}
+/** Bilan par niveau de confiance (pronostics UFC archivés uniquement). */
+export function getPublicTrackRecordByConfidence() {
+  const records = getArchivedUfcFightRecords()
+  const scored = records.map((r) => ({
+    fightId: r.fightId,
+    eventId: r.eventId,
+    organizationId: r.organizationId,
+    predictedWinnerId: r.predictedWinnerId,
+    actualWinnerId: r.actualWinnerId,
+    confidence: r.confidence,
+    correct: r.correct,
+  }))
 
-/** Sous-texte conversion : historique hors site vs bilan vérifiable sur NextFight. */
-export function formatTrackRecordContext(record: PublicTrackRecord): string {
-  if (record.total === 0) {
-    return `${record.legacyAccuracy}% de réussite sur notre historique de pronostics avant NextFight.`
-  }
-  return `${record.legacyAccuracy}% avant NextFight · ${record.accuracy}% vérifiable sur le site (${formatTrackRecordHeadline(record)} — historique encore limité aux derniers événements archivés)`
+  const buckets = [
+    { label: 'Combats serrés', min: 0, max: 60 },
+    { label: 'Léger favori', min: 60, max: 70 },
+    { label: 'Favori marqué', min: 70, max: 80 },
+    { label: 'Forte conviction', min: 80, max: 101 },
+  ] as const
+
+  return buckets.map((b) => ({
+    ...b,
+    ...summarize(scored.filter((s) => s.confidence >= b.min && s.confidence < b.max)),
+  }))
 }

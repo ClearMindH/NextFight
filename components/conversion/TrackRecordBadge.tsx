@@ -30,7 +30,7 @@ export function TrackRecordBadge({ className, compact = false }: TrackRecordBadg
     >
       <Target className="h-4 w-4 shrink-0 text-[#c9b896]" aria-hidden />
       <span className="font-semibold tabular-nums text-[#f5f2eb] group-hover:text-[#fff8ef]">
-        {record.legacyAccuracy}% historique
+        {record.accuracy}% UFC
       </span>
       {compact ? (
         <span className="text-[#c9b896]">· détail →</span>

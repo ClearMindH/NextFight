@@ -3,21 +3,24 @@ import {
   formatTrackRecordContext,
   formatTrackRecordHeadline,
   getPublicTrackRecord,
-  LEGACY_TRACK_RECORD_ACCURACY,
+  PUBLIC_UFC_TRACK_RECORD_ACCURACY,
 } from '@/lib/public-track-record'
+import { getArchivedUfcTrackRecordSummary } from '@/lib/archived-track-record'
 
 describe('public-track-record', () => {
-  it('expose un bilan sur 6 mois', () => {
+  it('expose un bilan basé uniquement sur les pronostics UFC archivés', () => {
     const record = getPublicTrackRecord()
-    expect(record.periodLabel).toBe('Cartes UFC — 6 derniers mois')
-    expect(record.legacyAccuracy).toBe(LEGACY_TRACK_RECORD_ACCURACY)
+    const archived = getArchivedUfcTrackRecordSummary()
+
+    expect(record.total).toBe(archived.total)
+    expect(record.correct).toBe(archived.correct)
+
     if (record.total > 0) {
+      expect(record.accuracy).toBe(PUBLIC_UFC_TRACK_RECORD_ACCURACY)
       expect(formatTrackRecordHeadline(record)).toMatch(/\d+\/\d+ pronostics corrects/)
-      expect(record.accuracy).toBeGreaterThanOrEqual(0)
-      expect(record.accuracy).toBeLessThanOrEqual(100)
-      expect(formatTrackRecordContext(record)).toMatch(/78% avant NextFight/)
-      expect(formatTrackRecordContext(record)).toMatch(/vérifiable sur le site/)
-      expect(formatTrackRecordContext(record)).toMatch(/historique encore limité/)
+      expect(formatTrackRecordContext(record)).toMatch(/70% de précision/)
+      expect(formatTrackRecordContext(record)).not.toMatch(/78%/)
+      expect(formatTrackRecordContext(record)).not.toMatch(/avant NextFight/)
     }
   })
 })
