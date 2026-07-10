@@ -44,6 +44,15 @@ function FighterSide({
           aria-hidden
         />
         <span className="min-w-0">
+          <span
+            className={cn(
+              'mb-1 block text-lg leading-none sm:text-xl',
+              align === 'right' && 'text-right',
+            )}
+            aria-hidden
+          >
+            {flag}
+          </span>
           <span className="block font-display text-sm font-semibold tracking-tight text-foreground sm:text-base">
             {fighter.name}
           </span>
