@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import type Stripe from 'stripe'
 import { getCustomerEmailFromCookie } from '@/lib/auth-cookie'
 import { getStripe, getSiteUrl, isStripeConfigured } from '@/lib/stripe'
 import { getStripePriceId, isPaidPlan } from '@/lib/stripe-plans'
@@ -54,11 +55,17 @@ export async function POST(request: Request) {
       customer_email: customerEmail,
       allow_promotion_codes: true,
       billing_address_collection: 'auto',
+      // Écran carte classique — pas de paiement par défaut via Stripe Link.
+      wallet_options: {
+        link: {
+          display: 'never',
+        },
+      },
       metadata: { planId: body.planId },
       subscription_data: {
         metadata: { planId: body.planId },
       },
-    })
+    } as Stripe.Checkout.SessionCreateParams)
 
     if (!session.url) {
       return NextResponse.json({ error: 'Checkout session failed' }, { status: 500 })
