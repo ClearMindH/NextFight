@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { getCustomerEmailFromCookie } from '@/lib/auth-cookie'
 import { getStripe, getSiteUrl, isStripeConfigured } from '@/lib/stripe'
 import { getStripePriceId, isPaidPlan } from '@/lib/stripe-plans'
 import type { PlanId } from '@/types/subscription'
@@ -16,7 +17,14 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
       planId: PlanId
-      email?: string
+    }
+
+    const customerEmail = (await getCustomerEmailFromCookie())?.trim()
+    if (!customerEmail) {
+      return NextResponse.json(
+        { error: 'Connectez-vous pour passer Premium.', code: 'AUTH_REQUIRED' },
+        { status: 401 },
+      )
     }
 
     if (!body.planId || !isPaidPlan(body.planId)) {
@@ -40,11 +48,10 @@ export async function POST(request: Request) {
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       payment_method_types: ['card'],
-      customer_creation: 'always',
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${siteUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/checkout/cancel`,
-      customer_email: body.email?.trim() || undefined,
+      customer_email: customerEmail,
       allow_promotion_codes: true,
       billing_address_collection: 'auto',
       metadata: { planId: body.planId },
@@ -58,7 +65,9 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ url: session.url, sessionId: session.id })
-  } catch {
-    return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Checkout failed'
+    console.error('[stripe checkout]', message)
+    return NextResponse.json({ error: message }, { status: 400 })
   }
 }

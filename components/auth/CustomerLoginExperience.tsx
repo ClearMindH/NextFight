@@ -8,6 +8,7 @@ type AuthMode = 'login' | 'register'
 interface CustomerLoginExperienceProps {
   mode: AuthMode
   magicLinkAuth?: boolean
+  redirectNext?: string | null
 }
 
 const COPY: Record<
@@ -26,12 +27,12 @@ const COPY: Record<
     eyebrow: 'Espace membre',
     title: 'Connexion',
     subtitle:
-      'Entrez l’email utilisé lors du paiement (Apple Pay, Link ou carte) : nous vous envoyons un lien sécurisé pour débloquer votre Premium.',
+      'Entrez votre email : nous vous envoyons un lien sécurisé. Connectez-vous d’abord, puis passez Premium depuis les tarifs.',
     submit: 'Recevoir le lien de connexion',
     switchHref: '/register',
     switchLabel: 'Créer un accès',
     aside:
-      'Modèle statistique par affrontement : probabilités de victoire et comparaison des profils.',
+      'Modèle statistique par affrontement : probabilités de victoire et comparaison des profils UFC.',
   },
   register: {
     eyebrow: 'Accès local',
@@ -42,13 +43,14 @@ const COPY: Record<
     switchHref: '/login',
     switchLabel: 'Déjà inscrit',
     aside:
-      'En production, l’accès membre est activé automatiquement après paiement Stripe.',
+      'En production, créez votre accès par email puis souscrivez au Premium depuis la page tarifs.',
   },
 }
 
 export function CustomerLoginExperience({
   mode,
   magicLinkAuth = false,
+  redirectNext = null,
 }: CustomerLoginExperienceProps) {
   const router = useRouter()
   const useMagicLink = magicLinkAuth && mode === 'login'
@@ -76,8 +78,9 @@ export function CustomerLoginExperience({
     const email = String(form.get('email') ?? '')
     const password = String(form.get('password') ?? '')
 
-    const body: { email: string; password?: string } = { email }
+    const body: { email: string; password?: string; next?: string } = { email }
     if (!useMagicLink && password) body.password = password
+    if (redirectNext) body.next = redirectNext
 
     const res = await fetch('/api/auth/login', {
       method: 'POST',
@@ -146,7 +149,7 @@ export function CustomerLoginExperience({
           <p className="mt-5 text-sm text-[#6b6b6b] leading-relaxed">{copy.aside}</p>
 
           <ul className="mt-8 space-y-3 border-t border-[#1c1c1c] pt-8">
-            {['UFC', 'PFL', 'KSW', 'ARES', 'Hexagone MMA'].map((org) => (
+            {['UFC'].map((org) => (
               <li
                 key={org}
                 className="flex items-center gap-3 text-xs uppercase tracking-[0.14em] text-[#5c5c5c]"
@@ -231,13 +234,17 @@ export function CustomerLoginExperience({
 
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm">
               <Link
-                href={copy.switchHref}
+                href={
+                  redirectNext
+                    ? `${copy.switchHref}?next=${encodeURIComponent(redirectNext)}`
+                    : copy.switchHref
+                }
                 className="text-[#8a8278] hover:text-[#c9b896] transition-colors"
               >
                 {copy.switchLabel}
               </Link>
               <Link
-                href="/pricing"
+                href={redirectNext ?? '/pricing'}
                 className="text-[#5c5c5c] hover:text-[#f5f2eb] text-xs uppercase tracking-[0.12em] transition-colors"
               >
                 Offres Premium

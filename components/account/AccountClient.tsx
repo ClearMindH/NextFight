@@ -472,7 +472,6 @@ function ScreenBilling({
             </div>
             <StripeCheckoutButton
               planId={p.id}
-              email={email ?? undefined}
               highlighted={p.highlighted}
               className={cn(
                 'mt-4 rounded-xl',

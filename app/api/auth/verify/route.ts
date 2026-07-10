@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { verifyMagicLoginToken } from '@/lib/auth-magic-link'
+import { sanitizeAuthRedirectPath, verifyMagicLoginToken } from '@/lib/auth-magic-link'
 import { applyCustomerEmailCookie } from '@/lib/auth-cookie'
 import { getSiteUrl } from '@/lib/site'
 import { getStripe, isStripeConfigured } from '@/lib/stripe'
@@ -28,6 +28,7 @@ export async function GET(request: Request) {
     }
   }
 
-  const response = NextResponse.redirect(`${getSiteUrl()}/account`)
+  const next = sanitizeAuthRedirectPath(searchParams.get('next')) ?? '/account'
+  const response = NextResponse.redirect(`${getSiteUrl()}${next}`)
   return applyCustomerEmailCookie(response, email)
 }

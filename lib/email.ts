@@ -34,7 +34,7 @@ export async function sendWelcomeSubscriptionEmail(
       html: `
         <div style="font-family:system-ui,sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a">
           <h1 style="font-size:1.5rem">Ton abonnement est confirmé 🥊</h1>
-          <p>Tu as accès à tous les pronostics UFC, PFL, KSW, ARES et Hexagone MMA.</p>
+          <p>Tu as accès à tous les pronostics UFC du mois en cours.</p>
           <p>Plan souscrit : <strong>${planLabel}</strong></p>
           <p style="font-size:14px;color:#444">
             Aucun mot de passe : utilise le lien ci-dessous pour te connecter sur mobile ou un autre appareil
@@ -98,13 +98,14 @@ export async function sendContactEmail(input: {
 
 export async function sendMagicLoginEmail(
   email: string,
+  next?: string | null,
 ): Promise<{ sent: boolean; error?: string }> {
   const resend = getResend()
   if (!resend) {
     return { sent: false, error: 'RESEND_API_KEY not configured' }
   }
 
-  const loginUrl = buildMagicLoginUrl(email)
+  const loginUrl = buildMagicLoginUrl(email, next)
   if (!loginUrl) {
     return { sent: false, error: 'MAGIC_LINK_SECRET not configured' }
   }

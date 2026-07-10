@@ -46,9 +46,18 @@ export function verifyMagicLoginToken(token: string): string | null {
   }
 }
 
-export function buildMagicLoginUrl(email: string): string | null {
+/** Chemin interne sûr après connexion (ex. /pricing). */
+export function sanitizeAuthRedirectPath(path: string | null | undefined): string | null {
+  const raw = path?.trim()
+  if (!raw?.startsWith('/') || raw.startsWith('//')) return null
+  return raw
+}
+
+export function buildMagicLoginUrl(email: string, next?: string | null): string | null {
   const token = createMagicLoginToken(email)
   if (!token) return null
   const params = new URLSearchParams({ token })
+  const safeNext = sanitizeAuthRedirectPath(next)
+  if (safeNext) params.set('next', safeNext)
   return `${getSiteUrl()}/api/auth/verify?${params.toString()}`
 }

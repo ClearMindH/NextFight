@@ -26,8 +26,8 @@ const FAQ = [
     a: 'Oui : co-main gratuit sur chaque carte UFC. Premium débloque tous les combats du mois.',
   },
   {
-    q: 'Paiement sécurisé ?',
-    a: 'Checkout Stripe. Nous ne stockons pas vos coordonnées bancaires.',
+    q: 'Faut-il un compte avant de payer ?',
+    a: 'Oui : connectez-vous avec votre email (lien magique), puis passez Premium. Votre abonnement reste lié à cet email.',
   },
 ]
 

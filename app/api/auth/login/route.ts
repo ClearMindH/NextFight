@@ -9,9 +9,10 @@ import { syncSubscriptionsForEmail } from '@/lib/stripe-sync'
 export const runtime = 'nodejs'
 
 export async function POST(request: Request) {
-  const { email, password } = (await request.json()) as {
+  const { email, password, next } = (await request.json()) as {
     email?: string
     password?: string
+    next?: string
   }
 
   const normalized = email?.toLowerCase().trim()
@@ -39,7 +40,7 @@ export async function POST(request: Request) {
     }
   }
 
-  const mail = await sendMagicLoginEmail(normalized)
+  const mail = await sendMagicLoginEmail(normalized, next)
   if (!mail.sent) {
     return NextResponse.json(
       { error: mail.error ?? 'Envoi du lien impossible. Réessayez plus tard.' },
