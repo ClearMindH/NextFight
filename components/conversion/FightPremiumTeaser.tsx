@@ -1,10 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import { Lock } from 'lucide-react'
 import { useSubscription } from '@/hooks/useSubscription'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import type { Event } from '@/types'
 import { getFreePreviewFight } from '@/lib/event-helpers'
+import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 
 type FightPremiumTeaserProps = {
   event: Event
@@ -18,35 +20,38 @@ export function FightPremiumTeaser({ event, fightId }: FightPremiumTeaserProps) 
   if (isPremium || freeFight?.id !== fightId) return null
 
   const lockedCount = Math.max(event.fights.length - 1, 0)
-  const othersCount = Math.max(lockedCount - 2, 0)
-  const othersLabel =
-    othersCount > 0
-      ? ` et ${othersCount} autre${othersCount > 1 ? 's' : ''} combat${othersCount > 1 ? 's' : ''}`
-      : ''
 
   return (
-    <section className="border-t border-white/[0.08] bg-[#0c0c10]">
+    <section className="border-y border-[#e8c840]/20 bg-gradient-to-b from-[#12100a] to-[#0a0a0a]">
       <div className="container-content section-padding">
-        <div className="mx-auto max-w-2xl rounded-2xl border border-[#c9b896]/25 bg-[#12100c] px-6 py-8 text-center sm:px-10">
-          <h2 className="font-display text-xl font-semibold tracking-tight text-[#f5f2eb]">
-            Débloquez toute la carte
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-[#8a8278]">
-            Comparaisons détaillées, facteurs décisifs et score complet du modèle pour Topuria vs
-            Gaethje, O&apos;Malley vs Zahabi{othersLabel}.
+        <div className="mx-auto max-w-3xl rounded-2xl border-2 border-[#e8c840]/30 bg-[#0f0e0a] px-6 py-10 text-center shadow-[0_0_60px_-12px_rgba(232,200,64,0.15)] sm:px-12">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#e8c840]/15">
+            <Lock className="h-6 w-6 text-[#e8c840]" aria-hidden />
+          </div>
+          <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#e8c840]">
+            Vous avez vu le pronostic gratuit
           </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center sm:items-center">
-            <StripeCheckoutButton planId="premium_monthly" highlighted className="sm:max-w-xs">
-              Débloquer cette analyse
+          <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-[#f5f2eb] sm:text-3xl">
+            Débloquez les {lockedCount} autres combats
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-[#a8a29e] sm:text-base">
+            Main event, probabilités, facteurs clés et analyse complète pour chaque combat de{' '}
+            {event.name} — plus toutes les cartes UFC du mois.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center sm:items-center">
+            <StripeCheckoutButton planId="premium_monthly" highlighted className="w-full sm:max-w-xs">
+              S&apos;abonner · {PREMIUM_MONTHLY_PRICE_LABEL}/mois
             </StripeCheckoutButton>
             <Link
-              href="/ufc-pronostics"
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-[#f5f2eb] transition-colors hover:border-[#c9b896]/40 hover:text-[#c9b896]"
+              href="/pricing"
+              className="rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-[#f5f2eb] transition-colors hover:border-[#e8c840]/40 hover:text-[#e8c840]"
             >
-              Voir tous les combats →
+              Comparer les offres →
             </Link>
           </div>
-          <p className="mt-3 text-[11px] text-[#5c5c5c]">Premium · 4,99€/mois · annulable</p>
+          <p className="mt-4 text-[11px] text-[#5c5c5c]">
+            Paiement sécurisé · annulation libre · accès immédiat
+          </p>
         </div>
       </div>
     </section>

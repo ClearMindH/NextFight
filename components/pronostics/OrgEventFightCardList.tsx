@@ -10,10 +10,11 @@ import {
   getFightDetailHref,
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
+import { LockedFightTeaser } from '@/components/pronostics/LockedFightTeaser'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
-import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
-import { cn } from '@/utils/cn'
+import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
+import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 
 interface OrgEventFightCardListProps {
   org: Organization
@@ -64,11 +65,19 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
           {!isPremium && accessReady && (
             <p className="mt-2 text-sm text-[#8a8278] leading-relaxed">
               {onFightPage
-                ? 'Explorez les autres combats — abonnez-vous Premium pour ouvrir chaque pronostic.'
-                : 'Le co-main gratuit est affiché ci-dessus. Les autres combats ouvrent la page Tarifs.'}
+                ? 'Les pronostics des autres combats sont invisibles sans Premium — abonnez-vous pour tout débloquer.'
+                : 'Le co-main gratuit est affiché ci-dessus. Les autres combats restent verrouillés.'}
             </p>
           )}
         </div>
+
+        {!isPremium && accessReady && onFightPage && cardFights.length > 0 && (
+          <div className="mx-auto mt-6 max-w-4xl">
+            <StripeCheckoutButton planId="premium_monthly" highlighted className="max-w-sm">
+              Débloquer les {cardFights.length} combats · {PREMIUM_MONTHLY_PRICE_LABEL}/mois
+            </StripeCheckoutButton>
+          </div>
+        )}
 
         <ul className="mx-auto mt-6 max-w-4xl divide-y divide-white/[0.06] rounded-2xl border border-white/[0.08] bg-[#0c1219]/40">
           {cardFights.map((fight) => (
@@ -78,7 +87,6 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
               event={event}
               isPremium={isPremium}
               accessReady={accessReady}
-              showInlinePricingTeaser={!isPremium && accessReady && !onFightPage}
             />
           ))}
         </ul>
@@ -92,13 +100,11 @@ function FightCardRow({
   event,
   isPremium,
   accessReady,
-  showInlinePricingTeaser,
 }: {
   fight: Fight
   event: Event
   isPremium: boolean
   accessReady: boolean
-  showInlinePricingTeaser: boolean
 }) {
   const hasAccess = accessReady && canAccessFightPrediction(fight, event, isPremium)
   const href = getFightDetailHref(fight, event, isPremium)
@@ -107,51 +113,38 @@ function FightCardRow({
     <li className="px-5 py-4 transition-colors hover:bg-white/[0.03]">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
         <FightRowContent fight={fight} unlocked={hasAccess} />
-        <FastLink
-          href={href}
-          className={cn(
-            'inline-flex items-center gap-1 text-sm font-medium shrink-0 self-start',
-            hasAccess ? 'text-[#c9b896]' : 'text-[#8a8278] hover:text-[#c9b896]',
-          )}
-        >
-          {hasAccess ? (
-            <>
-              Voir le pronostic
-              <ChevronRight className="h-4 w-4" />
-            </>
-          ) : (
-            <>
-              <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
-              Aperçu verrouillé
-              <ChevronRight className="h-4 w-4 opacity-60" />
-            </>
-          )}
-        </FastLink>
-      </div>
-
-      {!hasAccess && showInlinePricingTeaser && (
-        <div className="mt-3 border-t border-white/[0.06] pt-3">
-          <PredictionKeyFactors
-            fight={fight}
-            compact
-            hideFooter
-            locked
-            className="!mx-0 !max-w-none !rounded-lg !border-white/[0.06] !bg-[#0a0f14]/80 !px-3 !py-3"
-          />
+        {hasAccess ? (
+          <FastLink
+            href={href}
+            className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-[#c9b896]"
+          >
+            Voir le pronostic
+            <ChevronRight className="h-4 w-4" />
+          </FastLink>
+        ) : (
           <Link
             href="/pricing"
-            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-[#c9b896] transition-colors hover:text-[#e8dcc4]"
+            className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-[#8a8278] transition-colors hover:text-[#c9b896]"
           >
-            Voir l&apos;analyse complète → 4,99€/mois
-            <ChevronRight className="h-3.5 w-3.5" />
+            <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
+            Débloquer Premium
+            <ChevronRight className="h-4 w-4 opacity-60" />
           </Link>
-        </div>
-      )}
+        )}
+      </div>
     </li>
   )
 }
 
 function FightRowContent({ fight, unlocked }: { fight: Fight; unlocked: boolean }) {
+  if (!unlocked) {
+    return (
+      <div className="min-w-0 flex-1">
+        <LockedFightTeaser fight={fight} className="border-none bg-transparent px-0 py-0" />
+      </div>
+    )
+  }
+
   return (
     <div className="min-w-0 flex-1">
       <div className="flex flex-wrap items-center gap-2">
@@ -164,11 +157,9 @@ function FightRowContent({ fight, unlocked }: { fight: Fight; unlocked: boolean 
       <div className="mt-3">
         <FighterMatchupLine red={fight.redCorner} blue={fight.blueCorner} />
       </div>
-      {unlocked ? (
-        <div className="mt-2">
-          <PredictionVerdictBanner fight={fight} variant="compact" />
-        </div>
-      ) : null}
+      <div className="mt-2">
+        <PredictionVerdictBanner fight={fight} variant="compact" />
+      </div>
     </div>
   )
 }

@@ -5,11 +5,13 @@ import { FastLink } from '@/components/navigation/FastLink'
 import { ArrowLeft } from 'lucide-react'
 import type { FightPageData } from '@/lib/fights'
 import { OrgFightExperience } from '@/components/pronostics/OrgFightExperience'
+import { UnlockCardPremiumCTA } from '@/components/pronostics/UnlockCardPremiumCTA'
 import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
 import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
 import {
   canAccessFightPrediction,
 } from '@/lib/fight-access'
+import { getFreePreviewFight } from '@/lib/event-helpers'
 import { useSubscription } from '@/hooks/useSubscription'
 import { useUserActivity } from '@/hooks/useUserActivity'
 import { FightPremiumTeaser } from '@/components/conversion/FightPremiumTeaser'
@@ -23,6 +25,8 @@ export function FightPageView({ data }: FightPageViewProps) {
   const { trackPredictionView } = useUserActivity()
   const { fight, event, organization, orgEvents } = data
   const hasFullPrediction = canAccessFightPrediction(fight, event, isPremium)
+  const freeFight = getFreePreviewFight(event)
+  const isFreeFightPage = freeFight?.id === fight.id && !isPremium
 
   useEffect(() => {
     if (hasFullPrediction) trackPredictionView(fight.id, event.id)
@@ -53,6 +57,11 @@ export function FightPageView({ data }: FightPageViewProps) {
         accessLabel={accessLabel}
         enforceAccess
         variant="detail"
+        afterVerdict={
+          isFreeFightPage ? (
+            <UnlockCardPremiumCTA event={event} variant="banner" className="mt-2" />
+          ) : undefined
+        }
       />
 
       <FightPremiumTeaser event={event} fightId={fight.id} />

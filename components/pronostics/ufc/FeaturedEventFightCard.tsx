@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Lock } from 'lucide-react'
 import type { Event, Fight } from '@/types'
 import { getFreePreviewFight, sortFightsByCardOrder } from '@/lib/event-helpers'
 import { canAccessFightPrediction, getFightDetailHref } from '@/lib/fight-access'
@@ -10,8 +9,12 @@ import { MATCHUP_READ_OVERRIDES } from '@/lib/prediction-adjustment'
 import { useSubscription } from '@/hooks/useSubscription'
 import { FastLink } from '@/components/navigation/FastLink'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
+import { LockedFightTeaser } from '@/components/pronostics/LockedFightTeaser'
+import { UnlockCardPremiumCTA } from '@/components/pronostics/UnlockCardPremiumCTA'
 import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { PredictionSummary } from '@/components/pronostics/PredictionSummary'
+import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
+import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 import { formatShortDate } from '@/utils/format'
 import { cn } from '@/utils/cn'
 
@@ -55,12 +58,10 @@ function LockedFightRow({
   fight,
   event,
   isPremium,
-  showRationaleTeaser = false,
 }: {
   fight: Fight
   event: Event
   isPremium: boolean
-  showRationaleTeaser?: boolean
 }) {
   const hasAccess = canAccessFightPrediction(fight, event, isPremium)
   const href = getFightDetailHref(fight, event, isPremium)
@@ -68,48 +69,38 @@ function LockedFightRow({
 
   return (
     <li className="rounded-xl border border-white/[0.08] bg-[#0c0c0c] px-4 py-4 sm:px-5">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#8a8278]">
-          {fightRoleLabel(fight)}
-        </span>
-        <span className="text-[10px] text-[#5c5c5c]">·</span>
-        <span className="text-xs text-[#6b6b6b]">{fight.weightClass}</span>
-      </div>
-      <div className="mt-3">
-        <FighterMatchupLine red={fight.redCorner} blue={fight.blueCorner} variant="elegant" />
-      </div>
-
       {hasAccess ? (
-        <div className="mt-4 space-y-3">
-          <ProbabilityBars fight={fight} />
-          {rationale && (
-            <p className="text-xs leading-relaxed text-[#8a8278]">{rationale}</p>
-          )}
-          <FastLink href={href} className="text-sm font-medium" style={{ color: ACCENT }}>
-            Voir le pronostic complet →
-          </FastLink>
-        </div>
-      ) : (
-        <div className="mt-4 space-y-3">
-          {showRationaleTeaser && rationale && (
-            <p className="text-xs leading-relaxed text-[#6f6a62]">
-              <span className="font-medium text-[#8a8278]">Pourquoi ce combat compte · </span>
-              <span className="blur-[4px] select-none">{rationale.slice(0, 80)}…</span>
-            </p>
-          )}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="flex items-center gap-2 text-xs text-[#8a8278]">
-              <Lock className="h-3.5 w-3.5" aria-hidden />
-              Analyse Premium · probabilités et facteurs verrouillés
-            </p>
-            <Link
-              href="/pricing"
-              className="inline-flex shrink-0 items-center justify-center rounded-full border border-[#e8c840]/40 px-4 py-2 text-xs font-semibold transition-colors hover:bg-[#e8c840]/10"
-              style={{ color: ACCENT }}
-            >
-              Débloquer
-            </Link>
+        <>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#8a8278]">
+              {fightRoleLabel(fight)}
+            </span>
+            <span className="text-[10px] text-[#5c5c5c]">·</span>
+            <span className="text-xs text-[#6b6b6b]">{fight.weightClass}</span>
           </div>
+          <div className="mt-3">
+            <FighterMatchupLine red={fight.redCorner} blue={fight.blueCorner} variant="elegant" />
+          </div>
+          <div className="mt-4 space-y-3">
+            <ProbabilityBars fight={fight} />
+            {rationale && (
+              <p className="text-xs leading-relaxed text-[#8a8278]">{rationale}</p>
+            )}
+            <FastLink href={href} className="text-sm font-medium" style={{ color: ACCENT }}>
+              Voir le pronostic complet →
+            </FastLink>
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <LockedFightTeaser fight={fight} className="flex-1 border-none bg-transparent px-0 py-0" />
+          <Link
+            href="/pricing"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[#e8c840]/50 bg-[#e8c840]/10 px-5 py-2.5 text-xs font-semibold transition-colors hover:bg-[#e8c840]/20"
+            style={{ color: ACCENT }}
+          >
+            S&apos;abonner · {PREMIUM_MONTHLY_PRICE_LABEL}/mois
+          </Link>
         </div>
       )}
     </li>
@@ -119,13 +110,11 @@ function LockedFightRow({
 type FeaturedEventFightCardProps = {
   event: Event
   className?: string
-  showRationaleTeaser?: boolean
 }
 
 export function FeaturedEventFightCard({
   event,
   className,
-  showRationaleTeaser = false,
 }: FeaturedEventFightCardProps) {
   const { isPremium, loading: subLoading } = useSubscription()
   const confirmedPremium = !subLoading && isPremium
@@ -216,14 +205,34 @@ export function FeaturedEventFightCard({
               >
                 Voir l&apos;analyse complète du co-main →
               </FastLink>
+
+              {!confirmedPremium && lockedFights.length > 0 && (
+                <div className="mt-6">
+                  <UnlockCardPremiumCTA event={event} variant="inline" />
+                </div>
+              )}
             </article>
           )}
 
           {lockedFights.length > 0 && (
             <div className="mt-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-[#8a8278]">
-                {confirmedPremium ? 'Reste de la carte' : 'Combats Premium'}
-              </h3>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-[#8a8278]">
+                    {confirmedPremium ? 'Reste de la carte' : `${lockedFights.length} combats Premium verrouillés`}
+                  </h3>
+                  {!confirmedPremium && (
+                    <p className="mt-1.5 text-xs leading-relaxed text-[#6f6a62]">
+                      Aucun pronostic visible sans abonnement — seul le co-main ci-dessus est gratuit.
+                    </p>
+                  )}
+                </div>
+                {!confirmedPremium && (
+                  <StripeCheckoutButton planId="premium_monthly" highlighted className="max-w-[220px] shrink-0">
+                    Débloquer la carte
+                  </StripeCheckoutButton>
+                )}
+              </div>
               <ul className="mt-4 space-y-3">
                 {lockedFights.map((fight) => (
                   <LockedFightRow
@@ -231,7 +240,6 @@ export function FeaturedEventFightCard({
                     fight={fight}
                     event={event}
                     isPremium={confirmedPremium}
-                    showRationaleTeaser={showRationaleTeaser}
                   />
                 ))}
               </ul>

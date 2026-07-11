@@ -200,17 +200,15 @@ export function OrgFightExperience({
             <FightExperienceSkeleton />
           ) : enforceAccess && !hasAccess && !isFreePreview ? (
             <>
-              <PredictionKeyFactors fight={fight} compact locked hideFooter />
               <PremiumGate
                 title="Pronostic Premium"
                 description={
                   lockMessage ??
-                  'Débloquez les probabilités, la comparaison complète et la justification du modèle pour ce combat.'
+                  'Ce combat est réservé aux abonnés Premium. Aucune probabilité ni analyse n’est visible sans abonnement.'
                 }
-                className="min-h-[240px]"
-              >
-                {predictionBlock}
-              </PremiumGate>
+                blur={false}
+                className="min-h-[200px]"
+              />
               <PremiumAnalysisUnlock />
             </>
           ) : (

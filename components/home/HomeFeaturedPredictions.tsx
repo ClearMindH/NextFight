@@ -96,7 +96,7 @@ export function HomeFeaturedPredictions({ event, trackRecord }: HomeFeaturedPred
         </div>
       </section>
 
-      <FeaturedEventFightCard event={event} showRationaleTeaser />
+      <FeaturedEventFightCard event={event} />
 
       <section className="border-b border-white/[0.06] bg-[#080808]">
         <div className="container-content section-padding">
