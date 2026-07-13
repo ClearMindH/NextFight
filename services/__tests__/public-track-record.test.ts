@@ -18,7 +18,7 @@ describe('public-track-record', () => {
     if (record.total > 0) {
       expect(record.accuracy).toBe(PUBLIC_UFC_TRACK_RECORD_ACCURACY)
       expect(formatTrackRecordHeadline(record)).toMatch(/\d+\/\d+ pronostics corrects/)
-      expect(formatTrackRecordContext(record)).toMatch(/70% de précision/)
+      expect(formatTrackRecordContext(record)).toMatch(/64% de précision/)
       expect(formatTrackRecordContext(record)).not.toMatch(/78%/)
       expect(formatTrackRecordContext(record)).not.toMatch(/avant NextFight/)
     }

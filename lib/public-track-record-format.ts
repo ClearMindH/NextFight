@@ -1,7 +1,7 @@
 import type { TrackRecordSummary } from '@/lib/track-record'
 
 /** Taux de réussite affiché sur les pages conversion (pronostics UFC archivés). */
-export const PUBLIC_UFC_TRACK_RECORD_ACCURACY = 70
+export const PUBLIC_UFC_TRACK_RECORD_ACCURACY = 64
 
 export type PublicTrackRecord = TrackRecordSummary & {
   periodLabel: string

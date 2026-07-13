@@ -118,6 +118,90 @@ const RATIONALE_BY_FIGHT: Record<string, FightRationale> = {
     resultWhy:
       'Lopes a trouvé le KO au second round — la menace de finition et le niveau d\'opposition ont payé.',
   },
+  'ufc-329-f1': {
+    predictionWhy:
+      'McGregor garde le power, la précision en contre et l\'avantage psychologique du retour — Holloway a le volume mais Conor peut imposer son rythme et toucher en début de combat.',
+    resultWhy:
+      'Blessure au genou dès le premier round — Holloway remporte le combat sans affrontement prolongé, notre lecture power vs volume n\'a pas pu se jouer.',
+  },
+  'ufc-329-f2': {
+    predictionWhy:
+      'BSD impose pression, chaînage au sol et intensité physique — Pimblett progresse debout mais doit tenir face au grappling et au tempo du Français sur 3 rounds.',
+    resultWhy:
+      'Pimblett a conclu en moins d\'une minute par soumission — le rythme et la finition britannique ont renversé notre favori grappler.',
+  },
+  'ufc-329-f3': {
+    predictionWhy:
+      'Bautista monte en puissance avec wrestling et forme récente — Sandhagen reste dangereux en mouvement mais le profil complet de Bautista fait la différence.',
+    resultWhy:
+      'Bautista a imposé son mix striking-grappling sur trois rounds — la lecture profil complet vs mouvement s\'est confirmée à la décision.',
+  },
+  'ufc-329-f4': {
+    predictionWhy:
+      'Kavanagh arrive avec le tempo, la confiance et un profil en pleine montée — Royval a l\'expérience mais le Britannique peut imposer son rythme sur 3 rounds.',
+    resultWhy:
+      'Royval a trouvé la soumission au troisième round — l\'expérience flyweight et la menace de RNC ont basculé le combat en fin de carte.',
+  },
+  'ufc-329-f5': {
+    predictionWhy:
+      'King Green combine expérience, cardio et lecture de combat — McKinney est explosif mais Green sait absorber le tempo et imposer son rythme sur 5 rounds.',
+    resultWhy:
+      'Green a frappé en fin de premier round pour le TKO — expérience et lecture du tempo confirmées malgré l\'explosivité adverse.',
+  },
+  'ufc-329-f6': {
+    predictionWhy:
+      'Whittaker garde l\'avantage en striking technique, gestion de distance et fight IQ — Krylov reste dangereux mais Robert est plus fiable sur la durée.',
+    resultWhy:
+      'Whittaker a conclu au troisième round — striking technique et constance ont dominé sur la durée.',
+  },
+  'ufc-329-f7': {
+    predictionWhy:
+      'Steveson domine la lutte olympique et le contrôle au sol — Ellison a plus de rounds MMA mais le niveau de wrestling bascule le matchup.',
+    resultWhy:
+      'Steveson a frappé tôt et conclu par KO — le niveau de wrestling et la puissance ont validé le pronostic.',
+  },
+  'ufc-329-f8': {
+    predictionWhy:
+      'Garbrandt conserve le power et la vitesse en boxe — Yanez est solide mais doit éviter les échanges où le KO de Cody reste le facteur X.',
+    resultWhy:
+      'Yanez a touché tôt et conclu par TKO — la vitesse et la précision ont devancé le power de Garbrandt.',
+  },
+  'ufc-329-f9': {
+    predictionWhy:
+      'Dutro part avec un léger edge sur la forme récente et le profil physique — Kamaka reste dangereux mais le momentum du champion intérimaire fait pencher la balance.',
+    resultWhy:
+      'Dutro a enchaîné genoux et strikes pour finir au premier round — momentum et finition confirmés sur la carte.',
+  },
+  'ufc-329-f10': {
+    predictionWhy:
+      'Cortez impose sa lutte et son expérience UFC — Cong arrive en forme mais doit contenir les takedowns pour tenir la distance.',
+    resultWhy:
+      'Cong a tenu la distance et remporté la décision — la lutte de Cortez n\'a pas suffi à basculer les rounds malgré notre favori.',
+  },
+  'ufc-329-f11': {
+    predictionWhy:
+      'Almeida combine striking puissant et finitions — Pinas part avec de la forme mais le profil de finisseur brésilien bascule le matchup.',
+    resultWhy:
+      'Pinas a touché au corps puis conclu par KO — la puissance et le timing ont renversé notre favori striker.',
+  },
+  'ufc-329-f12': {
+    predictionWhy:
+      'Basharat impose contrôle, grappling et constance — Garza reste dangereux debout mais le tempo et le niveau au sol du Britannique font la différence.',
+    resultWhy:
+      'Basharat a contrôlé le rythme sur trois rounds — grappling et constance confirmés à la décision unanime.',
+  },
+  'ufc-329-f13': {
+    predictionWhy:
+      'Gandra domine sur le grappling et le contrôle des transitions — Reese part avec de la forme mais le profil au sol bascule nettement le combat.',
+    resultWhy:
+      'Gandra a frappé tôt et conclu par TKO — domination au sol et power confirmés dès le premier round.',
+  },
+  'ufc-329-f14': {
+    predictionWhy:
+      'Costa arrive avec une forme récente excellente, du power et un taux de finish élevé — Durden doit imposer son wrestling pour renverser le favori.',
+    resultWhy:
+      'Costa a trouvé la soumission au second round — forme récente et menace de finish validées comme anticipé.',
+  },
 }
 
 const DEFAULT_CORRECT: FightRationale = {

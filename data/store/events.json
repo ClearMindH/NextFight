@@ -471,7 +471,7 @@
       "venue": "T-Mobile Arena",
       "city": "Las Vegas",
       "country": "United States",
-      "status": "upcoming",
+      "status": "completed",
       "predictionsStatus": "published",
       "fights": [
         {
@@ -483,7 +483,19 @@
           "isMainEvent": true,
           "scheduledRounds": 5,
           "redId": "ufc-conor-mcgregor",
-          "blueId": "ufc-max-holloway"
+          "blueId": "ufc-max-holloway",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-conor-mcgregor",
+            "redWinProbability": 54,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-max-holloway",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f2",
@@ -494,7 +506,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-benoit-saint-denis",
-          "blueId": "ufc-paddy-pimblett"
+          "blueId": "ufc-paddy-pimblett",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-benoit-saint-denis",
+            "redWinProbability": 51,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-paddy-pimblett",
+            "method": "submission",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f3",
@@ -505,7 +529,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-cory-sandhagen",
-          "blueId": "ufc-mario-bautista"
+          "blueId": "ufc-mario-bautista",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-mario-bautista",
+            "redWinProbability": 47,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-mario-bautista",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f4",
@@ -516,7 +552,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-brandon-royval",
-          "blueId": "ufc-loneer-kavanagh"
+          "blueId": "ufc-loneer-kavanagh",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-loneer-kavanagh",
+            "redWinProbability": 48,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-brandon-royval",
+            "method": "submission",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f5",
@@ -527,7 +575,19 @@
           "isMainEvent": false,
           "scheduledRounds": 5,
           "redId": "ufc-king-green",
-          "blueId": "ufc-terrance-mckinney"
+          "blueId": "ufc-terrance-mckinney",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-king-green",
+            "redWinProbability": 62,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-king-green",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f6",
@@ -538,7 +598,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-nikita-krylov",
-          "blueId": "ufc-robert-whittaker"
+          "blueId": "ufc-robert-whittaker",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-robert-whittaker",
+            "redWinProbability": 44,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-robert-whittaker",
+            "method": "ko_tko",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f7",
@@ -549,7 +621,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-gable-steveson",
-          "blueId": "ufc-elisha-ellison"
+          "blueId": "ufc-elisha-ellison",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-gable-steveson",
+            "redWinProbability": 56,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-gable-steveson",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f8",
@@ -560,7 +644,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-cody-garbrandt",
-          "blueId": "ufc-adrian-yanez"
+          "blueId": "ufc-adrian-yanez",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-cody-garbrandt",
+            "redWinProbability": 57,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-adrian-yanez",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f9",
@@ -571,7 +667,19 @@
           "isMainEvent": false,
           "scheduledRounds": 5,
           "redId": "ufc-riley-dutro",
-          "blueId": "ufc-kai-kamaka-iii"
+          "blueId": "ufc-kai-kamaka-iii",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-riley-dutro",
+            "redWinProbability": 51,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-riley-dutro",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f10",
@@ -582,7 +690,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-tracy-cortez",
-          "blueId": "ufc-wang-cong"
+          "blueId": "ufc-wang-cong",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-tracy-cortez",
+            "redWinProbability": 55,
+            "confidence": 92,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-wang-cong",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f11",
@@ -593,7 +713,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-damian-pinas",
-          "blueId": "ufc-cesar-almeida"
+          "blueId": "ufc-cesar-almeida",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-cesar-almeida",
+            "redWinProbability": 45,
+            "confidence": 54,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-damian-pinas",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f12",
@@ -604,7 +736,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-farid-basharat",
-          "blueId": "ufc-pablo-garza"
+          "blueId": "ufc-pablo-garza",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-farid-basharat",
+            "redWinProbability": 53,
+            "confidence": 60,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-farid-basharat",
+            "method": "decision",
+            "round": 3,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f13",
@@ -615,7 +759,19 @@
           "isMainEvent": false,
           "scheduledRounds": 3,
           "redId": "ufc-ryan-gandra",
-          "blueId": "ufc-zachary-reese"
+          "blueId": "ufc-zachary-reese",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-ryan-gandra",
+            "redWinProbability": 69,
+            "confidence": 60,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-ryan-gandra",
+            "method": "ko_tko",
+            "round": 1,
+            "source": "ufc.com"
+          }
         },
         {
           "id": "ufc-329-f14",
@@ -626,7 +782,19 @@
           "isMainEvent": false,
           "scheduledRounds": 5,
           "redId": "ufc-alessandro-costa",
-          "blueId": "ufc-cody-durden"
+          "blueId": "ufc-cody-durden",
+          "predictionSnapshot": {
+            "predictedWinnerId": "ufc-alessandro-costa",
+            "redWinProbability": 79.4,
+            "confidence": 92,
+            "capturedAt": "2026-07-11T18:00:00.000Z"
+          },
+          "result": {
+            "winnerId": "ufc-alessandro-costa",
+            "method": "submission",
+            "round": 2,
+            "source": "ufc.com"
+          }
         }
       ]
     },
@@ -1164,5 +1332,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-07-10T11:56:06.128Z"
+  "updatedAt": "2026-07-13T10:41:59.433Z"
 }
