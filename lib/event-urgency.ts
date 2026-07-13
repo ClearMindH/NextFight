@@ -1,19 +1,23 @@
 /**
- * Carte UFC mise en avant — UFC 329 (McGregor vs Holloway 2).
- * Source : https://www.ufc.com/event/ufc-329
- * Samedi 11 juillet 2026 · 21h00 EDT = dimanche 12 juillet · 3h00 CEST (Paris).
+ * Carte UFC mise en avant — UFC Fight Night Oklahoma City.
+ * Source : https://www.ufc.com/event/ufc-fight-night-july-18-2026
+ * Samedi 18 juillet 2026 · 20h00 EDT = dimanche 19 juillet · 2h00 CEST (Paris).
  */
-export const FEATURED_UFC_EVENT_ID = 'ufc-329'
-export const FEATURED_UFC_FREE_FIGHT_ID = 'ufc-329-f2'
+export const FEATURED_UFC_EVENT_ID = 'ufc-fight-night-july-18-2026'
+export const FEATURED_UFC_FREE_FIGHT_ID = 'ufc-fight-night-july-18-2026-f2'
 
-export const FEATURED_UFC_EVENT_START_ISO = '2026-07-12T01:00:00.000Z'
+export const FEATURED_UFC_EVENT_START_ISO = '2026-07-19T00:00:00.000Z'
 
 /** Fin de visibilité bannière rouge (fin de soirée événement, heure US). */
-export const FEATURED_UFC_BANNER_END_ISO = '2026-07-12T10:00:00.000Z'
+export const FEATURED_UFC_BANNER_END_ISO = '2026-07-19T10:00:00.000Z'
 
-export const FEATURED_UFC_DATE_LABEL = 'Samedi 11 juillet'
-export const FEATURED_UFC_TIME_LABEL = '21h00 EDT · 3h00 dimanche (Paris)'
+export const FEATURED_UFC_DATE_LABEL = 'Samedi 18 juillet'
+export const FEATURED_UFC_TIME_LABEL = '20h00 EDT · 2h00 dimanche (Paris)'
 export const FEATURED_UFC_EVENT_LABEL = `${FEATURED_UFC_DATE_LABEL} · ${FEATURED_UFC_TIME_LABEL}`
+
+/** Libellés courts pour hero / CTA (sans recharger l'événement côté client). */
+export const FEATURED_UFC_MAIN_EVENT_LABEL = 'Du Plessis vs Usman'
+export const FEATURED_UFC_FREE_FIGHT_LABEL = 'Cannonier vs Duncan'
 
 export const EVENT_URGENCY_BANNER_HEIGHT_PX = 40
 
@@ -29,7 +33,7 @@ export function isEventUrgencyBannerActive(now: Date = new Date()): boolean {
   return now.getTime() < getFeaturedUfcBannerEnd().getTime()
 }
 
-/** Affiche le countdown tant que la carte n’a pas commencé. */
+/** Affiche le countdown tant que la carte n'a pas commencé. */
 export function isEventCountdownActive(now: Date = new Date()): boolean {
   return now.getTime() < getFeaturedUfcEventStart().getTime()
 }

@@ -10,6 +10,7 @@ import { formatTrackRecordContext } from '@/lib/public-track-record-format'
 import {
   FEATURED_UFC_DATE_LABEL,
   FEATURED_UFC_EVENT_LABEL,
+  FEATURED_UFC_FREE_FIGHT_LABEL,
 } from '@/lib/event-urgency'
 import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 
@@ -39,7 +40,7 @@ export function HomeFeaturedPredictions({ event, trackRecord }: HomeFeaturedPred
               Pronostic gratuit + carte UFC complète
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#a8a29e] sm:text-base">
-              {FEATURED_UFC_EVENT_LABEL} — co-main BSD vs Pimblett en accès libre,{' '}
+              {FEATURED_UFC_EVENT_LABEL} — co-main {FEATURED_UFC_FREE_FIGHT_LABEL} en accès libre,{' '}
               {lockedCount} autres analyses en Premium ({PREMIUM_MONTHLY_PRICE_LABEL}/mois).
             </p>
 

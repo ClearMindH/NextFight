@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useSubscription } from '@/hooks/useSubscription'
+import { FEATURED_UFC_MAIN_EVENT_LABEL } from '@/lib/event-urgency'
 
 type UfcMobileFloatingCtaProps = {
   lockedCount?: number
@@ -46,7 +47,7 @@ export function UfcMobileFloatingCta({
         className="block w-full rounded-lg bg-white py-3.5 text-center text-sm font-bold leading-snug text-[#0a0a0a]"
       >
         <span aria-hidden>🔓 </span>
-        UFC 329 — Débloquer les {lockedCount} analyses · 4,99€/mois
+        {FEATURED_UFC_MAIN_EVENT_LABEL} — Débloquer les {lockedCount} analyses · 4,99€/mois
       </Link>
     </div>
   )

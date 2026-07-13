@@ -67,6 +67,18 @@ export const PREDICTION_OVERRIDES: Record<string, PredictionOverride> = {
     reason:
       'Notre lecture : Cortez impose sa lutte et son expérience UFC — Cong arrive en forme mais doit contenir les takedowns pour tenir la distance.',
   },
+  'ufc-fight-night-july-18-2026-f1': {
+    winnerCorner: 'red',
+    winnerProbability: 57,
+    reason:
+      'Notre lecture : Du Plessis impose pression, volume et finitions — Usman garde l\'expérience mais sort d\'une défaite titre et monte en 185 lbs.',
+  },
+  'ufc-fight-night-july-18-2026-f2': {
+    winnerCorner: 'red',
+    winnerProbability: 54,
+    reason:
+      'Notre lecture : Cannonier combine power, expérience et gestion de distance — Duncan monte en puissance mais le vétéran #11 reste favori sur 3 rounds.',
+  },
 }
 
 /** Poids du marché dans le blend final (45 % marché / 55 % modèle). */

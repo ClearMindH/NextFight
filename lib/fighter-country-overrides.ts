@@ -46,6 +46,17 @@ const FIGHTER_COUNTRY_OVERRIDES: Record<string, string> = {
   'ufc-zachary-reese': 'USA',
   'ufc-alessandro-costa': 'BRA',
   'ufc-cody-durden': 'USA',
+  // UFC Fight Night Oklahoma City (18 juillet 2026)
+  'ufc-dricus-du-plessis': 'ZAF',
+  'ufc-kamaru-usman': 'NGA',
+  'ufc-jared-cannonier': 'USA',
+  'ufc-christian-leroy-duncan': 'UK',
+  'ufc-chase-hooper': 'USA',
+  'ufc-mitch-ramirez': 'USA',
+  'ufc-tommy-mcmillen': 'USA',
+  'ufc-alberto-montes': 'MEX',
+  'ufc-tabatha-ricci': 'BRA',
+  'ufc-fatima-kline': 'USA',
 }
 
 export function resolveFighterCountry(fighter: Pick<Fighter, 'id' | 'country'>): string | undefined {

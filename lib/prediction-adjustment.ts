@@ -69,6 +69,28 @@ export const MATCHUP_READ_OVERRIDES: Record<string, string> = {
     'Gandra domine sur le grappling et le contrôle des transitions — Reese part avec de la forme mais le profil au sol bascule nettement le combat.',
   'ufc-329-f14':
     'Costa arrive avec une forme récente excellente, du power et un taux de finish élevé — Durden doit imposer son wrestling pour renverser le favori.',
+  'ufc-fight-night-july-18-2026-f1':
+    'Du Plessis impose pression, volume et finitions en montée — Usman garde l\'expérience, la défense de takedown et le cardio sur 5 rounds, mais le champion sort d\'une défaite et monte en middleweight.',
+  'ufc-fight-night-july-18-2026-f2':
+    'Cannonier combine power, expérience UFC et gestion de distance — Leroy Duncan monte en puissance mais doit tenir face au striking et à l\'expérience du vétéran sur 3 rounds.',
+  'ufc-fight-night-july-18-2026-f3':
+    'Hooper progresse en grappling et finitions — Ramirez part avec de la forme mais le niveau au sol et le volume du prospect basculent le matchup.',
+  'ufc-fight-night-july-18-2026-f4':
+    'McMillen arrive avec la dynamique et le profil physique — Montes reste dangereux mais le momentum et l\'athlétisme du prospect font pencher la balance.',
+  'ufc-fight-night-july-18-2026-f5':
+    'Ricci impose volume, pression et expérience — Kline progresse vite mais doit contenir le rythme de la Brésilienne sur la durée.',
+  'ufc-fight-night-july-18-2026-f6':
+    'Delgado combine finitions et agressivité — Bashi part avec de la forme mais le profil de finisseur et l\'expérience récente basculent le combat.',
+  'ufc-fight-night-july-18-2026-f7':
+    'Lebosnoyani garde l\'avantage en striking et en reach — Ko reste solide au sol mais doit imposer son wrestling pour renverser le favori debout.',
+  'ufc-fight-night-july-18-2026-f8':
+    'Franco arrive avec la dynamique et la forme récente — Rodrigues a l\'expérience mais le profil montant du Brésilien fait la différence.',
+  'ufc-fight-night-july-18-2026-f9':
+    'Coria impose volume et constance — Caliari reste dangereuse mais le tempo et la gestion de distance du prospect basculent le matchup.',
+  'ufc-fight-night-july-18-2026-f10':
+    'Frye combine puissance et profil physique en heavyweight — Hines part avec de la forme mais le power et l\'athlétisme du favori font pencher la balance.',
+  'ufc-fight-night-july-18-2026-f11':
+    'Barbosa garde l\'avantage en grappling et en transitions — Hardy a l\'expérience mais le niveau au sol et la forme récente de Dione basculent le combat.',
   'ufc-freedom-250-f1':
     'Topuria impose pression, précision et constance — Gaethje a le power mais devra tenir sur la distance face à un champion invaincu qui monte en volume.',
   'ufc-freedom-250-f2':

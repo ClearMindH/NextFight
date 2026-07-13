@@ -37,7 +37,7 @@ export const siteMetadata: Metadata = {
   },
   description:
     'Pronostics UFC carte par carte : co-main gratuit, analyses statistiques et probabilités de victoire. Outil informatif sans paris sportifs.',
-  keywords: ['pronostics UFC', 'prédictions UFC', 'McGregor Holloway', 'analyses MMA'],
+  keywords: ['pronostics UFC', 'prédictions UFC', 'Du Plessis Usman', 'analyses MMA'],
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   icons: {

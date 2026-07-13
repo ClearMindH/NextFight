@@ -9,6 +9,7 @@ import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdi
 import { useEvents } from '@/hooks/useEvents'
 import { useSubscription } from '@/hooks/useSubscription'
 import { isUpcomingEvent } from '@/lib/event-upcoming'
+import { FEATURED_UFC_MAIN_EVENT_LABEL } from '@/lib/event-urgency'
 import { getOrganization } from '@/data/organizations'
 import { getOrgBrand } from '@/lib/org-brand'
 import { formatShortDate } from '@/utils/format'
@@ -33,7 +34,7 @@ export function UpcomingEvents() {
             Prochain événement UFC
           </h2>
           <p className="mt-2 max-w-xl text-sm text-muted">
-            UFC 329 — pronostics McGregor vs Holloway disponibles.
+            {FEATURED_UFC_MAIN_EVENT_LABEL} — pronostics disponibles sur la prochaine carte.
           </p>
         </FadeIn>
 

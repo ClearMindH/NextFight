@@ -817,7 +817,7 @@
           "isMainEvent": true,
           "scheduledRounds": 5,
           "redId": "ufc-dricus-du-plessis",
-          "blueId": "ufc-gugun-gusman"
+          "blueId": "ufc-kamaru-usman"
         },
         {
           "id": "ufc-fight-night-july-18-2026-f2",
@@ -845,10 +845,10 @@
           "id": "ufc-fight-night-july-18-2026-f4",
           "eventId": "ufc-fight-night-july-18-2026",
           "order": 4,
-          "weightClass": "Featherweight Championship",
-          "isTitle": true,
+          "weightClass": "Featherweight",
+          "isTitle": false,
           "isMainEvent": false,
-          "scheduledRounds": 5,
+          "scheduledRounds": 3,
           "redId": "ufc-tommy-mcmillen",
           "blueId": "ufc-alberto-montes"
         },
@@ -929,7 +929,8 @@
           "redId": "ufc-veronica-hardy",
           "blueId": "ufc-dione-barbosa"
         }
-      ]
+      ],
+      "predictionsStatus": "published"
     },
     {
       "id": "ufc-fight-night-july-25-2026",

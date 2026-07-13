@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useSubscription } from '@/hooks/useSubscription'
+import { FEATURED_UFC_DATE_LABEL, FEATURED_UFC_MAIN_EVENT_LABEL } from '@/lib/event-urgency'
 import { cn } from '@/utils/cn'
 
 type UfcAboveFoldCtaProps = {
@@ -26,7 +27,7 @@ export function UfcAboveFoldCta({ lockedCount, className }: UfcAboveFoldCtaProps
       )}
     >
       <p className="text-sm font-semibold leading-snug text-white sm:text-base">
-        UFC 329 · Dimanche 15 juin ·{' '}
+        {FEATURED_UFC_MAIN_EVENT_LABEL} · {FEATURED_UFC_DATE_LABEL} ·{' '}
         <span className="text-[#ffedd5]">
           {lockedCount} analyse{lockedCount > 1 ? 's' : ''} disponible
           {lockedCount > 1 ? 's' : ''} maintenant

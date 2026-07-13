@@ -10,6 +10,8 @@ import {
   FEATURED_UFC_DATE_LABEL,
   FEATURED_UFC_EVENT_LABEL,
   FEATURED_UFC_FREE_FIGHT_ID,
+  FEATURED_UFC_FREE_FIGHT_LABEL,
+  FEATURED_UFC_MAIN_EVENT_LABEL,
   FEATURED_UFC_TIME_LABEL,
 } from '@/lib/event-urgency'
 import { PREMIUM_MONTHLY_PRICE_LABEL, STRIPE_PLANS } from '@/lib/stripe-plans'
@@ -135,7 +137,7 @@ export function PricingPageContent() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-1.5 rounded-full border border-[#B91C1C]/35 bg-[#1a0a0a]/80 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8a0a0]">
               <Sparkles className="h-3 w-3" aria-hidden />
-              UFC 329 · {FEATURED_UFC_EVENT_LABEL}
+              {FEATURED_UFC_MAIN_EVENT_LABEL} · {FEATURED_UFC_EVENT_LABEL}
             </p>
             <h1 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2rem]">
               Débloquez tous les pronostics UFC du mois
@@ -252,7 +254,7 @@ export function PricingPageContent() {
         <div className="container-content">
           <div className="mx-auto max-w-xl rounded-2xl border border-[#c9b896]/25 bg-gradient-to-b from-[#12100c] to-[#0a0a0a] px-6 py-8 text-center">
             <p className="font-display text-lg text-[#f5f2eb]">
-              UFC 329 — McGregor vs Holloway · {FEATURED_UFC_DATE_LABEL}
+              {FEATURED_UFC_MAIN_EVENT_LABEL} · {FEATURED_UFC_DATE_LABEL}
             </p>
             <p className="mt-1 text-xs text-[#c9b896]">
               Début carte principale · {FEATURED_UFC_TIME_LABEL}
@@ -269,7 +271,7 @@ export function PricingPageContent() {
                 href={`/fight/${FEATURED_UFC_FREE_FIGHT_ID}`}
                 className="text-xs text-[#8a8278] transition-colors hover:text-[#c9b896]"
               >
-                Voir le co-main gratuit BSD vs Pimblett
+                Voir le co-main gratuit {FEATURED_UFC_FREE_FIGHT_LABEL}
               </Link>
             </div>
           </div>

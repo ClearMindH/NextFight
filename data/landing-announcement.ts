@@ -4,18 +4,18 @@ export interface LandingAnnouncementItem {
   dateLabel: string
 }
 
-/** Bannière temporaire d’accueil — désactiver ou dépasser `expiresAt` pour la retirer. */
+/** Bannière temporaire d'accueil — désactiver ou dépasser `expiresAt` pour la retirer. */
 export const LANDING_ANNOUNCEMENT = {
   enabled: true,
-  expiresAt: '2026-06-15T12:00:00.000Z',
-  title: 'Pronostics disponibles',
+  expiresAt: '2026-07-19T10:00:00.000Z',
+  title: 'Pronostics Oklahoma City',
   description:
-    'Les pronostics complets pour la prochaine carte UFC sont en ligne.',
+    'Les pronostics complets pour UFC Fight Night : Du Plessis vs Usman sont en ligne.',
   items: [
     {
-      label: 'UFC Freedom 250',
+      label: 'Du Plessis vs Usman',
       href: '/ufc-pronostics',
-      dateLabel: 'Dimanche 14 juin · 20h00 EDT',
+      dateLabel: 'Samedi 18 juillet · 20h00 EDT',
     },
   ] satisfies LandingAnnouncementItem[],
 } as const

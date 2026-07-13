@@ -30812,6 +30812,35 @@
       },
       "lastSyncedAt": "2026-07-10T11:47:45.426Z",
       "source": "event-card"
+    },
+    {
+      "id": "ufc-kamaru-usman",
+      "organizationId": "ufc",
+      "name": "Kamaru Usman",
+      "nickname": "The Nigerian Nightmare",
+      "record": "21-4-0",
+      "wins": 21,
+      "losses": 4,
+      "draws": 0,
+      "country": "NG",
+      "weightClass": "Middleweight",
+      "imageUrl": "https://ufc.com/images/styles/teaser/s3/2022-06/b24ed27d-883a-46d9-b845-9cc5e9610873%252FGUSMAN_GUGUN_RTU.png?h=a30e7339&itok=uMZg4VHp",
+      "stats": {
+        "strikingAccuracy": 52,
+        "strikeDefense": 55,
+        "takedownAccuracy": 20,
+        "takedownDefense": 90,
+        "reachCm": 193,
+        "heightCm": 183,
+        "age": 39,
+        "winStreak": 1,
+        "slpm": 4.16,
+        "sapm": 2.67,
+        "tdAvg": 2.79,
+        "subAvg": 0.09
+      },
+      "lastSyncedAt": "2026-07-13T10:45:46.067Z",
+      "source": "manual"
     }
   ]
 }
