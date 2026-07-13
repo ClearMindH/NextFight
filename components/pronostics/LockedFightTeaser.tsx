@@ -1,5 +1,7 @@
 import { Lock } from 'lucide-react'
 import type { Fight } from '@/types'
+import { FighterMatchupLine } from '@/components/FighterMatchupLine'
+import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { cn } from '@/utils/cn'
 
 function fightRoleLabel(fight: Fight): string {
@@ -12,43 +14,55 @@ function fightRoleLabel(fight: Fight): string {
 type LockedFightTeaserProps = {
   fight: Fight
   className?: string
-  /** Affiche la catégorie de poids (sans noms de combattants). */
   showWeightClass?: boolean
+  /** Met en avant le pick (main event, liste carte). */
+  highlight?: boolean
 }
 
-/** Aperçu verrouillé — aucun nom, pronostic ni probabilité. */
+/** Pick visible (nom + %), analyse complète verrouillée. */
 export function LockedFightTeaser({
   fight,
   className,
   showWeightClass = true,
+  highlight = false,
 }: LockedFightTeaserProps) {
   return (
     <div
       className={cn(
-        'flex items-start gap-3 rounded-xl border border-dashed border-[#e8c840]/20 bg-[#0a0a0a]/80 px-4 py-3.5',
+        'min-w-0',
+        highlight
+          ? 'rounded-xl border border-[#e8c840]/25 bg-[#12100a]/80 px-4 py-4'
+          : undefined,
         className,
       )}
     >
-      <div
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e8c840]/10"
-        aria-hidden
-      >
-        <Lock className="h-4 w-4 text-[#e8c840]" strokeWidth={2} />
-      </div>
-      <div className="min-w-0">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#e8c840]">
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#e8c840]">
           {fightRoleLabel(fight)}
-          {showWeightClass && (
-            <>
-              <span className="mx-1.5 font-normal text-[#5c5c5c]">·</span>
-              <span className="font-medium text-[#8a8278]">{fight.weightClass}</span>
-            </>
-          )}
-        </p>
-        <p className="mt-1 text-sm text-[#8a8278]">
-          Pronostic, probabilités et analyse réservés Premium
-        </p>
+        </span>
+        {showWeightClass && (
+          <>
+            <span className="text-[10px] text-[#5c5c5c]">·</span>
+            <span className="text-xs text-[#8a8278]">{fight.weightClass}</span>
+          </>
+        )}
+        <span className="inline-flex items-center gap-1 rounded-full bg-[#e8c840]/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-wider text-[#c9b896]">
+          <Lock className="h-2.5 w-2.5" aria-hidden />
+          Analyse Premium
+        </span>
       </div>
+
+      <div className="mt-3">
+        <FighterMatchupLine red={fight.redCorner} blue={fight.blueCorner} variant="elegant" />
+      </div>
+
+      <div className="mt-3">
+        <PredictionVerdictBanner fight={fight} variant="inline" />
+      </div>
+
+      <p className="mt-2 text-xs text-[#6f6a62]">
+        Facteurs clés, méthode et lecture matchup — avec Premium
+      </p>
     </div>
   )
 }

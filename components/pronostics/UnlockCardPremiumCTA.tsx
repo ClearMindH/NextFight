@@ -58,8 +58,8 @@ export function UnlockCardPremiumCTA({
               Débloquez les {lockedCount} autres combats de la carte
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-[#a8a29e]">
-              Main event, probabilités, facteurs clés et lecture matchup pour chaque combat —
-              sans voir le pronostic tant que vous n&apos;êtes pas abonné.
+              Picks visibles sur chaque combat — débloquez facteurs clés, méthode et lecture
+              matchup pour les {lockedCount} analyses Premium.
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ export function UnlockCardPremiumCTA({
           </Link>
         </div>
         <p className="mt-3 text-[11px] text-[#5c5c5c]">
-          Paiement sécurisé · annulation libre · accès immédiat
+          Paiement direct Stripe · pas de compte requis avant la carte
         </p>
       </div>
     </div>

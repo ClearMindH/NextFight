@@ -1,8 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { FastLink } from '@/components/navigation/FastLink'
-import { Lock, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import type { Event, Fight, Organization } from '@/types'
 import { sortFightsByCardOrder, getMainFight, getFreePreviewFight } from '@/lib/event-helpers'
 import {
@@ -65,8 +64,8 @@ export function OrgEventFightCardList({ org, event, excludeFightId }: OrgEventFi
           {!isPremium && accessReady && (
             <p className="mt-2 text-sm text-[#8a8278] leading-relaxed">
               {onFightPage
-                ? 'Les pronostics des autres combats sont invisibles sans Premium — abonnez-vous pour tout débloquer.'
-                : 'Le co-main gratuit est affiché ci-dessus. Les autres combats restent verrouillés.'}
+                ? 'Picks visibles ci-dessous — abonnez-vous pour les analyses complètes.'
+                : 'Co-main gratuit en analyse complète. Picks visibles sur les autres combats.'}
             </p>
           )}
         </div>
@@ -118,18 +117,13 @@ function FightCardRow({
             href={href}
             className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-[#c9b896]"
           >
-            Voir le pronostic
+            Voir l&apos;analyse
             <ChevronRight className="h-4 w-4" />
           </FastLink>
         ) : (
-          <Link
-            href="/pricing"
-            className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-[#8a8278] transition-colors hover:text-[#c9b896]"
-          >
-            <Lock className="h-3.5 w-3.5" strokeWidth={1.5} />
-            Débloquer Premium
-            <ChevronRight className="h-4 w-4 opacity-60" />
-          </Link>
+          <StripeCheckoutButton planId="premium_monthly" className="max-w-[240px] shrink-0 self-start">
+            Analyse complète
+          </StripeCheckoutButton>
         )}
       </div>
     </li>

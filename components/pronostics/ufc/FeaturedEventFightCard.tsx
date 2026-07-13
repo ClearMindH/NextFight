@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import type { Event, Fight } from '@/types'
 import { getFreePreviewFight, sortFightsByCardOrder } from '@/lib/event-helpers'
 import { canAccessFightPrediction, getFightDetailHref } from '@/lib/fight-access'
@@ -10,6 +9,7 @@ import { useSubscription } from '@/hooks/useSubscription'
 import { FastLink } from '@/components/navigation/FastLink'
 import { FighterMatchupLine } from '@/components/FighterMatchupLine'
 import { LockedFightTeaser } from '@/components/pronostics/LockedFightTeaser'
+import { MainEventPickTeaser } from '@/components/pronostics/MainEventPickTeaser'
 import { UnlockCardPremiumCTA } from '@/components/pronostics/UnlockCardPremiumCTA'
 import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { PredictionSummary } from '@/components/pronostics/PredictionSummary'
@@ -92,15 +92,15 @@ function LockedFightRow({
           </div>
         </>
       ) : (
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <LockedFightTeaser fight={fight} className="flex-1 border-none bg-transparent px-0 py-0" />
-          <Link
-            href="/pricing"
-            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[#e8c840]/50 bg-[#e8c840]/10 px-5 py-2.5 text-xs font-semibold transition-colors hover:bg-[#e8c840]/20"
-            style={{ color: ACCENT }}
-          >
-            S&apos;abonner · {PREMIUM_MONTHLY_PRICE_LABEL}/mois
-          </Link>
+        <div className="flex flex-col gap-4">
+          <LockedFightTeaser
+            fight={fight}
+            highlight={fight.isMainEvent}
+            className="border-none bg-transparent px-0 py-0"
+          />
+          <StripeCheckoutButton planId="premium_monthly" highlighted className="max-w-xs self-start">
+            Analyse complète · {PREMIUM_MONTHLY_PRICE_LABEL}/mois
+          </StripeCheckoutButton>
         </div>
       )}
     </li>
@@ -207,7 +207,8 @@ export function FeaturedEventFightCard({
               </FastLink>
 
               {!confirmedPremium && lockedFights.length > 0 && (
-                <div className="mt-6">
+                <div className="mt-6 space-y-4">
+                  <MainEventPickTeaser event={event} />
                   <UnlockCardPremiumCTA event={event} variant="inline" />
                 </div>
               )}
@@ -223,7 +224,8 @@ export function FeaturedEventFightCard({
                   </h3>
                   {!confirmedPremium && (
                     <p className="mt-1.5 text-xs leading-relaxed text-[#6f6a62]">
-                      Aucun pronostic visible sans abonnement — seul le co-main ci-dessus est gratuit.
+                      Pick et probabilité visibles sur chaque combat — analyse détaillée avec
+                      Premium.
                     </p>
                   )}
                 </div>

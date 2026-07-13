@@ -19,13 +19,10 @@ export function canAccessFightPrediction(
 /** URL de navigation depuis la liste des combats. */
 export function getFightDetailHref(
   fight: Fight,
-  event: Event,
-  isPremium: boolean,
+  _event: Event,
+  _isPremium: boolean,
 ): string {
-  if (canAccessFightPrediction(fight, event, isPremium)) {
-    return `/fight/${fight.id}`
-  }
-  return '/pricing'
+  return `/fight/${fight.id}`
 }
 
 export function getFightAccessMessage(

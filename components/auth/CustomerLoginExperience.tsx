@@ -27,7 +27,7 @@ const COPY: Record<
     eyebrow: 'Espace membre',
     title: 'Connexion',
     subtitle:
-      'Entrez votre email : nous vous envoyons un lien sécurisé. Connectez-vous d’abord, puis passez Premium depuis les tarifs.',
+      'Entrez votre email pour retrouver votre abonnement ou recevoir un lien sécurisé. Le paiement Premium se fait directement sur Stripe, sans compte obligatoire avant.',
     submit: 'Recevoir le lien de connexion',
     switchHref: '/register',
     switchLabel: 'Créer un accès',

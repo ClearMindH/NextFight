@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import type { Event } from '@/types'
 import { FeaturedEventFightCard } from '@/components/pronostics/ufc/FeaturedEventFightCard'
+import { FreePicksEmailCapture } from '@/components/conversion/FreePicksEmailCapture'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import { FastLink } from '@/components/navigation/FastLink'
 import type { PublicTrackRecord } from '@/lib/public-track-record-format'
@@ -40,8 +41,9 @@ export function HomeFeaturedPredictions({ event, trackRecord }: HomeFeaturedPred
               Pronostic gratuit + carte UFC complète
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#a8a29e] sm:text-base">
-              {FEATURED_UFC_EVENT_LABEL} — co-main {FEATURED_UFC_FREE_FIGHT_LABEL} en accès libre,{' '}
-              {lockedCount} autres analyses en Premium ({PREMIUM_MONTHLY_PRICE_LABEL}/mois).
+              {FEATURED_UFC_EVENT_LABEL} — co-main {FEATURED_UFC_FREE_FIGHT_LABEL} en accès libre
+              (analyse complète), picks visibles sur toute la carte,{' '}
+              {lockedCount} analyses détaillées en Premium ({PREMIUM_MONTHLY_PRICE_LABEL}/mois).
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
@@ -98,6 +100,14 @@ export function HomeFeaturedPredictions({ event, trackRecord }: HomeFeaturedPred
       </section>
 
       <FeaturedEventFightCard event={event} />
+
+      <section className="border-b border-white/[0.06] bg-[#080808]">
+        <div className="container-content section-padding">
+          <div className="mx-auto max-w-4xl">
+            <FreePicksEmailCapture />
+          </div>
+        </div>
+      </section>
 
       <section className="border-b border-white/[0.06] bg-[#080808]">
         <div className="container-content section-padding">

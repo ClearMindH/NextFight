@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
 import type { PlanId } from '@/types/subscription'
 import { isPaidPlan } from '@/lib/stripe-plans'
@@ -14,8 +13,6 @@ interface StripeCheckoutButtonProps {
   className?: string
   children: React.ReactNode
   highlighted?: boolean
-  /** Page de retour après connexion (défaut : page actuelle). */
-  loginNext?: string
 }
 
 export function StripeCheckoutButton({
@@ -23,15 +20,10 @@ export function StripeCheckoutButton({
   className,
   children,
   highlighted,
-  loginNext,
 }: StripeCheckoutButtonProps) {
-  const pathname = usePathname()
   const { status, loading, isPremium } = useSubscription()
   const [checkoutLoading, setCheckoutLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-
-  const returnPath = loginNext ?? pathname ?? '/pricing'
-  const loginHref = `/login?next=${encodeURIComponent(returnPath)}`
 
   async function handleClick() {
     if (!isPaidPlan(planId)) return
@@ -47,12 +39,7 @@ export function StripeCheckoutButton({
         body: JSON.stringify({ planId }),
       })
 
-      const data = (await res.json()) as { url?: string; error?: string; code?: string }
-
-      if (res.status === 401 || data.code === 'AUTH_REQUIRED') {
-        window.location.href = loginHref
-        return
-      }
+      const data = (await res.json()) as { url?: string; error?: string }
 
       if (!res.ok || !data.url) {
         setError(data.error ?? 'Checkout unavailable')
@@ -109,28 +96,6 @@ export function StripeCheckoutButton({
     )
   }
 
-  if (!status.email) {
-    return (
-      <div className="w-full">
-        <Link
-          href={loginHref}
-          className={cn(
-            'block w-full rounded-full py-2.5 text-center text-sm font-medium transition-all',
-            highlighted
-              ? 'bg-foreground text-background hover:scale-[1.02]'
-              : 'border border-border hover:border-gold/40',
-            className,
-          )}
-        >
-          Se connecter pour passer Premium →
-        </Link>
-        <p className="mt-2 text-center text-[10px] text-[#8a8278]">
-          Lien magique par email · puis paiement sécurisé Stripe
-        </p>
-      </div>
-    )
-  }
-
   return (
     <div className="w-full">
       <button
@@ -148,16 +113,18 @@ export function StripeCheckoutButton({
         {checkoutLoading ? (
           <span className="inline-flex items-center justify-center gap-2">
             <Loader2 className="h-4 w-4 animate-spin" />
-            Redirection…
+            Redirection Stripe…
           </span>
         ) : (
           children
         )}
       </button>
-      <p className="mt-2 text-center text-[10px] text-[#6b6560]">
-        Compte : {status.email}
+      <p className="mt-2 text-center text-[10px] text-[#8a8278]">
+        {status.email
+          ? `Compte : ${status.email} · paiement sécurisé`
+          : 'Paiement sécurisé · pas de compte requis avant la carte'}
       </p>
-      {error && <p className="mt-2 text-xs text-red-400/90 text-center">{error}</p>}
+      {error && <p className="mt-2 text-center text-xs text-red-400/90">{error}</p>}
     </div>
   )
 }

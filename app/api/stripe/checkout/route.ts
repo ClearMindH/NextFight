@@ -20,14 +20,6 @@ export async function POST(request: Request) {
       planId: PlanId
     }
 
-    const customerEmail = (await getCustomerEmailFromCookie())?.trim()
-    if (!customerEmail) {
-      return NextResponse.json(
-        { error: 'Connectez-vous pour passer Premium.', code: 'AUTH_REQUIRED' },
-        { status: 401 },
-      )
-    }
-
     if (!body.planId || !isPaidPlan(body.planId)) {
       return NextResponse.json({ error: 'Invalid plan' }, { status: 400 })
     }
@@ -45,17 +37,16 @@ export async function POST(request: Request) {
 
     const stripe = getStripe()
     const siteUrl = getSiteUrl()
+    const loggedInEmail = (await getCustomerEmailFromCookie())?.trim()
 
-    const session = await stripe.checkout.sessions.create({
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       mode: 'subscription',
       payment_method_types: ['card'],
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${siteUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/checkout/cancel`,
-      customer_email: customerEmail,
       allow_promotion_codes: true,
       billing_address_collection: 'auto',
-      // Écran carte classique — pas de paiement par défaut via Stripe Link.
       wallet_options: {
         link: {
           display: 'never',
@@ -65,7 +56,14 @@ export async function POST(request: Request) {
       subscription_data: {
         metadata: { planId: body.planId },
       },
-    } as Stripe.Checkout.SessionCreateParams)
+    }
+
+    // Checkout invité : Stripe collecte l'email si l'utilisateur n'est pas connecté.
+    if (loggedInEmail) {
+      sessionParams.customer_email = loggedInEmail
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams)
 
     if (!session.url) {
       return NextResponse.json({ error: 'Checkout session failed' }, { status: 500 })

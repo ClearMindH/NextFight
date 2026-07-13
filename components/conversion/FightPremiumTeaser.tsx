@@ -5,7 +5,8 @@ import { Lock } from 'lucide-react'
 import { useSubscription } from '@/hooks/useSubscription'
 import { StripeCheckoutButton } from '@/components/stripe/StripeCheckoutButton'
 import type { Event } from '@/types'
-import { getFreePreviewFight } from '@/lib/event-helpers'
+import { getFreePreviewFight, getMainFight } from '@/lib/event-helpers'
+import { buildPredictionVerdict } from '@/lib/prediction-verdict'
 import { PREMIUM_MONTHLY_PRICE_LABEL } from '@/lib/stripe-plans'
 
 type FightPremiumTeaserProps = {
@@ -20,6 +21,8 @@ export function FightPremiumTeaser({ event, fightId }: FightPremiumTeaserProps) 
   if (isPremium || freeFight?.id !== fightId) return null
 
   const lockedCount = Math.max(event.fights.length - 1, 0)
+  const mainFight = getMainFight(event)
+  const mainVerdict = mainFight ? buildPredictionVerdict(mainFight) : null
 
   return (
     <section className="border-y border-[#e8c840]/20 bg-gradient-to-b from-[#12100a] to-[#0a0a0a]">
@@ -35,8 +38,20 @@ export function FightPremiumTeaser({ event, fightId }: FightPremiumTeaserProps) 
             Débloquez les {lockedCount} autres combats
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-[#a8a29e] sm:text-base">
-            Main event, probabilités, facteurs clés et analyse complète pour chaque combat de{' '}
-            {event.name} — plus toutes les cartes UFC du mois.
+            {mainVerdict ? (
+              <>
+                Main event : <span className="font-medium text-white">{mainVerdict.headline}</span>
+                {mainVerdict.probabilityLine ? (
+                  <span className="text-[#e8c840]"> · {mainVerdict.probabilityLine}</span>
+                ) : null}
+                {' — '}débloquez l&apos;analyse complète des {lockedCount} autres combats.
+              </>
+            ) : (
+              <>
+                Picks visibles sur toute la carte — analyses détaillées pour les{' '}
+                {lockedCount} autres combats.
+              </>
+            )}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center sm:items-center">
             <StripeCheckoutButton planId="premium_monthly" highlighted className="w-full sm:max-w-xs">

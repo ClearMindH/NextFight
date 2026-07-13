@@ -5,6 +5,7 @@ import { FastLink } from '@/components/navigation/FastLink'
 import { ArrowLeft } from 'lucide-react'
 import type { FightPageData } from '@/lib/fights'
 import { OrgFightExperience } from '@/components/pronostics/OrgFightExperience'
+import { MainEventPickTeaser } from '@/components/pronostics/MainEventPickTeaser'
 import { UnlockCardPremiumCTA } from '@/components/pronostics/UnlockCardPremiumCTA'
 import { OrgEventCalendar } from '@/components/pronostics/OrgEventCalendar'
 import { OrgEventFightCardList } from '@/components/pronostics/OrgEventFightCardList'
@@ -59,7 +60,10 @@ export function FightPageView({ data }: FightPageViewProps) {
         variant="detail"
         afterVerdict={
           isFreeFightPage ? (
-            <UnlockCardPremiumCTA event={event} variant="banner" className="mt-2" />
+            <>
+              <MainEventPickTeaser event={event} className="mt-2" />
+              <UnlockCardPremiumCTA event={event} variant="inline" className="mt-4" />
+            </>
           ) : undefined
         }
       />

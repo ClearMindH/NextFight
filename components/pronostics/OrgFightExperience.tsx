@@ -5,16 +5,16 @@ import { FastLink } from '@/components/navigation/FastLink'
 import type { Event, Fight, Organization } from '@/types'
 import { FighterPortrait } from '@/components/fight/FighterPortrait'
 import { RecentResults } from '@/components/fight/RecentResults'
-import { PremiumGate } from '@/components/premium/PremiumGate'
 import {
   canAccessFightPrediction,
-  getFightAccessMessage,
 } from '@/lib/fight-access'
 import { useSubscription } from '@/hooks/useSubscription'
 import { PredictionVerdictBanner } from '@/components/pronostics/PredictionVerdictBanner'
 import { PredictionKeyFactors } from '@/components/pronostics/PredictionKeyFactors'
 import { PredictionSummary } from '@/components/pronostics/PredictionSummary'
 import { PremiumAnalysisUnlock } from '@/components/premium/PremiumAnalysisUnlock'
+import { LockedFightTeaser } from '@/components/pronostics/LockedFightTeaser'
+import { MainEventPickTeaser } from '@/components/pronostics/MainEventPickTeaser'
 import { FightExperienceSkeleton } from '@/components/pronostics/FightExperienceSkeleton'
 import { formatCountryLabel } from '@/lib/country-flag'
 import { formatShortDate, formatPercent } from '@/utils/format'
@@ -56,14 +56,12 @@ export function OrgFightExperience({
   const hasAccess = enforceAccess
     ? isFreePreview || canAccessFightPrediction(fight, event, isPremium)
     : true
-  const lockMessage = enforceAccess
-    ? getFightAccessMessage(fight, event, isPremium)
-    : undefined
 
   const redProb = fight.model.redWinProbability
   const blueProb = 100 - redProb
   const favoriteProb = Math.max(redProb, blueProb)
   const revealPrediction = !enforceAccess || isFreePreview || hasAccess
+  const showPickTeaser = enforceAccess && !hasAccess && !isFreePreview
   const showAccessSkeleton =
     enforceAccess && subLoading && !isPremium && !isFreePreview
   const isPreview = variant === 'preview'
@@ -198,18 +196,17 @@ export function OrgFightExperience({
         <div className={cn('mt-4 space-y-4 sm:mt-5', !isPreview && 'sm:space-y-6')}>
           {showAccessSkeleton ? (
             <FightExperienceSkeleton />
-          ) : enforceAccess && !hasAccess && !isFreePreview ? (
+          ) : showPickTeaser ? (
             <>
-              <PremiumGate
-                title="Pronostic Premium"
-                description={
-                  lockMessage ??
-                  'Ce combat est réservé aux abonnés Premium. Aucune probabilité ni analyse n’est visible sans abonnement.'
-                }
-                blur={false}
-                className="min-h-[200px]"
-              />
-              <PremiumAnalysisUnlock />
+              <div className="mx-auto max-w-3xl">
+                <LockedFightTeaser fight={fight} highlight className="border-none" />
+              </div>
+              <PremiumAnalysisUnlock showPricingHint />
+              {!fight.isMainEvent && (
+                <div className="mx-auto max-w-3xl">
+                  <MainEventPickTeaser event={event} />
+                </div>
+              )}
             </>
           ) : (
             <>

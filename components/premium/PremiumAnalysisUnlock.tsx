@@ -51,11 +51,11 @@ export function PremiumAnalysisUnlock({
         </Link>
       </div>
 
-      {showPricingHint && (
-        <p className="mt-3 text-[11px] text-[#5c5c5c]">
-          Toutes les cartes UFC du mois · à partir de 4,99€/mois
-        </p>
-      )}
+      <p className="mt-3 text-[11px] text-[#5c5c5c]">
+        {showPricingHint
+          ? 'Paiement direct sur Stripe · accès immédiat · 4,99€/mois'
+          : 'Paiement direct sur Stripe · accès immédiat après paiement'}
+      </p>
     </div>
   )
 }
