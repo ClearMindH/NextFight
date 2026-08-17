@@ -27,6 +27,19 @@ export const UFC_MARKET_ODDS: Record<string, MarketOddsEntry> = {
   'ufc-freedom-250-f5': { redAmerican: -650, blueAmerican: 400, source: 'consensus' },
   'ufc-freedom-250-f6': { redAmerican: -375, blueAmerican: 260, source: 'consensus' },
   'ufc-freedom-250-f7': { redAmerican: -185, blueAmerican: 155, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f1': { redAmerican: -170, blueAmerican: 140, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f2': { redAmerican: 145, blueAmerican: -170, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f3': { redAmerican: -375, blueAmerican: 290, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f4': { redAmerican: 235, blueAmerican: -290, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f5': { redAmerican: -500, blueAmerican: 375, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f6': { redAmerican: 115, blueAmerican: -140, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f7': { redAmerican: 145, blueAmerican: -175, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f8': { redAmerican: -110, blueAmerican: -110, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f9': { redAmerican: -145, blueAmerican: 120, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f10': { redAmerican: 310, blueAmerican: -390, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f11': { redAmerican: -600, blueAmerican: 450, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f12': { redAmerican: -850, blueAmerican: 575, source: 'ufc.com' },
+  'ufc-fight-night-august-22-2026-f13': { redAmerican: 650, blueAmerican: -1000, source: 'ufc.com' },
 }
 
 /** Overrides validés manuellement (prioritaires sur le modèle statistique). */
@@ -78,6 +91,30 @@ export const PREDICTION_OVERRIDES: Record<string, PredictionOverride> = {
     winnerProbability: 54,
     reason:
       'Notre lecture : Cannonier combine power, expérience et gestion de distance — Duncan monte en puissance mais le vétéran #11 reste favori sur 3 rounds.',
+  },
+  'ufc-fight-night-august-22-2026-f1': {
+    winnerCorner: 'red',
+    winnerProbability: 58,
+    reason:
+      'Notre lecture : Hernandez impose grappling, pression et chaînage au sol — Rodrigues a le power mais doit tenir le tempo du #6 sur 5 rounds.',
+  },
+  'ufc-fight-night-august-22-2026-f2': {
+    winnerCorner: 'blue',
+    winnerProbability: 56,
+    reason:
+      'Notre lecture : Petrino combine power et finishing — Spivac reste dangereux au sol mais le Brésilien peut imposer les échanges et toucher tôt.',
+  },
+  'ufc-fight-night-august-22-2026-f5': {
+    winnerCorner: 'red',
+    winnerProbability: 68,
+    reason:
+      'Notre lecture : Judice part largement favorite sur le striking et l\'expérience UFC — Chaves arrive invaincue mais doit tenir le volume.',
+  },
+  'ufc-fight-night-august-22-2026-f8': {
+    winnerCorner: 'blue',
+    winnerProbability: 54,
+    reason:
+      'Notre lecture : Haqparast impose le striking technique et la gestion de distance — Padilla a la pression mais doit toucher proprement pour basculer le combat.',
   },
 }
 

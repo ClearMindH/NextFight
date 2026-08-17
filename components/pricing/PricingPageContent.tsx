@@ -29,7 +29,7 @@ const FAQ = [
   },
   {
     q: 'Faut-il un compte avant de payer ?',
-    a: 'Oui : connectez-vous avec votre email (lien magique), puis passez Premium. Votre abonnement reste lié à cet email.',
+    a: 'Non : le paiement se fait directement sur Stripe, sans compte obligatoire. Après paiement, un lien de connexion est envoyé à l’email utilisé.',
   },
 ]
 

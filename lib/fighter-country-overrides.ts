@@ -57,6 +57,19 @@ const FIGHTER_COUNTRY_OVERRIDES: Record<string, string> = {
   'ufc-alberto-montes': 'MEX',
   'ufc-tabatha-ricci': 'BRA',
   'ufc-fatima-kline': 'USA',
+  // UFC Fight Night Sacramento (22 août 2026)
+  'ufc-anthony-hernandez': 'USA',
+  'ufc-gregory-rodrigues': 'BRA',
+  'ufc-serghei-spivac': 'MDA',
+  'ufc-vitor-petrino': 'BRA',
+  'ufc-reinier-de-ridder': 'NLD',
+  'ufc-roman-dolidze': 'GEO',
+  'ufc-marquel-mederos': 'USA',
+  'ufc-mason-jones': 'UK',
+  'ufc-carli-judice': 'USA',
+  'ufc-jeisla-chaves': 'BRA',
+  'ufc-kennedy-nzechukwu': 'NGA',
+  'ufc-shamil-gaziev': 'BHR',
 }
 
 export function resolveFighterCountry(fighter: Pick<Fighter, 'id' | 'country'>): string | undefined {

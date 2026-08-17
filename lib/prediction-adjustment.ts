@@ -91,6 +91,32 @@ export const MATCHUP_READ_OVERRIDES: Record<string, string> = {
     'Frye combine puissance et profil physique en heavyweight — Hines part avec de la forme mais le power et l\'athlétisme du favori font pencher la balance.',
   'ufc-fight-night-july-18-2026-f11':
     'Barbosa garde l\'avantage en grappling et en transitions — Hardy a l\'expérience mais le niveau au sol et la forme récente de Dione basculent le combat.',
+  'ufc-fight-night-august-22-2026-f1':
+    'Hernandez impose grappling, pression et chaînage au sol — Rodrigues a le power mais doit tenir le tempo du #6 sur 5 rounds après la défaite contre Strickland.',
+  'ufc-fight-night-august-22-2026-f2':
+    'Petrino combine power et finishing en heavyweight — Spivac reste dangereux au sol mais le Brésilien peut imposer les échanges et toucher tôt.',
+  'ufc-fight-night-august-22-2026-f3':
+    'De Ridder domine le grappling et le contrôle — Dolidze a le power mais doit éviter le sol pour tenir trois rounds.',
+  'ufc-fight-night-august-22-2026-f4':
+    'Jones impose volume, boxing et expérience UFC — Mederos progresse vite mais doit contenir le rythme du Gallois.',
+  'ufc-fight-night-august-22-2026-f5':
+    'Judice part favorite nette sur le striking et l\'expérience — Chaves arrive invaincue mais doit tenir la distance et le volume.',
+  'ufc-fight-night-august-22-2026-f6':
+    'Gaziev combine power et gabarit — Nzechukwu a l\'athlétisme mais le finish de Shamil bascule le matchup heavyweight.',
+  'ufc-fight-night-august-22-2026-f7':
+    'McVey arrive avec la dynamique et le profil montant — Schultz reste dangereux mais le tempo du prospect fait pencher la balance.',
+  'ufc-fight-night-august-22-2026-f8':
+    'Haqparast impose le striking technique et la gestion de distance — Padilla a la pression mais doit toucher proprement pour basculer le combat.',
+  'ufc-fight-night-august-22-2026-f9':
+    'Young impose wrestling et contrôle — Dorsainvil a le power mais doit tenir les takedowns pour rester dans le combat.',
+  'ufc-fight-night-august-22-2026-f10':
+    'Douglas arrive en favorite nette avec le tempo et les finitions — Emmers a l\'expérience mais doit éviter les échanges chauds.',
+  'ufc-fight-night-august-22-2026-f11':
+    'Dyer impose pression et forme récente — Reed a l\'expérience UFC mais le rythme de Shanelle bascule le matchup.',
+  'ufc-fight-night-august-22-2026-f12':
+    'Barbosa est largement favorite sur le grappling et les finitions — Kuse doit surprendre tôt pour renverser le combat.',
+  'ufc-fight-night-august-22-2026-f13':
+    'Wint arrive invaincu avec le power heavyweight — Chatman doit imposer le wrestling pour tenir face au finishing.',
   'ufc-freedom-250-f1':
     'Topuria impose pression, précision et constance — Gaethje a le power mais devra tenir sur la distance face à un champion invaincu qui monte en volume.',
   'ufc-freedom-250-f2':

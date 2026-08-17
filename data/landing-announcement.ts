@@ -7,15 +7,15 @@ export interface LandingAnnouncementItem {
 /** Bannière temporaire d'accueil — désactiver ou dépasser `expiresAt` pour la retirer. */
 export const LANDING_ANNOUNCEMENT = {
   enabled: true,
-  expiresAt: '2026-07-19T10:00:00.000Z',
-  title: 'Pronostics Oklahoma City',
+  expiresAt: '2026-08-23T10:00:00.000Z',
+  title: 'Pronostics Sacramento',
   description:
-    'Les pronostics complets pour UFC Fight Night : Du Plessis vs Usman sont en ligne.',
+    'Les pronostics complets pour UFC Fight Night : Hernandez vs Rodrigues sont en ligne.',
   items: [
     {
-      label: 'Du Plessis vs Usman',
+      label: 'Hernandez vs Rodrigues',
       href: '/ufc-pronostics',
-      dateLabel: 'Samedi 18 juillet · 20h00 EDT',
+      dateLabel: 'Samedi 22 août · 20h00 EDT',
     },
   ] satisfies LandingAnnouncementItem[],
 } as const

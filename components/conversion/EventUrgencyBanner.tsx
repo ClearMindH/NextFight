@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { FastLink } from '@/components/navigation/FastLink'
 import {
   EVENT_URGENCY_BANNER_HEIGHT_PX,
+  FEATURED_UFC_DATE_LABEL,
   FEATURED_UFC_MAIN_EVENT_LABEL,
   isEventUrgencyBannerActive,
 } from '@/lib/event-urgency'
@@ -33,7 +34,7 @@ export function EventUrgencyBanner() {
     >
       <p className="truncate sm:whitespace-normal">
         <span aria-hidden>🥊 </span>
-        {FEATURED_UFC_MAIN_EVENT_LABEL} · samedi 18 juillet ·{' '}
+        {FEATURED_UFC_MAIN_EVENT_LABEL} · {FEATURED_UFC_DATE_LABEL} ·{' '}
         <FastLink
           href="/ufc-pronostics"
           className="underline underline-offset-2 transition-opacity hover:opacity-90"

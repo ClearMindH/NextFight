@@ -82,8 +82,8 @@ describe('getFightDetailHref', () => {
     expect(getFightDetailHref(coMain, event, false)).toBe('/fight/comain')
   })
 
-  it('redirects free users to pricing for locked fights', () => {
-    expect(getFightDetailHref(main, event, false)).toBe('/pricing')
-    expect(getFightDetailHref(prelim, event, false)).toBe('/pricing')
+  it('opens fight page for locked fights so the pick teaser is visible', () => {
+    expect(getFightDetailHref(main, event, false)).toBe('/fight/main')
+    expect(getFightDetailHref(prelim, event, false)).toBe('/fight/prelim')
   })
 })
