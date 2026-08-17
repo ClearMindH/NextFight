@@ -12466,7 +12466,7 @@
       "wins": 22,
       "losses": 8,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "weightClass": "Featherweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2025-11/EMMERS_JAMALL_11-08.png?h=a30e7339&itok=kKZ2_Eq5",
       "stats": {
@@ -13140,7 +13140,7 @@
       "wins": 8,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "BRA",
       "weightClass": "Women&#039;s Flyweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-06/CHAVES_JEISLA_06-06.png?h=a30e7339&itok=EsvjBJ41",
       "stats": {
@@ -17248,7 +17248,7 @@
       "wins": 14,
       "losses": 5,
       "draws": 0,
-      "country": "Unknown",
+      "country": "BRA",
       "weightClass": "Featherweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-03/DOUGLAS_LERRYAN_03-28.png?h=a30e7339&itok=DetH52PU",
       "stats": {
@@ -18748,7 +18748,7 @@
       "wins": 17,
       "losses": 2,
       "draws": 0,
-      "country": "Unknown",
+      "country": "BRA",
       "weightClass": "Featherweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-04/BARBOSA_MARCIO_04-18.png?h=a30e7339&itok=nezdllTW",
       "stats": {
@@ -23346,7 +23346,7 @@
       "wins": 21,
       "losses": 4,
       "draws": 0,
-      "country": "Unknown",
+      "country": "Netherlands",
       "weightClass": "Middleweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-03/DE-RIDDER_REINIER_03-07.png?h=a30e7339&itok=DqAqYK_7",
       "stats": {
@@ -24355,7 +24355,7 @@
       "wins": 15,
       "losses": 5,
       "draws": 0,
-      "country": "Unknown",
+      "country": "GEO",
       "weightClass": "Middleweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-03/DOLIDZE_ROMAN_03-21.png?h=a30e7339&itok=2LwH343N",
       "stats": {
@@ -25346,7 +25346,7 @@
       "wins": 14,
       "losses": 3,
       "draws": 0,
-      "country": "Unknown",
+      "country": "BHR",
       "weightClass": "Heavyweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-04/GAZIEV_SHAMIL_05-02.png?h=a30e7339&itok=QaS8B2WG",
       "stats": {
@@ -25494,7 +25494,7 @@
       "wins": 7,
       "losses": 1,
       "draws": 0,
-      "country": "Unknown",
+      "country": "UK",
       "weightClass": "Women&#039;s Strawweight",
       "imageUrl": "https://ufc.com/images/styles/teaser/s3/2026-03/DYER_SHANELLE_03-21.png?h=a30e7339&itok=PIRgQ_PN",
       "stats": {
@@ -30888,7 +30888,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "Moldova",
       "ranking": 6,
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2026-02/SPIVAC_SERGHEI_L_02-21.png?itok=HFMrh8LQ",
       "stats": {
@@ -30914,7 +30914,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "BRA",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,
@@ -30938,7 +30938,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2025-06/MEDEROS_MARQUEL_L_06-07.png?itok=4tuBmlV5",
       "stats": {
         "strikingAccuracy": 50,
@@ -30963,7 +30963,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "UK",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,
@@ -30987,7 +30987,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2025-07/JUDICE_CARLI_L_07-19.png?itok=_sbMF-Pb",
       "stats": {
         "strikingAccuracy": 50,
@@ -31012,7 +31012,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "NGA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2025-12/NZECHUKWU_KENNEDY_L_12-13.png?itok=t4fUjxtK",
       "stats": {
         "strikingAccuracy": 50,
@@ -31037,7 +31037,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2026-04/SHULTZ_WESLEY_R_05-02.png?itok=1w37TTKs",
       "stats": {
         "strikingAccuracy": 50,
@@ -31062,7 +31062,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,
@@ -31086,7 +31086,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2026-04/PADILLA_CHRIS_L_04-11.png?itok=CZk-i8VG",
       "stats": {
         "strikingAccuracy": 50,
@@ -31111,7 +31111,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "Morocco",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,
@@ -31135,7 +31135,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/2025-08/YOUNG_GAUGE_R_08-23.png?itok=bs8W9DCO",
       "stats": {
         "strikingAccuracy": 50,
@@ -31160,7 +31160,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,
@@ -31184,7 +31184,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,
@@ -31208,7 +31208,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "imageUrl": "https://ufc.com/images/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/fighter_images/SHADOW_Fighter_fullLength_RED.png?VersionId=0NwYm4ow5ym9PWjgcpd05ObDBIC5pBtX&itok=CFBkG7gS",
       "stats": {
         "strikingAccuracy": 50,
@@ -31233,7 +31233,7 @@
       "wins": 0,
       "losses": 0,
       "draws": 0,
-      "country": "Unknown",
+      "country": "USA",
       "stats": {
         "strikingAccuracy": 50,
         "strikeDefense": 50,

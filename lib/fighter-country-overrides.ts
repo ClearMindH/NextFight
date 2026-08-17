@@ -60,9 +60,9 @@ const FIGHTER_COUNTRY_OVERRIDES: Record<string, string> = {
   // UFC Fight Night Sacramento (22 août 2026)
   'ufc-anthony-hernandez': 'USA',
   'ufc-gregory-rodrigues': 'BRA',
-  'ufc-serghei-spivac': 'MDA',
+  'ufc-serghei-spivac': 'Moldova',
   'ufc-vitor-petrino': 'BRA',
-  'ufc-reinier-de-ridder': 'NLD',
+  'ufc-reinier-de-ridder': 'Netherlands',
   'ufc-roman-dolidze': 'GEO',
   'ufc-marquel-mederos': 'USA',
   'ufc-mason-jones': 'UK',
@@ -70,6 +70,19 @@ const FIGHTER_COUNTRY_OVERRIDES: Record<string, string> = {
   'ufc-jeisla-chaves': 'BRA',
   'ufc-kennedy-nzechukwu': 'NGA',
   'ufc-shamil-gaziev': 'BHR',
+  'ufc-wes-schultz': 'USA',
+  'ufc-jackson-mcvey': 'USA',
+  'ufc-chris-padilla': 'USA',
+  'ufc-nasrat-haqparast': 'Morocco',
+  'ufc-gauge-young': 'USA',
+  'ufc-stan-dorsainvil': 'USA',
+  'ufc-jamall-emmers': 'USA',
+  'ufc-lerryan-douglas': 'BRA',
+  'ufc-shanelle-dyer': 'UK',
+  'ufc-marcio-barbosa': 'BRA',
+  'ufc-ryan-kuse': 'USA',
+  'ufc-terrance-chatman': 'USA',
+  'ufc-anthony-wint': 'USA',
 }
 
 export function resolveFighterCountry(fighter: Pick<Fighter, 'id' | 'country'>): string | undefined {
